@@ -25,7 +25,7 @@ class Map:
     def new_shared_edge(self, id, v1, v2, components=None):
         ''' single Edge object that is shared by both vertices. Ordering of linked list will require checking the vertex indices ''' 
         if not all(v in self.graph.keys() for v in [v1, v2]): raise Exception(f'Could Not Create Edge: one or both of the chambers has not been created yet, so could not add edge between them.')
-        newEdge = self.Edge(id, v1, v2)
+        newEdge = self.Edge(id, v1, v2,'shared')
         self.graph[v2].connections[v1] = newEdge 
         self.graph[v1].connections[v2] = newEdge
         return newEdge
@@ -46,7 +46,8 @@ class Map:
             for adj_id in chamber.connections.keys(): # for all of its adjacent vertices 
                 if chamber.connections[adj_id].id == edgeid: # check if vertex has edge w/ that id 
                     return chamber.connections[adj_id]
-                else: raise Exception(f'Edge {edgeid} Not Found')
+
+        raise Exception(f'Edge {edgeid} Not Found')
 
     
 
@@ -65,41 +66,92 @@ class Map:
     # Edges -- linked list for storing Components
     # 
     class Edge:    
-        def __init__(self, id, chamber1, chamber2): 
+        def __init__(self, id, chamber1, chamber2, type=None): 
             
             # Identifying Edge w/ id val and the chambers it connects 
             self.id = id 
             self.v1 = chamber1 
             self.v2 = chamber2
+            self.type = type 
 
             # Component Makeup of the Edge 
             self.headval = None # will point to first instance of Component
         
         def __str__(self): 
+            if self.type=='shared': 
+                return 'Edge ' + str(self.id) + f', connects: {self.v1} <-> {self.v2}'
+
             return 'Edge ' + str(self.id) + f', connects: {self.v1} -> {self.v2}'
 
-        def new_component(self, newcomponent): 
+
+        def find_component(self, interactable): 
+            # beginning at headval, traverses linked list to find component. Returns None if it does not exist
+            
+            if (self.headval.interactable == interactable): 
+                return self.headval 
+
+            c = self.headval
+            while(c.nextval): 
+                c = c.nextval 
+                if c.interactable == interactable: 
+                    return c 
+            return None # c does not exist in linked list 
+
+        def new_component(self, newinteractable): 
             # instantiates new Component and adds to end of linked list
-            newComp = self.Component(newcomponent)
+            newComp = self.Component(newinteractable)
 
             if self.headval is None: 
                 self.headval = newComp
-                return
+                return newComp
             
             component = self.headval 
             while(component.nextval):
-                component = component.nextval # list traversal 
+                component = component.nextval # list traversal to get last component in linked list 
                 if component.interactable == newComp.interactable:                 
                     # check that component is not a repeat 
                     del newComp
                     raise Exception(f'component not added because this component has already been added to the edge')
-                    
+            
+            
             component.nextval = newComp # update list w/ new Component
-                
+            newComp.prevval = component # set new Component's previous component to allow for backwards traversal     
+            return newComp
                 
 
+        def add_component_after(self, newinteractable, previnteractable): 
+            # instantiates and adds new component directly after the specified interactable (so can be in middle of linked list if desired) 
+
+            if (self.find_component(newinteractable)) is not None: raise Exception(f'{newinteractable} already exists on this edge')
+            
+            # if previous component set to None, then make new component the new head of Linked List
+            if previnteractable is None: 
+                if self.headval is None: 
+                    return self.new_component(newinteractable)
+                else: 
+                    prevhead = self.headval 
+                    self.headval = self.Component(newinteractable)
+                    self.headval.nextval = prevhead
+                    return self.headval
+            
+            else: 
+                prevComp = self.find_component(previnteractable) # retrieve prevComp and check that it exists 
+                if prevComp is None: 
+                    raise Exception(f'{previnteractable} must already exist on this edge to add a component that follows it, so could not add {newinteractable}')
+
+                # once prevcomponent is located, instantiate new component and update the vals of the previous component, current component, and next component
+                newComp = self.Component(newinteractable)
+                newComp.prevval = prevComp 
+                newComp.nextval = prevComp.nextval
+
+                # update the components on either side of newComp to reflect changes
+                prevComp.nextval = newComp 
+                newComp.nextval.prevval = newComp 
+                return newComp
+
+
+        
         '''
-        def add_component_after(self, newcomponent, interactable) # adds new component directly after the specified interactable (so can be in the middle of the linked list if desired)
         def add_component_at_idx(self, newcomponent, idx) # adds new component at position <idx> in the linked list
         '''    
 
@@ -109,6 +161,7 @@ class Map:
             def __init__(self, interactable): 
                 self.interactable = interactable # dataval 
                 self.nextval = None
+                self.prevval = None
             
             def __str__(self): 
                 return str(self.interactable) + f', {self.nextval}'

@@ -1,6 +1,10 @@
 import unittest 
+unittest.TestLoader.sortTestMethodsUsing = None
 from Map import Map 
 
+#
+# Vole Testing
+#
 
 #
 # Map Testing 
@@ -8,45 +12,49 @@ from Map import Map
 class MapTestCase(unittest.TestCase): 
 
 
-    def est_new_chamber(self): 
-        print(f'\nTest Case 1: New Chamber')
-        map = Map() 
-        map.new_chamber(5)
-        map.new_chamber(2)
-        map.print_graph_info()
+    
+    map = Map() 
 
-    def est_new_edge(self): 
-        print(f'\nTest Case 2: New Edge')
-        map = Map() 
-        map.new_chamber(1)
-        map.new_chamber(2)
-        try: map.new_bidirectional_edge(12,1,2)
-        except Exception as e: print('Exception:', e)
-        map.print_graph_info()
+    def test1_new_chamber(self): 
+        self.map.new_chamber(1) 
+        self.map.new_chamber(2)
+        self.map.new_chamber(3)
+        self.map.new_chamber(4)
+
+    def test2_new_edge(self): 
+        self.map.new_shared_edge(12,1,2)
+        self.map.new_shared_edge(13,1,3)
+        self.map.new_shared_edge(14,1,4)
     
     
-    def test_new_component(self): 
-        map = Map() 
-        map.new_chamber(1)
-        map.new_chamber(2)
-        map.new_shared_edge(12,1,2)
-        
+    def test3_new_component(self): 
 
-        map.new_chamber(4)
-        map.new_shared_edge(14,1,4)
-        edge14 = map.graph[1].connections[4]
+        edge14 = self.map.graph[1].connections[4] # grabs the shared edge w/ id 14 that goes from 1<->4
+
+        # Add Components
         edge14.new_component('food')
         edge14.new_component('water')
+        edge14.new_component('wheel')
 
 
-        # Add Component 
-        try: 
-            edge = map.get_edge(12)
-            edge.new_component('wheel')
-        except Exception as e: print('Exception:', e)
+        # Different Method of getting an Edge: 
+        edge12 = self.map.get_edge(12)
+        edge12.new_component('wheel')    
 
-        map.print_graph_info()
+    def test4_find_component(self): 
         
+        edge12 = self.map.get_edge(12)
+        print('edge 12: ', edge12)
+        print('Wheel Located? ', edge12.find_component('wheel') ) 
+        print('Door located? ', edge12.find_component('door'))
+
+
+        edge14 = self.map.get_edge(14)
+        print('edge 14: ', edge14)
+        print('Water Located? ', edge14.find_component('water'))
+
+        self.map.print_graph_info()
+    
 
 if __name__ == '__main__': 
     unittest.main()
