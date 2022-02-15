@@ -6,6 +6,7 @@ class Map:
     def __init__(self): 
         ''' key is id assigned to vertex: Chamber instance'''
         self.graph = {} 
+        self.edges = [] # list of edge objects that have been created
     
 
     def print_graph_info(self): 
@@ -16,6 +17,12 @@ class Map:
                 print(edge)                      # edge id and vertices it connects
                 print(edge.headval)              # all components on edge
             
+    def get_chamber(self, id): 
+        ''' returns chamber object with specified id '''
+        for cid in self.graph.keys(): 
+            if cid == id: 
+                return self.graph[cid]
+        return None
 
     def new_chamber(self, id): 
         ''' new Chamber instantiated and added to graph'''
@@ -28,15 +35,19 @@ class Map:
         newEdge = self.Edge(id, v1, v2,'shared')
         self.graph[v2].connections[v1] = newEdge 
         self.graph[v1].connections[v2] = newEdge
+        self.edges.append(newEdge)
         return newEdge
         
 
     def new_unidirectional_edges(self, id, v1, v2, components=None): 
         ''' creates 2 new Edges for connecting 2 chambers -- each has a different Edge instance tho, so components may differ '''
         if not all(v in self.graph.keys() for v in [v1, v2]): raise Exception(f'Could Not Create Edge: one or both of the chambers has not been created yet, so could not add edge between them.')
-        self.graph[v1].connections[v2] = self.Edge(id,v1,v2) # add edges to vertices' adjacency dict 
+        edge1 = self.Edge(id,v1,v2,"unidirectional")
+        self.graph[v1].connections[v2] = edge1 # add edges to vertices' adjacency dict 
         rev_id = int(str(id)[::-1]) # reverse the id for the edge going the reverse direction 
-        self.graph[v2].connections[v1] = self.Edge(rev_id,v2,v1)
+        edge2 = self.Edge(rev_id, v2, v1, "unidirectional")
+        self.graph[v2].connections[v1] = edge2
+        self.edges.extend([edge1, edge2])
 
     
     def get_edge(self, edgeid): 
@@ -47,7 +58,7 @@ class Map:
                 if chamber.connections[adj_id].id == edgeid: # check if vertex has edge w/ that id 
                     return chamber.connections[adj_id]
 
-        raise Exception(f'Edge {edgeid} Not Found')
+        return None
 
     
 
@@ -84,7 +95,7 @@ class Map:
             return 'Edge ' + str(self.id) + f', connects: {self.v1} -> {self.v2}'
 
 
-        def find_component(self, interactable): 
+        def get_component(self, interactable): 
             # beginning at headval, traverses linked list to find component. Returns None if it does not exist
             
             if (self.headval.interactable == interactable): 
@@ -122,7 +133,7 @@ class Map:
         def add_component_after(self, newinteractable, previnteractable): 
             # instantiates and adds new component directly after the specified interactable (so can be in middle of linked list if desired) 
 
-            if (self.find_component(newinteractable)) is not None: raise Exception(f'{newinteractable} already exists on this edge')
+            if (self.get_component(newinteractable)) is not None: raise Exception(f'{newinteractable} already exists on this edge')
             
             # if previous component set to None, then make new component the new head of Linked List
             if previnteractable is None: 
@@ -135,7 +146,7 @@ class Map:
                     return self.headval
             
             else: 
-                prevComp = self.find_component(previnteractable) # retrieve prevComp and check that it exists 
+                prevComp = self.get_component(previnteractable) # retrieve prevComp and check that it exists 
                 if prevComp is None: 
                     raise Exception(f'{previnteractable} must already exist on this edge to add a component that follows it, so could not add {newinteractable}')
 

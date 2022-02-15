@@ -1,10 +1,24 @@
 import unittest 
 unittest.TestLoader.sortTestMethodsUsing = None
 from Map import Map 
+from Simulation import Simulation
 
 #
 # Vole Testing
 #
+class VoleTestCase(unittest.TestCase): 
+
+    map = Map()
+    sim = Simulation(map)
+
+    def test1_new_vole(self): 
+        self.sim.map.new_chamber(1) 
+        self.sim.map.new_chamber(2)
+        self.sim.new_vole(101, 1)
+        self.sim.new_vole(102, 1)
+        self.sim.draw_map()
+
+
 
 #
 # Map Testing 
@@ -41,17 +55,17 @@ class MapTestCase(unittest.TestCase):
         edge12 = self.map.get_edge(12)
         edge12.new_component('wheel')    
 
-    def test4_find_component(self): 
+    def test4_get_component(self): 
         
         edge12 = self.map.get_edge(12)
         print('edge 12: ', edge12)
-        print('Wheel Located? ', edge12.find_component('wheel') ) 
-        print('Door located? ', edge12.find_component('door'))
+        print('Wheel Located? ', edge12.get_component('wheel') ) 
+        print('Door located? ', edge12.get_component('door'))
 
 
         edge14 = self.map.get_edge(14)
         print('edge 14: ', edge14)
-        print('Water Located? ', edge14.find_component('water'))
+        print('Water Located? ', edge14.get_component('water'))
 
         self.map.print_graph_info()
     
