@@ -28,7 +28,19 @@ class Simulation:
         newVole = Vole(tag, start_chamber, self.map)
         self.voles.append(newVole)
         return newVole
-            
+    
+    def remove_vole(self, tag): 
+        ''' removes vole object specified by the vole's tag '''
+        vole = self.get_vole(tag)
+        if not vole: raise Exception(f'vole {tag} does not exist, so cannot be removed')
+        self.voles.remove(vole)
+
+    
+
+
+    #
+    #  Vole/Map Visualization 
+    #         
     def draw_chambers(self): 
 
         for cid in self.map.graph.keys(): 
@@ -59,6 +71,8 @@ class Simulation:
         edges = self.map.edges
         for e in edges: 
             print(f'({e.v1}) <---[{e.headval}]----> ({e.v2})')
+    
+    
     '''
     def setup(self)
     def run(self)

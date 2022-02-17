@@ -1,6 +1,6 @@
 import unittest 
 unittest.TestLoader.sortTestMethodsUsing = None
-from Map import Map 
+from Map import Map
 from Simulation import Simulation
 
 
@@ -20,6 +20,8 @@ class RemovalMethodTestCase(unittest.TestCase):
         chamber3 = self.map.new_chamber(3)
         edge12 = self.map.new_shared_edge(12,1,2)
         edge13 = self.map.new_shared_edge(13,1,3)
+        try: self.map.new_shared_edge(13,1,3)
+        except Exception as e: print('Exception Caught: ', e)
         edge12.new_component('water')
         edge12.new_component('wheel')
         edge12.new_component('couch')

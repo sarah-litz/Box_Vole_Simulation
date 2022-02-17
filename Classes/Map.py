@@ -9,7 +9,7 @@ class Map:
     def __init__(self): 
         ''' key is id assigned to vertex: Chamber instance'''
         self.graph = {} 
-        self.edges = [] # list of edge objects that have been created
+        self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
     
 
     def print_graph_info(self): 
@@ -43,6 +43,8 @@ class Map:
     def new_shared_edge(self, id, v1, v2, components=None):
         ''' single Edge object that is shared by both vertices. Ordering of linked list will require checking the vertex indices ''' 
         if not all(v in self.graph.keys() for v in [v1, v2]): raise Exception(f'Could Not Create Edge: one or both of the chambers has not been created yet, so could not add edge between them.')
+        if self.get_edge(id): raise Exception(f'An edge with the id {id} already exists, could not create edge.')
+        
         newEdge = self.Edge(id, v1, v2,'shared')
         self.graph[v2].connections[v1] = newEdge 
         self.graph[v1].connections[v2] = newEdge
@@ -53,12 +55,17 @@ class Map:
     def new_unidirectional_edges(self, id, v1, v2, components=None): 
         ''' creates 2 new Edges for connecting 2 chambers -- each has a different Edge instance tho, so components may differ '''
         if not all(v in self.graph.keys() for v in [v1, v2]): raise Exception(f'Could Not Create Edge: one or both of the chambers has not been created yet, so could not add edge between them.')
+        if self.get_edge(id): raise Exception(f'An edge with the id {id} already exists, could not create edge.')
+        
         edge1 = self.Edge(id,v1,v2,"unidirectional")
         self.graph[v1].connections[v2] = edge1 # add edges to vertices' adjacency dict 
+        
         rev_id = int(str(id)[::-1]) # reverse the id for the edge going the reverse direction 
         edge2 = self.Edge(rev_id, v2, v1, "unidirectional")
         self.graph[v2].connections[v1] = edge2
-        self.edges.extend([edge1, edge2])
+        
+        self.edges.extend([edge1, edge2]) # add new edges list of map edges
+        return (edge1, edge2)
 
     
     def get_edge(self, edgeid): 
@@ -99,6 +106,8 @@ class Map:
                     if adj == goal: 
                         return trace_path(previous, adj)
 
+
+
     # 
     # Chamber -- vertices in the graph
     #  
@@ -126,6 +135,10 @@ class Map:
             for i in self.interactables: 
                 if i == interactable: return i 
             return None 
+
+
+
+
     #
     # Edges -- linked list for storing Components
     # 
@@ -264,6 +277,26 @@ class Map:
         # Component Object: Subclass of the Edge Class, used for implementing Linked List 
         #
         class Component: 
+
+            ''' ____________________________________________________________________________________________'''
+            ''' This Class will actually be implemented by Control Software, so delete this after Integration '''
+            class Interactable:
+                def __init__(self, initial_threshold = False, threshold_requirement_func = None): 
+                    
+                    self.initial_threshold = initial_threshold
+                    self.initial_threshold_requirement_func = threshold_requirement_func
+
+                    self.threshold = initial_threshold 
+                    self.threshold_requirement_func = threshold_requirement_func
+
+                def set_threshold(self, bool): 
+                    self.threshold = bool  
+                def reset(self): 
+                    self.threshold = self.initial_threshold
+                    self.threshold_requirement_func = self.initial_threshold_requirement_func
+
+            ''' ____________________________________________________________________________________________'''
+            
             def __init__(self, interactable): 
                 self.interactable = interactable # dataval 
                 self.nextval = None
@@ -271,6 +304,21 @@ class Map:
             
             def __str__(self): 
                 return str(self.interactable) + f', {self.nextval}'
+            
+            def simulate(self): 
+                if self.interactable.threshold_requirement_func: 
+                    # execute function to meet threshold 
+                    self.interactable.threshold_requirement_func() 
+                else: 
+                    # simulate by directly setting the threshold to True 
+                    self.interactable.set_threshold(True)
+            
+            def set_threshold_requirement(self, func): 
+                self.interactable.threshold_requirement_func = func
+
+            def reset(self): 
+                self.interactable.reset() 
+
 
                 ''' add any attributes here that are for tracking status of component but are only relevant to the Simulation '''
                 '''
