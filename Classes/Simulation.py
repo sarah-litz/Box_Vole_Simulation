@@ -29,14 +29,43 @@ class Simulation:
         self.voles.append(newVole)
         return newVole
             
-        
+    def draw_chambers(self): 
+
+        for cid in self.map.graph.keys(): 
+            
+            chmbr = self.map.graph[cid]
+            cvoles = [] 
+
+            for v in self.voles: 
+                if v.current_loc == chmbr.id: cvoles.append(v.tag)
+            print(f'_____________\n|   (C{chmbr.id})    |')
+
+            for v in cvoles: 
+                if len(str(v)) > 8: 
+                    v = str(v)[:7] + '-'
+                space = 8 - len(str(v)) 
+                print(f'|V[{v}]' + f"{'':>{space}}" + '|')
+            
+            for i in chmbr.interactables: 
+                if len(str(i)) > 8: 
+                    i = i[:7] + '-'
+                space = 8 - len(str(i)) 
+                print(f'|I[{i}]' + f"{'':>{space}}" + '|')
+
+            print(f'-------------')
+
+    
+    def draw_edges(self): 
+        edges = self.map.edges
+        for e in edges: 
+            print(f'({e.v1}) <---[{e.headval}]----> ({e.v2})')
     '''
     def setup(self)
     def run(self)
     def reset(self)
 
     def new_vole(self) 
-    def 
+    def remove_vole(self)
     '''
 
         
