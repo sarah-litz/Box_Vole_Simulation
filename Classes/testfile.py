@@ -5,7 +5,7 @@ from Simulation import Simulation
 
 
 #
-# Mathods fos Removing Map and Simulation Objects
+# Methods for Removing Interactables from Edges and Chambers
 #
 class RemovalMethodTestCase(unittest.TestCase): 
     sim = Simulation(Map())
@@ -14,20 +14,42 @@ class RemovalMethodTestCase(unittest.TestCase):
     #
     # Adding Components so we can test removing them 
     #
-    def test_add_stuff(self): 
+    def test1_add_stuff(self): 
         chamber1 = self.map.new_chamber(1)
         chamber2 = self.map.new_chamber(2)
+        chamber3 = self.map.new_chamber(3)
         edge12 = self.map.new_shared_edge(12,1,2)
+        edge13 = self.map.new_shared_edge(13,1,3)
         edge12.new_component('water')
         edge12.new_component('wheel')
+        edge12.new_component('couch')
+        edge12.new_component('bed')
         chamber1.new_interactable('C1Food')
         self.sim.new_vole(1,1)
         self.sim.new_vole(2,1)
         self.sim.draw_chambers() 
         self.sim.draw_edges()
     
-    def test1_remove_component(self): 
-        self.remove_component('')
+    def test2_remove_component(self): 
+        # Removes Interactable on an Edge
+        edge12 = self.map.get_edge(12)
+        print(edge12)
+        edge12.remove_component('couch')
+        edge12.remove_component('water')
+        edge12.remove_component('bed')
+        print(edge12)
+        
+        edge13 = self.map.get_edge(13)
+        print(edge13)
+        try: edge13.remove_component('dne')
+        except Exception as e : print("Exception Caught: ", e)
+    
+    def test3_remove_interactable(self): 
+        # Removes Interactable from a Chamber 
+        print('\n')
+        chamber1 = self.map.graph[1]
+        chamber1.remove_interactable('C1Food')
+        self.sim.draw_chambers()
 #
 # Map and Simulation Testing 
 #

@@ -39,7 +39,7 @@ class Map:
         self.graph[id] = newChamber
         return newChamber
 
-    
+
     def new_shared_edge(self, id, v1, v2, components=None):
         ''' single Edge object that is shared by both vertices. Ordering of linked list will require checking the vertex indices ''' 
         if not all(v in self.graph.keys() for v in [v1, v2]): raise Exception(f'Could Not Create Edge: one or both of the chambers has not been created yet, so could not add edge between them.')
@@ -110,12 +110,22 @@ class Map:
 
         def __str__(self): 
             return 'Chamber: ' + str(self.id) + ', adjacent: ' + str([x for x in self.connections])
-
-        
+   
         def new_interactable(self, interactable): 
             # Adds interactable to chamber; these are objects that we don't care about when moving to a new chamber, but may 
             # simulate an interaction with while exisitng within the chamber 
             self.interactables.append(interactable)
+        
+        def remove_interactable(self, interactable): 
+            if self.get_interactable(interactable) is None: 
+                raise Exception(f'Chamber{self.id} does not contain {interactable}, so this interactable cannot be removed.')
+            self.interactables.remove(interactable)
+
+        def get_interactable(self, interactable): 
+            # search list of interactables and return the specified object 
+            for i in self.interactables: 
+                if i == interactable: return i 
+            return None 
     #
     # Edges -- linked list for storing Components
     # 
@@ -133,11 +143,11 @@ class Map:
         
         def __str__(self): 
             if self.type=='shared': 
-                return 'Edge ' + str(self.id) + f', connects: {self.v1} <-> {self.v2}'
+                return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{self.headval}--> {self.v2}'
 
-            return 'Edge ' + str(self.id) + f', connects: {self.v1} -> {self.v2}'
+            return 'Edge ' + str(self.id) + f', connects: {self.v1} --{self.headval}---> {self.v2}'
 
-        # Methods for checking linked list for certain components
+        ''' Traversing and Locating Components on an Edge '''
         def component_exists(self, interactable): 
             # beginning at headval, traverses linked list to find component. Returns True if exists, False otherwise 
             if (self.headval.interactable == interactable): 
@@ -148,9 +158,14 @@ class Map:
                 if c.interactable == interactable: 
                     return True
             return False
+
         def get_component(self, interactable): 
-            # beginning at headval, traverses linked list to find component. Returns None if it does not exist
+            '''beginning at headval, traverses linked list to find component. Returns None if it does not exist'''
             
+            if not (self.headval): 
+                # Edge does not contain any components 
+                return None 
+
             if (self.headval.interactable == interactable): 
                 return self.headval 
 
@@ -161,6 +176,8 @@ class Map:
                     return c 
             return None # c does not exist in linked list 
 
+
+        ''' Adding and Removing Components from Edge '''
         def new_component(self, newinteractable): 
             # instantiates new Component and adds to end of linked list
             newComp = self.Component(newinteractable)
@@ -231,6 +248,9 @@ class Map:
                 # update the head value of linked list 
                 self.headval = nxtComp 
                 nxtComp.prevval = None 
+            elif nxtComp == None: 
+                # remComp is the last element of the linked list
+                prevComp.nextval = None 
             else: 
                 prevComp.nextval = nxtComp 
                 nxtComp.prevval = prevComp 
@@ -238,12 +258,10 @@ class Map:
             del remComp 
             return 
 
-        ''' def remove_chamber(chamber) '''
-        ''' def remove_edge(edge) '''
-        ''' def remove_interactable(interactable)'''
-        
+
+
         #
-        # Components 
+        # Component Object: Subclass of the Edge Class, used for implementing Linked List 
         #
         class Component: 
             def __init__(self, interactable): 
