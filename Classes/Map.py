@@ -280,20 +280,25 @@ class Map:
 
             ''' ____________________________________________________________________________________________'''
             ''' This Class will actually be implemented by Control Software, so delete this after Integration '''
+            ## TODO: Delete This Class once Control Software Interactable Objects have been Completed!
             class Interactable:
-                def __init__(self, initial_threshold = False, threshold_requirement_func = None): 
+                def __init__(self, threshold_requirement_func = None): 
                     
-                    self.initial_threshold = initial_threshold
-                    self.initial_threshold_requirement_func = threshold_requirement_func
+                    self.ID = None
+                    self.threshold = None
 
-                    self.threshold = initial_threshold 
-                    self.threshold_requirement_func = threshold_requirement_func
+                    #self.initial_threshold = initial_threshold
+                    #self.initial_threshold_requirement_func = threshold_requirement_func
+                    #self.threshold = initial_threshold 
+                    #self.threshold_requirement_func = threshold_requirement_func
 
                 def set_threshold(self, bool): 
                     self.threshold = bool  
                 def reset(self): 
-                    self.threshold = self.initial_threshold
-                    self.threshold_requirement_func = self.initial_threshold_requirement_func
+                    self.__reset()
+                    self.threshold = False 
+                def __reset(self): 
+                    raise NameError("Overwrite with unique logic")
 
             ''' ____________________________________________________________________________________________'''
             
@@ -301,6 +306,12 @@ class Map:
                 self.interactable = interactable # dataval 
                 self.nextval = None
                 self.prevval = None
+
+                ''' add any attributes here that are for tracking status of component but are only relevant to the Simulation '''
+                '''
+                Attributes 
+                self.prob_success # probability that vole successfully interacts (meets threshold) w/ the component
+                '''
             
             def __str__(self): 
                 return str(self.interactable) + f', {self.nextval}'
@@ -320,9 +331,4 @@ class Map:
                 self.interactable.reset() 
 
 
-                ''' add any attributes here that are for tracking status of component but are only relevant to the Simulation '''
-                '''
-                Attributes 
-                self.prob_success # probability that vole successfully interacts (meets threshold) w/ the component
-                '''
                 

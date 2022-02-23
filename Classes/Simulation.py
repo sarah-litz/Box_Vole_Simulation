@@ -28,6 +28,8 @@ class Simulation:
         newVole = Vole(tag, start_chamber, self.map)
         self.voles.append(newVole)
         return newVole
+
+    
     
     def remove_vole(self, tag): 
         ''' removes vole object specified by the vole's tag '''
@@ -35,7 +37,7 @@ class Simulation:
         if not vole: raise Exception(f'vole {tag} does not exist, so cannot be removed')
         self.voles.remove(vole)
 
-    
+
 
 
     #

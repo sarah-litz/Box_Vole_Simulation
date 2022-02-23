@@ -42,10 +42,14 @@ class VoleTests(unittest.TestCase):
     def test3_make_move(self): 
         pass 
 
-    def test4_remove_vole(self): 
+    def est4_remove_vole(self): 
         print([i.tag for i in self.sim.voles])
         self.sim.remove_vole(tag=1)
         print([i.tag for i in self.sim.voles]) 
+    
+    def test5_random_voles(self): 
+        vole4 = self.sim.new_vole(4,1)
+        vole4.random_action() # LEAVING OFF HERE; don't think this function is entirely working
 
 
 if __name__ == '__main__': 
