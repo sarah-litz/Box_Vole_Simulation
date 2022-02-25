@@ -155,12 +155,21 @@ class Map:
             self.headval = None # will point to first instance of Component
         
         def __str__(self): 
+            interactables = [c.interactable for c in e] 
             if self.type=='shared': 
-                return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{self.headval}--> {self.v2}'
+                return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{interactables}--> {self.v2}'
 
-            return 'Edge ' + str(self.id) + f', connects: {self.v1} --{self.headval}---> {self.v2}'
+            return 'Edge ' + str(self.id) + f', connects: {self.v1} --{interactables}---> {self.v2}'
 
-        ''' Traversing and Locating Components on an Edge '''
+        ''' Methods for Traversing and Locating Components on an Edge '''
+        def __iter__(self): 
+            component = self.headval
+            while component is not None: 
+                yield component
+                print 
+                component = component.nextval
+
+
         def component_exists(self, interactable): 
             # beginning at headval, traverses linked list to find component. Returns True if exists, False otherwise 
             if (self.headval.interactable == interactable): 
@@ -314,9 +323,10 @@ class Map:
                 '''
             
             def __str__(self): 
-                return str(self.interactable) + f', {self.nextval}'
+                return str(self.interactable)
             
-            def simulate(self): 
+            def simulate(self, vole): 
+                ''' simulates a Vole's interaction with the interactable -- Called by the user script that specifies what actions the vole should make leading up to a move_chamber call '''
                 if self.interactable.threshold_requirement_func: 
                     # execute function to meet threshold 
                     self.interactable.threshold_requirement_func() 

@@ -25,6 +25,11 @@ class VoleTests(unittest.TestCase):
         edge12.new_component('wheel')
         edge12.new_component('couch')
         edge12.new_component('bed')
+
+        print('---- EDGE 12 ------')
+        for c in edge12: 
+            print(c)
+        
         chamber1.new_interactable('C1Food')
         
         self.sim.new_vole(1,1)
@@ -34,13 +39,15 @@ class VoleTests(unittest.TestCase):
         self.sim.draw_chambers() 
         self.sim.draw_edges()
     
-    def test2_send_move_request(self): 
+    def test2_move_validity_check(self): 
 
-        print('Move Request Result: ',self.sim.get_vole(1).send_move_request(destination=2))
-        print('Move Request Result: ', self.sim.get_vole(3).send_move_request(destination=3))
+        print('Move Request Result: ',self.sim.get_vole(1).is_move_valid(destination=2))
+        print('Move Request Result: ', self.sim.get_vole(3).is_move_valid(destination=3))
     
-    def test3_make_move(self): 
-        pass 
+    def test3_attempt_move(self): 
+
+        vole1 = self.sim.get_vole(1)
+        vole1.attempt_move(2) 
 
     def est4_remove_vole(self): 
         print([i.tag for i in self.sim.voles])

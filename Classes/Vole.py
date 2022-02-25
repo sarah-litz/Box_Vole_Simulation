@@ -15,9 +15,8 @@ class Vole:
     #
     # Vole Movements
     #
-
     ## TODO: make_move and make_multichamber_move need work based on Control Software
-    def send_move_request(self, destination): 
+    def is_move_valid(self, destination): 
         '''Check validity of making a move from voles current location to some destination 
         Does not actually make move/update the voles location, just checks if the move is possible according to map layout 
         Return True if move is possible, False otherwise 
@@ -27,11 +26,35 @@ class Vole:
             return True 
         else: return False
     
-    def make_move(self, destination): 
-        ''' executes a move. Assumes that we have already checked if move is valid or not. '''
-        
+    # TODO: change to attempt_move
+    def attempt_move(self, destination, validity_check=True): 
+        ''' called by Vole object ''' 
+        ''' attempts to executes a move. if validity_check is set to True, then we check if the move is physically valid or not. '''
+        ''' GETTING the thresholds of each interactable and checking that it is True '''
+        ''' if the thresholds of each interactable are not True, then we cannot successfully make the move '''
+
+
+        if validity_check: 
+            if not self.is_move_valid(destination): 
+                raise Exception('attempting a move that is not physically possible according to Map layout')
+
         # retrieve edge between current location and the destination, and check threshold for each of these 
-        pass 
+        edge = self.map.graph[self.current_loc].connections[destination]
+
+        # traverse the linked list 
+        for component in edge: 
+
+            # check if component is an rfid --> if it is an rfid, then add to rfid queue
+            if type(component) == rfid: 
+                component.to_queue(self.tag, component.id) # RFID ping: (vole tag, rfid num)
+
+            # if not rfid, check that the threshold is True
+            if component.interactable.threshold is False:
+                print(f'{component.interactable} threshold is False, cannot complete the move.')
+                return False  
+
+
+
 
     def make_multichamber_move(self, goal): 
         pass 
@@ -45,15 +68,6 @@ class Vole:
     #
     # Component Simulation; simulates Vole's interaction w/ some hardware interactable 
     # 
-    ## TODO: simulate_component and make_move needs Work based on Control Software ## 
-    def simulate_interactable(self, obj): 
-
-        # (OPTION 1) set threshold to True, simulating to the control software that a certain threshold condition has been met 
-        obj.set_threshold(True)
-
-        # (OPTION 2) each object will contain logic w/in control software that makes the exact "moves" to meet the threshold 
-        obj.meet_threshold(goal=True)
-
         
     def send_interaction_requestion(self, interactable): 
         ''' Checks validity of interacting with some interactable/component 
@@ -87,7 +101,7 @@ class Vole:
 
         # add all possible "move chamber" options 
         for adj_chmbr in self.map.graph[self.current_loc].connections: # for all of the current chamber's neighboring chambers
-            actions.append( (self.make_move, adj_chmbr) ) # add to list of possible moves 
+            actions.append( (self.attempt_move, adj_chmbr) ) # add to list of possible moves 
         
         # add all possible "interact w/ chamber interactables" options
         for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber

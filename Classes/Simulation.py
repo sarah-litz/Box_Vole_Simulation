@@ -72,7 +72,8 @@ class Simulation:
     def draw_edges(self): 
         edges = self.map.edges
         for e in edges: 
-            print(f'({e.v1}) <---[{e.headval}]----> ({e.v2})')
+            interactables = [c.interactable for c in e] 
+            print(f'({e.v1}) <---{interactables}----> ({e.v2})')
     
     
     '''
