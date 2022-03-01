@@ -105,7 +105,7 @@ class Vole:
         
         # add all possible "interact w/ chamber interactables" options
         for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber
-            actions.append( (self.simulate_interactable, interactable) )
+            actions.append( (interactable.simulate, self) )
         
         return actions
 
@@ -124,8 +124,17 @@ class Vole:
 
         possible_actions = self.possible_actions()
         
-        # randomly choose action to take from list of possible_actions
+        # choose action from possible_actions based on their value in the current chamber's probability distribution
+
         idx = random.randint(0, len(possible_actions)-1)
+        action_probability = self.map.graph[self.current_loc].actionobject_probability
+        pd = [] # list to contain probabilities in same order of actionobject_probability
+        for a in possible_actions: 
+            # retrieve each possible actions corresponding probability, and append to an ordered lsit 
+            pd.append(action_probability[a])
+
+
+        idx = random.choices( [i for i in range(0,len(possible_actions)-1)], weights = pd, k = 1 )
         # LEAVING OFF HERE
         possible_actions[idx][0]( *possible_actions[idx][1:] )
 

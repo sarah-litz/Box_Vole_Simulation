@@ -3,6 +3,7 @@
 
 
 from collections import deque
+import time
 
 
 class Map: 
@@ -10,7 +11,7 @@ class Map:
         ''' key is id assigned to vertex: Chamber instance'''
         self.graph = {} 
         self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
-    
+        
 
     def print_graph_info(self): 
         for chamber in self.graph.values(): 
@@ -114,8 +115,18 @@ class Map:
     class Chamber: 
         def __init__(self,id): 
             self.id = id 
+            
             self.connections = {} # adjacent chamber: a single Edge object which points to linked list of components
+            self.num_connections = len(self.connections)
+
             self.interactables = [] # interactable specific to a chamber, rather than an edge 
+            self.num_interactables = len(self.interactables)
+
+            #self.action_objects = list(self.connections.keys()) + self.interactables # merges list of chambers and interactables. Assign probabilities to each value in this list 
+            # LEAVING OFF HERE: # self.actionobject_probability: dictionary w/ the action objects as keys, and initalized w/ a uniform probability distribution --> (or should I initalize w/ an ActionProbability Object??)
+            
+            #dict.fromkeys(self.action_objects, (100/len(self.action_objects))) 
+
 
         def __str__(self): 
             return 'Chamber: ' + str(self.id) + ', adjacent: ' + str([x for x in self.connections])
@@ -135,6 +146,77 @@ class Map:
             for i in self.interactables: 
                 if i == interactable: return i 
             return None 
+        
+
+
+        #
+        # (for Simulation Use Only) Probability Tracking: tracking probabilities of some Action-Object getting chosen by a Vole when a simulated vole is told to make random decisions
+        #
+        def set_action_probability( self, actionobj_probability_lst):
+
+            # actionobj_probability_lst: list of (actionobject, new_p) 
+
+            for a in self.action_objects: 
+                if a not in actionobj_probability_lst: 
+                    raise Exception(f'must set the probability value for all action objects within the chamber ({self.action_objects}). Did not find a value for {a}. ')
+            
+
+            newsum = sum(a for (a,p) in actionobj_probability_lst) 
+            if newsum != 1: 
+                raise Exception(f'probabilities must sum to 1, but the given probabilities added to {newsum}')
+            
+
+            for (a,p) in actionobj_probability_lst: 
+                self.actionobject_probability[a] = p
+
+            #ISSUE: what if there are only 2 action objects in a chamber and both of their isDefaults are False. Then would be impossible to adjust the probability since could never change a diff value to ensure that total probability is 100%
+            # to solve this issue, for now am ridding of the use of .isDefault, and no matter what, we will adjust all the other action-objects. 
+
+            # updates the objects probability of getting chosen, and adjusts the other probabilities to ensure that they add up to 100% 
+            # if an object's isDefault==False, then it does not get adjusted. Only the objects that have isDefault==True will be updated. 
+            # if probability does not sum to 100 and there are no objects that are able to be adjusted to reach 100%, throw an error
+
+
+            '''adjustable_actionobjects = [ a for (a,p) in self.action_objects if a not in actionobj_probability_lst ] # put any remaining actionobject in lst 
+            # total_diff = 
+            for actionobj in actionobjectlst: 
+
+                old_p = self.actionobject_probability[actionobj]
+                p_diff = new_p - old_p
+                # adjustable_actionobjects = [ a for a in self.action_objects if (self.actionobject_probability[a].isDefault and a != actionobj) ] # new list of adjustable objects, discluding the object of the current action-object we are trying to change the probability of 
+                
+
+                # increase/decrease the probabilities of adjustable_actionobjects such that in total the change in probability is equal to that of p_diff 
+                
+                num_adjustables = len(self.actionobject_probability) - len(actionobjectlst)   
+                if num_adjustables < 1: raise Exception(f'cannot adjust the probability of {actionobj} to a value not equal to 100%, because it is the only action-object accessible from chamber {self.id}')
+                
+                adjusted_p = p_diff/num_adjustables # divide the total change in p equally amongst all of the other action_objects
+                for a in self.actionobject_probability: # loop thru the action-objects that we want to adjust, and change probability value accordingly
+                    self.actionobject_probability[a] = self.actionobject_probability[a] + adjusted_p
+                
+                self.actionobject_probability[actionobj] = new_p # update with new probability value
+                new_sum = sum(v for (k,v) in self.actionobject_probability.items()) # double check that new sum is 100%
+                if new_sum != 1: 
+                    raise Exception(f'something went wrong in adjusting the probabilities (def set_action_probability in Map Class). the sum after changing the probability is now {new_sum}')
+                
+
+           '''
+                
+
+        class ActionObjectProbability:
+            def __init__( self, probability ): 
+                self.probability = probability # updated probability 
+                self.initial_p = probability # initial default probability 
+                self.isDefault = True # Boolean to represent if probability has changes from default or not 
+            
+            def update_probability( self, new_p ): 
+                self.probability = new_p 
+                self.isDefault = False 
+            
+
+
+        
 
 
 
@@ -320,6 +402,7 @@ class Map:
                 '''
                 Attributes 
                 self.prob_success # probability that vole successfully interacts (meets threshold) w/ the component
+                
                 '''
             
             def __str__(self): 
