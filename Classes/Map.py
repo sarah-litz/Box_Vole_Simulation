@@ -158,7 +158,7 @@ class Map:
 
             # check that the specified action-objects are accessible from the current chamber, and of type Chamber, Interactable, or 'sleep'
             p_sum = 0
-            for (k,v) in actionobj_probability_dict:          
+            for (k,v) in actionobj_probability_dict.items():  
                 if isinstance(k, type(self)): # type: Chamber 
                     if k.id not in self.connections.keys(): 
                         raise Exception(f'attempting to set the probability of moving to chamber{k.id}, which is not adjacent to chamber{self.id}, so cannot set its probability.') 
@@ -175,7 +175,7 @@ class Map:
             if p_sum != 1: 
                 raise Exception(f'the probabilities must sum to 1, but the given probabilities for chamber{self.id} summed to {p_sum}')
             
-            
+
             self.action_probability_dist = actionobj_probability_dict
 
         

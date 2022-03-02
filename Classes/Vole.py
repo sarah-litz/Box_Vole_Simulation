@@ -26,7 +26,7 @@ class Vole:
             return True 
         else: return False
     
-    # TODO: change to attempt_move
+
     def attempt_move(self, destination, validity_check=True): 
         ''' called by Vole object ''' 
         ''' attempts to executes a move. if validity_check is set to True, then we check if the move is physically valid or not. '''
@@ -105,7 +105,8 @@ class Vole:
         
         # add all possible "interact w/ chamber interactables" options
         for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber
-            actions.append( (interactable.simulate, self) )
+            # TODO: once using control software, change to an actual interactable.simulate 
+            actions.append( ('interactable.simulate', self) )
         
         return actions
 
@@ -123,18 +124,27 @@ class Vole:
         '''
 
         possible_actions = self.possible_actions()
+        print('possible actions: ', possible_actions)
         
         # choose action from possible_actions based on their value in the current chamber's probability distribution
 
-        # idx = random.randint(0, len(possible_actions)-1)
-        action_probability = self.map.graph[self.current_loc].actionobject_probability
-        pd = [] # list to contain probabilities in same order of actionobject_probability
-        for a in possible_actions: 
-            # retrieve each possible actions corresponding probability, and append to an ordered lsit 
-            pd.append(action_probability[a])
+        action_probability = self.map.graph[self.current_loc].action_probability_dist
+        if action_probability is not None: 
+            # User has set probabilities for the actions, make deicision based on this. 
+            print('action probability:', action_probability)
+            pd = [] # list to contain probabilities in same order of actionobject_probability
+            for a in possible_actions: 
+                # retrieve each possible actions corresponding probability, and append to an ordered lsit 
+                pd.append(action_probability[a])
+            
+            idx = random.choices( [i for i in range(0,len(possible_actions)-1)], weights = pd, k = 1 )
+
+        
+        else: 
+            # no probabilities have been set, make decision where every possible action has an equal decision of being chosen
+            idx = random.randint(0, len(possible_actions)-1)
 
 
-        idx = random.choices( [i for i in range(0,len(possible_actions)-1)], weights = pd, k = 1 )
         # LEAVING OFF HERE
         possible_actions[idx][0]( *possible_actions[idx][1:] )
 

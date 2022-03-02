@@ -31,6 +31,7 @@ class VoleTests(unittest.TestCase):
             print(c)
         
         chamber1.new_interactable('C1Food')
+        chamber1.new_interactable('C1Water')
         
         self.sim.new_vole(1,1)
         self.sim.new_vole(2,1)
@@ -61,7 +62,14 @@ class VoleTests(unittest.TestCase):
 
     # LEAVING OFF HERE! 
     def test6_add_action_probabilities(self): 
-        pass 
+
+        c1food = self.sim.map.graph[1].get_interactable('C1Food')
+        c1water = self.sim.map.graph[1].get_interactable('C1Water')
+        e12 = self.sim.map.get_edge(12)
+        e13 = self.sim.map.get_edge(13)
+
+        chamber1 = self.sim.map.graph[1]
+        chamber1.add_action_probabilities({'sleep':.1, c1food:.1, c1water:.1, e12:.1, e13:.1})
         # add probabilities to vole actions 
         # then update vole.random_action() so it first checks for probabilities. If action_probabilities==None, then call possible_actions() and choose randomly (using a uniform distribution)
 
