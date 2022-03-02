@@ -126,7 +126,7 @@ class Vole:
         
         # choose action from possible_actions based on their value in the current chamber's probability distribution
 
-        idx = random.randint(0, len(possible_actions)-1)
+        # idx = random.randint(0, len(possible_actions)-1)
         action_probability = self.map.graph[self.current_loc].actionobject_probability
         pd = [] # list to contain probabilities in same order of actionobject_probability
         for a in possible_actions: 

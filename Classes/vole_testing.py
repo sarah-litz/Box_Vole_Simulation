@@ -57,6 +57,13 @@ class VoleTests(unittest.TestCase):
     def test5_random_voles(self): 
         vole4 = self.sim.new_vole(4,1)
         vole4.random_action() # LEAVING OFF HERE; don't think this function is entirely working
+    
+
+    # LEAVING OFF HERE! 
+    def test6_add_action_probabilities(self): 
+        pass 
+        # add probabilities to vole actions 
+        # then update vole.random_action() so it first checks for probabilities. If action_probabilities==None, then call possible_actions() and choose randomly (using a uniform distribution)
 
 
 if __name__ == '__main__': 
