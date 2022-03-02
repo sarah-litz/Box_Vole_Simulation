@@ -1,0 +1,49 @@
+{ 
+    "chambers": [ 
+        {
+            "id": 1, 
+            "descriptive_name": "Main Chamber", 
+            "interactables": ["water1", "food1"] 
+        }, 
+
+        {
+            "id": 2, 
+            "descriptive_name": "Chamber 2", 
+            "interactables": []
+        }, 
+
+        {
+            "id": 3, 
+            "descriptive_name": "Chamber 3",
+            "interactables": ["wheel1"]
+        }
+    
+    ], 
+
+    "edges": [
+        {
+            "start_chamber_id":1, 
+            "target_chamber_id":2, 
+            "id":12, 
+            "type":"shared", 
+            "components":[
+                { "interactable":"rfid1" }, 
+                { "interactable":"door1" }, 
+                { "interactable":"rfid2" }
+            ]
+        }, 
+
+        { 
+            "start_chamber_id":1, 
+            "target_chamber_id":3, 
+            "id": 13, 
+            "type":"shared", 
+            "components":[
+                { "interactable":"rfid3", "component_id": 3 }, 
+                { "interactable": "door2", "component_id": 2 }, 
+                { "interactable": "rfid4", "component_id": 4 }
+            ]
+        }
+    ]
+
+}

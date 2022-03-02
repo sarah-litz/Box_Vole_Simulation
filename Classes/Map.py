@@ -4,6 +4,7 @@
 
 from collections import deque
 import time
+import json 
 
 
 class Map: 
@@ -23,7 +24,43 @@ class Map:
 
     #
     # Getters and Setters 
-    #       
+    #
+
+    def configure_setup(self, config_filepath): 
+        ''' function to read/parse configuration file and set up map accordingly '''
+
+        # opening JSON file 
+        f = open(config_filepath)
+
+        # returns json object as a dictionary 
+        data = json.load(f) 
+
+        print(data)
+
+        # Iterate thru to chambers list to initalize the diff chambers and their interactables 
+        for chmbr in data['chambers']: 
+            
+            new_c = self.new_chamber( chmbr['id'] )
+            
+            for i in chmbr['interactables']: 
+                
+                # TODO: retrieve the actual interactable object from control software, and add this to the map
+                new_c.new_interactable(i) 
+        
+        # Iterate thru edges list to make connections between the chambers 
+        for edge in data['edges']: 
+
+            if edge['type'] == 'shared': 
+                
+                new_edge = self.new_shared_edge(edge['id'], edge['start_chamber_id'], edge['target_chamber_id'])
+                
+                for c in edge['components']:
+
+                    # TODO: retrieve the actual interactable object from control software, and add this to the edge
+                    new_edge.new_component( c )
+    
+         
+                
     def get_chamber(self, id): 
         ''' returns chamber object with specified id '''
         for cid in self.graph.keys(): 
@@ -196,7 +233,7 @@ class Map:
             self.headval = None # will point to first instance of Component
         
         def __str__(self): 
-            interactables = [c.interactable for c in e] 
+            interactables = [c.interactable for c in self] 
             if self.type=='shared': 
                 return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{interactables}--> {self.v2}'
 
