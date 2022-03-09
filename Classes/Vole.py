@@ -45,6 +45,7 @@ class Vole:
         for component in edge: 
 
             # check if component is an rfid --> if it is an rfid, then add to rfid queue
+            # TODO: figure out how to handle diff. components! 
             if type(component) == rfid: 
                 component.to_queue(self.tag, component.id) # RFID ping: (vole tag, rfid num)
 

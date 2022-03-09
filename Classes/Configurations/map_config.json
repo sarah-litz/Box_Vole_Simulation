@@ -3,7 +3,9 @@
         {
             "id": 1, 
             "descriptive_name": "Main Chamber", 
-            "interactables": ["water1", "food1"] 
+            "interactables": [
+                {"interactable_name":"lever1", "type":"lever"}
+            ] 
         }, 
 
         {
@@ -15,7 +17,7 @@
         {
             "id": 3, 
             "descriptive_name": "Chamber 3",
-            "interactables": ["wheel1"]
+            "interactables": []
         }
     
     ], 
@@ -27,9 +29,9 @@
             "id":12, 
             "type":"shared", 
             "components":[
-                { "interactable":"rfid1" }, 
-                { "interactable":"door1" }, 
-                { "interactable":"rfid2" }
+                { "interactable_name":"rfid1", "type":"rfid" }, 
+                { "interactable_name":"door1", "type":"door" }, 
+                { "interactable_name":"rfid2", "type":"rfid" }
             ]
         }, 
 
@@ -39,11 +41,8 @@
             "id": 13, 
             "type":"shared", 
             "components":[
-                { "interactable":"rfid3", "component_id": 3 }, 
-                { "interactable": "door2", "component_id": 2 }, 
-                { "interactable": "rfid4", "component_id": 4 }
+
             ]
         }
     ]
-
 }

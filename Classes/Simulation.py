@@ -4,11 +4,33 @@ import copy
 
 class Simulation: 
 
-    def __init__(self, map): 
+    def __init__(self, map, vole_dict={}): 
         
+        # TODO: option for passing in voles dictionary, and we immediately initialize the voles as specified by the dictionary
         self.voles = []
         self.map = map
 
+        for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
+    
+
+    #
+    # Running the Simulation 
+    #
+    
+    def __setup__(self): 
+
+        raise Exception('you need to overwrite the __setup__ function! This is where you add/initialize any voles that you want to Simulate.')
+
+    def run_sim(self, func_to_run, timeout_interval): 
+
+        # TODO 
+        # creates thread with target function 'func_to_run' 
+        # returns after timeout_interval is up, even if the simulation function has not completely finished running 
+        pass 
+    
+    #
+    # Vole Getters and Setters 
+    #
     def get_vole(self, tag): 
         # searches list of voles and returns vole object w/ the specified tag 
         for v in self.voles: 
@@ -29,8 +51,7 @@ class Simulation:
         self.voles.append(newVole)
         return newVole
 
-    
-    
+        
     def remove_vole(self, tag): 
         ''' removes vole object specified by the vole's tag '''
         vole = self.get_vole(tag)
@@ -77,14 +98,21 @@ class Simulation:
     
     
     
+    #
+    # Simulate Vole-Interactable Interactations
+    #
+    def simulate_interactable(self, interactable, vole): 
+
+        interactable.set_threshold(True)
+
     
+
+
+        
     '''
     def setup(self)
     def run(self)
     def reset(self)
-
-    def new_vole(self) 
-    def remove_vole(self)
     '''
 
         

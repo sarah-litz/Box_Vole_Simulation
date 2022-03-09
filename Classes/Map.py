@@ -2,17 +2,25 @@
 ''' Defining a network of Vertices and Edges, where vertices are chambers, and edges are the connections/components existing between chambers'''
 
 
+from code import interact
 from collections import deque
 import time
 import json 
-
+import os
+import mode 
+from mode import interactableABC,lever, door, rfid
 
 class Map: 
-    def __init__(self): 
+    def __init__(self, config_directory): 
         ''' key is id assigned to vertex: Chamber instance'''
-        self.graph = {} 
-        self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
         
+        self.graph = {} 
+
+        self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
+
+        self.instantiated_interactables = [] # list of names of every object of type interactableABC that has been created to avoid repeats
+        
+        self.config_directory = config_directory # directory containing all of the configuration files 
 
     def print_graph_info(self): 
         for chamber in self.graph.values(): 
@@ -24,8 +32,100 @@ class Map:
 
     #
     # Getters and Setters 
-    #
+    #        
+    def instantiate_interactable_hardware( self, name, type ): 
 
+        ''' anytime that an interactable is added (either to a chamber or to an edge), first a call to this function is made. 
+            called from configure_setup in 2 places: 
+                (1) first called to instantiate objects that are added to chamber.interactables 
+                (2) second called to instantiate objects that are added to chamber.connections[adjacent_chmbr_id].components
+            based on the object type and object id, instantiates a new interactableABC subclass object
+            the specified "type" is a string representation of an existing interactableABC subclass, specified in the map configuration file
+        '''
+
+
+        # Edge Case: if type is not a valid subclass of interactableABC, raise Exception
+        try: getattr(mode, type)
+        except: raise Exception(f' unknown interacatable type: {type} ')
+
+
+        # Edge Case: if an object of the same type and id has already been created
+        if name in self.instantiated_interactables: raise Exception(f'the interactable {name} already exists. please assign unique names to the interactables')
+
+
+        # Edge Case: missing configuration file for either this type of interactable
+        config_filepath = None 
+        filename = type+'.json'
+        for root, dirs, files in os.walk(self.config_directory): 
+            if filename in files: 
+                config_filepath = os.path.join(root,filename)
+        if config_filepath is None: raise Exception(f'there is no configuration file for {type} in {self.config_directory}')
+            
+
+        f = open( config_filepath ) # opening json file 
+        
+        data = json.load( f ) # returns json object as a dictionary 
+
+        f.close() # close file
+
+
+        # edge case: configuration file does not have specifications for an object with this name
+        try: objspec = data[name]
+        except: raise Exception(f'there is no entry for {name} in the {type} configuration file, {filename}')
+
+        # if name not in data.keys(): raise Exception(f'there is no entry for {name} in the {type} configuration file')
+
+        #
+        # Instantiate New Interactable
+        # 
+        '''
+        TODO: ( Potentially work with Ryan to complete this part. ) 
+                    # https://stackoverflow.com/questions/4821104/dynamic-instantiation-from-string-name-of-a-class-in-dynamically-imported-module 
+        # read in corresponding config file based on the interactable type 
+        # locate and parse the specifications of the particular interactable based on the interactable id 
+        # instantiate subclass based on the interactable type 
+        # pass and set necessary attributes using the information from the configuration file 
+        # return the new object 
+        '''
+
+        # using variable <data> which contains the text read in from the hardware configuration file 
+        # potentially have a data['arguments'] that contains all of the arguments that we need to pass to the instantiation of the object ??
+
+
+
+
+        if type == 'door': 
+            
+            # get door w/ <id> from the door config file 
+            try: new_obj = door(ID=objspec['id'], servoPin = objspec['servoPin']) # instantiate door 
+            except Exception as e: raise Exception(f'there was a problem instantiating the object {name}: {e}')
+
+        elif type == 'rfid': 
+
+            try: new_obj = rfid(ID=objspec['id']) # ASK: also need to pass in rfidQ?? confused on where this comes from though. 
+            except Exception as e: raise Exception(f'there was a problem instantiating the object: {name}: {e}')
+
+        elif type == 'lever': 
+            
+            try: new_obj = lever(ID=objspec['id'], signalPin = objspec['signalPin'], numPresses = objspec['numPresses'])
+            except Exception as e: raise Exception(f'there was a problem instantiating the object {name}: {e}')
+
+
+        else: 
+
+            raise Exception(f'interactableABC does not have a subclass {type} implemented in mode.py')
+
+            
+        
+        self.instantiated_interactables += name # add string identifier to list of instantiated interactables
+        return new_obj
+
+        
+
+
+    #
+    # Map Configuration 
+    #
     def configure_setup(self, config_filepath): 
         ''' function to read/parse configuration file and set up map accordingly '''
 
@@ -35,7 +135,8 @@ class Map:
         # returns json object as a dictionary 
         data = json.load(f) 
 
-        print(data)
+        # closing JSON file
+        f.close() 
 
         # Iterate thru to chambers list to initalize the diff chambers and their interactables 
         for chmbr in data['chambers']: 
@@ -44,8 +145,10 @@ class Map:
             
             for i in chmbr['interactables']: 
                 
-                # TODO: retrieve the actual interactable object from control software, and add this to the map
-                new_c.new_interactable(i) 
+                # TODO: call function to instantiate interactable hardware 
+                new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+
+                new_c.new_interactable( new_i ) 
         
         # Iterate thru edges list to make connections between the chambers 
         for edge in data['edges']: 
@@ -54,10 +157,24 @@ class Map:
                 
                 new_edge = self.new_shared_edge(edge['id'], edge['start_chamber_id'], edge['target_chamber_id'])
                 
-                for c in edge['components']:
+                for i in edge['components']:
 
-                    # TODO: retrieve the actual interactable object from control software, and add this to the edge
-                    new_edge.new_component( c )
+                    # TODO: call function to instantiate interactable hardware
+                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+
+                    new_edge.new_component( new_i )
+            
+            '''
+            elif edge['type'] == 'unidirectional': 
+
+                new_edge = self.new_unidirectional_edge
+
+                for c in edge['components']: 
+
+                    # Unidirectional Edges bring up special case where we may need to reuse/point to an already instantiated interactable.
+                    # i.e. the components along the edge may have already been instantiated if a unidirectional edge connecting the same 2 chambers was already created.
+                    # If this is the case, then we need to point to the existing component instead of instantiating a new one.  
+            '''
     
          
                 
@@ -164,10 +281,10 @@ class Map:
             return 'Chamber: ' + str(self.id) + ', adjacent: ' + str([x for x in self.connections])
    
         def new_interactable(self, interactable): 
-            # Adds interactable to chamber; these are objects that we don't care about when moving to a new chamber, but may 
-            # simulate an interaction with while exisitng within the chamber 
+            # Adds interactable to chamber; these objects exist w/in a chamber, and not on an edge so have nothing to do with a vole's movement between chambers
             self.interactables.append(interactable)
-        
+
+
         def remove_interactable(self, interactable): 
             if self.get_interactable(interactable) is None: 
                 raise Exception(f'Chamber{self.id} does not contain {interactable}, so this interactable cannot be removed.')
@@ -404,20 +521,7 @@ class Map:
             def __str__(self): 
                 return str(self.interactable)
             
-            def simulate(self, vole): 
-                ''' simulates a Vole's interaction with the interactable -- Called by the user script that specifies what actions the vole should make leading up to a move_chamber call '''
-                if self.interactable.threshold_requirement_func: 
-                    # execute function to meet threshold 
-                    self.interactable.threshold_requirement_func() 
-                else: 
-                    # simulate by directly setting the threshold to True 
-                    self.interactable.set_threshold(True)
-            
-            def set_threshold_requirement(self, func): 
-                self.interactable.threshold_requirement_func = func
 
-            def reset(self): 
-                self.interactable.reset() 
 
 
                 

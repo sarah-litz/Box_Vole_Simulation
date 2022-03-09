@@ -1,0 +1,11 @@
+
+
+{ 
+    "lever1": 
+    {
+        "id":1,
+        "signalPin":1, 
+        "numPresses":2  
+    }
+    
+}
