@@ -1,0 +1,81 @@
+
+# Standard Lib Imports 
+import time 
+
+# Local Imports 
+from Simulation import SimulationABC
+from Map import Map
+from ryan_example1 import mode1
+
+# 
+# This is just an example --> Doesn't actually run yet. (config_testing.py has a more working version)
+# 
+class SarahsSimulation(SimulationABC): 
+
+    def __init__(self, modes, map, vole_dict={}):
+        
+        super().__init__(modes, map, vole_dict) 
+
+  
+
+    # TODO: these should automatically run on their own thread; create a decorator func to do this
+    def mode1_timeout(self): 
+
+        #
+        # Script to specify what should happen when we enter mode1's timeout interval
+        #
+          
+        chmbr1 = self.map.graph[1]
+        
+        # chmbr1.interactables['wheel1'].simulate(vole=1)
+        self.simulate_interactable(chmbr1.interactables['wheel1'], vole=1) 
+
+        time.sleep(5)
+
+        self.simulate_interactable(chmbr1.interactables['door1'].dependent['lever1'].simulate(vole=1))
+
+
+    def mode2_timeout(self): 
+
+        #
+        # Script to specify what should happen when mode2 enters its timeout interval
+        #
+        print('this shouldnt be getting called atm')
+        return 
+
+
+
+
+if __name__ == '__main__': 
+
+
+    # instantiate map (which will also instantiate the hardware components) 
+    map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
+
+    
+    # instantiate the modes that you want to run
+    mode1 = mode1( timeout = 432000, map = map ) 
+
+    
+    # instantiate the Simulation, pass in the Mode objects, map, and Voles to create
+    sim = SarahsSimulation( modes = [mode1], map = map, vole_dict = { 1:1, 2:1 }  ) 
+
+    # indicate the simulation function to run when the mode enters timeout 
+    sim.simulation_func[mode1] = sim.mode1_timeout 
+
+    #
+    # LEAVING OFF HERE!! 
+    # UNSURE WHY THE RUN_SIM FUNCTION THROWS AN ERROR BEFORE THE DRAW CHAMBERS THROWS AN ERROR 
+    # IF I TAKE AWAY THE RUN_IN_THREAD DECORATOR FUNC THAT CALLS RUN_SIM GETS PASSED TO, THEN JUST THE DRAW_CHAMBERS THROWS AN ERROR 
+    # so basically i don't think i fully understand how the decorator functions work 
+    #
+    sim.draw_chambers()
+    print('helloooo')
+    # runs simulation as daemon thread 
+    sim.run_sim() 
+
+
+    # start experiment 
+    mode1.enter() 
+    mode1.run() 
+    

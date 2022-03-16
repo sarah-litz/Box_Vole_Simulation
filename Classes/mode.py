@@ -24,8 +24,9 @@ class modeABC:
         self.box     = map
         self.threads = None
         self.active  = False
-        self.timeout = None
+        self.timeout = timeout
         self.optional = kwargs
+        self.inTimeout = False 
 
         # Set variables as the enter and exit strings
         self.enterStrings = enterFuncs

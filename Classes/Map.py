@@ -22,6 +22,8 @@ class Map:
         
         self.config_directory = config_directory # directory containing all of the configuration files 
 
+        self.configure_setup(config_directory + '/map.json')
+
     def print_graph_info(self): 
         for chamber in self.graph.values(): 
             print(chamber)                       # chamber id and adjacent vertices

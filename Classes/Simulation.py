@@ -1,36 +1,101 @@
+
+# Local Imports 
 from Vole import Vole
 from Map import Map
+
+# Standard Lib Imports 
 import copy
+import threading 
+import time 
 
-class Simulation: 
 
-    def __init__(self, map, vole_dict={}): 
+
+class SimulationABC: 
+
+    def __init__(self, modes, map, vole_dict={}): 
         
         # TODO: option for passing in voles dictionary, and we immediately initialize the voles as specified by the dictionary
         self.voles = []
+        
         self.map = map
 
+        self.simulation_func = {} # dict for pairing a mode with a simulation function 
+
+        self.modes = modes
+
+        # TODO: either use a vole_dict argument option OR setup_voles option. Think it'll be confusing if both options are offered.
+        # self.setup_voles()
         for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
     
 
-    #
-    # Running the Simulation 
-    #
+    def run_in_thread(func): 
+        ''' decorator function to run function on its own thread '''
+        def run(*k, **kw): 
+            t = threading.Thread(target = func, args = k, kwargs=kw, daemon=True)
+            t.start() 
+        return run() 
     
-    def __setup__(self): 
+    @run_in_thread
+    def run_sim(self): 
 
-        raise Exception('you need to overwrite the __setup__ function! This is where you add/initialize any voles that you want to Simulate.')
+        
+        ''' This Function Runs Continuously Until the Experiment Ends 
+                    Runs on a separate thread 
+                    Calls the function that is paired with the currently active mode '''
 
-    def run_sim(self, func_to_run, timeout_interval): 
+        # TODO: the function that we call should potentially also run on its own thread, so then all this function does is 
+        # loop until the active mode is not in Timeout or the current mode is inactive. Basically will just allow for a more immediate 
+        # stopage of the simulation when a mode gets out of timeout and/or stops running 
 
-        # TODO 
-        # creates thread with target function 'func_to_run' 
-        # returns after timeout_interval is up, even if the simulation function has not completely finished running 
-        pass 
+        while True: 
+            ''' we can assume that this thread will get killed when the main thread running the modes finishes '''
+            ''' so we can just keep looping and assume that we are in between modes, and that a mode will eventually become active again '''
+
+
+            # Set the Currently Active Mode 
+            current_mode = self.get_active_mode() # update the current mode 
+            
+            if current_mode is None: 
+                # wait for a mode to become active 
+                time.sleep(0.5)
+                current_mode = self.get_active_mode() 
+            
+            
+            # Loop Until Current Mode is Inactive
+            while current_mode.active: # reruns simulation while the mode is still active
+
+                # Wait for Mode's Timeout 
+                while not current_mode.inTimeout() and current_mode.active: # active mode not in Timeout
+                    # while not in timeout portion of mode, loop 
+                    time.sleep(0.5)
+                
+                # Run the Mode's Simulation Function
+                while current_mode.inTimeout() and current_mode.active:  # active mode is in timeout 
+                    # run sim function if it exists for this mode 
+                    # TODO: error catchting for if there is not a simulation function for a mode ( we should still run the mode, just don't run a simulation function )
+                    self.simulation_func[current_mode]() 
+            
+
+
+
+    def get_active_mode(self): 
+
+        '''returns the mode object that is currently running ( assumes there is never more than one active mode at a given point in time ) '''
+       
+        for mode in self.modes: 
+            if mode.active: 
+                return mode 
+        
+        return None
+    
+    
+
     
     #
     # Vole Getters and Setters 
     #
+    def setup_voles(self):  raise Exception('you need to add a setup_voles() method to your simulation! This is where you should add/initialize any voles that you want to Simulate.')
+
     def get_vole(self, tag): 
         # searches list of voles and returns vole object w/ the specified tag 
         for v in self.voles: 
@@ -115,4 +180,6 @@ class Simulation:
     def reset(self)
     '''
 
-        
+if __name__ == '__main__': 
+    
+    print('SimulationABC is an Abstract Base Class, meaning you cannot run it directly. In order to run a Simulation, create a subclass of SimulationABC')
