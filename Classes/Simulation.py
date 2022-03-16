@@ -33,12 +33,14 @@ class SimulationABC:
         def run(*k, **kw): 
             t = threading.Thread(target = func, args = k, kwargs=kw, daemon=True)
             t.start() 
-        return run() 
+            return t
+        return run 
     
     @run_in_thread
     def run_sim(self): 
 
-        
+        print('Simulation is Running')
+
         ''' This Function Runs Continuously Until the Experiment Ends 
                     Runs on a separate thread 
                     Calls the function that is paired with the currently active mode '''
@@ -65,14 +67,15 @@ class SimulationABC:
             while current_mode.active: # reruns simulation while the mode is still active
 
                 # Wait for Mode's Timeout 
-                while not current_mode.inTimeout() and current_mode.active: # active mode not in Timeout
+                while not current_mode.inTimeout and current_mode.active: # active mode not in Timeout
                     # while not in timeout portion of mode, loop 
                     time.sleep(0.5)
                 
                 # Run the Mode's Simulation Function
-                while current_mode.inTimeout() and current_mode.active:  # active mode is in timeout 
+                while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
                     # run sim function if it exists for this mode 
                     # TODO: error catchting for if there is not a simulation function for a mode ( we should still run the mode, just don't run a simulation function )
+                    print(f'Simulaton is calling the function:{self.simulation_func[current_mode]}')
                     self.simulation_func[current_mode]() 
             
 

@@ -24,16 +24,23 @@ class SarahsSimulation(SimulationABC):
         #
         # Script to specify what should happen when we enter mode1's timeout interval
         #
-          
+        
+        print('Running the Mode 1 Simulation ')
+
         chmbr1 = self.map.graph[1]
         
         # chmbr1.interactables['wheel1'].simulate(vole=1)
-        self.simulate_interactable(chmbr1.interactables['wheel1'], vole=1) 
+        #self.simulate_interactable(chmbr1.interactables['wheel1'], vole=1) 
+
+        vole1 = self.get_vole(1)
+
+        # vole1.attempt_move(destination = 2)
 
         time.sleep(5)
 
-        self.simulate_interactable(chmbr1.interactables['door1'].dependent['lever1'].simulate(vole=1))
+        # self.simulate_interactable(chmbr1.interactables['door1'].dependent['lever1'].simulate(vole=1))
 
+        print('Exiting the Mode 1 Simulation')
 
     def mode2_timeout(self): 
 
@@ -54,7 +61,7 @@ if __name__ == '__main__':
 
     
     # instantiate the modes that you want to run
-    mode1 = mode1( timeout = 432000, map = map ) 
+    mode1 = mode1( timeout = 15, map = map ) 
 
     
     # instantiate the Simulation, pass in the Mode objects, map, and Voles to create
@@ -69,10 +76,9 @@ if __name__ == '__main__':
     # IF I TAKE AWAY THE RUN_IN_THREAD DECORATOR FUNC THAT CALLS RUN_SIM GETS PASSED TO, THEN JUST THE DRAW_CHAMBERS THROWS AN ERROR 
     # so basically i don't think i fully understand how the decorator functions work 
     #
-    sim.draw_chambers()
-    print('helloooo')
+    # sim.draw_chambers()
     # runs simulation as daemon thread 
-    sim.run_sim() 
+    t1 = sim.run_sim() 
 
 
     # start experiment 

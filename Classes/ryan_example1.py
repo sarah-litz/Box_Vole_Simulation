@@ -20,6 +20,7 @@ class mode1(modeABC):
         super().__init__(self, timeout, map)
 
     def enter(self):
+        self.startTime = time.time() 
         self.active = True
 
     def exit(self):
@@ -30,17 +31,17 @@ class mode1(modeABC):
     def run(self):
         # Run code of the class. This basically waits for the timeout
 
-        print(' Mode 1 is Running ')
+        print('Mode 1 is Running ')
         # Retract the lever and open the door
         #self.map.chamber_lever.retract()
         #self.map.door.default = True # opened
         #self.map.door.trigger = None # No lever connected
 
 
-        print( 'Mode 1 is entering Timeout Inteval')
+        print('Mode 1 is entering Timeout Inteval')
         # set timeout boolean to True, then Wait for timeout interval
         self.inTimeout = True 
-        while self.active & ((time.now() - self.startTime) < self.timeout):
+        while self.active and ((time.time() - self.startTime) < self.timeout):
             pass
         self.inTimeout = False 
 

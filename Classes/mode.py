@@ -27,6 +27,7 @@ class modeABC:
         self.timeout = timeout
         self.optional = kwargs
         self.inTimeout = False 
+        self.startTime = None
 
         # Set variables as the enter and exit strings
         self.enterStrings = enterFuncs
