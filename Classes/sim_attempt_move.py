@@ -70,8 +70,13 @@ if __name__ == '__main__':
     # indicate the simulation function to run when the mode enters timeout 
     sim.simulation_func[mode1] = sim.mode1_timeout 
 
-    # TODO: draw_chambers is not working 
-    
+    #
+    # LEAVING OFF HERE!! 
+    # UNSURE WHY THE RUN_SIM FUNCTION THROWS AN ERROR BEFORE THE DRAW CHAMBERS THROWS AN ERROR 
+    # IF I TAKE AWAY THE RUN_IN_THREAD DECORATOR FUNC THAT CALLS RUN_SIM GETS PASSED TO, THEN JUST THE DRAW_CHAMBERS THROWS AN ERROR 
+    # so basically i don't think i fully understand how the decorator functions work 
+    #
+    # sim.draw_chambers()
     # runs simulation as daemon thread 
     t1 = sim.run_sim() 
 
