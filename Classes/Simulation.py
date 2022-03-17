@@ -74,8 +74,15 @@ class SimulationABC:
                 # Run the Mode's Simulation Function
                 while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
                     # run sim function if it exists for this mode 
+                    
+                    #
+                    # LEAVING OFF HERE!!! 
+                    #
+                    # adjust for the optional argument that specifies how many times the simulation should get run 
+                    # So check if the argument is a tuple, and if it is, then that second value represents the number of iterations we should loop thru the simulation fucntion for. 
                     # TODO: error catchting for if there is not a simulation function for a mode ( we should still run the mode, just don't run a simulation function )
-                    print(f'Simulaton is calling the function:{self.simulation_func[current_mode]}')
+                    print(f'Simulaton is calling the function:{self.simulation_func[current_mode][0]}')
+
                     self.simulation_func[current_mode]() 
             
 
@@ -150,6 +157,7 @@ class SimulationABC:
                 print(f'|V[{v}]' + f"{'':>{space}}" + '|')
             
             for i in chmbr.interactables: 
+                i = i.name # reset i so we loop thru the names of the interactable objects
                 if len(str(i)) > 8: 
                     i = i[:7] + '-'
                 space = 8 - len(str(i)) 
@@ -161,7 +169,7 @@ class SimulationABC:
     def draw_edges(self): 
         edges = self.map.edges
         for e in edges: 
-            interactables = [c.interactable for c in e] 
+            interactables = [c.interactable.name for c in e] # creates list of the interactable names 
             print(f'({e.v1}) <---{interactables}----> ({e.v2})')
     
     

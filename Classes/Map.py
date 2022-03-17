@@ -30,7 +30,6 @@ class Map:
             for adj in chamber.connections.keys(): 
                 edge = chamber.connections[adj]  
                 print(edge)                      # edge id and vertices it connects
-                print(edge.headval)              # all components on edge
 
     #
     # Getters and Setters 
@@ -119,7 +118,7 @@ class Map:
 
             
         
-        self.instantiated_interactables += name # add string identifier to list of instantiated interactables
+        self.instantiated_interactables.append(name) # add string identifier to list of instantiated interactables
         return new_obj
 
         
@@ -352,7 +351,7 @@ class Map:
             self.headval = None # will point to first instance of Component
         
         def __str__(self): 
-            interactables = [c.interactable for c in self] 
+            interactables = [c.interactable.name for c in self] # list of the interactable object's Names -- (concatenation of type+ID)
             if self.type=='shared': 
                 return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{interactables}--> {self.v2}'
 
@@ -483,31 +482,7 @@ class Map:
         # Component Object: Subclass of the Edge Class, used for implementing Linked List 
         #
         class Component: 
-
-            ''' ____________________________________________________________________________________________'''
-            ''' This Class will actually be implemented by Control Software, so delete this after Integration '''
-            ## TODO: Delete This Class once Control Software Interactable Objects have been Completed!
-            class Interactable:
-                def __init__(self, threshold_requirement_func = None): 
-                    
-                    self.ID = None
-                    self.threshold = None
-
-                    #self.initial_threshold = initial_threshold
-                    #self.initial_threshold_requirement_func = threshold_requirement_func
-                    #self.threshold = initial_threshold 
-                    #self.threshold_requirement_func = threshold_requirement_func
-
-                def set_threshold(self, bool): 
-                    self.threshold = bool  
-                def reset(self): 
-                    self.__reset()
-                    self.threshold = False 
-                def __reset(self): 
-                    raise NameError("Overwrite with unique logic")
-
-            ''' ____________________________________________________________________________________________'''
-            
+       
             def __init__(self, interactable): 
                 self.interactable = interactable # dataval 
                 self.nextval = None
@@ -521,7 +496,7 @@ class Map:
                 '''
             
             def __str__(self): 
-                return str(self.interactable)
+                return str(self.interactable.name)
             
 
 

@@ -179,6 +179,7 @@ class lever(interactableABC):
         super().__init__()
 
         # Initialize the given properties
+        self.name = 'lever'+str(ID) 
         self.ID        = ID 
         self.signalPin = signalPin
         self.numPresses = numPresses
@@ -223,6 +224,7 @@ class door(interactableABC):
         super().__init__()
         
         # Set the input variables
+        self.name = 'door'+str(ID)
         self.ID       = ID 
         self.servoPin = servoPin
 
@@ -273,12 +275,14 @@ class rfid(interactableABC):
         super().__init__()
 
         # Initialize the required properties
+        self.name = 'rfid'+str(ID)
         self.ID = ID 
 
         # Init the found properties
         self.rfidQ = None
         self.specificQ = queue.LifoQueue()
 
+    
     def from_queue(self, numEntries = 1):
         """Pulls the given number of entries from the shared rfidQ with the hardware or simulation.
 

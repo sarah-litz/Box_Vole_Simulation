@@ -1,0 +1,6 @@
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout

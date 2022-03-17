@@ -1,8 +1,9 @@
 
 from ftplib import FTP_PORT
 from Map import Map 
-from Simulation import Simulation 
-from run_sim_example import SarahsSimulation
+from Simulation import SimulationABC 
+from sim_attempt_move import SarahsSimulation
+from ryan_example1 import mode1
 
 
 
@@ -17,22 +18,19 @@ fp = '/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_
 # setup map 
 map = Map(fd) 
 
-# setup hardware
-# LEAVING OFF HERE!!! 
-map.configure_setup(fp) # TODO: leaving off here!! Figure out why errors aren't getting thrown when adding an interactable with weird name types
 
 # setup simulation
-# sim = Simulation(map = map, vole_dict = {1:1, 2:1, 3:1, 4:2} ) 
-# map = sim.map
-
-sim2 = SarahsSimulation(map = map)
+sim2 = SimulationABC(modes = [], map = map, vole_dict={1:1, 2:2, 3:3})
 
 
 #
 # Visualize Map after Setup
 # 
-map.print_graph_info()
+# map.print_graph_info()
 sim2.draw_chambers() 
 sim2.draw_edges()
+
+
+
 
 
