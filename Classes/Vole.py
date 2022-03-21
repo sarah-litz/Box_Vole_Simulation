@@ -38,10 +38,11 @@ class Vole:
         if validity_check: 
             if not self.is_move_valid(destination): 
 
-                debug(f'attempting a move that is not physically possible according to Map layout')
+                debug(f'attempting a move that is not physically possible according to Map layout. Skipping Move Request')
 
-                raise Exception('attempting a move that is not physically possible according to Map layout')
+                print('attempting a move that is not physically possible according to Map layout. Skipping Move Request.')
 
+                return False
         # retrieve edge between current location and the destination, and check threshold for each of these 
         edge = self.map.graph[self.current_loc].connections[destination]
         rfid_lst = []
@@ -53,7 +54,13 @@ class Vole:
 
             # check if component is an rfid --> if it is an rfid, then add to rfid queue
             # TODO: figure out how to handle diff. components! 
-
+            #
+            # LEAVING OFF HERE! 
+            # abstract away from needing to reference specific hardware objects.
+            # in particular, figure out how to avoid referencing the mode.rfid object. 
+            #
+            #
+            
             # if rfid, place in lst to iterate over later. Otherwise, check that the component's threshold is True. 
             if type(component) == mode.rfid: 
                 rfid_lst.append(component) # add rfids to list so we can write to queue after checking all thresholds 

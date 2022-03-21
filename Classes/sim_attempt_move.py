@@ -8,7 +8,7 @@ from Logging.logging_specs import debug
 # Local Imports 
 from Simulation import SimulationABC
 from Map import Map
-from ryan_example1 import mode1
+from ryan_example1 import mode1, mode2
 
 # 
 # This is just an example --> Doesn't actually run yet. (config_testing.py has a more working version)
@@ -54,7 +54,15 @@ class SarahsSimulation(SimulationABC):
         #
         # Script to specify what should happen when mode2 enters its timeout interval
         #
-        print('this shouldnt be getting called atm')
+        print('Running the Mode 2 Simulation')
+
+        vole1 = self.get_vole(1)
+
+        vole1.attempt_move(destination=1)
+
+        time.sleep(5)
+
+        print('Exiting the Mode 2 Simulation')
         return 
 
 
@@ -69,10 +77,11 @@ if __name__ == '__main__':
     
     # instantiate the modes that you want to run
     mode1 = mode1( timeout = 15, map = map ) 
+    mode2 = mode2( timeout = 15, map = map )
 
     
     # instantiate the Simulation, pass in the Mode objects, map, and Voles to create
-    sim = SarahsSimulation( modes = [mode1], map = map, vole_dict = { 1:1, 2:1 }  ) 
+    sim = SarahsSimulation( modes = [mode1, mode2], map = map, vole_dict = { 1:1, 2:1 }  ) 
 
 
     # simulation visualizations
@@ -82,7 +91,8 @@ if __name__ == '__main__':
 
     # indicate the simulation function to run when the mode enters timeout 
     # optional second argument: indicate the number of times to run the simulation function. If this value is not passed in, then the simulation loops until the experiment finishes its timeout interval. 
-    sim.simulation_func[mode1] = (sim.mode1_timeout, 1) 
+    sim.simulation_func[mode1] = (sim.mode1_timeout, 2)
+    sim.simulation_func[mode2] = (sim.mode2_timeout, 1) 
 
     # runs simulation as daemon thread 
     t1 = sim.run_sim() 
@@ -91,4 +101,7 @@ if __name__ == '__main__':
     # start experiment 
     mode1.enter() 
     mode1.run() 
+
+    mode2.enter() 
+    mode2.run() 
     

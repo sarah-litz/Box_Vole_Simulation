@@ -1,5 +1,195 @@
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+
+______________________________________________________DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
 DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
 DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
 DEBUG:root:Vole 1 successfully moved into chamber 2
 DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
-DEBUG:root:attempting a move that is not physically possible according to Map layout
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:____________________Mode 2 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode2'>
+DEBUG:root:____________________Mode 2 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'bool'>
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode1'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 2
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+DEBUG:root:attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:root:____________________Mode 1 Fin____________________
+DEBUG:root:
+
+New Mode: <class 'ryan_example1.mode2'>
+DEBUG:root:Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:root: traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:root:Vole 1 successfully moved into chamber 1
+DEBUG:root:____________________Mode 2 Fin____________________

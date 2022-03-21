@@ -6,6 +6,8 @@ import time
 from Map import Map
 from mode import modeABC
 
+from Logging.logging_specs import debug 
+
 
 
 #---------------------------------------------------------------------------------------------------
@@ -31,14 +33,14 @@ class mode1(modeABC):
     def run(self):
         # Run code of the class. This basically waits for the timeout
 
-        print('Mode 1 is Running ')
+        print('Mode 1 is Running')
         # Retract the lever and open the door
         #self.map.chamber_lever.retract()
         #self.map.door.default = True # opened
         #self.map.door.trigger = None # No lever connected
 
 
-        print('Mode 1 is entering Timeout Inteval')
+        print('Mode 1 is entering Timeout Interval')
         # set timeout boolean to True, then Wait for timeout interval
         self.inTimeout = True 
         while self.active and ((time.time() - self.startTime) < self.timeout):
@@ -46,6 +48,7 @@ class mode1(modeABC):
         self.inTimeout = False 
 
         print( 'Mode 1 finished its Timeout Period and is now exiting ')
+        debug('____________________Mode 1 Fin____________________')
 
         self.exit()
 
@@ -58,29 +61,45 @@ class mode2(modeABC):
         modeABC (class object): Inherited abstract base class
     """
     
-    def __init__(self):
-        super().__init__()
+    def __init__(self, timeout, map):
+        super().__init__(self, timeout, map)
 
     def enter(self):
+        self.startTime = time.time() 
         self.active = True
-
-        # Extend the lever and close the door
-        door.trigger = chamber_lever
-        door.default = False
-        chamber_lever.extend()
 
     def exit(self):
         self.active = False
 
+
     def run(self):
 
-        # Logic to change the num presses every time the wheel is run
+
+        '''# Logic to change the num presses every time the wheel is run
         while self.active:
             # If the wheel has been interacted with, increase the number of required presses
             if self.box.wheel_1.threshold:
                 self.box.chamber_lever.numPresses += 1
             # END if
-        # END while
+        # END while'''
+        print('Mode 2 is Running')
+        # Retract the lever and open the door
+        #self.map.chamber_lever.retract()
+        #self.map.door.default = True # opened
+        #self.map.door.trigger = None # No lever connected
+
+
+        print('Mode 2 is entering Timeout Interval')
+        # set timeout boolean to True, then Wait for timeout interval
+        self.inTimeout = True 
+        while self.active and ((time.time() - self.startTime) < self.timeout):
+            pass
+        self.inTimeout = False 
+
+        print( 'Mode 2 finished its Timeout Period and is now exiting ')
+        debug('____________________Mode 2 Fin____________________')
+
+        self.exit()
 
 if __name__ == "__main__":
     # Set up Map

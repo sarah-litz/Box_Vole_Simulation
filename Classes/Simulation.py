@@ -1,5 +1,6 @@
 
 # Local Imports 
+from Logging.logging_specs import debug
 from Vole import Vole
 from Map import Map
 
@@ -56,34 +57,74 @@ class SimulationABC:
 
             # Set the Currently Active Mode 
             current_mode = self.get_active_mode() # update the current mode 
+
+            debug(f'\n\nNew Mode: {type(current_mode)}')
             
-            if current_mode is None: 
+            while current_mode is False: # if no mode is currently active 
                 # wait for a mode to become active 
                 time.sleep(0.5)
-                current_mode = self.get_active_mode() 
+                current_mode = self.get_active_mode() # update the current mode when one becomes active 
+                debug(f'\n\nNew Mode: {type(current_mode)}')
+
             
             
             # Loop Until Current Mode is Inactive
             while current_mode.active: # reruns simulation while the mode is still active
 
-                # Wait for Mode's Timeout 
+                #
+                # Wait for Mode's Timeout Interval
                 while not current_mode.inTimeout and current_mode.active: # active mode not in Timeout
                     # while not in timeout portion of mode, loop 
                     time.sleep(0.5)
-                
-                # Run the Mode's Simulation Function
-                while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
-                    # run sim function if it exists for this mode 
-                    
-                    #
-                    # LEAVING OFF HERE!!! 
-                    #
-                    # adjust for the optional argument that specifies how many times the simulation should get run 
-                    # So check if the argument is a tuple, and if it is, then that second value represents the number of iterations we should loop thru the simulation fucntion for. 
-                    # TODO: error catchting for if there is not a simulation function for a mode ( we should still run the mode, just don't run a simulation function )
-                    print(f'Simulaton is calling the function:{self.simulation_func[current_mode][0]}')
 
-                    self.simulation_func[current_mode]() 
+                
+                #
+                # Check for if simulation function 
+                if current_mode not in self.simulation_func.keys(): # no simulation function specified for this mode 
+                    # do nothing loop until current mode is inactive 
+                    debug(f'No simulation function for {type(current_mode)}.')
+                    while current_mode.active: 
+                        time.sleep(0.5)
+
+
+                #
+                # Check if an iterator value was specified (num of times to call the sim function) 
+                sim_iterator = None # specifies number of times to call the simulation function (optional)
+                sim_fn = None # simulation function 
+                
+                if type(self.simulation_func[current_mode]) is tuple: # sim_iterator specified
+                    # if the value is a tuple, then there is a specified number of times to run the function 
+                    sim_iterator = self.simulation_func[current_mode][1]
+                    sim_fn = self.simulation_func[current_mode][0]
+
+                    # remove sim function from dictionary since we have a set num of times to run it, we don't want to retrieve it from dict again 
+                    del self.simulation_func[current_mode]
+                
+                else: # no sim_iterator specified
+                    # if the value is not a tuple, then the function should just rerun continuously until while loop can exit 
+                    sim_fn = self.simulation_func[current_mode]
+                        
+                
+                #
+                # Run the Mode's Simulation Function
+                # LEAVING OFF HERE: this needs testing! 
+                while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
+                    
+                    if sim_iterator is None: 
+                        
+                        print(f'Simulaton is calling the function:{sim_fn}')
+
+                        sim_fn()  # calling function continuously throught timeout interval 
+
+                    elif sim_iterator > 0:  
+                        
+                        print(f'Simulaton is calling the function:{sim_fn}')
+
+                        sim_fn() # function call for running the simulation 
+
+                        sim_iterator -= 1 # decrement the iterator each run 
+                    
+                    time.sleep(2)
             
 
 
@@ -96,7 +137,7 @@ class SimulationABC:
             if mode.active: 
                 return mode 
         
-        return None
+        return False
     
     
 
