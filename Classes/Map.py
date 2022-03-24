@@ -484,19 +484,16 @@ class Map:
         class Component: 
        
             def __init__(self, interactable): 
-                self.interactable = interactable # dataval 
+                self.interactable = interactable # access to the actual object that represents a hardware component
                 self.nextval = None
                 self.prevval = None
 
-                ''' add any attributes here that are for tracking status of component but are only relevant to the Simulation '''
-                '''
-                Attributes 
-                self.prob_success # probability that vole successfully interacts (meets threshold) w/ the component
-                
-                '''
             
             def __str__(self): 
                 return str(self.interactable.name)
+            
+
+            
             
 
 

@@ -79,9 +79,99 @@ class mode2(modeABC):
         while self.active:
             # If the wheel has been interacted with, increase the number of required presses
             if self.box.wheel_1.threshold:
-                self.box.chamber_lever.numPresses += 1
+                self.box.chamber_lever.required_presses += 1
+            
+            # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
+            if self.box.chamber_lever.threshold is True: 
+                self.box.chamber_lever.presses = 0 
+                self.door.condition_for_threshold_to_get_set_to_True(open=True) 
+            
+            # if rfid1 and rfid2 were pinged (meaning the vole moved to the next chamber), close door 
+            if self.box.rfid1.threshold and self.box.rfid2.threshold: 
+                self.door.condition_for_threshold_to_get_set_to_True(open=False)
+
             # END if
         # END while'''
+
+        ''''
+        class rfid:
+            ## not sure what the normal code will look like ## 
+            # Simulation Version! #  
+            @threaded_fn
+            def condition_for_threshold_to_get_set_to_true(): 
+                # constantly looping and updating the rfid threshold val 
+                if self.ping_queue gets new value: 
+                    write val to output 
+                    self.threshold = True 
+                
+
+        class Wheel: 
+            @threaded_fn
+            def condition_for_threshold_to_get_set_to_True(): 
+                # constantly looping and updating the rfid threshold val 
+                if self.moves is True: 
+                    self.threshold = True 
+                # simulation version of this function would look the same 
+                # if the user specified to simulate the wheel, then the sim script will specify at what times the vole interacts with the wheel 
+                # when vole interacts with the wheel, we will just directly set wheel.moves to True to "simulate" the movement. 
+        class Lever: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_true(): 
+                if presses == self.required_presses: 
+                    self.threshold = True 
+            ## Simulation Version of this Function would look the same ##
+            # if the user specified that we are simulating the lever (no physical hardware), then the user will directly specify in their simulation 
+            # script that the vole should press the lever, by simply directly adding one to the self.pressed count 
+            # ( or this will happen randomly if we are running a random_vole_moves() experiment ) 
+
+        class Door: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_true(open): 
+                if open is True: # set threshold to True after successfully opening door 
+                    self.open_door() 
+                    self.threshold = True
+                else: # set threshold to True after successfully closing door 
+                    self.close_door() 
+                    self.threshold = True
+
+                    ~~~~~ simulation version of this funciton ~~~~    
+                    ## If the user wants to abstract away from physical hardware, override the condition_for_threshold function ## 
+                    ## ensures that we don't call any functions that interact with the rpi ## 
+                    ## Simulation should Override the function condition_for_threshold_to_get_set_to_true(): 
+                    def condition_for_threshold_to_get_set_to_true(open): 
+                        if open is True: 
+                            print('opening door')
+                            self.threshold = True 
+                        if open is False: 
+                            print('closing door')
+                            self.threshold = True 
+            
+            def isOpen(): 
+                return state_switch # hardware! 
+            def open_door(): 
+                raspberry_pi_things.open # hardware
+                if state_switch: # hardware! 
+                    self.isOpen = True 
+            def close_door(): 
+                rpi.close # hardware! 
+                if state_switch: #hardware!
+                    self.isOpen = False         
+        '''
+
+
+
+        '''
+        class rfid: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_True(): 
+                # constantly looping and updating the rfid threshold val
+                if 3 items have been added to self.ping_queue: 
+                    self.threshold = True 
+        '''
+        '''
+            if self.box.rfid1.threshold is True: 
+                self.box.door1.open() 
+        '''
         print('Mode 2 is Running')
         # Retract the lever and open the door
         #self.map.chamber_lever.retract()

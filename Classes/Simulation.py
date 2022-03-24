@@ -29,6 +29,10 @@ class SimulationABC:
         for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
     
 
+
+    #
+    # Threaded Simulation Runner 
+    #
     def run_in_thread(func): 
         ''' decorator function to run function on its own thread '''
         def run(*k, **kw): 
@@ -215,6 +219,9 @@ class SimulationABC:
     
     
     
+
+
+
     #
     # Simulate Vole-Interactable Interactations
     #

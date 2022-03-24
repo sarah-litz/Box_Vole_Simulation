@@ -18,7 +18,7 @@ class modeABC:
     """This is the base class, each mode will be an obstantiation of this class.
     """
 
-    def __init__(self, map = None, timeout = None, enterFuncs = None, exitFuncs = None, **kwargs):
+    def __init__(self, map = None, timeout = None, enterFuncs = None, exitFuncs = None, bypass = False, **kwargs):
         # Set the givens
         self.rfidQ   = None
         self.box     = map
@@ -32,6 +32,9 @@ class modeABC:
         # Set variables as the enter and exit strings
         self.enterStrings = enterFuncs
         self.exitStrings  = exitFuncs
+
+
+
         
     def threader(self):
         """This is a decorator function that will be added to any method here that needs to run on its own thread. It simply creates, starts, and logs a method to a thread. 

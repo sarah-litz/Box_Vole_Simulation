@@ -19,7 +19,17 @@ class SarahsSimulation(SimulationABC):
         
         super().__init__(modes, map, vole_dict) 
 
-  
+        '''Interactable Behavior: 
+        - in running a simulation, we will automatically add an attribute to each interactable that allows 
+        - default behavior ( if left unchanged )
+        '''
+
+        ## Set Interactable Behavior ## 
+        # map.instantiated_interactables[]: 
+
+
+    
+
     def mode1_timeout(self): 
 
         #
@@ -74,6 +84,13 @@ if __name__ == '__main__':
     # instantiate map (which will also instantiate the hardware components) 
     map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
 
+    # TODO: change the configurations of what a component's threshold is?? 
+    # e.g. thru a function call, be able to change what action is performed when we call the function component.check_threshold() 
+    # bypass
+    # map.rfid1.change_default
+
+
+    debug('\n\n\n\nNew Simulation Running')
     
     # instantiate the modes that you want to run
     mode1 = mode1( timeout = 15, map = map ) 

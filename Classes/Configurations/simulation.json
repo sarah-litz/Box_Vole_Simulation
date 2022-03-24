@@ -1,0 +1,26 @@
+
+{
+
+    "interactables": [
+        {
+            "rfid1": { 
+                "function": {
+                    "arguments": "self, vole_tag, rfid_id", 
+                    "body":"self.rfidQ.append(vole_tag, rfid_id)"
+                }
+            }, 
+            "door1": {
+                "function": {
+                    "arguments":"self",
+                    "body":"self.threshold = True" 
+                }
+             }, 
+            "rfid2":{
+                "function": { 
+                    "arguments": "self, vole_tag, rfid_id", 
+                    "body":"self.rfidQ.append(vole_tag, rfid_id)"
+                }
+             }
+        }
+    ]
+}

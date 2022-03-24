@@ -45,7 +45,6 @@ class Vole:
                 return False
         # retrieve edge between current location and the destination, and check threshold for each of these 
         edge = self.map.graph[self.current_loc].connections[destination]
-        rfid_lst = []
 
         debug(f' traversing the edge: {edge} ')
 
@@ -58,24 +57,33 @@ class Vole:
             # LEAVING OFF HERE! 
             # abstract away from needing to reference specific hardware objects.
             # in particular, figure out how to avoid referencing the mode.rfid object. 
-            #
-            #
+            # component.to_queue(self.tag, component.id) # RFID ping: (vole tag, rfid num)
             
-            # if rfid, place in lst to iterate over later. Otherwise, check that the component's threshold is True. 
-            if type(component) == mode.rfid: 
-                rfid_lst.append(component) # add rfids to list so we can write to queue after checking all thresholds 
-
-            # if not rfid, check that the threshold is True
+            '''
+            if we are supposed to simulate (abstract away from the physical hardware) the component, then we 
+            should call that component's simulate() function. (function that in the simplest case is just setting threshold to True)
+            
+            if the hardware exists and is functioning and we do not want to simulate the component, rather just let it run normally, 
+            then we should continuously loop until that component's threshold has been set to True by the control software. 
+            '''
+            # check that the threshold is True
             if component.interactable.threshold is False:
+
+                # LEAVING OFF HERE!!! 
+                # TODO: if the threshold is False:  check if we should bypass Control Software for this interactable. 
+                # if we are supposed to bypass the Control Software, then call the interactable.simulate() function which 
+                # should contain logic that ends w/ setting self.threshold == True. 
+                ''''
+                if interactable.simulate_control_side == True: 
+                    interactable.simulate_control_side_fn(self) 
+                else: 
+                    print(f'{component.interactable} threshold is False, cannot complete the move.')
+                    return False 
+                '''
+
                 print(f'{component.interactable} threshold is False, cannot complete the move.')
                 return False  
             
-        # if all interactables along the edge had true thresholds, then we are able to make the move, so we should ping the rfids to simulate the move
-        ## Rfid Pings ##
-        for component in rfid_lst: 
-
-            component.to_queue(self.tag, component.id) # RFID ping: (vole tag, rfid num)
-
 
         ## Update Vole Location ## 
         self.current_loc = destination
