@@ -2,10 +2,14 @@
 {
     "rfid1":
     {
-        "id":1
+        "id":1, 
+        "threshold_condition": { "attribute":"check_threshold_with_fn", "value": false }, 
+        "check_threshold_with_fn": "lambda self: self.rfidQ.empty()"
     }, 
     "rfid2":
     {
-        "id":2
+        "id":2,
+        "threshold_condition": { "attribute":"check_threshold_with_fn","value": false }, 
+        "check_threshold_with_fn": "lambda self: self.rfidQ.emtpy()"
     }
 }

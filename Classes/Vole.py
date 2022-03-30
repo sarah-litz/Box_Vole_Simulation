@@ -1,3 +1,4 @@
+# from Classes.mode import interactableABC
 import mode 
 import random
 import time 
@@ -51,39 +52,59 @@ class Vole:
         # traverse the linked list 
         for component in edge: 
 
-            # check if component is an rfid --> if it is an rfid, then add to rfid queue
-            # TODO: figure out how to handle diff. components! 
-            #
-            # LEAVING OFF HERE! 
-            # abstract away from needing to reference specific hardware objects.
-            # in particular, figure out how to avoid referencing the mode.rfid object. 
-            # component.to_queue(self.tag, component.id) # RFID ping: (vole tag, rfid num)
-            
-            '''
-            if we are supposed to simulate (abstract away from the physical hardware) the component, then we 
-            should call that component's simulate() function. (function that in the simplest case is just setting threshold to True)
-            
-            if the hardware exists and is functioning and we do not want to simulate the component, rather just let it run normally, 
-            then we should continuously loop until that component's threshold has been set to True by the control software. 
-            '''
-            # check that the threshold is True
-            if component.interactable.threshold is False:
 
-                # LEAVING OFF HERE!!! 
-                # TODO: if the threshold is False:  check if we should bypass Control Software for this interactable. 
-                # if we are supposed to bypass the Control Software, then call the interactable.simulate() function which 
-                # should contain logic that ends w/ setting self.threshold == True. 
-                ''''
-                if interactable.simulate_control_side == True: 
-                    interactable.simulate_control_side_fn(self) 
-                else: 
-                    print(f'{component.interactable} threshold is False, cannot complete the move.')
-                    return False 
-                '''
+            # check if the component should be simulated 
+            if component.interactable.simulate: 
+                interactable = component.interactable
 
-                print(f'{component.interactable} threshold is False, cannot complete the move.')
-                return False  
+                print( f'simulating vole{self.tag} interaction with {component.interactable.name}' ) 
+
+
+                #########################
+                ## LEAVING OFF HERE!!! ##
+
+
+
+                # SET the attributes to values that meet the threshold condition by calling simulate_with_fn 
+                
+                if hasattr(component.interactable, 'simulate_with_fn'):
+                    component.interactable.simulate_with_fn(component.interactable, self.tag)
+
+                else:
+                    # set value using the threshold condition attribute/value pairing 
+
+                    threshold_attr_name = interactable.threshold_condition["attribute"]
+                    attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
+                    debug(f'{interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["value"]}')
+                
+                    # manually set the attribute to its goal value so we meet the threshold condition, and trigger the control side to add an event to the threshold_event_queue 
+                    setattr(component.interactable, threshold_attr_name, interactable.threshold_condition['value'])
+                    # debug(f'{interactable.name}, manual attribute check: {interactable.state}')
+                    debug(f"{interactable.name}, attribute result: {attribute}")
+
+                
+            else: 
+                # component should not be simulated, as the hardware for this component is present. 
+                # assumes that there is a person present to perform a lever press, interrupt the rfid reader so it sends a ping, etc. 
+                print ( f'if testing the hardware for {component.interactable.name}, take any necessary actions now.')
+                
+            # TODO: automate the watch_for_threshold function 
+            interactable.watch_for_threshold_event()
+            ########################
             
+            # Pause to give control side a moment to assess if there was a threshold event 
+            time.sleep(3)
+
+            # check if the control side added a threshold event, meaning this interactables threshold condition was met 
+            # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
+            if component.interactable.threshold_event_queue.empty(): 
+                print(f'the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
+                return False 
+            else:
+                event = component.interactable.threshold_event_queue.get()
+                print(f'the threshold condition was met for {component.interactable.name}. Event: {event}')
+        ## END FOR: Done Simulating Components along the Edge ##
+
 
         ## Update Vole Location ## 
         self.current_loc = destination

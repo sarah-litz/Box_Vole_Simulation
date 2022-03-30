@@ -2,25 +2,24 @@
 {
 
     "interactables": [
-        {
-            "rfid1": { 
-                "function": {
-                    "arguments": "self, vole_tag, rfid_id", 
-                    "body":"self.rfidQ.append(vole_tag, rfid_id)"
-                }
-            }, 
-            "door1": {
-                "function": {
-                    "arguments":"self",
-                    "body":"self.threshold = True" 
-                }
-             }, 
-            "rfid2":{
-                "function": { 
-                    "arguments": "self, vole_tag, rfid_id", 
-                    "body":"self.rfidQ.append(vole_tag, rfid_id)"
-                }
-             }
+        
+        {"name":"rfid1", 
+            "simulate":true, 
+            "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )" 
+        }, 
+        {"name":"door1", 
+            "simulate":true, 
+            "condition_dict": { "attribute":"isOpen", "value":true }
+        }, 
+        {"name":"rfid2", 
+            "simulate":true, 
+            "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )" , 
+            "condition_dict": { "attribute":"rfidQ", "value":true }
+        }, 
+        {"name":"lever1", 
+            "simulate":true,
+            "condition_dict": { "attribute":"pressed", "value":true }
         }
+        
     ]
 }

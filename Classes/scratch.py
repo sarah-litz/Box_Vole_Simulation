@@ -1,30 +1,212 @@
+
+      ''''
+        class rfid:
+            ## not sure what the normal code will look like ## 
+            # Simulation Version! #  
+            @threaded_fn
+            def condition_for_threshold_to_get_set_to_true(): 
+                # constantly looping and updating the rfid threshold val 
+                if self.ping_queue gets new value: 
+                    write val to output 
+                    self.threshold = True 
+                
+
+        class Wheel: 
+            @threaded_fn
+            def condition_for_threshold_to_get_set_to_True(): 
+                # constantly looping and updating the rfid threshold val 
+                if self.moves is True: 
+                    self.threshold = True 
+                # simulation version of this function would look the same 
+                # if the user specified to simulate the wheel, then the sim script will specify at what times the vole interacts with the wheel 
+                # when vole interacts with the wheel, we will just directly set wheel.moves to True to "simulate" the movement. 
+        class Lever: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_true(): 
+                if presses == self.required_presses: 
+                    self.threshold = True 
+            ## Simulation Version of this Function would look the same ##
+            # if the user specified that we are simulating the lever (no physical hardware), then the user will directly specify in their simulation 
+            # script that the vole should press the lever, by simply directly adding one to the self.pressed count 
+            # ( or this will happen randomly if we are running a random_vole_moves() experiment ) 
+
+        class Door: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_true(open): 
+                if open is True: # set threshold to True after successfully opening door 
+                    self.open_door() 
+                    self.threshold = True
+                else: # set threshold to True after successfully closing door 
+                    self.close_door() 
+                    self.threshold = True
+
+                    ~~~~~ simulation version of this funciton ~~~~    
+                    ## If the user wants to abstract away from physical hardware, override the condition_for_threshold function ## 
+                    ## ensures that we don't call any functions that interact with the rpi ## 
+                    ## Simulation should Override the function condition_for_threshold_to_get_set_to_true(): 
+                    def condition_for_threshold_to_get_set_to_true(open): 
+                        if open is True: 
+                            print('opening door')
+                            self.threshold = True 
+                        if open is False: 
+                            print('closing door')
+                            self.threshold = True 
+            
+            def isOpen(): 
+                return state_switch # hardware! 
+            def open_door(): 
+                raspberry_pi_things.open # hardware
+                if state_switch: # hardware! 
+                    self.isOpen = True 
+            def close_door(): 
+                rpi.close # hardware! 
+                if state_switch: #hardware!
+                    self.isOpen = False         
+        '''
+
+
+
+        '''
+        class rfid: 
+            @threaded_fn 
+            def condition_for_threshold_to_get_set_to_True(): 
+                # constantly looping and updating the rfid threshold val
+                if 3 items have been added to self.ping_queue: 
+                    self.threshold = True 
+        '''
+        '''
+            if self.box.rfid1.threshold is True: 
+                self.box.door1.open() 
+        '''
+
+
+
+# next TODO: from Map.py, when creating the interactable or component from the info from map.json, 
+# start reading in the new "threshold_condition" value so we can know what the 
+# threshold attribute/value goal is for each component. Pass this info when creating 
+# the interactable, and give interactables a new attribute to store this information.  
+'''         _________________________________________________________________________________
+            ## the simulation version reverses the order of a cause/effect reaction. 
+            # Non-Simulation Version #
+            # in the non-simulation version, the control software has the following cause/effect
+                                            cause = some set of actions has met the threshold condition 
+                                                (e.g. 2 lever presses in a row, where the threshold was defined as lever.required_presses == 2) 
+                                                
+                                                --> maybe in the function we can just say (if (condition) | if (simulation==True)&&(bypass==True)), go ahead and add to threshold_event_queue. 
+                                                    if (simulation==True)&&(bypass==True): make sure to also wait a good num of seconds before adding to the event queue again to avoid adding an endless amount to the queue
+                                            
+                                            effect = add to threshold_event_queue 
+
+
+                # so we are checking for if the condition has been met. 
+            # Simulation Version # 
+            # in the simulation version, the control software has the following cause/effect
+                                        cause = something got added to the threshold_event_queue 
+                                        effect = update attributes of the component to reflect the event 
+                    for example, appending to an rfid queue, or changing the isOpen state of the door. 
+
+            
+
+
+
+            example for setting these values, with edge components (lever1, rfid1, door1, rfid2)
+
+                # NON-SIM -- checks these attributes to see if their threshold_conditions have been met: 
+                lever1.condition( lever1.required_presses == 6 )
+                    def condition: 
+                        if arg is True: lever1.signal_threshold() # adds to queue 
+                
+                class InteractableABC
+                    def signal_threshold() 
+                        # effect: add to queue 
+                        self.threshold_event_queue.put() 
+                    def threshold_attributes() 
+                        # (NON-SIM) cause: check if attribute equals desired value --> set as dict of {attribute: value}
+                        # (SIM) effect: set the attribute values
+                        if self.condition_dict is True: self.signal_threshold() 
+                class rfid1
+                    ## Setting Values so it works for both Non-Sim and Sim Version 
+                    self.condition_dict = { "rfidQ": True }
+                class door1 
+                    self.condition_dict = { "isOpen": True }
+                class lever1
+                    self.condition_dict = { "required_presses":6, "pressed":"required_presses" }
+                class rfid2
+                    self.condition_dict = { "rfidQ": True }
+
+
+
+
+
+
+                door1.condition( door1.isOpen() == True ) 
+
+                rfid1.condition( rfid1.rfidQ.added() ) 
+
+                # SIM 
+                
+          _________________________________________________________________________________
+'''
 self = None 
 
 
 # Logic to change the num presses every time the wheel is run
 while self.active:
     # If the wheel has been interacted with, increase the number of required presses
-    if self.box.wheel_1.threshold_event.get(block=False): # if an event was added to the queue to denote that the threshold's condition was met 
+    if self.box.wheel_1.threshold_event_queue.get(block=False): # if an event was added to the queue to denote that the threshold's condition was met 
         self.box.chamber_lever.required_presses += 1
     
     # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
-    if self.box.chamber_lever.threshold_event.get(block=False): # if lever's threshold queue gets new value 
+    if self.box.chamber_lever.threshold_event_queue.get(block=False): # if lever's threshold queue gets new value 
         self.box.chamber_lever.presses = 0 # reset tracked num of presses to 0
-        self.door.condition_for_threshold_to_get_set_to_True(open=True) # open door 
+        self.door.open_door() # open door 
     
     # if rfid1 and rfid2 were pinged (meaning the vole moved to the next chamber), close door 
-    if self.box.rfid1.threshold.threshold_event.get(block=False) and self.box.rfid2.threshold_event.get(block=False): 
-        self.door.condition_for_threshold_to_get_set_to_True(open=False)
+    if self.box.rfid1.threshold.threshold_event_queue.get(block=False) and self.box.rfid2.threshold_event_queue.get(block=False): 
+        self.door.close_door() # close door 
 
-    # END if
-# END while'''
 
+        # LEAVING OFF HERE!!! 
+        # simulate attribute has now been added to all of the interactable objects for use by the simulation 
         ''''
         class interactableABC: 
             self.event_queue # any event, even if it does not meet the defined threshold condition, will get added to this queue
             self.threshold_event_queue # if threshold condition is met, then we add to this queue 
 
+            def sim_check(): 
+                # decorator thread that should be called in any function that accesses hardware parts (the rpi)
+                # this function should be overriden in each interactable, and specific simulation logic should sit in this function 
+
+
+            def setup_watch_for_threshold_event(): 
+                if hasattr(self.simulate): 
+
+                    if self.simulate: 
+
+                            #   .... OR? instead of overriding the normal function should we just 
+                            # write a function that forces the threshold condition to be met?? 
+                            # And then the watch_for_threshold_event function will still be running so will recognize that the threshold was met
+                        
+                        # override the normal functionality of so it waits for stuff 
+                        # to get added to the threshold_event_queue, and if stuff gets added can manually update 
+                        # attributes to reflect the threshold event. 
+
+           
+           
+           
+           
             def watch_for_threshold_event(): 
+
+
+
+                # if not simulating, watch the condition and add to threshold_event_queue when condition is met 
+
+
+                cause = some actions has met the threshold condition 
+                    (e.g. 2 lever presses in a row, where the threshold was defined as lever.required_presses == 2) 
+                effect = add to threshold_event_queue 
+
+
                 # function that is unique to each interactable 
                 # specifies the specific conditions required to meet the threshold
                 # if that condition is met then an event is added to the threshold_event_queue 
@@ -32,7 +214,7 @@ while self.active:
 
         class rfid:
             ## not sure what the normal code will look like ## 
-            # Simulation Version! #  
+            # Non-Simulation Version! #  
             def watch_for_threshold_event(): 
                 # constantly looping to check if the defined condition has been met 
                 # once condition gets met, then append to the threshold_event_queue 
@@ -41,15 +223,58 @@ while self.active:
                 new_ping = self.rfid_q.get(): 
                 if new_ping: 
                     self.threshold_event_queue.put(new_ping)
-                
+            
+          _________________________________________________________________________________
+            ## the simulation version reverses the order of a cause/effect reaction. 
+            # Non-Simulation Version #
+            # in the non-simulation version, cause = some actions has met the threshold condition (e.g. 2 lever presses in a row, where the threshold was defined as lever.required_presses == 2) 
+                                             effect = add to threshold_event_queue 
+                # so we are checking for if the condition has been met. 
+                # when condition is met, the control software appends to the th
+            # Simulation Version # 
+            # in the simulation version, cause = something added to the threshold_event_queue 
+                                         effect = update attributes of the component to reflect the event 
+                                                    for example, appending to an rfid queue, or changing the isOpen state of the door. 
+          _________________________________________________________________________________
 
-        class Wheel: 
+        class Door: 
             @threaded_fn
             def watch_for_threshold_event(): 
-                # constantly looping to check if the defined condition has been met. 
+                # loops over the condition that gets defined here 
+                # if condition is met at any point, then append to the threshold_event_queue 
+                
+                # door is watching for any state change in the door 
+                prev_state = self.isOpen
+                if self.isOpen != prev_state: 
+                    # change in door state detected, write to threshold event queue
+                    self.threshold_event_queue.put(self.isOpen)
+            
+            ## simulation functionality ## 
+                # user will just directly change is isOpen value to force door to do what they want 
+                # 
+            
+            def sim_check(): 
+                if self.simulation == True: 
+                     then we don't want to actually call open/close door
+                     since this call is made directly from the experiment code, we need a way to prevent that function from fully executing
+                     instead, just directly update the isOpen value to reflect the desired function 
+                     the watch_for_threshold_event should see this state change and will append to the threshold_event_queue
+                     then return from both functions, without ever having called the open/close door function. 
+
+            @sim_check
+            def open_door() 
+
+
+
+
+        class Wheel: 
+            
+            def watch_for_threshold_event(): 
+                # constantly looping on own thread to check if the defined condition has been met. 
                 # once condition gets met, then append to the threshold_event_queue
                 if self.moves is True: 
                     self.threshold_event_queue.put(True)
+            
             
             ## simulation functionality ## 
                 # user will just directly add self.moves to True 
@@ -124,6 +349,7 @@ while self.active:
 
 
 
+            ''' ____________________________________________________________________________________________'''
 
 
 
@@ -219,7 +445,14 @@ while self.active:
 
             ''' ____________________________________________________________________________________________'''
 
+            "rfid2":{
+                "function": { 
+                    "arguments": "self, vole_tag, rfid_id", 
+                    "body":"self.rfidQ.append(vole_tag, rfid_id)"
+                }
+             }
 
+            ''' ____________________________________________________________________________________________'''
 
 
             

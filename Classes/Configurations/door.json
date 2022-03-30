@@ -2,6 +2,7 @@
 {
     "door1": {
         "id":1, 
-        "servoPin":3
+        "servoPin":3, 
+        "threshold_condition": { "attribute":"state", "value":true }
     }
 }

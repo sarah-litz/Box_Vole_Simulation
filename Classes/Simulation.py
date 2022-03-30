@@ -1,6 +1,6 @@
 
 # Local Imports 
-from Logging.logging_specs import debug
+from Logging.logging_specs import debug, debugthreshold
 from Vole import Vole
 from Map import Map
 
@@ -8,6 +8,7 @@ from Map import Map
 import copy
 import threading 
 import time 
+import json
 
 
 
@@ -19,6 +20,8 @@ class SimulationABC:
         self.voles = []
         
         self.map = map
+
+        self.configure_simulation(map.config_directory + '/simulation.json') # updates map features
 
         self.simulation_func = {} # dict for pairing a mode with a simulation function 
 
@@ -62,7 +65,7 @@ class SimulationABC:
             # Set the Currently Active Mode 
             current_mode = self.get_active_mode() # update the current mode 
 
-            debug(f'\n\nNew Mode: {type(current_mode)}')
+            debug(f'\n\nNew Mode: {(current_mode)}')
             
             while current_mode is False: # if no mode is currently active 
                 # wait for a mode to become active 
@@ -219,6 +222,78 @@ class SimulationABC:
     
     
     
+
+
+    #
+    # Add Simulation Features to Map 
+    #
+    def configure_simulation(self, config_filepath): 
+        '''function to read/parse the simulation configuration file'''
+        ''' Adds a simulation attribute to all of the interactables '''
+
+        print("Configuring the Simulation")
+
+
+        # opening JSON file 
+        f = open(config_filepath)
+
+        # returns json object as a dictionary 
+        data = json.load(f) 
+
+        # closing JSON file
+        f.close() 
+
+
+        ## add a simulation boolean attribute to each component that is on an edge in the map ## 
+        # if an interactable doesn't exist in the json file, print message and set simulation attribute to be False 
+
+        # copy list of interactables so we can ensure that every interactable gets an attribute 
+        instantiated_interactables_copy = self.map.instantiated_interactables.copy() # shallow copy 
+        
+
+        for i in data['interactables']: 
+            
+            # check if interactable exists on edge or in chamber
+            loc_type = instantiated_interactables_copy[i['name']][0] # string that takes value of "chamber" or "edge"
+            loc_id = instantiated_interactables_copy[i['name']][1] # id of the chamber or edge 
+            del instantiated_interactables_copy[i['name']] # delete val from the dict's copy 
+
+            if loc_type == 'edge':
+                # get object from edge 
+                obj = self.map.get_edge(loc_id).get_interactable_from_component(i['name']) 
+            
+            else: 
+                # get object from chamber 
+                obj = self.map.graph[loc_id].get_interactable(i['name'])
+
+            # give obj new attribute to represent if we should simulate the interactable or not  
+            setattr(obj, 'simulate', i['simulate']) 
+
+            # if provided, set the optional function to call for simulation process
+            if 'simulate_with_fn'in i: 
+                setattr(obj, 'simulate_with_fn', eval(i['simulate_with_fn']))
+
+                print(f"{obj.name}, new attribute set: {(i['simulate_with_fn'])}")
+                
+        
+        # set attribute for any interactables that were not specified 
+        for name in instantiated_interactables_copy.keys(): 
+            print(f'simulation.json did not contain the interactable {name}. sim defaults to False, so this interactable will not be simulated as the simulation runs.')
+
+            loc_type = instantiated_interactables_copy[name][0] # chamber or edge 
+            loc_id = instantiated_interactables_copy[name][1] # id of chamber or edge 
+
+            if loc_type == 'edge': obj = self.map.get_edge(loc_id).get_interactable_from_component[name]
+            else: obj = self.map.graph[loc_id].get_interactable(name)
+
+            # assign new attribute to False 
+            setattr(obj, 'simulate', False)
+
+
+        # clear copied dictionary 
+        instantiated_interactables_copy.clear() 
+        return 
+
 
 
 

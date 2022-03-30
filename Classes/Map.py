@@ -18,7 +18,7 @@ class Map:
 
         self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
 
-        self.instantiated_interactables = [] # list of names of every object of type interactableABC that has been created to avoid repeats
+        self.instantiated_interactables = {} # dict of (interactable name: (type=edge or chamber, id) ) to represent every object of type interactableABC that has been created to avoid repeats
         
         self.config_directory = config_directory # directory containing all of the configuration files 
 
@@ -34,7 +34,7 @@ class Map:
     #
     # Getters and Setters 
     #        
-    def instantiate_interactable_hardware( self, name, type ): 
+    def instantiate_interactable_hardware( self, name, type, edge_or_chmbr, edge_or_chmbr_id ): 
 
         ''' anytime that an interactable is added (either to a chamber or to an edge), first a call to this function is made. 
             called from configure_setup in 2 places: 
@@ -51,7 +51,7 @@ class Map:
 
 
         # Edge Case: if an object of the same type and id has already been created
-        if name in self.instantiated_interactables: raise Exception(f'the interactable {name} already exists. please assign unique names to the interactables')
+        if name in self.instantiated_interactables.keys(): raise Exception(f'the interactable {name} already exists. please assign unique names to the interactables')
 
 
         # Edge Case: missing configuration file for either this type of interactable
@@ -98,17 +98,17 @@ class Map:
         if type == 'door': 
             
             # get door w/ <id> from the door config file 
-            try: new_obj = door(ID=objspec['id'], servoPin = objspec['servoPin']) # instantiate door 
+            try: new_obj = door(ID=objspec['id'], servoPin = objspec['servoPin'], threshold_condition = objspec['threshold_condition']) # instantiate door 
             except Exception as e: raise Exception(f'there was a problem instantiating the object {name}: {e}')
 
         elif type == 'rfid': 
 
-            try: new_obj = rfid(ID=objspec['id']) # ASK: also need to pass in rfidQ?? confused on where this comes from though. 
+            try: new_obj = rfid(ID=objspec['id'], threshold_condition = objspec['threshold_condition']) # ASK: also need to pass in rfidQ?? confused on where this comes from though. 
             except Exception as e: raise Exception(f'there was a problem instantiating the object: {name}: {e}')
 
         elif type == 'lever': 
             
-            try: new_obj = lever(ID=objspec['id'], signalPin = objspec['signalPin'], numPresses = objspec['numPresses'])
+            try: new_obj = lever(ID=objspec['id'], signalPin = objspec['signalPin'], threshold_condition = objspec['threshold_condition'])
             except Exception as e: raise Exception(f'there was a problem instantiating the object {name}: {e}')
 
 
@@ -116,9 +116,14 @@ class Map:
 
             raise Exception(f'interactableABC does not have a subclass {type} implemented in mode.py')
 
+        print('DATA')
+        print(objspec)
+        if "check_threshold_with_fn" in objspec.keys(): 
+            print(f" ADDING THE CHECK THESHOLD WITH FN ATTRIBUTE TO {objspec['id']} " )
+            setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) )
             
         
-        self.instantiated_interactables.append(name) # add string identifier to list of instantiated interactables
+        self.instantiated_interactables[name] = (edge_or_chmbr, edge_or_chmbr_id)  # add string identifier to list of instantiated interactables
         return new_obj
 
         
@@ -128,7 +133,7 @@ class Map:
     # Map Configuration 
     #
     def configure_setup(self, config_filepath): 
-        ''' function to read/parse configuration file and set up map accordingly '''
+        ''' function to read/parse configuration file map.py and set up map accordingly '''
 
         # opening JSON file 
         f = open(config_filepath)
@@ -146,9 +151,10 @@ class Map:
             
             for i in chmbr['interactables']: 
                 
-                # TODO: call function to instantiate interactable hardware 
-                new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+                # instantiate interactable hardware 
+                new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'chamber', chmbr['id'] )
 
+                # assign the interactable to a chamber object
                 new_c.new_interactable( new_i ) 
         
         # Iterate thru edges list to make connections between the chambers 
@@ -160,8 +166,8 @@ class Map:
                 
                 for i in edge['components']:
 
-                    # TODO: call function to instantiate interactable hardware
-                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+                    # instantiate interactable hardware
+                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'edge', edge['id'] )
 
                     new_edge.new_component( new_i )
             
@@ -286,15 +292,16 @@ class Map:
             self.interactables.append(interactable)
 
 
-        def remove_interactable(self, interactable): 
-            if self.get_interactable(interactable) is None: 
-                raise Exception(f'Chamber{self.id} does not contain {interactable}, so this interactable cannot be removed.')
-            self.interactables.remove(interactable)
+        def remove_interactable(self, interactable_name): 
+            interactableobj = self.get_interactable(interactable_name)
+            if interactableobj is None: 
+                raise Exception(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
+            self.interactables.remove(interactableobj)
 
-        def get_interactable(self, interactable): 
+        def get_interactable(self, interactable_name): 
             # search list of interactables and return the specified object 
             for i in self.interactables: 
-                if i == interactable: return i 
+                if i.name == interactable_name: return i 
             return None 
         
 
@@ -377,7 +384,24 @@ class Map:
                     return True
             return False
 
+        def get_interactable_from_component(self, name): 
+            '''traverses linked list and returns object with specified name'''
+            if not (self.headval): 
+                # Edge does not contain any components (i.e. no interactables) 
+                return None 
+
+            if (self.headval.interactable.name == name): 
+                return self.headval.interactable
+            
+            c = self.headval
+            while(c.nextval):
+                c = c.nextval 
+                if c.interactable.name == name: 
+                    return c.interactable
+            return None # a component with an interactable with name does not exist in linked list
+
         def get_component(self, interactable): 
+            ## helper function for adding components into the linked list ## 
             '''beginning at headval, traverses linked list to find component. Returns None if it does not exist'''
             
             if not (self.headval): 

@@ -13,15 +13,18 @@ import threading
 import queue
 import inspect
 
+from Logging.logging_specs import debug
+
+
 # Classes
 class modeABC:
     """This is the base class, each mode will be an obstantiation of this class.
     """
 
-    def __init__(self, map = None, timeout = None, enterFuncs = None, exitFuncs = None, bypass = False, **kwargs):
+    def __init__(self, timeout = None, map = None, enterFuncs = None, exitFuncs = None, bypass = False, **kwargs):
         # Set the givens
         self.rfidQ   = None
-        self.box     = map
+        self.map     = map
         self.threads = None
         self.active  = False
         self.timeout = timeout
@@ -119,12 +122,54 @@ class modeABC:
 
 class interactableABC:
 
-    def __init__(self):
+    def __init__(self, threshold_condition):
         self.ID = None
         self.threshold = None
 
+        # LEAVING OFF HERE!!!! 
+        # threshold_condition = {attribute, value} dict to specify what the attribute/value goal of the interactable is. 
+        self.threshold_condition = threshold_condition
+        self.threshold_event_queue = queue.Queue()
+        self.goal_value = threshold_condition["value"]
+
+        # self.threshold_check = lambda: (_ for _ in ()).throw(Exception('Must Override the threshold_check attribute with an inline function that returns the current value representing the threshold condition'))
+
+
     def activate(self):
         raise NameError("Needs to be overwritten")
+
+    def watch_for_threshold_event(self, constant=None, reset_vals=None): 
+
+        # using the attribute/value pairing specified by the threshold_condition dictionary
+        # if at any time the given attribute == value, append to the threshold_event_queue.
+
+        # if constant is True, then this is a threaded function that is running throughout the entire experiment execution 
+        # if constant is False, then this function must be manually called by the control software whenever we need to watch for a threshold event occurrence for the interactable 
+
+        # if reset_vals is True, value of the attribute will get reset to its starting state
+        # if reset_vals is False, value of the attribute will remain the same
+
+        debug(f"checking {self.name} for threshold event")
+        threshold_attr_name = self.threshold_condition["attribute"]
+        attribute = getattr(self, threshold_attr_name) # get object specified by the attribute name
+
+        print("Threshold Name:", threshold_attr_name)
+        print("Threshold Attribute Obj:", attribute)
+        
+        if hasattr(self, 'check_threshold_with_fn'): 
+            # the attribute is pointing to a function that we need to execute 
+            attribute = attribute(self) 
+
+
+        if attribute == self.threshold_condition['value']: 
+            # check for a threshold event 
+            print(f"{self.name} threshold event detected!")
+            debug(f"{self.name} threshold event detected!")
+            self.threshold_event_queue.put('An Event!')
+        
+        else: 
+            print(f"watch_for_threshold_event: no threshold event for {self.name}. Attributes Value: {attribute}, Goal Value: {self.threshold_condition['value']}") 
+            print(type(attribute), type(self.threshold_condition['value']))
 
     def __set_threshold(self, condition=True):
         """Override function to automatically bypass the logic of the object and set the threshhold value to whatever it needs to be. This can be accessed by either the safety software of the simulation software.
@@ -177,15 +222,22 @@ class interactableABC:
         time.sleep(0.1)
         
 class lever(interactableABC):
-    def __init__(self, ID, signalPin, numPresses = 1):
+    def __init__(self, ID, signalPin, threshold_condition):
         # Initialize the parent class
-        super().__init__()
+        super().__init__(threshold_condition)
 
         # Initialize the given properties
         self.name = 'lever'+str(ID) 
         self.ID        = ID 
         self.signalPin = signalPin
-        self.numPresses = numPresses
+
+        self.threshold_check = lambda: print('fix the lever threshold check! --> ',self.name)
+        
+
+        ## Threshold Condition Tracking ## 
+        #self.pressed = 0 # counts current num of presses 
+        #self.required_presses = self.threshold_condition["value"] # Threshold Goal Value specifies the threshold goal, i.e. required_presses to meet the threshold
+        #self.threshold_attribute = self.threshold_condition["attribute"] # points to the attribute we should check to see if we have reached goal. For lever, this is simply a pointer to the self.pressed attribute. 
 
         # Initialize the retrieved variables
         self.angleExtend  = None
@@ -222,9 +274,9 @@ class door(interactableABC):
         interactableABC ([type]): [description]
     """
 
-    def __init__(self, ID, servoPin):
+    def __init__(self, ID, servoPin, threshold_condition):
         # Initialize the abstract class stuff
-        super().__init__()
+        super().__init__(threshold_condition)
         
         # Set the input variables
         self.name = 'door'+str(ID)
@@ -239,6 +291,9 @@ class door(interactableABC):
         self.currentAngle = None
         self.openAngle = None
         self.closeAngle = None
+
+        ## Threshold Goal ## 
+        self.threshold_check = lambda: self.state
 
     #@threader
     def close(self):
@@ -273,17 +328,22 @@ class rfid(interactableABC):
         interactableABC ([type]): [description]
     """
 
-    def __init__(self, ID, rfidQ = None):
+    def __init__(self, ID, threshold_condition, rfidQ = None):
         # Initialize the parent 
-        super().__init__()
+        super().__init__(threshold_condition)
 
         # Initialize the required properties
         self.name = 'rfid'+str(ID)
         self.ID = ID 
 
         # Init the found properties
-        self.rfidQ = None
+        self.rfidQ = queue.Queue()
+        self.rfidQisEmpty = self.rfidQ.empty() # returns True if queue is Empty
         self.specificQ = queue.LifoQueue()
+
+
+        self.threshold_set = lambda voletag: self.rfidQ.put((voletag, self.ID))
+        self.threshold_check = lambda: self.rfidQsize
 
     
     def from_queue(self, numEntries = 1):

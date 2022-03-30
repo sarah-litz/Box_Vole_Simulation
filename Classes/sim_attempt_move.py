@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
     # indicate the simulation function to run when the mode enters timeout 
     # optional second argument: indicate the number of times to run the simulation function. If this value is not passed in, then the simulation loops until the experiment finishes its timeout interval. 
-    sim.simulation_func[mode1] = (sim.mode1_timeout, 2)
+    sim.simulation_func[mode1] = (sim.mode1_timeout, 1)
     sim.simulation_func[mode2] = (sim.mode2_timeout, 1) 
 
     # runs simulation as daemon thread 
