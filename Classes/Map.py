@@ -116,10 +116,8 @@ class Map:
 
             raise Exception(f'interactableABC does not have a subclass {type} implemented in mode.py')
 
-        print('DATA')
-        print(objspec)
+
         if "check_threshold_with_fn" in objspec.keys(): 
-            print(f" ADDING THE CHECK THESHOLD WITH FN ATTRIBUTE TO {objspec['id']} " )
             setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) )
             
         

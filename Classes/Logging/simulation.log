@@ -1,0 +1,119 @@
+
+
+
+ New Simulation
+
+
+
+ (__main__) New Simulation: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations/simulation.json
+(__main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+ (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: <ryan_example1.mode1 object at 0x100b1e7c0>
+(Simulation.py, run_sim) The current mode (<ryan_example1.mode1 object at 0x100b1e7c0>) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) <ryan_example1.mode1 object at 0x100b1e7c0> is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x100d3b760>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x100d3b760>>
+
+
+ (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: <ryan_example1.mode2 object at 0x100d3b970>
+(Simulation.py, run_sim) The current mode (<ryan_example1.mode2 object at 0x100d3b970>) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) <ryan_example1.mode2 object at 0x100d3b970> is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x100d3b760>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x100d3b760>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: <ryan_example1.mode1 object at 0x102e5c7c0>
+(Simulation.py, run_sim) The current mode (<ryan_example1.mode1 object at 0x102e5c7c0>) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) <ryan_example1.mode1 object at 0x102e5c7c0> is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x103079040>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x103079040>>
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: <ryan_example1.mode2 object at 0x1030797c0>
+(Simulation.py, run_sim) The current mode (<ryan_example1.mode2 object at 0x1030797c0>) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) <ryan_example1.mode2 object at 0x1030797c0> is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x103079040>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x103079040>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: mode
+(Simulation.py, run_sim) The current mode (mode) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) mode is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x10c24b3a0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x10c24b3a0>>
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: mode
+(Simulation.py, run_sim) The current mode (mode) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) mode is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x10c24b3a0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x10c24b3a0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x108d8a820>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x108d8a820>>
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x108d8a820>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x108d8a820>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x10ad82790>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <__main__.SarahsSimulation object at 0x10ad82790>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+
+
+  New Mode
+(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x10ad82790>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <__main__.SarahsSimulation object at 0x10ad82790>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation

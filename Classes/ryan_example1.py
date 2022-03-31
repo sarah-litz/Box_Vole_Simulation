@@ -20,8 +20,9 @@ class mode1(modeABC):
     """
     def __init__(self, timeout, map):
         super().__init__(timeout, map)
-        print("------> MAP!", self.map)
 
+    def __str__(self): 
+        return 'Mode 1'
     def enter(self):
         self.startTime = time.time() 
         self.active = True
@@ -58,7 +59,7 @@ class mode1(modeABC):
         self.inTimeout = False 
 
         print( 'Mode 1 finished its Timeout Period and is now exiting ')
-        debug('____________________Mode 1 Fin____________________')
+        debug('End of Mode 1\n')
 
         self.exit()
 
@@ -74,6 +75,8 @@ class mode2(modeABC):
     def __init__(self, timeout, map):
         super().__init__(timeout, map)
 
+    def __str__(self): 
+        return 'Mode 2'
     def enter(self):
         self.startTime = time.time() 
         self.active = True
@@ -127,7 +130,7 @@ class mode2(modeABC):
         self.inTimeout = False 
 
         print( 'Mode 2 finished its Timeout Period and is now exiting ')
-        debug('____________________Mode 2 Fin____________________')
+        debug('End of Mode 2 \n')
 
         self.exit()
 
@@ -136,10 +139,9 @@ if __name__ == "__main__":
     # Instantiate the hardware objects by creating the map 
     map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
 
-    print("-------> map:", map)
     # Instantiate the modes
-    mode1 = mode1(timeout = 43200, map = map)
-    mode2 = mode2(timeout = 43200, map = map)
+    mode1 = mode1(timeout = 15, map = map)
+    mode2 = mode2(timeout = 15, map = map)
 
     # Set attributes
 

@@ -38,7 +38,8 @@ class modeABC:
 
 
 
-        
+    def __str__(self): 
+        return __name__
     def threader(self):
         """This is a decorator function that will be added to any method here that needs to run on its own thread. It simply creates, starts, and logs a method to a thread. 
         """

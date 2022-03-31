@@ -1,6 +1,6 @@
 
 # Local Imports 
-from Logging.logging_specs import debug, debugthreshold
+from Logging.logging_specs import sim_log
 from Vole import Vole
 from Map import Map
 
@@ -47,7 +47,7 @@ class SimulationABC:
     @run_in_thread
     def run_sim(self): 
 
-        print('Simulation is Running')
+        sim_log('(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.')
 
         ''' This Function Runs Continuously Until the Experiment Ends 
                     Runs on a separate thread 
@@ -65,16 +65,15 @@ class SimulationABC:
             # Set the Currently Active Mode 
             current_mode = self.get_active_mode() # update the current mode 
 
-            debug(f'\n\nNew Mode: {(current_mode)}')
             
             while current_mode is False: # if no mode is currently active 
                 # wait for a mode to become active 
                 time.sleep(0.5)
                 current_mode = self.get_active_mode() # update the current mode when one becomes active 
-                debug(f'\n\nNew Mode: {type(current_mode)}')
 
-            
-            
+            sim_log(f'\n\n  New Mode\n(Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: {(current_mode)}')
+
+
             # Loop Until Current Mode is Inactive
             while current_mode.active: # reruns simulation while the mode is still active
 
@@ -84,16 +83,17 @@ class SimulationABC:
                     # while not in timeout portion of mode, loop 
                     time.sleep(0.5)
 
-                
+                sim_log(f'(Simulation.py, run_sim) The current mode ({current_mode}) entered in timeout. Checking for if a simulation should be run. ')
                 #
                 # Check for if simulation function 
                 if current_mode not in self.simulation_func.keys(): # no simulation function specified for this mode 
                     # do nothing loop until current mode is inactive 
-                    debug(f'No simulation function for {type(current_mode)}.')
+                    sim_log(f'(Simulation.py, run_sim) No simulation function for {type(current_mode)}.')
                     while current_mode.active: 
                         time.sleep(0.5)
 
-
+                
+                sim_log(f'(Simulation.py, run_sim) {current_mode} is paired with the simulation function: {self.simulation_func[current_mode]}')
                 #
                 # Check if an iterator value was specified (num of times to call the sim function) 
                 sim_iterator = None # specifies number of times to call the simulation function (optional)
@@ -114,18 +114,18 @@ class SimulationABC:
                 
                 #
                 # Run the Mode's Simulation Function
-                # LEAVING OFF HERE: this needs testing! 
+                # TODO: this needs testing! 
                 while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
                     
                     if sim_iterator is None: 
                         
-                        print(f'Simulaton is calling the function:{sim_fn}')
+                        sim_log(f'(Simulation.py, run_sim) Simulaton is calling the function:{sim_fn}')
 
                         sim_fn()  # calling function continuously throught timeout interval 
 
                     elif sim_iterator > 0:  
                         
-                        print(f'Simulaton is calling the function:{sim_fn}')
+                        sim_log(f'(Simulation.py, run_sim) Simulaton is calling the function:{sim_fn}')
 
                         sim_fn() # function call for running the simulation 
 
@@ -231,7 +231,7 @@ class SimulationABC:
         '''function to read/parse the simulation configuration file'''
         ''' Adds a simulation attribute to all of the interactables '''
 
-        print("Configuring the Simulation")
+        sim_log(f"(Simulation.py, configure_simulation) reading/parsing the file {config_filepath}")
 
 
         # opening JSON file 
@@ -271,14 +271,12 @@ class SimulationABC:
 
             # if provided, set the optional function to call for simulation process
             if 'simulate_with_fn'in i: 
-                setattr(obj, 'simulate_with_fn', eval(i['simulate_with_fn']))
-
-                print(f"{obj.name}, new attribute set: {(i['simulate_with_fn'])}")
-                
+                setattr(obj, 'simulate_with_fn', eval(i['simulate_with_fn']))                
         
         # set attribute for any interactables that were not specified 
         for name in instantiated_interactables_copy.keys(): 
             print(f'simulation.json did not contain the interactable {name}. sim defaults to False, so this interactable will not be simulated as the simulation runs.')
+            sim_log(f'simulation.json did not contain the interactable {name}. sim defaults to False, so this interactable will not be simulated as the simulation runs.')
 
             loc_type = instantiated_interactables_copy[name][0] # chamber or edge 
             loc_id = instantiated_interactables_copy[name][1] # id of chamber or edge 
@@ -300,19 +298,8 @@ class SimulationABC:
     #
     # Simulate Vole-Interactable Interactations
     #
-    def simulate_interactable(self, interactable, vole): 
-
-        interactable.set_threshold(True)
-
-    
 
 
-        
-    '''
-    def setup(self)
-    def run(self)
-    def reset(self)
-    '''
 
 if __name__ == '__main__': 
     

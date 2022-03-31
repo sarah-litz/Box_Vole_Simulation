@@ -4,19 +4,45 @@
 
 
 import logging
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+formatter = logging.Formatter('%(asctime)s %(message)s') # To Display Level Name (debug vs. info vs. etc): %(levelname)s 
 
 
 logging.basicConfig(filename='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/eventlogging.log', level=logging.DEBUG )
 
-logging.basicConfig(filename='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/thresholdlogging.log', level=logging.INFO)
+control_fp='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/control.log'
+simulation_fp='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/simulation.log'
+
+
+def setup_logger(name, log_file, level=logging.DEBUG):
+    """To setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)        
+    # handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    # logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
+
+
+
+control_logger = setup_logger('control_logger', control_fp, level = logging.debug)
+simulation_logger = setup_logger('simulation_logger', simulation_fp, level = logging.debug)
+
 
 def debug(message): 
+    # this one uses the basicconfig filepath 
     logging.debug(message)
 
 
-def debugthreshold(message): 
-    logging.info(message)
+def sim_log(message): 
+    simulation_logger.debug(message)
+
+def control_log(message): 
+    control_logger.debug(message)
+
+
 
 
 
