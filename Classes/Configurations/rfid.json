@@ -10,6 +10,6 @@
     {
         "id":2,
         "threshold_condition": { "attribute":"check_threshold_with_fn","value": false }, 
-        "check_threshold_with_fn": "lambda self: self.rfidQ.emtpy()"
+        "check_threshold_with_fn": "lambda self: self.rfidQ.empty()"
     }
 }

@@ -55,26 +55,26 @@ class Vole:
 
             # check if the component should be simulated 
             if component.interactable.simulate: 
+                ##
+                ## Simulating Interactable thru setting attribute value or thru function call
+                ##
                 interactable = component.interactable
 
                 print( f'simulating vole{self.tag} interaction with {component.interactable.name}' ) 
+                debug( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {component.interactable.name}' ) 
 
-
-                #########################
-                ## LEAVING OFF HERE!!! ##
-
-
-
-                # SET the attributes to values that meet the threshold condition by calling simulate_with_fn 
                 
                 if hasattr(component.interactable, 'simulate_with_fn'):
+                    
+                    # sets the attributes to values that meet the threshold condition by calling simulate_with_fn 
                     component.interactable.simulate_with_fn(component.interactable, self.tag)
 
                 else:
+                    
                     # set value using the threshold condition attribute/value pairing 
-
                     threshold_attr_name = interactable.threshold_condition["attribute"]
                     attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
+                    
                     debug(f'{interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["value"]}')
                 
                     # manually set the attribute to its goal value so we meet the threshold condition, and trigger the control side to add an event to the threshold_event_queue 
@@ -89,7 +89,7 @@ class Vole:
                 print ( f'if testing the hardware for {component.interactable.name}, take any necessary actions now.')
                 
             # TODO: automate the watch_for_threshold function 
-            interactable.watch_for_threshold_event()
+            component.interactable.watch_for_threshold_event()
             ########################
             
             # Pause to give control side a moment to assess if there was a threshold event 

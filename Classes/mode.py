@@ -149,12 +149,11 @@ class interactableABC:
         # if reset_vals is True, value of the attribute will get reset to its starting state
         # if reset_vals is False, value of the attribute will remain the same
 
-        debug(f"checking {self.name} for threshold event")
         threshold_attr_name = self.threshold_condition["attribute"]
         attribute = getattr(self, threshold_attr_name) # get object specified by the attribute name
 
-        print("Threshold Name:", threshold_attr_name)
-        print("Threshold Attribute Obj:", attribute)
+        debug(f"(mode.py, watch_for_threshold_event) {self.name}: Threshold Name: {threshold_attr_name}, Threshold Attribute Obj: {attribute}")
+        
         
         if hasattr(self, 'check_threshold_with_fn'): 
             # the attribute is pointing to a function that we need to execute 
@@ -328,7 +327,7 @@ class rfid(interactableABC):
         interactableABC ([type]): [description]
     """
 
-    def __init__(self, ID, threshold_condition, rfidQ = None):
+    def __init__(self, ID, threshold_condition, rfidQ = queue.Queue()):
         # Initialize the parent 
         super().__init__(threshold_condition)
 
