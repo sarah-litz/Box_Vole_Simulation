@@ -42,11 +42,6 @@ class SarahsSimulation(SimulationABC):
         # chmbr1.interactables['wheel1'].simulate(vole=1)
         #self.simulate_interactable(chmbr1.interactables['wheel1'], vole=1) 
 
-        #
-        # LEAVING OFF HERE!! 
-        # next step is to work out the issues in attempt_move() function, and hopefully get a simulation where 
-        # a vole is able to move chambers working!!! 
-        #
 
         vole1 = self.get_vole(1)
 
@@ -85,10 +80,8 @@ if __name__ == '__main__':
     # instantiate map (which will also instantiate the hardware components) 
     map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
 
-    # TODO: change the configurations of what a component's threshold is?? 
-    # e.g. thru a function call, be able to change what action is performed when we call the function component.check_threshold() 
-    # bypass
-    # map.rfid1.change_default
+    res = map.get_edge(12).get_interactable_from_component('rfid1').__getattribute__('check_threshold_with_fn')
+    print(res.__name__)
 
 
     sim_log('\n\n\n\n-----------------------------New Simulation Running------------------------------------')

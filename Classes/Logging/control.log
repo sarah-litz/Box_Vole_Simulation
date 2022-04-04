@@ -1,0 +1,476 @@
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: []
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+End of Mode 2
+
+NEW MODE : Mode 1
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+End of Mode 1
+
+NEW MODE: Mode 2
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+(Mode.py, watch_for_threshold_event) checking door1's dependent: lever1
+(Mode.py, watch_for_threshold_event) door1's dependent, lever1 did not reach its threshold value.
+End of Mode 2
+
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+(mode.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+NEW MODE : Mode 1
+(mode.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!']
+(mode.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: ['An Event!', 'An Event!', 'An Event!']
+End of Mode 1
+
+NEW MODE: Mode 2
+End of Mode 2
+

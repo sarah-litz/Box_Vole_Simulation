@@ -8,17 +8,14 @@
             "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )" 
         }, 
         {"name":"door1", 
-            "simulate":true, 
-            "condition_dict": { "attribute":"isOpen", "value":true }
+            "simulate":true
         }, 
         {"name":"rfid2", 
             "simulate":true, 
-            "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )" , 
-            "condition_dict": { "attribute":"rfidQ", "value":true }
+            "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )"  
         }, 
         {"name":"lever1", 
-            "simulate":true,
-            "condition_dict": { "attribute":"pressed", "value":true }
+            "simulate":true
         }
         
     ]

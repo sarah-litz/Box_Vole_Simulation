@@ -4,9 +4,9 @@ This is an example scenario that someone would run for the home_cage experiment.
 import os
 import time
 from Map import Map
-from mode import modeABC
+from Mode import modeABC
 
-from Logging.logging_specs import debug 
+from Logging.logging_specs import control_log 
 
 
 
@@ -36,6 +36,8 @@ class mode1(modeABC):
         # Run code of the class. This basically waits for the timeout
 
         print('Mode 1 is Running')
+        control_log('NEW MODE : Mode 1')
+
         # Retract the lever and open the door
         #self.map.chamber_lever.retract()
         #self.map.door.default = True # opened
@@ -59,7 +61,7 @@ class mode1(modeABC):
         self.inTimeout = False 
 
         print( 'Mode 1 finished its Timeout Period and is now exiting ')
-        debug('End of Mode 1\n')
+        control_log('End of Mode 1\n')
 
         self.exit()
 
@@ -87,6 +89,7 @@ class mode2(modeABC):
 
     def run(self):
 
+        control_log('NEW MODE: Mode 2')
 
         '''# Logic to change the num presses every time the wheel is run
         while self.active:
@@ -130,11 +133,13 @@ class mode2(modeABC):
         self.inTimeout = False 
 
         print( 'Mode 2 finished its Timeout Period and is now exiting ')
-        debug('End of Mode 2 \n')
+        control_log('End of Mode 2\n')
 
         self.exit()
 
 if __name__ == "__main__":
+
+    control_log(f'\n\n\nrunning {__name__}: New Experiment! ')
     # Set up Map
     # Instantiate the hardware objects by creating the map 
     map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
@@ -150,3 +155,4 @@ if __name__ == "__main__":
     mode1.run()
 
     # It should run continuously from this point on
+

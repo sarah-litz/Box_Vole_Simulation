@@ -7,8 +7,8 @@ from collections import deque
 import time
 import json 
 import os
-import mode 
-from mode import interactableABC,lever, door, rfid
+import Mode 
+from Mode import interactableABC,lever, door, rfid
 
 class Map: 
     def __init__(self, config_directory): 
@@ -46,7 +46,7 @@ class Map:
 
 
         # Edge Case: if type is not a valid subclass of interactableABC, raise Exception
-        try: getattr(mode, type)
+        try: getattr(Mode, type)
         except: raise Exception(f' unknown interacatable type: {type} ')
 
 
@@ -92,9 +92,6 @@ class Map:
         # using variable <data> which contains the text read in from the hardware configuration file 
         # potentially have a data['arguments'] that contains all of the arguments that we need to pass to the instantiation of the object ??
 
-
-
-
         if type == 'door': 
             
             # get door w/ <id> from the door config file 
@@ -117,11 +114,19 @@ class Map:
             raise Exception(f'interactableABC does not have a subclass {type} implemented in mode.py')
 
 
+        # dynamically set any attributes that can be optionally added to an interactable's configurations
         if "check_threshold_with_fn" in objspec.keys(): 
-            setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) )
+            setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) ) # function for checking if the threshold condition has been met
+        if "dependent" in objspec.keys(): 
+            setattr( new_obj, 'dependent_name', objspec['dependent'] ) # interactable that the threshold is dependent on (e.g. if we want lever1 to control door1, then set door1's dependent to be lever1. )
             
         
-        self.instantiated_interactables[name] = (edge_or_chmbr, edge_or_chmbr_id)  # add string identifier to list of instantiated interactables
+        self.instantiated_interactables[name] = new_obj  # add string identifier to list of instantiated interactables
+        
+        # activate the object so it begins watching for threshold events --> can potentially reposition this to save CPU energy since each interactable gets its own thread. 
+        # be careful/don't add the activation statement to the interactable's __init__ statements, because then we get a race condition between this function which sets "check_threshold_with_fn" and the watch_for_threshold_event which gets the "check_threshold_with_fn" value.  
+
+        new_obj.activate()
         return new_obj
 
         
@@ -180,9 +185,31 @@ class Map:
                     # i.e. the components along the edge may have already been instantiated if a unidirectional edge connecting the same 2 chambers was already created.
                     # If this is the case, then we need to point to the existing component instead of instantiating a new one.  
             '''
+        
+        self.set_dependent_interactables()
     
          
+
+    def set_dependent_interactables(self): 
+        print('HELLO')
+        # if an interactable specified a "dependent" in its configuration file, then it gets an attribute "interactable_name" which serves as a string representation of the interactable
+        # after all objects have been instantiated, we now want to assign the actual interactable objects rather than just their string representation
+
+        # loop thru all instantiated interactables and check for the attribute interactable_name 
+        for i_name in self.instantiated_interactables:
+            
+            i = self.instantiated_interactables[i_name]
+            if hasattr(i, 'dependent_name'): 
+
+                d = self.instantiated_interactables[i.dependent_name]
+                if d is not None:
+                    print(f'setting dependent attribute: {d}, {type(d)} for ', i.name)
+                    setattr(i, 'dependent', d)
                 
+                    delattr(i, 'dependent_name')  # delete the dependent_name attribute since we don't need it anymore 
+
+
+
     def get_chamber(self, id): 
         ''' returns chamber object with specified id '''
         for cid in self.graph.keys(): 
@@ -291,12 +318,12 @@ class Map:
 
 
         def remove_interactable(self, interactable_name): 
-            interactableobj = self.get_interactable(interactable_name)
+            interactableobj = self.get_chmbr_interactable(interactable_name)
             if interactableobj is None: 
                 raise Exception(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
             self.interactables.remove(interactableobj)
 
-        def get_interactable(self, interactable_name): 
+        def get_chmbr_interactable(self, interactable_name): 
             # search list of interactables and return the specified object 
             for i in self.interactables: 
                 if i.name == interactable_name: return i 

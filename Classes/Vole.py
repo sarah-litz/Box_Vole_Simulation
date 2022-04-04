@@ -1,9 +1,12 @@
-# from Classes.mode import interactableABC
-import mode 
+# Standard Lib Imports 
+from itertools import count
 import random
 import time 
 
-from Logging.logging_specs import debug
+# Local Imports 
+import Mode 
+from Logging.logging_specs import sim_log
+from Timer import countdown_for_current_event
 
 class Vole: 
 
@@ -13,11 +16,47 @@ class Vole:
         self.map = map 
     
 
-    #
-    # Vole Movements
-    #
-    ## TODO: make_move and make_multichamber_move need work based on Control Software
+    ##
+    ## Simulating Interactable thru setting attribute value or thru function call
+    ##
+    def simulate_vole_interactable_interaction(self, interactable): 
+
+        if interactable.simulate: 
+
+            print( f'simulating vole{self.tag} interaction with {interactable.name}' ) 
+            sim_log( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {interactable.name}' ) 
+    
+            if hasattr(interactable, 'simulate_with_fn'):
+                
+                # sets the attributes to values that meet the threshold condition by calling simulate_with_fn 
+                interactable.simulate_with_fn(interactable, self.tag)
+
+            else:
+                
+                # set value using the threshold condition attribute/value pairing 
+                threshold_attr_name = interactable.threshold_condition["attribute"]
+                attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
+
+                sim_log(f'(Vole.py, attempt_move) {interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["value"]}')
+            
+                # manually set the attribute to its goal value so we meet the threshold condition, and trigger the control side to add an event to the threshold_event_queue 
+                setattr(interactable, threshold_attr_name, interactable.threshold_condition['value'])
+                # sim_log(f'{interactable.name}, manual attribute check: {interactable.state}')
+                sim_log(f"(Vole.py, attempt_move) {interactable.name}, attribute result: {attribute}")
+    
+        
+        else:  # component should not be simulated, as the hardware for this component is present. 
+            # assumes that there is a person present to perform a lever press, interrupt the rfid reader so it sends a ping, etc. 
+            print ( f'if testing the hardware for {interactable.name}, take any necessary actions now.')
+            countdown_for_current_event(5, event=f'perform interactions to trigger a threshold event for {interactable.name}')
+            time.sleep(5)
+    
+    
+    ##
+    ## Vole Movements
+    ##
     def is_move_valid(self, destination): 
+        # attempt_move helper function
         '''Check validity of making a move from voles current location to some destination 
         Does not actually make move/update the voles location, just checks if the move is possible according to map layout 
         Return True if move is possible, False otherwise 
@@ -27,19 +66,18 @@ class Vole:
             return True 
         else: return False
     
-
     def attempt_move(self, destination, validity_check=True): 
-        ''' called by Vole object ''' 
+        ''' called by a Vole object ''' 
         ''' attempts to executes a move. if validity_check is set to True, then we check if the move is physically valid or not. '''
         ''' GETTING the thresholds of each interactable and checking that it is True '''
         ''' if the threshold of any interactable is not True, then we cannot successfully make the move '''
 
-        debug(f'Entering the attempt move function. Vole {self.tag} is currently in chamber {self.current_loc}. Destination: {destination}.')
+        sim_log(f'(Vole.py, attempt_move) Entering the attempt move function. Vole {self.tag} is currently in chamber {self.current_loc}. Destination: {destination}.')
 
         if validity_check: 
             if not self.is_move_valid(destination): 
 
-                debug(f'attempting a move that is not physically possible according to Map layout. Skipping Move Request')
+                sim_log(f'(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request')
 
                 print('attempting a move that is not physically possible according to Map layout. Skipping Move Request.')
 
@@ -47,70 +85,53 @@ class Vole:
         # retrieve edge between current location and the destination, and check threshold for each of these 
         edge = self.map.graph[self.current_loc].connections[destination]
 
-        debug(f' traversing the edge: {edge} ')
+        sim_log(f'(Vole.py, attempt_move) traversing the edge: {edge} ')
 
-        # traverse the linked list 
+        # traverse the linked list containing the edge components 
         for component in edge: 
 
+            #
+            # Simulation 
+            #
+            interactable = component.interactable
+            self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
 
-            # check if the component should be simulated 
-            if component.interactable.simulate: 
-                ##
-                ## Simulating Interactable thru setting attribute value or thru function call
-                ##
-                interactable = component.interactable
-
-                print( f'simulating vole{self.tag} interaction with {component.interactable.name}' ) 
-                debug( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {component.interactable.name}' ) 
+            if hasattr(interactable, 'dependent'): 
+                self.simulate_vole_interactable_interaction(interactable.dependent)
 
                 
-                if hasattr(component.interactable, 'simulate_with_fn'):
-                    
-                    # sets the attributes to values that meet the threshold condition by calling simulate_with_fn 
-                    component.interactable.simulate_with_fn(component.interactable, self.tag)
+            #
+            # Wait for Control Side Software to react to Simulation 
+            #
+            ################################################
+            time.sleep(3)  # Pause to give control side a moment to assess if there was a threshold event 
+            ################################################
 
-                else:
-                    
-                    # set value using the threshold condition attribute/value pairing 
-                    threshold_attr_name = interactable.threshold_condition["attribute"]
-                    attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
-                    
-                    debug(f'{interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["value"]}')
-                
-                    # manually set the attribute to its goal value so we meet the threshold condition, and trigger the control side to add an event to the threshold_event_queue 
-                    setattr(component.interactable, threshold_attr_name, interactable.threshold_condition['value'])
-                    # debug(f'{interactable.name}, manual attribute check: {interactable.state}')
-                    debug(f"{interactable.name}, attribute result: {attribute}")
 
-                
-            else: 
-                # component should not be simulated, as the hardware for this component is present. 
-                # assumes that there is a person present to perform a lever press, interrupt the rfid reader so it sends a ping, etc. 
-                print ( f'if testing the hardware for {component.interactable.name}, take any necessary actions now.')
-                
-            # TODO: automate the watch_for_threshold function 
-            component.interactable.watch_for_threshold_event()
-            ########################
-            
-            # Pause to give control side a moment to assess if there was a threshold event 
-            time.sleep(3)
-
-            # check if the control side added a threshold event, meaning this interactables threshold condition was met 
-            # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
+            #
+            # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
+            #
             if component.interactable.threshold_event_queue.empty(): 
+                # check if the control side added a threshold event, meaning this interactables threshold condition was met 
                 print(f'the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
                 return False 
             else:
+                # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
                 event = component.interactable.threshold_event_queue.get()
                 print(f'the threshold condition was met for {component.interactable.name}. Event: {event}')
+        
+            component.interactable.deactivate() 
         ## END FOR: Done Simulating Components along the Edge ##
 
 
         ## Update Vole Location ## 
         self.current_loc = destination
 
-        debug(f'Vole {self.tag} successfully moved into chamber {self.current_loc}')
+        sim_log(f'(Vole.py, attempt_move) Vole {self.tag} successfully moved into chamber {self.current_loc}')
 
+
+
+    
 
 
 
