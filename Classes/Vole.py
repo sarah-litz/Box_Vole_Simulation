@@ -96,8 +96,8 @@ class Vole:
             interactable = component.interactable
             self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
 
-            if hasattr(interactable, 'dependent'): 
-                self.simulate_vole_interactable_interaction(interactable.dependent)
+            for dependent in interactable.dependents:  
+                self.simulate_vole_interactable_interaction(dependent)
 
                 
             #
@@ -120,7 +120,6 @@ class Vole:
                 event = component.interactable.threshold_event_queue.get()
                 print(f'the threshold condition was met for {component.interactable.name}. Event: {event}')
         
-            component.interactable.deactivate() 
         ## END FOR: Done Simulating Components along the Edge ##
 
 

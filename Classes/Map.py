@@ -117,8 +117,8 @@ class Map:
         # dynamically set any attributes that can be optionally added to an interactable's configurations
         if "check_threshold_with_fn" in objspec.keys(): 
             setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) ) # function for checking if the threshold condition has been met
-        if "dependent" in objspec.keys(): 
-            setattr( new_obj, 'dependent_name', objspec['dependent'] ) # interactable that the threshold is dependent on (e.g. if we want lever1 to control door1, then set door1's dependent to be lever1. )
+        if "dependents" in objspec.keys(): 
+            setattr( new_obj, 'dependent_names', objspec['dependents'] ) # interactable that the threshold is dependent on (e.g. if we want lever1 to control door1, then set door1's dependent to be lever1. )
             
         
         self.instantiated_interactables[name] = new_obj  # add string identifier to list of instantiated interactables
@@ -191,7 +191,7 @@ class Map:
          
 
     def set_dependent_interactables(self): 
-        print('HELLO')
+
         # if an interactable specified a "dependent" in its configuration file, then it gets an attribute "interactable_name" which serves as a string representation of the interactable
         # after all objects have been instantiated, we now want to assign the actual interactable objects rather than just their string representation
 
@@ -199,14 +199,14 @@ class Map:
         for i_name in self.instantiated_interactables:
             
             i = self.instantiated_interactables[i_name]
-            if hasattr(i, 'dependent_name'): 
+            if hasattr(i, 'dependent_names'): 
+                dependents = []
+                for dname in i.dependent_names:
+                    dependents.append(self.instantiated_interactables[dname])
 
-                d = self.instantiated_interactables[i.dependent_name]
-                if d is not None:
-                    print(f'setting dependent attribute: {d}, {type(d)} for ', i.name)
-                    setattr(i, 'dependent', d)
+                i.dependents = dependents # store list of dependent objects in the interactables dependent list
                 
-                    delattr(i, 'dependent_name')  # delete the dependent_name attribute since we don't need it anymore 
+                delattr(i, 'dependent_names')  # delete the dependent_names attribute since we don't need it anymore 
 
 
 

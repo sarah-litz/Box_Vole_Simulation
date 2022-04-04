@@ -131,6 +131,8 @@ class interactableABC:
         self.threshold_condition = threshold_condition  # {attribute, value} dict to specify what the attribute/value goal of the interactable is. 
         self.threshold_event_queue = queue.Queue() # queue for tracking anytime a threshold condition is met 
 
+        self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. 
+
     def activate(self):
         self.active = True 
         self.watch_for_threshold_event() # begins continuous thread for monitoring for a threshold event
