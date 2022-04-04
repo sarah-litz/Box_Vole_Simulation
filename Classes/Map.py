@@ -7,6 +7,7 @@ from collections import deque
 import time
 import json 
 import os
+from Logging.logging_specs import control_log
 import Mode 
 from Mode import interactableABC,lever, door, rfid
 
@@ -51,7 +52,7 @@ class Map:
 
 
         # Edge Case: if an object of the same type and id has already been created
-        if name in self.instantiated_interactables.keys(): raise Exception(f'the interactable {name} already exists. please assign unique names to the interactables')
+        if name in self.instantiated_interactables.keys(): raise Exception(f'the interactable {name} already exists. please assign unique names to the interactables.')
 
 
         # Edge Case: missing configuration file for either this type of interactable
@@ -73,8 +74,6 @@ class Map:
         # edge case: configuration file does not have specifications for an object with this name
         try: objspec = data[name]
         except: raise Exception(f'there is no entry for {name} in the {type} configuration file, {filename}')
-
-        # if name not in data.keys(): raise Exception(f'there is no entry for {name} in the {type} configuration file')
 
         #
         # Instantiate New Interactable
@@ -155,10 +154,19 @@ class Map:
             for i in chmbr['interactables']: 
                 
                 # instantiate interactable hardware 
-                new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'chamber', chmbr['id'] )
-
-                # assign the interactable to a chamber object
-                new_c.new_interactable( new_i ) 
+                try: 
+                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'chamber', chmbr['id'] )
+                    # assign the interactable to a chamber object
+                    new_c.new_interactable( new_i )
+                
+                except Exception as e: 
+                    print(f"Ran into an issue when trying to instantiate the interactable object: {i['interactable_name']}")
+                    print('Error Message: ', e)
+                    print(f'would you like to continue running the experiment without instantiating this interactable? If yes, I wont be aware of any interactions a vole may have with it. If no, I will exit the experiment immediately.')
+                    ans = input('input (y/n) \n')
+                    if ans == 'n': exit() 
+                    
+ 
         
         # Iterate thru edges list to make connections between the chambers 
         for edge in data['edges']: 
@@ -202,7 +210,12 @@ class Map:
             if hasattr(i, 'dependent_names'): 
                 dependents = []
                 for dname in i.dependent_names:
-                    dependents.append(self.instantiated_interactables[dname])
+                    try: dependents.append(self.instantiated_interactables[dname])
+                    except KeyError as e: 
+                        print(f' specified an unknown interactable {e} as a dependent for {i.name}. Double check the config files for {e} and for {i.name} to ensure they are correct.')
+                        ans = input(f' would you like to carry on the experiment without adding {e} as a dependent for {i.name}? (y/n)')
+                        if ans == 'n': exit()
+
 
                 i.dependents = dependents # store list of dependent objects in the interactables dependent list
                 
@@ -320,7 +333,8 @@ class Map:
         def remove_interactable(self, interactable_name): 
             interactableobj = self.get_chmbr_interactable(interactable_name)
             if interactableobj is None: 
-                raise Exception(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
+                control_log(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
+                print(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
             self.interactables.remove(interactableobj)
 
         def get_chmbr_interactable(self, interactable_name): 

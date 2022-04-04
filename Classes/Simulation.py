@@ -22,7 +22,7 @@ class SimulationABC:
         
         self.map = map
 
-        self.configure_simulation(map.config_directory + '/simulation.json') # updates map features
+        self.configure_simulation(map.config_directory + '/simulation.json') # updates map interactables with simulation attributes, and adds voles to chambers
 
         self.simulation_func = {} # dict for pairing a mode with a simulation function 
 
@@ -30,7 +30,7 @@ class SimulationABC:
 
         # TODO: either use a vole_dict argument option OR setup_voles option. Think it'll be confusing if both options are offered.
         # self.setup_voles()
-        for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
+        # for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
     
 
 
@@ -155,6 +155,8 @@ class SimulationABC:
     #
     def setup_voles(self):  raise Exception('you need to add a setup_voles() method to your simulation! This is where you should add/initialize any voles that you want to Simulate.')
 
+        # gets voles from the simulation configuration file
+
     def get_vole(self, tag): 
         # searches list of voles and returns vole object w/ the specified tag 
         for v in self.voles: 
@@ -165,11 +167,28 @@ class SimulationABC:
         ''' creates a new Vole object and adds it to the list of voles. Returns Vole object on success '''
 
         # ensure vole does not already exist 
-        if self.get_vole(tag) is not None: raise Exception(f'vole with tag {tag} already exists')
-
+        if self.get_vole(tag) is not None: 
+            sim_log(f'vole with tag {tag} already exists')
+            print(f'you are trying to create a vole with the tag {tag} twice')
+            input(f'Would you like to skip the creating of this vole and continue running the simulation? If no, the simulation and experiment will stop running immediately. Please enter: "y" or "n". ')
+            if 'y': return 
+            if 'n': exit() 
         # ensure that start_chamber exists in map
-        if self.map.get_chamber(start_chamber) is None: raise Exception(f'chamber {start_chamber} does not exist')
-        
+        chmbr = self.map.get_chamber(start_chamber) 
+        if chmbr is None: 
+            sim_log(f'trying to place vole {tag} in a nonexistent chamber #{start_chamber}.')
+            print(f'trying to place vole {tag} in a nonexistent chamber #{start_chamber}.')
+            print(f'existing chambers: ', self.map.graph.keys())
+            while chmbr is None: 
+                ans = input(f'enter "q" if you would like to exit the experiment, or enter the id of a different chamber to place this vole in.\n')
+                if ans == 'q': exit() 
+                try: 
+                    start_chamber = int(ans)
+                    chmbr = self.map.get_chamber(int(start_chamber)) 
+                except ValueError as e: print(f'invalid input. Must be a number or the letter q. ({e})')            
+
+                 
+
         # Create new Vole 
         newVole = Vole(tag, start_chamber, self.map)
         self.voles.append(newVole)
@@ -179,7 +198,7 @@ class SimulationABC:
     def remove_vole(self, tag): 
         ''' removes vole object specified by the vole's tag '''
         vole = self.get_vole(tag)
-        if not vole: raise Exception(f'vole {tag} does not exist, so cannot be removed')
+        if not vole: sim_log(f'attempting to remove vole {tag} which does not exist, so cannot be removed')
         self.voles.remove(vole)
 
 
@@ -246,7 +265,6 @@ class SimulationABC:
         # if an interactable doesn't exist in the json file, print message and set simulation attribute to be False 
         for (name, i) in self.map.instantiated_interactables.items(): # loop thru interactable names 
 
-            print(data['interactables'])
             # check if name was specified in the config file 
             for interactable_specs in data['interactables']:
 
@@ -264,6 +282,11 @@ class SimulationABC:
                 print(f'simulation.json did not contain the interactable {name}. sim defaults to False, so this interactable will not be simulated as the simulation runs.')
                 sim_log(f'simulation.json did not contain the interactable {name}. sim defaults to False, so this interactable will not be simulated as the simulation runs.')
                 setattr(i, 'simulate', False) 
+        
+
+        ## add Voles ## 
+        for v in data['voles']: 
+            self.new_vole(v['tag'], v['start_chamber'])
 
         return 
 

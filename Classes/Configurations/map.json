@@ -4,7 +4,8 @@
             "id": 1, 
             "descriptive_name": "Main Chamber", 
             "interactables": [
-                {"interactable_name":"lever1", "type":"lever"}
+                {"interactable_name":"lever1", "type":"lever"}, 
+                {"interactable_name": "wheel1","type":"wheel"}
             ] 
         }, 
 
