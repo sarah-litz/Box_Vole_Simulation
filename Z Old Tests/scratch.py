@@ -1,4 +1,83 @@
 
+
+''' IMPORT STATEMENT THINGS 
+
+# print(os.getcwd())
+# dir_path = os.getcwd() + '/Control'
+# sys.path.append(dir_path)
+# site.addsitedir(dir_path)
+# sys.path.append('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation')
+
+
+
+
+site.addsitedir('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation')
+print(sys.path)
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(dir_path)
+sys.path.append('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation')
+'''      
+
+
+
+''' random helpful syntax : __getattribute__ and __name__
+res = map.get_edge(12).get_interactable_from_component('rfid1').__getattribute__('check_threshold_with_fn')
+print(res.__name__)
+'''
+
+
+''' 
+OLD __main__ function that was sitting w/in the sim_attempt_move.py module, but now I am changing it so there is an actual __main__.py file w/in the Simulation Module so i don't need this anymore 
+
+
+if __name__ == '__main__': 
+
+
+    # instantiate map (which will also instantiate the hardware components) 
+    map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
+
+    res = map.get_edge(12).get_interactable_from_component('rfid1').__getattribute__('check_threshold_with_fn')
+    print(res.__name__)
+
+
+    sim_log('\n\n\n\n-----------------------------New Simulation Running------------------------------------')
+    
+
+    # instantiate the modes that you want to run
+    mode1 = mode1( timeout = 15, map = map ) 
+    mode2 = mode2( timeout = 15, map = map )
+
+    
+    # instantiate the Simulation, pass in the Mode objects, map, and Voles to create
+    sim = SarahsSimulation( modes = [mode1, mode2], map = map  ) 
+    
+    sim_log(f'(sim_attempt_move.py, {__name__}) New Simulation Created: {type(sim).__name__}')
+
+    # simulation visualizations
+    sim.draw_chambers() 
+    sim.draw_edges() 
+
+
+    time.sleep(5) # pause before starting up the experiment 
+
+    # indicate the simulation function to run when the mode enters timeout 
+    # optional second argument: indicate the number of times to run the simulation function. If this value is not passed in, then the simulation loops until the experiment finishes its timeout interval. 
+    sim.simulation_func[mode1] = (sim.mode1_timeout, 1)
+    sim.simulation_func[mode2] = (sim.mode2_timeout, 1) 
+
+    # runs simulation as daemon thread. 
+    t1 = sim.run_sim() 
+
+
+    # start experiment 
+    mode1.enter() 
+    mode1.run() 
+
+    mode2.enter() 
+    mode2.run() 
+'''
+
       ''''
         class rfid:
             ## not sure what the normal code will look like ## 

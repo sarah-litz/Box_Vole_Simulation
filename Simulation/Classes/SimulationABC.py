@@ -2,36 +2,32 @@
 # Local Imports 
 from code import interact
 from Logging.logging_specs import sim_log
-from Vole import Vole
-from Map import Map
+from .Vole import Vole
 
 # Standard Lib Imports 
 import copy
 import threading 
 import time 
 import json
+import os
+cwd = os.getcwd() 
 
 
 
 class SimulationABC: 
 
-    def __init__(self, modes, map, vole_dict={}): 
+    def __init__(self, modes, map): 
         
-        # TODO: option for passing in voles dictionary, and we immediately initialize the voles as specified by the dictionary
         self.voles = []
         
         self.map = map
 
-        self.configure_simulation(map.config_directory + '/simulation.json') # updates map interactables with simulation attributes, and adds voles to chambers
+        # configure sim: updates interactables w/ simulation attributes & instantiates voles 
+        self.configure_simulation(cwd + '/Simulation/Configurations/simulation.json') 
 
         self.simulation_func = {} # dict for pairing a mode with a simulation function 
 
         self.modes = modes
-
-        # TODO: either use a vole_dict argument option OR setup_voles option. Think it'll be confusing if both options are offered.
-        # self.setup_voles()
-        # for (i,c) in vole_dict.items(): self.new_vole(i,c) # instantiate new voles 
-    
 
 
     #
@@ -148,8 +144,6 @@ class SimulationABC:
         return False
     
     
-
-    
     #
     # Vole Getters and Setters 
     #
@@ -173,6 +167,7 @@ class SimulationABC:
             input(f'Would you like to skip the creating of this vole and continue running the simulation? If no, the simulation and experiment will stop running immediately. Please enter: "y" or "n". ')
             if 'y': return 
             if 'n': exit() 
+
         # ensure that start_chamber exists in map
         chmbr = self.map.get_chamber(start_chamber) 
         if chmbr is None: 

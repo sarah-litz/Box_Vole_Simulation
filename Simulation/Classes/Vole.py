@@ -4,9 +4,8 @@ import random
 import time 
 
 # Local Imports 
-import Mode 
-from Logging.logging_specs import sim_log
-from Timer import countdown_for_current_event
+from ..Logging.loggingspecs import sim_log
+# from ...Control.Classes.Timer import countdown_for_current_event
 
 class Vole: 
 

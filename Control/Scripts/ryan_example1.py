@@ -3,8 +3,8 @@ This is an example scenario that someone would run for the home_cage experiment.
 """
 import os
 import time
-from Map import Map
-from Mode import modeABC
+from ..Classes.Map import Map
+from ..Classes.ModeABC import modeABC
 
 from Logging.logging_specs import control_log 
 

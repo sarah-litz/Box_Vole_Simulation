@@ -4,13 +4,18 @@
 
 
 import logging
+import os
 formatter = logging.Formatter('%(asctime)s %(message)s') # To Display Level Name (debug vs. info vs. etc): %(levelname)s 
 
+cwd = os.getcwd() 
 
-logging.basicConfig(filename='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/eventlogging.log', level=logging.DEBUG )
+## the basicConfig is currently set to filepath specific to my own file tree. 
+## This is for testing purposes only. If causing errors, comment the following line out and run again. ##  
+logging.basicConfig(filename='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Logging/eventlogging.log' , level=logging.DEBUG )
+## -- ## 
 
-control_fp='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/control.log'
-simulation_fp='/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Logging/simulation.log'
+control_fp=cwd+'/control.log'
+simulation_fp=cwd+'/simulation.log'
 
 
 def setup_logger(name, log_file, level=logging.DEBUG):
@@ -26,18 +31,12 @@ def setup_logger(name, log_file, level=logging.DEBUG):
     return logger
 
 
-
 control_logger = setup_logger('control_logger', control_fp, level = logging.debug)
-simulation_logger = setup_logger('simulation_logger', simulation_fp, level = logging.debug)
-
 
 def debug(message): 
     # this one uses the basicconfig filepath 
     logging.debug(message)
 
-
-def sim_log(message): 
-    simulation_logger.debug(message)
 
 def control_log(message): 
     control_logger.debug(message)
