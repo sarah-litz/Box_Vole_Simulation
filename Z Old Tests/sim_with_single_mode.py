@@ -18,7 +18,6 @@ class SarahsSimulation(SimulationABC):
 
   
 
-    # TODO: these should automatically run on their own thread; create a decorator func to do this
     def mode1_timeout(self): 
 
         #
@@ -70,7 +69,6 @@ if __name__ == '__main__':
     # indicate the simulation function to run when the mode enters timeout 
     sim.simulation_func[mode1] = sim.mode1_timeout 
 
-    # TODO: draw_chambers is not working 
     
     # runs simulation as daemon thread 
     t1 = sim.run_sim() 

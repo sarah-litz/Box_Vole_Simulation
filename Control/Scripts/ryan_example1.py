@@ -51,13 +51,9 @@ class mode1(modeABC):
         time.sleep(10) 
 
         while self.active and ((time.time() - self.startTime) < self.timeout):
-            # TODO: automate the watch_for_threshold_event call. 
-            # For now, just calling it here for testing purposes.
-            pass
-            '''edge = self.map.get_edge(12)
-            for component in edge: 
-                component.interactable.watch_for_threshold_event()
-                time.sleep(3)'''
+
+            time.sleep(0.25)
+
         self.inTimeout = False 
 
         print( 'Mode 1 finished its Timeout Period and is now exiting ')
@@ -122,13 +118,7 @@ class mode2(modeABC):
         self.inTimeout = True 
         while self.active and ((time.time() - self.startTime) < self.timeout):
             
-
-            pass 
-            # TODO: automate the watch_for_threshold_event call. 
-            # For now, just calling it here for testing purposes.
-            '''edge = self.box.graph[1].get_edge(12) 
-            for component in edge: 
-                component.interactable.watch_for_threshold_event()'''
+            time.sleep(0.25)
             
         self.inTimeout = False 
 

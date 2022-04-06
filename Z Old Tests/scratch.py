@@ -21,9 +21,15 @@ sys.path.append('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 
 
 
 
-''' random helpful syntax : __getattribute__ and __name__
+''' 
+random helpful syntax : 
+__getattribute__ and __name__
 res = map.get_edge(12).get_interactable_from_component('rfid1').__getattribute__('check_threshold_with_fn')
 print(res.__name__)
+
+
+helpful website 
+https://stackoverflow.com/questions/4821104/dynamic-instantiation-from-string-name-of-a-class-in-dynamically-imported-module 
 '''
 
 

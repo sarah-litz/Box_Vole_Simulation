@@ -1,10 +1,8 @@
 
-# Standard Lib Imports 
+# Imports
 import os 
 cwd = os.getcwd() # current working directory
 import time
-
-# Local Imports 
 from .Logging.loggingspecs import sim_log
 from Control.Classes.Map import Map
 
@@ -47,8 +45,7 @@ sim.simulation_func[mode2] = (sim.mode2_timeout, 1)
 # runs simulation as daemon thread. 
 t1 = sim.run_sim() 
 
-
-# start experiment 
+# (TODO) start experiment 
 mode1.enter() 
 mode1.run() 
 

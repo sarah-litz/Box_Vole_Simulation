@@ -6,12 +6,9 @@ from .Vole import Vole
 
 # Standard Lib Imports 
 import copy
-import threading 
-import time 
-import json
+import threading, time, json, sys
 import os
 cwd = os.getcwd() 
-
 
 
 class SimulationABC: 
@@ -50,7 +47,7 @@ class SimulationABC:
                     Runs on a separate thread 
                     Calls the function that is paired with the currently active mode '''
 
-        # TODO: the function that we call should potentially also run on its own thread, so then all this function does is 
+        # NOTE: the function that we call should potentially also run on its own thread, so then all this function does is 
         # loop until the active mode is not in Timeout or the current mode is inactive. Basically will just allow for a more immediate 
         # stopage of the simulation when a mode gets out of timeout and/or stops running 
 
@@ -111,7 +108,7 @@ class SimulationABC:
                 
                 #
                 # Run the Mode's Simulation Function
-                # TODO: this needs testing! 
+                # 
                 while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
                     
                     if sim_iterator is None: 
@@ -291,6 +288,12 @@ class SimulationABC:
     #
     # Simulate Vole-Interactable Interactations
     #
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 
 # To Use These Specifications, place this import statement at top of file: 
-# from Logging.logging_specs import debug
+# from .Logging.logging_specs import sim_log
 
 
 import logging

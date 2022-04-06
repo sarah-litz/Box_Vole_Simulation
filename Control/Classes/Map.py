@@ -66,13 +66,14 @@ class Map:
                 config_filepath = os.path.join(root,filename)
         if config_filepath is None: raise Exception(f'there is no configuration file for {type} in {self.config_directory}')
             
-
+        #
+        # Read in the config file for this type of interactable
+        #
         f = open( config_filepath ) # opening json file 
         
         data = json.load( f ) # returns json object as a dictionary 
 
         f.close() # close file
-
 
         # edge case: configuration file does not have specifications for an object with this name
         try: objspec = data[name]
@@ -81,19 +82,6 @@ class Map:
         #
         # Instantiate New Interactable
         # 
-        '''
-        TODO: ( Potentially work with Ryan to complete this part. ) 
-                    # https://stackoverflow.com/questions/4821104/dynamic-instantiation-from-string-name-of-a-class-in-dynamically-imported-module 
-        # read in corresponding config file based on the interactable type 
-        # locate and parse the specifications of the particular interactable based on the interactable id 
-        # instantiate subclass based on the interactable type 
-        # pass and set necessary attributes using the information from the configuration file 
-        # return the new object 
-        '''
-
-        # using variable <data> which contains the text read in from the hardware configuration file 
-        # potentially have a data['arguments'] that contains all of the arguments that we need to pass to the instantiation of the object ??
-
         if type == 'door': 
             
             # get door w/ <id> from the door config file 

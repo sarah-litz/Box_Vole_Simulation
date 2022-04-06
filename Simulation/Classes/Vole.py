@@ -5,7 +5,7 @@ import time
 
 # Local Imports 
 from ..Logging.loggingspecs import sim_log
-# from ...Control.Classes.Timer import countdown_for_current_event
+from .Timer import countdown_for_current_event
 
 class Vole: 
 
@@ -164,6 +164,8 @@ class Vole:
     # Random Vole 
     #   
     def possible_actions(self): 
+        # NOTE: this function has not been updated, so before use will need fixing!! 
+        
         ''' returns a list of all possible actions a vole can take given the voles current location'''
         # Reference on how to add functions to a list, where we will call the function at a later point in time: https://stackoverflow.com/questions/26881396/how-to-add-a-function-call-to-a-list
         '''
@@ -182,7 +184,7 @@ class Vole:
         
         # add all possible "interact w/ chamber interactables" options
         for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber
-            # TODO: once using control software, change to an actual interactable.simulate 
+
             actions.append( ('interactable.simulate', self) )
         
         return actions
