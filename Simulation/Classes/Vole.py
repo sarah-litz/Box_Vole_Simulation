@@ -1,3 +1,13 @@
+"""
+Authors: Sarah Litz, Ryan Cameron
+Date Created: 1/24/2022
+Date Modified: 4/6/2022
+Description: Class definition for a simulated vole. Contains methods that allow for a vole to move throughout a box and simulate interactions with interactables along the way.
+
+Property of Donaldson Lab at the University of Colorado at Boulder
+"""
+
+
 # Standard Lib Imports 
 from itertools import count
 import random

@@ -1,9 +1,10 @@
+"""
+Description: Generic Timer Functions that provide the user with information on the current stage of an executing simulation and/or experiment.
+"""
 
 
 import sys 
 import time
-
-
 
 
 def countdown_for_current_event(timeinterval, event): 

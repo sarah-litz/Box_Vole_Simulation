@@ -6,6 +6,7 @@ Description: This is the class file for the mode classes which contain all the i
 
 Property of Donaldson Lab at the University of Colorado at Boulder
 """
+
 # Imports
 from posixpath import split
 import inspect

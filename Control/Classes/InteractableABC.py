@@ -1,3 +1,11 @@
+"""
+Authors: Sarah Litz, Ryan Cameron
+Date Created: 1/24/2022
+Date Modified: 4/6/2022
+Description: Class definition for interacting with hardware components. This module contains the abstract class definition, as well as the subclasses that are specific to a piece of hardware.
+
+Property of Donaldson Lab at the University of Colorado at Boulder
+"""
 
 # Standard Lib Imports 
 import time

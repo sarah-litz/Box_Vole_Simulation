@@ -1,3 +1,11 @@
+"""
+Authors: Sarah Litz, Ryan Cameron
+Date Created: 1/24/2022
+Date Modified: 4/6/2022
+Description: Class definition for running a simulation version of an experiment. Tracks what mode the control software is running, and then simulates a vole's behavior with a simulated (or actual) hardware interactable.
+
+Property of Donaldson Lab at the University of Colorado at Boulder
+"""
 
 # Local Imports 
 from code import interact

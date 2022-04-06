@@ -1,5 +1,15 @@
 
-''' Defining a network of Vertices and Edges, where vertices are chambers, and edges are the connections/components existing between chambers'''
+"""
+Authors: Sarah Litz, Ryan Cameron
+Date Created: 1/24/2022
+Date Modified: 4/6/2022
+Description: Class definition for Map, a network of Vertices and Edges, where vertices are chambers, and edges are the connections existing between chambers. 
+            Objects that represent the hardware (subclasses of InteractableABC) in a box are assigned to either an edge or a chamber within the map. 
+            All outside software recieves a Map object, and will go through the Map class in order to interact with any physical hardware.
+
+Property of Donaldson Lab at the University of Colorado at Boulder
+"""
+
 
 # Standard Lib Imports 
 from code import interact
