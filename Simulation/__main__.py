@@ -3,7 +3,7 @@
 import os 
 cwd = os.getcwd() # current working directory
 import time
-from .Logging.loggingspecs import sim_log
+from .Logging.logging_specs import sim_log
 from Control.Classes.Map import Map
 
 # (TODO) Import Your ModeABC Implementations Here using the following syntax: from Control.Scripts.your_file_name import modeName1, modeName2, etc. 

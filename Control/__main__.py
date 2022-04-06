@@ -2,7 +2,7 @@
 # Imports
 import os 
 cwd = os.getcwd()
-from .Logging.loggingspecs import control_log
+from .Logging.logging_specs import control_log
 from .Classes.Map import Map 
 
 # (TODO) Import Your ModeABC Implementations here using the following syntax: from Scripts.your_file_name import mode_name_1, mode_name_2, etc.
@@ -19,7 +19,7 @@ mode1 = mode1(timeout = 8, map = map)
 mode2 = mode2(timeout = 8, map = map)
 
 
-# start experiment
+# (TODO) start experiment
 mode1.enter()
 mode1.run()
 

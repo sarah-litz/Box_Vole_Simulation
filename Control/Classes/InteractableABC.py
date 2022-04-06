@@ -39,7 +39,7 @@ class interactableABC:
     @run_in_thread
     def watch_for_threshold_event(self, constant=None, reset_vals=None): 
 
-        control_log(f"(mode.py, watch_for_threshold_event) {self.name} has been activated. starting contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
+        control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} has been activated. starting contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
         while self.active: 
 
             # using the attribute/value pairing specified by the threshold_condition dictionary
@@ -54,7 +54,7 @@ class interactableABC:
             threshold_attr_name = self.threshold_condition["attribute"]
             attribute = getattr(self, threshold_attr_name) # get object specified by the attribute name
 
-            # control_log(f"(mode.py, watch_for_threshold_event) {self.name}: Threshold Name: {threshold_attr_name}, Threshold Attribute Obj: {attribute}")
+            # control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name}: Threshold Name: {threshold_attr_name}, Threshold Attribute Obj: {attribute}")
             
             # check for attributes that may have been added dynamically 
             if hasattr(self, 'check_threshold_with_fn'): # the attribute check_threshold_with_fn is pointing to a function that we need to execute 
@@ -75,21 +75,21 @@ class interactableABC:
                     else: 
                         self.threshold_event_queue.put('An Event!')
 
-                # print(f"(mode.py, watch_for_threshold_event) {self.name} threshold event detected!")
-                # control_log(f"(mode.py, watch_for_threshold_event) {self.name} threshold event detected!")
+                # print(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
+                # control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
                 else: 
                     self.threshold_event_queue.put('An Event!')
             
             else: 
                 # no threshold event
                 # print(f"watch_for_threshold_event: no threshold event for {self.name}. Attributes Value: {attribute}, Goal Value: {self.threshold_condition['value']}") 
-                # control_log(f"(mode.py, watch_for_threshold_event) {self.name} has not reached its threshold value")
+                # control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} has not reached its threshold value")
                 # print(type(attribute), type(self.threshold_condition['value']))
                 pass 
                 
             time.sleep(0.75)
         
-        control_log(f"(mode.py, watch_for_threshold_event) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
+        control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
 
 
     def reset(self):

@@ -4,7 +4,7 @@ import random
 import time 
 
 # Local Imports 
-from ..Logging.loggingspecs import sim_log
+from ..Logging.logging_specs import sim_log
 from .Timer import countdown_for_current_event
 
 class Vole: 
@@ -165,7 +165,7 @@ class Vole:
     #   
     def possible_actions(self): 
         # NOTE: this function has not been updated, so before use will need fixing!! 
-        
+
         ''' returns a list of all possible actions a vole can take given the voles current location'''
         # Reference on how to add functions to a list, where we will call the function at a later point in time: https://stackoverflow.com/questions/26881396/how-to-add-a-function-call-to-a-list
         '''

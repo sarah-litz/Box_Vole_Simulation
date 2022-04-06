@@ -101,7 +101,7 @@ class Map:
 
         else: 
 
-            raise Exception(f'interactableABC does not have a subclass {type} implemented in mode.py')
+            raise Exception(f'interactableABC does not have a subclass {type} implemented in InteractableABC.py')
 
 
         # dynamically set any attributes that can be optionally added to an interactable's configurations
