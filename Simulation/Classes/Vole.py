@@ -15,7 +15,7 @@ import time
 
 # Local Imports 
 from ..Logging.logging_specs import sim_log
-from .Timer import countdown_for_current_event
+from .Timer import countdown
 
 class Vole: 
 
@@ -32,7 +32,6 @@ class Vole:
 
         if interactable.simulate: 
 
-            print( f'simulating vole{self.tag} interaction with {interactable.name}' ) 
             sim_log( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {interactable.name}' ) 
     
             if hasattr(interactable, 'simulate_with_fn'):
@@ -46,19 +45,23 @@ class Vole:
                 threshold_attr_name = interactable.threshold_condition["attribute"]
                 attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
 
-                sim_log(f'(Vole.py, attempt_move) {interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["value"]}')
+                sim_log(f'(Vole.py, attempt_move) {interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["goal_value"]}')
             
                 # manually set the attribute to its goal value so we meet the threshold condition, and trigger the control side to add an event to the threshold_event_queue 
-                setattr(interactable, threshold_attr_name, interactable.threshold_condition['value'])
+                setattr(interactable, threshold_attr_name, interactable.threshold_condition['goal_value'])
+                
+                newattrval = getattr(interactable, threshold_attr_name)
                 # sim_log(f'{interactable.name}, manual attribute check: {interactable.state}')
-                sim_log(f"(Vole.py, attempt_move) {interactable.name}, attribute result: {attribute}")
+                sim_log(f"(Vole.py, attempt_move) {interactable.name}, attribute result: {newattrval}")
+            
+            # countdown(5, f'simulating vole{self.tag} interaction with {interactable.name}')
     
         
         else:  # component should not be simulated, as the hardware for this component is present. 
             # assumes that there is a person present to perform a lever press, interrupt the rfid reader so it sends a ping, etc. 
             print ( f'if testing the hardware for {interactable.name}, take any necessary actions now.')
-            countdown_for_current_event(5, event=f'perform interactions to trigger a threshold event for {interactable.name}')
-            time.sleep(5)
+            countdown(10, f'remaining to perform interactions to trigger a threshold event for {interactable.name}')
+            
     
     
     ##
@@ -120,14 +123,16 @@ class Vole:
             #
             # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
             #
+            # TODO: check if NEW threshold_event has been added 
             if component.interactable.threshold_event_queue.empty(): 
-                # check if the control side added a threshold event, meaning this interactables threshold condition was met 
-                print(f'the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
-                return False 
-            else:
                 # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
+                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
+                return False 
+
+            else:
+                # check if the control side added a threshold event, meaning this interactables threshold condition was met 
                 event = component.interactable.threshold_event_queue.get()
-                print(f'the threshold condition was met for {component.interactable.name}. Event: {event}')
+                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}. Event: {event}')
         
         ## END FOR: Done Simulating Components along the Edge ##
 
@@ -136,8 +141,6 @@ class Vole:
         self.current_loc = destination
 
         sim_log(f'(Vole.py, attempt_move) Vole {self.tag} successfully moved into chamber {self.current_loc}')
-
-
 
     
 

@@ -3,6 +3,8 @@ This is an example scenario that someone would run for the home_cage experiment.
 """
 import os
 import time
+
+from ..Classes.Timer import countdown
 from ..Classes.Map import Map
 from ..Classes.ModeABC import modeABC
 
@@ -29,6 +31,7 @@ class mode1(modeABC):
 
     def exit(self):
         self.active = False
+        # self.map.reset_interactables() # 
 
         # Moves into mode 2
 
@@ -45,20 +48,18 @@ class mode1(modeABC):
 
 
         print('Mode 1 is entering Timeout Interval')
-        # set timeout boolean to True, then Wait for timeout interval
         self.inTimeout = True 
 
-        time.sleep(10) 
-
-        while self.active and ((time.time() - self.startTime) < self.timeout):
-
-            time.sleep(0.25)
+        ## Start Timeout Interval ## 
+        time.sleep(20)
+        # countdown( timeinterval = 20 , message = "remaining in Mode 1's timeout interval")
+        ## End Timeout Interval ## 
 
         self.inTimeout = False 
-
-        print( 'Mode 1 finished its Timeout Period and is now exiting ')
+        print( 'Mode 1 finished its Timeout Period and is now exiting')
+        
+        # End of Mode 
         control_log('End of Mode 1\n')
-
         self.exit()
 
 
@@ -87,20 +88,27 @@ class mode2(modeABC):
 
         control_log('NEW MODE: Mode 2')
 
-        '''# Logic to change the num presses every time the wheel is run
-        while self.active:
-            # If the wheel has been interacted with, increase the number of required presses
-            if self.box.wheel_1.threshold:
-                self.box.chamber_lever.required_presses += 1
+        # Logic to change the num presses every time the wheel is run
+        # while self.active:
             
             # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
-            if self.box.chamber_lever.threshold is True: 
-                self.box.chamber_lever.presses = 0 
-                self.door.condition_for_threshold_to_get_set_to_True(open=True) 
+        '''door1 = self.map.get_edge(12).get_interactable_from_component('door1') 
+            print(door1.dependents)
+            lever1 = door1.dependents[0]   
+
+            #
+            # LEAVING OFF HERE
+            #
+            event = lever1.threshold_event_queue.get() # wait for lever's threshold to be met
+            lever1.pressed = 0  # reset number of presses 
+            lever1.threshold_condition['goal_value'] += 1 
+            door1.open() # open door '''
+                # self.map.door1.threshold_condition['goal_value'] = False # close door 
+
             
             # if rfid1 and rfid2 were pinged (meaning the vole moved to the next chamber), close door 
-            if self.box.rfid1.threshold and self.box.rfid2.threshold: 
-                self.door.condition_for_threshold_to_get_set_to_True(open=False)
+            #if self.map.rfid1.threshold and self.box.rfid2.threshold: 
+            #    self.door.condition_for_threshold_to_get_set_to_True(open=False)
 
             # END if
         # END while'''
@@ -116,10 +124,11 @@ class mode2(modeABC):
         print('Mode 2 is entering Timeout Interval')
         # set timeout boolean to True, then Wait for timeout interval
         self.inTimeout = True 
-        while self.active and ((time.time() - self.startTime) < self.timeout):
-            
-            time.sleep(0.25)
-            
+        
+        ## Start Timeout Interval ## 
+        countdown( timeinterval = 20 , message = "remaining in Mode 2's timeout interval")
+        ## End Timeout Interval ## 
+
         self.inTimeout = False 
 
         print( 'Mode 2 finished its Timeout Period and is now exiting ')
@@ -127,22 +136,5 @@ class mode2(modeABC):
 
         self.exit()
 
-if __name__ == "__main__":
 
-    control_log(f'\n\n\nrunning {__name__}: New Experiment! ')
-    # Set up Map
-    # Instantiate the hardware objects by creating the map 
-    map = Map('/Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Classes/Configurations')
-
-    # Instantiate the modes
-    mode1 = mode1(timeout = 15, map = map)
-    mode2 = mode2(timeout = 15, map = map)
-
-    # Set attributes
-
-    # Begin the script 
-    mode1.enter()
-    mode1.run()
-
-    # It should run continuously from this point on
 

@@ -48,7 +48,7 @@ class Map:
     #
     # Getters and Setters 
     #        
-    def instantiate_interactable_hardware( self, name, type, edge_or_chmbr, edge_or_chmbr_id ): 
+    def instantiate_interactable_hardware( self, name, type ): 
 
         ''' anytime that an interactable is added (either to a chamber or to an edge), first a call to this function is made. 
             called from configure_setup in 2 places: 
@@ -117,6 +117,8 @@ class Map:
         # dynamically set any attributes that can be optionally added to an interactable's configurations
         if "check_threshold_with_fn" in objspec.keys(): 
             setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) ) # function for checking if the threshold condition has been met
+        if "update_goal_after_threshold_event" in objspec.keys(): 
+            setattr(new_obj, 'update_goal_after_threshold_event', eval(objspec['update_goal_after_threshold_event'])) # function to call once the threshold condition has been met
         if "dependents" in objspec.keys(): 
             setattr( new_obj, 'dependent_names', objspec['dependents'] ) # interactable that the threshold is dependent on (e.g. if we want lever1 to control door1, then set door1's dependent to be lever1. )
             
@@ -155,17 +157,17 @@ class Map:
             for i in chmbr['interactables']: 
                 
                 # instantiate interactable hardware 
-                try: 
-                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'chamber', chmbr['id'] )
+                #try: 
+                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
                     # assign the interactable to a chamber object
                     new_c.new_interactable( new_i )
                 
-                except Exception as e: 
+            '''except Exception as e: 
                     print(f"Ran into an issue when trying to instantiate the interactable object: {i['interactable_name']}")
                     print('Error Message: ', e)
                     print(f'would you like to continue running the experiment without instantiating this interactable? If yes, I wont be aware of any interactions a vole may have with it. If no, I will exit the experiment immediately.')
                     ans = input('input (y/n) \n')
-                    if ans == 'n': exit() 
+                    if ans == 'n': exit() '''
                     
  
         
@@ -179,7 +181,7 @@ class Map:
                 for i in edge['components']:
 
                     # instantiate interactable hardware
-                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'], 'edge', edge['id'] )
+                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
 
                     new_edge.new_component( new_i )
             

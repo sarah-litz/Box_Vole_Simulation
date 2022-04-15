@@ -6,7 +6,8 @@
         "id":1,
         "signalPin":1, 
         "numPresses":2,  
-        "threshold_condition": { "attribute": "pressed", "value": 6 }
+        "threshold_condition": { "attribute": "pressed", "initial_value":0, "goal_value": 6, "reset_value": true },    
+        "update_goal_after_threshold_event": "lambda self: self.threshold_condition['goal_value'] + 1"
     }
     
 }

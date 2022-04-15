@@ -1,9 +1,12 @@
 
 {
-    "door1": {
+    "door1": 
+    {
         "id":1, 
         "servoPin":3, 
-        "threshold_condition": { "attribute":"state", "value":true }, 
+        "threshold_condition": { "attribute":"state", "initial_value": false, "goal_value":true }, 
+        "update_goal_after_threshold_event": "lambda self: not self.state" ,
         "dependents": [ "lever1" ]
     }
 }
+

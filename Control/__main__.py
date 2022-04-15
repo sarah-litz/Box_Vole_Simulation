@@ -20,8 +20,10 @@ mode2 = mode2(timeout = 8, map = map)
 
 
 # (TODO) start experiment
+mode2.enter() 
+mode2.run() 
+
 mode1.enter()
 mode1.run()
 
-mode2.enter() 
-mode2.run() 
+

@@ -25,11 +25,11 @@ The following configuration file should exist in the Configurations directory:
 
     This json file is where you will be specifying two aspects for how your simulation should run.
 
-    1. "interactables" which is where you can specify which interactables you would like to simulate.
+    1. "interactables" which is where you can specify which interactables you would like to simulate. (To see what interactables will be setup in the Map, reference the Map.json configuration file.) 
     2. "voles" which specifies the voles that you would like to simulate. 
  *It is important to take note of the vole tags that you specify here, because you can reference a specific vole from your simulation's script by using its tag value that is set by this configuration file.*
 
-The following code block is an example of what this configuration file could look like. 
+The following code block is an example of what this configuration file could look like.
 
 ~~~json
 {

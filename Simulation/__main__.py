@@ -59,8 +59,11 @@ sim.simulation_func[mode2] = (sim.mode2_timeout, 1)
 t1 = sim.run_sim() 
 
 # (TODO) start experiment 
-mode1.enter() 
-mode1.run() 
 
 mode2.enter() 
 mode2.run() 
+
+
+mode1.enter() 
+mode1.run() 
+
