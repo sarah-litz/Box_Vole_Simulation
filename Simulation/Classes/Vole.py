@@ -106,30 +106,38 @@ class Vole:
             # Simulation 
             #
             interactable = component.interactable
-            self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
-
             for dependent in interactable.dependents:  
                 self.simulate_vole_interactable_interaction(dependent)
+            self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
+
+
+
 
                 
             #
             # Wait for Control Side Software to react to Simulation 
             #
             ################################################
-            time.sleep(3)  # Pause to give control side a moment to assess if there was a threshold event 
+            time.sleep(8)  # Pause to give control side a moment to assess if there was a threshold event 
             ################################################
 
 
             #
             # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
             #
-            # TODO: check if NEW threshold_event has been added 
-            if component.interactable.threshold_event_queue.empty(): 
+            # NOTE: check if NEW threshold_event has been added 
+            # change 2
+            #if component.interactable.threshold_event_queue.empty(): 
+            if not component.interactable.threshold:
+                print(component.interactable.threshold)
                 # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
                 print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
                 return False 
 
             else:
+                # reset the components threshold 
+                component.interactable.threshold = False 
+                
                 # check if the control side added a threshold event, meaning this interactables threshold condition was met 
                 event = component.interactable.threshold_event_queue.get()
                 print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}. Event: {event}')
@@ -141,7 +149,7 @@ class Vole:
         self.current_loc = destination
 
         sim_log(f'(Vole.py, attempt_move) Vole {self.tag} successfully moved into chamber {self.current_loc}')
-
+        print(f'Vole Move Successful: New Location is Chamber {self.current_loc}')
     
 
 

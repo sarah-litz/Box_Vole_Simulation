@@ -117,8 +117,10 @@ class Map:
         # dynamically set any attributes that can be optionally added to an interactable's configurations
         if "check_threshold_with_fn" in objspec.keys(): 
             setattr(new_obj, 'check_threshold_with_fn', eval(objspec['check_threshold_with_fn']) ) # function for checking if the threshold condition has been met
-        if "update_goal_after_threshold_event" in objspec.keys(): 
+        # NOTE --> delete! this! 
+        '''if "update_goal_after_threshold_event" in objspec.keys(): 
             setattr(new_obj, 'update_goal_after_threshold_event', eval(objspec['update_goal_after_threshold_event'])) # function to call once the threshold condition has been met
+        '''
         if "dependents" in objspec.keys(): 
             setattr( new_obj, 'dependent_names', objspec['dependents'] ) # interactable that the threshold is dependent on (e.g. if we want lever1 to control door1, then set door1's dependent to be lever1. )
             

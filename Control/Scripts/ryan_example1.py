@@ -51,8 +51,7 @@ class mode1(modeABC):
         self.inTimeout = True 
 
         ## Start Timeout Interval ## 
-        time.sleep(20)
-        # countdown( timeinterval = 20 , message = "remaining in Mode 1's timeout interval")
+        countdown( timeinterval = self.timeout , message = "remaining in Mode 1's timeout interval")
         ## End Timeout Interval ## 
 
         self.inTimeout = False 
@@ -99,7 +98,6 @@ class mode2(modeABC):
             #
             # LEAVING OFF HERE
             #
-            event = lever1.threshold_event_queue.get() # wait for lever's threshold to be met
             lever1.pressed = 0  # reset number of presses 
             lever1.threshold_condition['goal_value'] += 1 
             door1.open() # open door '''
@@ -126,7 +124,7 @@ class mode2(modeABC):
         self.inTimeout = True 
         
         ## Start Timeout Interval ## 
-        countdown( timeinterval = 20 , message = "remaining in Mode 2's timeout interval")
+        countdown( timeinterval = self.timeout , message = "remaining in Mode 2's timeout interval")
         ## End Timeout Interval ## 
 
         self.inTimeout = False 

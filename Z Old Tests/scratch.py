@@ -1,3 +1,26 @@
+{
+    "door2": 
+    {
+        "id":2, 
+        "servoPin":3, 
+        "threshold_condition": { "attribute":"state", "initial_value": false, "goal_value":true }, 
+        "update_goal_after_threshold_event": "lambda self: not self.state" ,
+        "dependents": []
+    }
+}
+
+{ 
+    "lever1": 
+    {
+        "id":1,
+        "signalPin":1, 
+        "numPresses":2,  
+        "threshold_condition": { "attribute": "pressed", "initial_value":0, "goal_value": 6, "reset_value": true },    
+        "update_goal_after_threshold_event": "lambda self: self.threshold_condition['goal_value'] + 1"
+    }
+    
+}
+
 
 
 ''' IMPORT STATEMENT THINGS 

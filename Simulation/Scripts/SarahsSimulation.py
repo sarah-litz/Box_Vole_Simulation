@@ -40,7 +40,7 @@ class SarahsSimulation(SimulationABC):
         
         vole1 = self.get_vole(1)
 
-        vole1.attempt_move(destination = 2)
+        vole1.attempt_move(destination = 1)
 
         time.sleep(5)
 
@@ -59,7 +59,7 @@ class SarahsSimulation(SimulationABC):
 
         vole1 = self.get_vole(1)
 
-        vole1.attempt_move(destination=1)
+        vole1.attempt_move(destination=2)
 
         time.sleep(5)
 

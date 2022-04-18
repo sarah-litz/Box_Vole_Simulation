@@ -2982,3 +2982,1659 @@ DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction wit
 DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
 DEBUG:control_logger:End of Mode 1
 
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:Door Is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:Door Is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10fda9910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10fda9910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10fda9910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10fda9910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:Door Is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10d46e910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10d46e910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x104036910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x104036910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ba09910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ba09910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10c096910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10c096910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event door1 was set to only check for a threshold once. Exiting function with contents of the threshold_event_queue as: ['door1 isOpen:False']
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10f0f5910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10f0f5910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event door1 was set to only check for a threshold once. Exiting function with contents of the threshold_event_queue as: ['door1 isOpen:False']
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106b59910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106b59910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event door1 was set to only check for a threshold once. Exiting function with contents of the threshold_event_queue as: ['door1 isOpen:False']
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a613910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a613910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event door1 was set to only check for a threshold once. Exiting function with contents of the threshold_event_queue as: ['door1 isOpen:False']
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10893f910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10893f910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10893f910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10893f910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e732910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e732910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10239b910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10239b910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1049b0670>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1049b0670>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a33df40>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a33df40>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bd74910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bd74910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: False
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(Door(InteractableABC)) {self.name} is Closed
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x103a6cb80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x103a6cb80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106651b80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106651b80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1083677c0>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1083677c0>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x102714910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x102714910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x100f89910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x100f89910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x107ff0b80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x107ff0b80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1099f67f0>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1099f67f0>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ef86910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ef86910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10dab4910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10dab4910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1102e7910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1102e7910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a976b80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a976b80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e9d9b80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e9d9b80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b520b50>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b520b50>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b520b50>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b520b50>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10cbb5b20>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10cbb5b20>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bca8b80>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bca8b80>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b55f910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10b55f910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x109d3e910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x109d3e910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a033be0>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10a033be0>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101ebdbe0>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101ebdbe0>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x102711520>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x102711520>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e617c70>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e617c70>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10dddd910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10dddd910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ce21910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ce21910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ce21910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10ce21910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10105e910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10105e910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10105e910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10105e910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101a3c910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101a3c910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101a3c910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x101a3c910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x108b50910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x108b50910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x108b50910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x108b50910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10295c910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10295c910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106761910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106761910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1029f2910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x1029f2910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: [(1, 2)]
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106293910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x106293910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e7a4910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e7a4910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: [(1, 2)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e7a4910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10e7a4910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bf47910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bf47910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: [(1, 2)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bf47910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.sim_attempt_move.SarahsSimulation object at 0x10bf47910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10edcd910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10edcd910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: [(1, 2)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10edcd910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10edcd910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:End of Mode 1
+
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10e2f4f10>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10e2f4f10>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10527f910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10527f910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been deactivated. Final contents of the threshold_event_queue are: [(1, 1)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been deactivated. Final contents of the threshold_event_queue are: [(1, 2)]
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10527f910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10527f910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10556d910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10556d910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been deactivated. Final contents of the threshold_event_queue are: ['lever1 pressed 6 times!']
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been deactivated. Final contents of the threshold_event_queue are: ['door1 isOpen:True']
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10556d910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10556d910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10abd7910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10abd7910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) lever1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) door1 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) rfid2 has been activated. starting contents of the threshold_event_queue are: []
+DEBUG:simulation_logger:
+
+
+
+-----------------------------New Simulation Running------------------------------------
+DEBUG:simulation_logger:(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+DEBUG:simulation_logger:(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+DEBUG:control_logger:NEW MODE: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100bfe910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100bfe910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+DEBUG:control_logger:End of Mode 2
+
+DEBUG:control_logger:NEW MODE : Mode 1
+DEBUG:simulation_logger:NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+DEBUG:simulation_logger:(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+DEBUG:simulation_logger:(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100bfe910>>, 1)
+DEBUG:simulation_logger:(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100bfe910>>
+DEBUG:simulation_logger:(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+DEBUG:simulation_logger:(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+DEBUG:simulation_logger:(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with lever1
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) lever1, attribute result: 6
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with door1
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+DEBUG:simulation_logger:(Vole.py, attempt_move) door1, attribute result: True
+DEBUG:control_logger: (InteractableABC,py, watch_for_threshold_event) resetting the threshold for lever1  
+DEBUG:control_logger:(InteractableABC.py, watch_for_threshold_event) Threshold Event for door1's dependent, lever1. event: lever1 pressed 6 times!
+DEBUG:simulation_logger:(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+DEBUG:simulation_logger:(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+DEBUG:control_logger:End of Mode 1
+
