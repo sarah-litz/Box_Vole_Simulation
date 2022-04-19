@@ -339,6 +339,8 @@ class Map:
         def new_interactable(self, interactable): 
             # Adds interactable to chamber; these objects exist w/in a chamber, and not on an edge so have nothing to do with a vole's movement between chambers
             self.interactables.append(interactable)
+            interactable.edge_or_chamber = 'chamber'
+            interactable.edge_or_chamber_id = self.id
 
 
         def remove_interactable(self, interactable_name): 
@@ -472,6 +474,8 @@ class Map:
         ''' Adding and Removing Components from Edge '''
         def new_component(self, newinteractable): 
             # instantiates new Component and adds to end of linked list
+            newinteractable.edge_or_chamber = 'edge'
+            newinteractable.edge_or_chamber_id = self.id
             newComp = self.Component(newinteractable)
 
             if self.headval is None: 

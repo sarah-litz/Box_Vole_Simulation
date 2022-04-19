@@ -31,6 +31,27 @@ class Vole:
     def simulate_vole_interactable_interaction(self, interactable): 
 
         ''' called from vole.attempt_move() for any interactable that has the simulate attribute set to True '''
+
+        #
+        # Physical Proximity Check 
+        #
+        if interactable.edge_or_chamber == 'chamber': # check that the vole's location is w/in physical proximity of the interactable we are simulating an interaction with
+            # vole's current chamber location must match 
+            if self.current_loc != interactable.edge_or_chamber_id: 
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate voles interaction with {interactable.name} because it is in a different chamber.')
+                return 
+        else: 
+            # vole's current chamber must be one of the chambers that the edge connects 
+            edge = self.map.get_edge(interactable.edge_or_chamber_id)
+            if (self.current_loc != edge.v1 and self.current_loc != edge.v2): 
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate voles interaction with {interactable.name} because it is on an edge connection different chambers.')
+                return 
+
+
+
+        #
+        # Simulate
+        #
         if interactable.simulate: 
 
             sim_log( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {interactable.name}' ) 

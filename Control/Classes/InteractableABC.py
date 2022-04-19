@@ -20,8 +20,14 @@ from Logging.logging_specs import control_log, sim_log
 class interactableABC:
 
     def __init__(self, threshold_condition):
+
+        ## Object Information ## 
         self.ID = None
         self.active = False # must activate an interactable to startup threads for tracking any vole interactions with the interactable
+
+        ## Location Information ## 
+        self.edge_or_chamber = None # string to represent if this interactable sits along an edge or in a chamber
+        self.edge_or_chamber_id = None # id of that edge or chamber 
 
         ## Threshold Tracking ## 
         self.threshold = False
