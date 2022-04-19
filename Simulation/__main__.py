@@ -61,9 +61,9 @@ t1 = sim.run_sim()
 # (TODO) start experiment 
 
 mode2.enter() 
-mode2.run() 
+#mode2.run() 
 
 
 mode1.enter() 
-mode1.run() 
+#mode1.run() 
 

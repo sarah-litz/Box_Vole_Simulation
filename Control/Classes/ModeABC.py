@@ -11,6 +11,10 @@ Property of Donaldson Lab at the University of Colorado at Boulder
 from posixpath import split
 import inspect
 from Logging.logging_specs import control_log
+import time
+import threading
+from ..Classes.Timer import countdown
+
 
 
 # Classes
@@ -42,16 +46,51 @@ class modeABC:
         """
         pass
 
+
+
+
     def enter(self):
         """This method runs when the mode is entered from another mode. Essentially it is the startup method. This differs from the __init__ method because it should not run when the object is created, rather it should run every time this mode of operation is started. 
         """
-        pass
+        print(f'new mode entered: {self}') # print to console 
+
+        self.map.activate_interactables() # ensure that interactables are running for the new mode 
+        self.startTime = time.time() 
+        self.active = True 
+
+        self.setup() # prep for run() function call 
+
+        self.inTimeout = True 
+        # start running the run() funciton in its own thread as a daemon thread
+        mode_thread = threading.Thread(target = self.run, daemon = True)
+        mode_thread.start() 
+
+        # countdown for the specified timeout interval 
+        countdown( timeinterval = self.timeout, message = f"remaining in {self}'s timeout interval" )
+
+
+        # exit when timeout countdown finishes  
+        self.exit()
+     
+    def exit(self): 
+        """This function is run when the mode exits and another mode begins. It closes down all the necessary threads and makes sure the next mode is setup and ready to go. 
+        """
+
+        print(f"{self} finished its Timeout Period and is now Exiting")
+        self.inTimeout = False
+        self.active = False 
+
 
     @threader
     def listen(self):
         """This method listens to the rfid queue and waits until something is added there.
         """
         pass
+
+
+    def setup(self): 
+        ''' any tasks for setting up box before run() gets called '''
+        raise NameError('this funciton should be overriden')
 
     def run(self):
         """This is the main method that contains the logic for the specific mode. It should be overwritten for each specific mode class that inherits this one. Because of that, if this function is not overwritten it will raise an error on its default. 
@@ -60,11 +99,6 @@ class modeABC:
         # If not overwritten, this function will throw the following error
         raise NameError("This function must be overwritten with specific mode logic")
 
-    @threader
-    def exit(self):
-        """This function is run when the mode exits and another mode begins. It closes down all the necessary threads and makes sure the next mode is setup and ready to go. 
-        """
-        pass
 
     def __find_func(self, functionName):
         """This function takes a given string and returns a function object that has the name of the given string. For example: If there was a class called "car" with a function called "get_miles" that returned the amount of miles the car has drive, this would look like __fund_func('car.get_miles'), and it would return the function object.

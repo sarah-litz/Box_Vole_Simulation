@@ -104,8 +104,12 @@ class interactableABC:
                 # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
                 for dependent in self.dependents: 
 
+                    if dependent.active is False: 
+                        # dependent is not currently active, skip over this one 
+                        break 
+
                     print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
-                    print(f'(InteractableABC.py, watch_for_threshold_event) dependent of {self.name} : {dependent.name} (event queue: {list(dependent.threshold_event_queue.queue)})')
+                    print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) dependent of {self.name} : {dependent.name} (event queue: {list(dependent.threshold_event_queue.queue)})')
 
                     time.sleep(3)      
 
@@ -113,7 +117,7 @@ class interactableABC:
                     # if dependent.threshold_event_queue.empty(): 
                     if not dependent.threshold:
                         # depedent did not reach its treshold, so neither does the current interactable
-                        print(f"(InteractableABC.py, watch_for_threshold_event) {self.name}'s dependent, {dependent.name} did not reach threshold")
+                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name}'s dependent, {dependent.name} did not reach threshold")
                         event_bool = False 
                         break  # do not need to check any remaining interactables in the list
                     
@@ -122,9 +126,9 @@ class interactableABC:
                         dependent.threshold = False 
 
                         # Retrieve the Event of the Current Interactable's Dependent.  
-                        event = dependent.threshold_event_queue.get() 
-                        control_log(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}'s dependent, {dependent.name}. event: {event}")
-                        print(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for  {self.name}'s dependent, {dependent.name}. event: {event}" )
+                        # CHANGEevent = dependent.threshold_event_queue.get() 
+                        control_log(f"(InteractableABC.py, watch_for_threshold_event, dependents loop) Threshold Event for {self.name}'s dependent, {dependent.name}.") # CHANGE event: {event}")
+                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) Threshold Event for  {self.name}'s dependent, {dependent.name}.")       # event: {event}" )
 
                         # print(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
                         # control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
@@ -211,7 +215,11 @@ class lever(interactableABC):
         self.threshold_event_queue.put(f'lever{self.ID} pressed {self.pressed} times!')
         # self.threshold_condition['goal_value'] = self.update_goal_after_threshold_event(self)
         print('(lever(InteractableABC), add_new_threshold_event) updated threshold: ', self.threshold_condition['goal_value'])
+
+
+        # (NOTE) if you don't want this component to be checking for a threhsold value the entire time, then deactivate here and re-activate when a new mode starts 
         #self.deactivate()
+
 
     #@threader
     def extend(self):
@@ -278,7 +286,10 @@ class door(interactableABC):
         print(f'(Door(InteractableABC.py, add_new_threshold_event) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
         #NOTE: self.threshold_condition['goal_value'] = self.update_goal_after_threshold_event(self)
         print('(Door(InteracbleABC.py), add_new_threshold_event) updated threshold: ', self.threshold_condition['goal_value'])
-        #self.deactivate()
+        
+        
+        # (NOTE) if you don't want this component to be checking for a threhsold value the entire time, then deactivate here and re-activate when a new mode starts 
+        self.deactivate()
 
     #@threader
     def close(self):
@@ -293,8 +304,6 @@ class door(interactableABC):
             return 
 
 
-        self.activate() # runs watch_for_threshold_event
-
         # if in simulation, the simulate_vole_interactable_interaction should be manually setting the new state value 
 
 
@@ -306,8 +315,6 @@ class door(interactableABC):
         print(f'(Door(InteractableABC), close() ) Hardware Accessed Stuff Here to Close {self.name}')
 
 
-        # 
-        #self.deactivate() 
 
 
 

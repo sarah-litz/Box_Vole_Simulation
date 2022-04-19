@@ -30,6 +30,7 @@ class Vole:
     ##
     def simulate_vole_interactable_interaction(self, interactable): 
 
+        ''' called from vole.attempt_move() for any interactable that has the simulate attribute set to True '''
         if interactable.simulate: 
 
             sim_log( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {interactable.name}' ) 
@@ -137,10 +138,10 @@ class Vole:
             else:
                 # reset the components threshold 
                 component.interactable.threshold = False 
-                
+
                 # check if the control side added a threshold event, meaning this interactables threshold condition was met 
-                event = component.interactable.threshold_event_queue.get()
-                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}. Event: {event}')
+                #CHANGEevent = component.interactable.threshold_event_queue.get()
+                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}.') #CHANGE Event: {event}')
         
         ## END FOR: Done Simulating Components along the Edge ##
 

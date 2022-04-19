@@ -3,12 +3,15 @@ This is an example scenario that someone would run for the home_cage experiment.
 """
 import os
 import time
+import threading 
+import queue
 
 from ..Classes.Timer import countdown
 from ..Classes.Map import Map
 from ..Classes.ModeABC import modeABC
 
 from Logging.logging_specs import control_log 
+
 
 
 
@@ -25,41 +28,32 @@ class mode1(modeABC):
 
     def __str__(self): 
         return 'Mode 1'
-    def enter(self):
-        self.startTime = time.time() 
-        self.active = True
+    
+    def setup(self): 
+        ''' any tasks to setup before run() gets called '''
 
-    def exit(self):
-        self.active = False
-        # self.map.reset_interactables() # 
+        ## Free Range Box ## 
+        # door just sits open. Set lever to inactive since door is not dependent on it, and set door's state to open.
+        # all that should be running is the rfid readers.
+            
+        self.map.instantiated_interactables['lever1'].active = False  
+        self.map.instantiated_interactables['door1'].state = True # Set To Open # NOTE: when open() is more implemented, just call open() here rather than manually setting the state variable.
 
-        # Moves into mode 2
 
     def run(self):
         # Run code of the class. This basically waits for the timeout
 
-        print('Mode 1 is Running')
-        control_log('NEW MODE : Mode 1')
+        #  Mode 1 Description: Open Cage! Voles are free to run around. # 
+        while self.active: 
 
-        # Retract the lever and open the door
-        #self.map.chamber_lever.retract()
-        #self.map.door.default = True # opened
-        #self.map.door.trigger = None # No lever connected
+            time.sleep(self.timeout)
 
 
-        print('Mode 1 is entering Timeout Interval')
-        self.inTimeout = True 
+            # Retract the lever and open the door
+            #self.map.chamber_lever.retract()
+            #self.map.door.default = True # opened
+            #self.map.door.trigger = None # No lever connected
 
-        ## Start Timeout Interval ## 
-        countdown( timeinterval = self.timeout , message = "remaining in Mode 1's timeout interval")
-        ## End Timeout Interval ## 
-
-        self.inTimeout = False 
-        print( 'Mode 1 finished its Timeout Period and is now exiting')
-        
-        # End of Mode 
-        control_log('End of Mode 1\n')
-        self.exit()
 
 
 
@@ -75,64 +69,52 @@ class mode2(modeABC):
 
     def __str__(self): 
         return 'Mode 2'
-    def enter(self):
-        self.startTime = time.time() 
-        self.active = True
 
-    def exit(self):
-        self.active = False
 
+    def setup(self): 
+
+        '''' any tasks to setup before run() gets called '''
+        pass 
 
     def run(self):
 
+        ## Timeout Logic ## 
+
+        self.inTimeout = True
+
         control_log('NEW MODE: Mode 2')
 
-        # Logic to change the num presses every time the wheel is run
-        # while self.active:
+        # Logic to change the num presses every time the wheel is run  
+        # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
+        while self.active: 
+
+            ## Timeout Logic ## 
+            door1 = self.map.get_edge(12).get_interactable_from_component('door1') 
+            lever1 = door1.dependents[0] 
+
+
+            # check for a lever threshold event 
+            event = lever1.threshold_event_queue.get() # blocks until something is added. If nothing is ever added, then will jsut run until timeout ends. ( can add a timeout arg to this call if needed )
             
-            # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
-        '''door1 = self.map.get_edge(12).get_interactable_from_component('door1') 
-            print(door1.dependents)
-            lever1 = door1.dependents[0]   
+            ## Lever Threshold Met ## 
+            print(f"(mode2, run()) Threshold Event for lever1, event: {event}" )
+            lever1.pressed = 0 # reset num of presses 
+            lever1.threshold_condition['goal_value'] += 1 # increase required number of presses by 1
+            print(f"(mode2, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
+
+
+            # door1.open() # open door
+
 
             #
             # LEAVING OFF HERE
             #
-            lever1.pressed = 0  # reset number of presses 
-            lever1.threshold_condition['goal_value'] += 1 
-            door1.open() # open door '''
-                # self.map.door1.threshold_condition['goal_value'] = False # close door 
 
-            
-            # if rfid1 and rfid2 were pinged (meaning the vole moved to the next chamber), close door 
-            #if self.map.rfid1.threshold and self.box.rfid2.threshold: 
-            #    self.door.condition_for_threshold_to_get_set_to_True(open=False)
-
-            # END if
-        # END while'''
-
-  
-        print('Mode 2 is Running')
         # Retract the lever and open the door
         #self.map.chamber_lever.retract()
         #self.map.door.default = True # opened
         #self.map.door.trigger = None # No lever connected
-
-
-        print('Mode 2 is entering Timeout Interval')
-        # set timeout boolean to True, then Wait for timeout interval
-        self.inTimeout = True 
         
-        ## Start Timeout Interval ## 
-        countdown( timeinterval = self.timeout , message = "remaining in Mode 2's timeout interval")
-        ## End Timeout Interval ## 
-
-        self.inTimeout = False 
-
-        print( 'Mode 2 finished its Timeout Period and is now exiting ')
-        control_log('End of Mode 2\n')
-
-        self.exit()
 
 
 

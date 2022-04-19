@@ -32,7 +32,7 @@ class Map:
 
         self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
 
-        self.instantiated_interactables = {} # dict of (interactable name: (type=edge or chamber, id) ) to represent every object of type interactableABC that has been created to avoid repeats
+        self.instantiated_interactables = {} # dict of (interactable name: interactable object ) to represent every object of type interactableABC that has been created to avoid repeats
         
         self.config_directory = config_directory # directory containing all of the configuration files 
 
@@ -130,10 +130,16 @@ class Map:
         # activate the object so it begins watching for threshold events --> can potentially reposition this to save CPU energy since each interactable gets its own thread. 
         # be careful/don't add the activation statement to the interactable's __init__ statements, because then we get a race condition between this function which sets "check_threshold_with_fn" and the watch_for_threshold_event which gets the "check_threshold_with_fn" value.  
 
-        new_obj.activate()
+        # new_obj.activate()
         return new_obj
 
-        
+    
+
+    def activate_interactables(self): 
+        ''' loops thru all instantiated interactables and ensures that all are actively running '''
+        for (n,i) in self.instantiated_interactables.items(): 
+            if not i.active: 
+                i.activate()
 
 
     #
