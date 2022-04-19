@@ -19,7 +19,7 @@ from Control.Classes.Map import Map
 
 
 # (TODO) Import Your ModeABC Implementations Here using the following syntax: from Control.Scripts.your_file_name import modeName1, modeName2, etc. 
-from Control.Scripts.ryan_example1 import mode1, mode2
+from Control.Scripts.ModeScripts1 import mode1, mode2
 
 # (TODO) Import your SimulationABC Implementations Here using the following syntax: from .Scripts.your_file_name import SimulationClassName
 from .Scripts.SarahsSimulation import SarahsSimulation
@@ -33,8 +33,8 @@ sim_log('\n\n\n\n-----------------------------New Simulation Running------------
 
 
 # (TODO) instantiate the modes that you want to run -- this should use the classes that you imported in the first "todo"
-mode1 = mode1( timeout = 40, map = map ) 
-mode2 = mode2( timeout = 40, map = map )
+mode1 = mode1( timeout = 60, map = map ) 
+mode2 = mode2( timeout = 60, map = map )
 
 
 # (TODO) instantiate the Simulation, pass in the Mode objects, map, and Voles to create -- this should be using the class you imported in the second "todo"

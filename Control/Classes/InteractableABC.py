@@ -100,9 +100,13 @@ class interactableABC:
                 
                 event_bool = True 
 
-                # if dependents are present, then before we can add an event to current interactable, we must check if the dependents have met their threshold 
-                # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
+
+                #
+                # Dependents Loop 
+                #
                 for dependent in self.dependents: 
+                    # if dependents are present, then before we can add an event to current interactable, we must check if the dependents have met their threshold 
+                    # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
 
                     if dependent.active is False: 
                         # dependent is not currently active, skip over this one 
@@ -113,29 +117,33 @@ class interactableABC:
 
                     time.sleep(3)      
 
-                    # change 1 
-                    # if dependent.threshold_event_queue.empty(): 
+                    # Threshold Not Reached
                     if not dependent.threshold:
                         # depedent did not reach its treshold, so neither does the current interactable
                         print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name}'s dependent, {dependent.name} did not reach threshold")
                         event_bool = False 
                         break  # do not need to check any remaining interactables in the list
-                    
-                    else: 
-                        # reset threshold value 
-                        dependent.threshold = False 
-
-                        # Retrieve the Event of the Current Interactable's Dependent.  
-                        # CHANGEevent = dependent.threshold_event_queue.get() 
-                        control_log(f"(InteractableABC.py, watch_for_threshold_event, dependents loop) Threshold Event for {self.name}'s dependent, {dependent.name}.") # CHANGE event: {event}")
-                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) Threshold Event for  {self.name}'s dependent, {dependent.name}.")       # event: {event}" )
-
-                        # print(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
-                        # control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} threshold event detected!")
                 
 
+                    else: 
+                        # Retrieve the Event of the Current Interactable's Dependent.  
+                        control_log(f"(InteractableABC.py, watch_for_threshold_event, dependents loop) Threshold Event for {self.name}'s dependent, {dependent.name}.") 
+                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) Threshold Event for  {self.name}'s dependent, {dependent.name}.") 
+                # End of Dependents Loop 
+             
+
+
+                #
+                # Interactable Threshold Event Handling
+                #             
                 if event_bool: 
-                    # AN EVENT!
+                    ## AN EVENT! ## 
+
+                    # Reset the Threshold Values of the interactable's Dependents (ok to do so now that we have confirmed that there was a threshold event)
+                    for dependent in self.dependents: 
+                        dependent.threshold = False 
+
+                    # Handle Event 
                     print(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}")
                     self.add_new_threshold_event()
                     self.threshold = True 
@@ -154,6 +162,8 @@ class interactableABC:
                     # no threshold event 
                     # print(f'(InteractableABC.py, watch_for_threshold_event) no threshold event for {self.name}')
                     pass 
+            
+            
             else: 
                 # no threshold event
                 # print(f"(InteractableABC.py, watch_for_threshold_event) no threshold event for {self.name}.") # Attributes Value: {attribute}, Goal Value: {self.threshold_condition['value']}") 
@@ -161,6 +171,7 @@ class interactableABC:
                 # print(type(attribute), type(self.threshold_condition['value']))
                 pass 
                 
+            
             time.sleep(0.75)
 
             if constant == False: 

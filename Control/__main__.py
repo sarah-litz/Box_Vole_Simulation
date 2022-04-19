@@ -6,7 +6,7 @@ from .Logging.logging_specs import control_log
 from .Classes.Map import Map 
 
 # (TODO) Import Your ModeABC Implementations here using the following syntax: from Scripts.your_file_name import mode_name_1, mode_name_2, etc.
-from .Scripts.ryan_example1 import mode1, mode2 
+from .Scripts.ModeScripts1 import mode1, mode2 
 
 
 control_log(f'\n\n\nrunning {__name__}: New Experiment! ')

@@ -44,7 +44,7 @@ class Vole:
                 
                 # set value using the threshold condition attribute/value pairing 
                 threshold_attr_name = interactable.threshold_condition["attribute"]
-                attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
+                # attribute = getattr(interactable, threshold_attr_name) # get object specified by the attribute name
 
                 sim_log(f'(Vole.py, attempt_move) {interactable.name}, threshold attribute: {threshold_attr_name}, threshold value: {interactable.threshold_condition["goal_value"]}')
             
@@ -60,8 +60,8 @@ class Vole:
         
         else:  # component should not be simulated, as the hardware for this component is present. 
             # assumes that there is a person present to perform a lever press, interrupt the rfid reader so it sends a ping, etc. 
-            print ( f'if testing the hardware for {interactable.name}, take any necessary actions now.')
-            countdown(10, f'remaining to perform interactions to trigger a threshold event for {interactable.name}')
+            print ( f'\nif testing the hardware for {interactable.name}, take any necessary actions now.')
+            # countdown(10, f'remaining to perform interactions to trigger a threshold event for {interactable.name}')
             
     
     
@@ -95,6 +95,7 @@ class Vole:
                 print('attempting a move that is not physically possible according to Map layout. Skipping Move Request.')
 
                 return False
+
         # retrieve edge between current location and the destination, and check threshold for each of these 
         edge = self.map.graph[self.current_loc].connections[destination]
 
@@ -119,31 +120,30 @@ class Vole:
             # Wait for Control Side Software to react to Simulation 
             #
             ################################################
-            time.sleep(8)  # Pause to give control side a moment to assess if there was a threshold event 
+            time.sleep(10)  # Pause to give control side a moment to assess if there was a threshold event 
             ################################################
+
+
 
 
             #
             # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
             #
-            # NOTE: check if NEW threshold_event has been added 
-            # change 2
-            #if component.interactable.threshold_event_queue.empty(): 
             if not component.interactable.threshold:
                 print(component.interactable.threshold)
                 # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
                 print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
                 return False 
-
-            else:
-                # reset the components threshold 
-                component.interactable.threshold = False 
-
-                # check if the control side added a threshold event, meaning this interactables threshold condition was met 
-                #CHANGEevent = component.interactable.threshold_event_queue.get()
-                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}.') #CHANGE Event: {event}')
         
         ## END FOR: Done Simulating Components along the Edge ##
+
+
+        # All Component Thresholds Reached; loop back thru and reset their threshold values to False now that we have confirmed an event occurred 
+        for component in edge:     
+            component.interactable.threshold = False  # reset the components threshold 
+            print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}.') #CHANGE Event: {event}')
+        
+        
 
 
         ## Update Vole Location ## 
