@@ -4718,3 +4718,772 @@ NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a Ne
 (Vole.py, attempt_move) door1, attribute result: True
 (Vole.py, attempt_move) simulating vole1 interaction with rfid2
 (Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10bc57910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10bc57910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10bc57910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10bc57910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1029ab910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1029ab910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104273910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104273910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104273910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104273910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10d402af0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10d402af0>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10d402af0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10d402af0>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10218a910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10218a910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10218a910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10218a910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x107b04910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x107b04910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x107b04910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x107b04910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10e200910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10e200910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10c053910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10c053910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10da34910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10da34910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x106242910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x106242910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10cb4d910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10cb4d910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10cb4d910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10cb4d910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10acc7910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10acc7910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10acc7910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10acc7910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10419e910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10419e910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10419e910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10419e910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f852910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f852910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f852910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f852910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f9fbf40>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10f9fbf40>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10b1de910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10b1de910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10b1de910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10b1de910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x105307910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x105307910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x105307910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x105307910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x109b69910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x109b69910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x109b69910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x109b69910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x103fc1910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x103fc1910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10eb68f10>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10eb68f10>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10eb68f10>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10eb68f10>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104553910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104553910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104553910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x104553910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1077ba910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1077ba910>>
+(sim_attempt_move.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1077ba910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x1077ba910>>
+(sim_attempt_move.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10ac48910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10ac48910>>
+(SarahsSimulation.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x101ae7910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x101ae7910>>
+(SarahsSimulation.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x101ae7910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x101ae7910>>
+(SarahsSimulation.py, SarahsSimulation, mode3_timeout) Running the Mode 3 Simulation
+vole with tag 2 already exists
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x108047910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x108047910>>
+(SarahsSimulation.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x108047910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x108047910>>
+(SarahsSimulation.py, SarahsSimulation, mode3_timeout) Running the Mode 3 Simulation
+vole with tag 2 already exists
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10ca46910>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x10ca46910>>
+(SarahsSimulation.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: SarahsSimulation
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: (<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode1_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>
+(SarahsSimulation.py, SarahsSimulation, mode1_timeout) Running the Mode 1 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode2_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>
+(SarahsSimulation.py, SarahsSimulation, mode2_timeout) Running the Mode 2 Simulation
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: (<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>, 1)
+(Simulation.py, run_sim) Simulaton is calling the function:<bound method SarahsSimulation.mode3_timeout of <Simulation.Scripts.SarahsSimulation.SarahsSimulation object at 0x100a8d7f0>>
+(SarahsSimulation.py, SarahsSimulation, mode3_timeout) Running the Mode 3 Simulation
+(Vole.py, simulate_vole_interactable_interaction) simulating vole3 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 6
+(Vole.py, attempt_move) lever1, attribute result: 6
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Vole 1 successfully moved into chamber 1

@@ -35,8 +35,12 @@ class mode1(modeABC):
         ## Free Range Box ## 
         # door just sits open. Set lever to inactive since door is not dependent on it, and set door's state to open.
         # all that should be running is the rfid readers.
+
+        #
+        # LEAVING OFF HERE!! --> reference Tasks (google tasks) for next couple things to do 
+        #
             
-        self.map.instantiated_interactables['lever1'].active = False  
+        self.map.instantiated_interactables['lever1'].active = False   
         self.map.instantiated_interactables['door1'].state = True # Set To Open # NOTE: when open() is more implemented, just call open() here rather than manually setting the state variable.
 
 
@@ -55,7 +59,9 @@ class mode1(modeABC):
             #self.map.door.trigger = None # No lever connected
 
 
-
+        # on exit, close the door again. 
+        self.map.instantiated_interactables['door1'].state = False # Set To Close # NOTE: when open() is more implemented, just call open() here rather than manually setting the state variable.
+        
 
 class mode2(modeABC):
     """This is for the second twelve hours of the experiment, where the door between the chambers is closed. Here, the lever is extended, and controls access to the wheel in the second chamber. Every time the wheel is accessed, the number of presses required for the lever to increase is one.
@@ -115,6 +121,65 @@ class mode2(modeABC):
         #self.map.door.default = True # opened
         #self.map.door.trigger = None # No lever connected
         
+
+
+class mode3(modeABC):
+    """This is for the second twelve hours of the experiment, where the door between the chambers is closed. Here, the lever is extended, and controls access to the wheel in the second chamber. Every time the wheel is accessed, the number of presses required for the lever to increase is one.
+
+    Args:
+        modeABC (class object): Inherited abstract base class
+    """
+    
+    def __init__(self, timeout, map):
+        super().__init__(timeout, map)
+
+    def __str__(self): 
+        return 'Mode 3'
+
+
+    def setup(self): 
+
+        '''' any tasks to setup before run() gets called '''
+        pass 
+
+    def run(self):
+
+        ## Timeout Logic ## 
+
+        self.inTimeout = True
+
+        control_log('NEW MODE: Mode 3')
+
+        # Logic to change the num presses every time the wheel is run  
+        # if lever was pressed required number of times, open door, reset the tracked num of lever presses to 0  
+        while self.active: 
+
+            ## Timeout Logic ## 
+            door1 = self.map.get_edge(12).get_interactable_from_component('door1') 
+            lever1 = door1.dependents[0] 
+
+
+            # check for a lever threshold event 
+            event = lever1.threshold_event_queue.get() # blocks until something is added. If nothing is ever added, then will jsut run until timeout ends. ( can add a timeout arg to this call if needed )
+            
+            ## Lever Threshold Met ## 
+            print(f"(mode2, run()) Threshold Event for lever1, event: {event}" )
+            lever1.pressed = 0 # reset num of presses 
+            lever1.threshold_condition['goal_value'] += 1 # increase required number of presses by 1
+            print(f"(mode2, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
+
+
+            # door1.open() # open door
+
+
+            #
+            # LEAVING OFF HERE
+            #
+
+        # Retract the lever and open the door
+        #self.map.chamber_lever.retract()
+        #self.map.door.default = True # opened
+        #self.map.door.trigger = None # No lever connected
 
 
 

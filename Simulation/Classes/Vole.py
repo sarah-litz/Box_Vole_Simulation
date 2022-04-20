@@ -33,6 +33,14 @@ class Vole:
         ''' called from vole.attempt_move() for any interactable that has the simulate attribute set to True '''
 
         #
+        # Active Check
+        #
+        if interactable.active is False: 
+            print(f'(Vole.py, simulate_vole_interactable_interaction) {interactable.name} is inactive')
+            # we don't care to simulate an inactive interactable
+            return 
+
+        #
         # Physical Proximity Check 
         #
         if interactable.edge_or_chamber == 'chamber': # check that the vole's location is w/in physical proximity of the interactable we are simulating an interaction with
@@ -54,7 +62,8 @@ class Vole:
         #
         if interactable.simulate: 
 
-            sim_log( f'(Vole.py, attempt_move) simulating vole{self.tag} interaction with {interactable.name}' ) 
+            sim_log( f'(Vole.py, simulate_vole_interactable_interaction) simulating vole{self.tag} interaction with {interactable.name}' ) 
+            print(f'(Vole.py, simulate_vole_interactable_interaction) Simulating vole{self.tag} interaction with {interactable.name}')
     
             if hasattr(interactable, 'simulate_with_fn'):
                 
@@ -129,7 +138,7 @@ class Vole:
             # Simulation 
             #
             interactable = component.interactable
-            for dependent in interactable.dependents:  
+            for dependent in interactable.dependents:
                 self.simulate_vole_interactable_interaction(dependent)
             self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
 
@@ -150,7 +159,7 @@ class Vole:
             #
             # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
             #
-            if not component.interactable.threshold:
+            if (component.interactable.active and not component.interactable.threshold): # active component with a false threshold
                 print(component.interactable.threshold)
                 # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
                 print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')

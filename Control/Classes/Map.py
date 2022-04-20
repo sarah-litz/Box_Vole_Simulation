@@ -134,12 +134,22 @@ class Map:
         return new_obj
 
     
-
+    #
+    # Handling Instantiated Interacables: Activate, Deactivate, and Reset all Interactables
+    #
+    def reset_interactables(self): 
+        ''' loops thru all instantiated interactables and resets them (emptys their threshold event queue '''
+        for (n,i) in self.instantiated_interactables.items() :
+            i.reset() 
     def activate_interactables(self): 
         ''' loops thru all instantiated interactables and ensures that all are actively running '''
         for (n,i) in self.instantiated_interactables.items(): 
             if not i.active: 
                 i.activate()
+    def deactivate_interactables(self): 
+        ''' loops thru all instantiated interactables and sets each of them to be inactive. Called in between modes '''
+        for (n,i) in self.instantiated_interactables.items(): 
+            i.active = False 
 
 
     #

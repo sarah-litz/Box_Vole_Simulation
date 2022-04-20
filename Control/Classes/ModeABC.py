@@ -80,6 +80,9 @@ class modeABC:
         self.inTimeout = False
         self.active = False 
 
+        self.map.deactivate_interactables() 
+        self.map.reset_interactables() # empty interactables threshold event queue before new mode 
+
 
     @threader
     def listen(self):

@@ -19,7 +19,7 @@ from Control.Classes.Map import Map
 
 
 # (TODO) Import Your ModeABC Implementations Here using the following syntax: from Control.Scripts.your_file_name import modeName1, modeName2, etc. 
-from Control.Scripts.ModeScripts1 import mode1, mode2
+from Control.Scripts.ModeScripts1 import mode1, mode2, mode3
 
 # (TODO) Import your SimulationABC Implementations Here using the following syntax: from .Scripts.your_file_name import SimulationClassName
 from .Scripts.SarahsSimulation import SarahsSimulation
@@ -35,11 +35,12 @@ sim_log('\n\n\n\n-----------------------------New Simulation Running------------
 # (TODO) instantiate the modes that you want to run -- this should use the classes that you imported in the first "todo"
 mode1 = mode1( timeout = 60, map = map ) 
 mode2 = mode2( timeout = 60, map = map )
+mode3 = mode3( timeout = 60, map = map )
 
 
-# (TODO) instantiate the Simulation, pass in the Mode objects, map, and Voles to create -- this should be using the class you imported in the second "todo"
+# (TODO) instantiate the Simulation, pass in the Mode objects and map -- this should be using the class you imported in the second "todo"
 # (TODO) in the modes argument, pass a list of all of the modes that you instantiated above. These should get passed in in the same order that they will run in.
-sim = SarahsSimulation( modes = [mode1, mode2], map = map  ) 
+sim = SarahsSimulation( modes = [mode1, mode2, mode3], map = map  ) 
 
 sim_log(f'(sim_attempt_move.py, {__name__}) New Simulation Created: {type(sim).__name__}')
 
@@ -54,16 +55,19 @@ time.sleep(5) # pause before starting up the experiment
 # optional second argument: indicate the number of times to run the simulation function. If this value is not passed in, then the simulation loops until the experiment finishes its timeout interval. 
 sim.simulation_func[mode1] = (sim.mode1_timeout, 1)
 sim.simulation_func[mode2] = (sim.mode2_timeout, 1) 
+sim.simulation_func[mode3] = (sim.mode3_timeout, 1)
 
 # runs simulation as daemon thread. 
 t1 = sim.run_sim() 
 
-# (TODO) start experiment 
-
-mode2.enter() 
-#mode2.run() 
-
+# (TODO) calls to start the experiment 
 
 mode1.enter() 
-#mode1.run() 
+
+mode2.enter() 
+
+mode3.enter()
+
+
+
 

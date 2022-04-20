@@ -46,6 +46,8 @@ class interactableABC:
     def deactivate(self): 
         self.active = False 
 
+    def reset(self): 
+        self.threshold_event_queue.queue.clear() # empty the threshold_event_queue
 
     def isSimulation(self): 
         ''' checks if object is being simulated. 
@@ -113,20 +115,22 @@ class interactableABC:
                 for dependent in self.dependents: 
                     # if dependents are present, then before we can add an event to current interactable, we must check if the dependents have met their threshold 
                     # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
+                    
+                    #print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
+                    #print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) dependent of {self.name} : {dependent.name} (event queue: {list(dependent.threshold_event_queue.queue)})')
+
+                    time.sleep(3)   
 
                     if dependent.active is False: 
                         # dependent is not currently active, skip over this one 
                         break 
 
-                    print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
-                    print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) dependent of {self.name} : {dependent.name} (event queue: {list(dependent.threshold_event_queue.queue)})')
-
-                    time.sleep(3)      
-
                     # Threshold Not Reached
-                    if not dependent.threshold:
+                    elif dependent.threshold is False:
                         # depedent did not reach its treshold, so neither does the current interactable
-                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name}'s dependent, {dependent.name} did not reach threshold")
+                        
+                        # print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name}'s dependent, {dependent.name} did not reach threshold")
+                        
                         event_bool = False 
                         break  # do not need to check any remaining interactables in the list
                 
@@ -158,7 +162,7 @@ class interactableABC:
 
 
                     # Since an event occurred, check if we should reset the attribute value 
-                    if 'reset_value' in self.threshold_condition.keys() and self.threshold_condition['reset_value']: 
+                    if ('reset_value' in self.threshold_condition.keys() and self.threshold_condition['reset_value'] is True): 
 
                         setattr( self, self.threshold_condition['attribute'], self.threshold_condition['initial_value'] )
 
@@ -188,20 +192,6 @@ class interactableABC:
         control_log(f"(InteractableABC.py, watch_for_threshold_event) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
 
 
-    def reset(self):
-      
-        self.__reset()
-
-      # called each time there is a new mode 
-
-      # if the simulation was running for this interactable, then its threshold_event_queue should be empty 
-
-      # if the simulation is not running, then this is where we empty out its threshold_event_queue
-      
-
-    def __reset(self):
-      
-      raise NameError("Overwrite with unique logic")
     
         
 class lever(interactableABC):
@@ -414,7 +404,10 @@ class rfid(interactableABC):
         # appends to the threshold event queue 
         # set isNewEvent to True 
 
-        ping = self.rfidQ.get_nowait()
+        try: ping = self.rfidQ.get_nowait()
+        except queue.Empty as e: 
+            print(f'(InteractableABC.py, add_new_threshold_event) Nothing in the rfidQ for {self.name}')
+
         self.threshold_event_queue.put(ping)
 
         # do not deactivate the rfids. always monitoring for pings. 
