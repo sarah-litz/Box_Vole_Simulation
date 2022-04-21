@@ -18,10 +18,15 @@ from Logging.logging_specs import control_log
 #---------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 class mode1(modeABC):
-    """This mode is the first of two. The setup is that for 12 hours, the doors are open and the vole has free reign to move into the second chamber. There is a lever in the first chamber and a free wheel in the second chamber. The lever is retracted during this time.
-
+    """
+    Description: 
+        Open Cage -- vole is free to roam in box. The door sits open the entire time. Lever presses have no effect on door functionality.
+    
     Args:
         modeABC (class object): Inherited abstract base class
+        timeout (int): amount of time that experiment runs. Begins after setup is completed. 
+        map (class object): Map object that contains the hardware objects and where they are positioned in the layout of the box. 
+        
     """
     def __init__(self, timeout, map):
         super().__init__(timeout, map)
@@ -32,42 +37,43 @@ class mode1(modeABC):
     def setup(self): 
         ''' any tasks to setup before run() gets called '''
 
-        ## Free Range Box ## 
-        # door just sits open. Set lever to inactive since door is not dependent on it, and set door's state to open.
-        # all that should be running is the rfid readers.
+        '''
+        Free Range Box 
+            door just sits open. Set lever to inactive since door is not dependent on it, and set door's state to open.
+            all that should be running is the rfid readers.
+        '''
 
-        #
-        # LEAVING OFF HERE!! --> reference Tasks (google tasks) for next couple things to do 
-        #
-            
-        self.map.instantiated_interactables['lever1'].active = False   
-        self.map.instantiated_interactables['door1'].state = True # Set To Open # NOTE: when open() is more implemented, just call open() here rather than manually setting the state variable.
+        self.map.instantiated_interactables['lever1'].deactivate() # Open cage is not dependent on lever presses. Deactive the lever.  
+        
+        door1 = self.map.instantiated_interactables['door1']    
+        door1.open() # Leave Door Open
 
-
+  
     def run(self):
         # Run code of the class. This basically waits for the timeout
 
         #  Mode 1 Description: Open Cage! Voles are free to run around. # 
         while self.active: 
 
-            time.sleep(self.timeout)
-
-
-            # Retract the lever and open the door
-            #self.map.chamber_lever.retract()
-            #self.map.door.default = True # opened
-            #self.map.door.trigger = None # No lever connected
+            time.sleep(2)
 
 
         # on exit, close the door again. 
-        self.map.instantiated_interactables['door1'].state = False # Set To Close # NOTE: when open() is more implemented, just call open() here rather than manually setting the state variable.
+        print('closing door--> Mode 1!')
+        self.map.instantiated_interactables['door1'].close() # Close the Door now that timeout is over.
         
 
-class mode2(modeABC):
-    """This is for the second twelve hours of the experiment, where the door between the chambers is closed. Here, the lever is extended, and controls access to the wheel in the second chamber. Every time the wheel is accessed, the number of presses required for the lever to increase is one.
 
+class mode2(modeABC):
+    """
+    Description: 
+        Closed Door -- lever1 requires set number of presses to open door1. Each time the vole presses the required number of times, then the nubmer of required lever presses is increased by 1. 
+    
     Args:
         modeABC (class object): Inherited abstract base class
+        timeout (int): amount of time that experiment runs. Begins after setup is completed. 
+        map (class object): Map object that contains the hardware objects and where they are positioned in the layout of the box. 
+        
     """
     
     def __init__(self, timeout, map):
@@ -86,8 +92,6 @@ class mode2(modeABC):
 
         ## Timeout Logic ## 
 
-        self.inTimeout = True
-
         control_log('NEW MODE: Mode 2')
 
         # Logic to change the num presses every time the wheel is run  
@@ -99,35 +103,54 @@ class mode2(modeABC):
             lever1 = door1.dependents[0] 
 
 
-            # check for a lever threshold event 
-            event = lever1.threshold_event_queue.get() # blocks until something is added. If nothing is ever added, then will jsut run until timeout ends. ( can add a timeout arg to this call if needed )
-            
+            ## Wait for Lever Press or Timeout ## 
+
+            event = None 
+            while event is None and self.active: 
+                
+                try: event = lever1.threshold_event_queue.get_nowait() # loops until something is added. If nothing is ever added, then will just exit once timeout ends ( can add a timeout arg to this call if needed )
+                except queue.Empty: pass 
+                time.sleep(.5)
+
+            if event is None:  # timed out before lever threshold event
+
+                return 
+
+
             ## Lever Threshold Met ## 
+
             print(f"(mode2, run()) Threshold Event for lever1, event: {event}" )
             lever1.pressed = 0 # reset num of presses 
             lever1.threshold_condition['goal_value'] += 1 # increase required number of presses by 1
             print(f"(mode2, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
 
 
-            # door1.open() # open door
-
 
             #
             # LEAVING OFF HERE
             #
 
-        # Retract the lever and open the door
-        #self.map.chamber_lever.retract()
-        #self.map.door.default = True # opened
-        #self.map.door.trigger = None # No lever connected
+            ## Effect of Lever Threshold Being Met ## 
+            # lever1.retract() # retract lever 
+            door1.open() # open door
+            countdown(timeinterval = 10, message = 'seconds until door1 closes') # (NOTE) careful with how long the sleep time is cause don't want to go over the timeout period, becuase it will then mess up the next mode. ( somehow have a continuous check for if been set to inactive throughout the sleep time?? )
+            door1.close() # close door 
+
+
+
         
 
 
 class mode3(modeABC):
-    """This is for the second twelve hours of the experiment, where the door between the chambers is closed. Here, the lever is extended, and controls access to the wheel in the second chamber. Every time the wheel is accessed, the number of presses required for the lever to increase is one.
-
+    """
+    Description: 
+        Closed Door -- lever1 requires set number of presses to open door1. Each time the vole presses the required number of times, then the nubmer of required lever presses is increased by 1. 
+    
     Args:
         modeABC (class object): Inherited abstract base class
+        timeout (int): amount of time that experiment runs. Begins after setup is completed. 
+        map (class object): Map object that contains the hardware objects and where they are positioned in the layout of the box. 
+        
     """
     
     def __init__(self, timeout, map):
@@ -159,27 +182,24 @@ class mode3(modeABC):
             lever1 = door1.dependents[0] 
 
 
-            # check for a lever threshold event 
-            event = lever1.threshold_event_queue.get() # blocks until something is added. If nothing is ever added, then will jsut run until timeout ends. ( can add a timeout arg to this call if needed )
+            ## Wait for Lever Press or Timeout ## 
+
+            event = None 
+            while event is None and self.active: 
+                
+                try: event = lever1.threshold_event_queue.get_nowait() # loops until something is added. If nothing is ever added, then will just exit once timeout ends ( can add a timeout arg to this call if needed )
+                except queue.Empty: pass 
+                time.sleep(.5)
+
+            if event is None:  # timed out before lever threshold event
+
+                return 
             
             ## Lever Threshold Met ## 
-            print(f"(mode2, run()) Threshold Event for lever1, event: {event}" )
+            print(f"(mode3, run()) Threshold Event for lever1, event: {event}" )
             lever1.pressed = 0 # reset num of presses 
             lever1.threshold_condition['goal_value'] += 1 # increase required number of presses by 1
-            print(f"(mode2, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
-
-
-            # door1.open() # open door
-
-
-            #
-            # LEAVING OFF HERE
-            #
-
-        # Retract the lever and open the door
-        #self.map.chamber_lever.retract()
-        #self.map.door.default = True # opened
-        #self.map.door.trigger = None # No lever connected
+            print(f"(mode3, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
 
 
 

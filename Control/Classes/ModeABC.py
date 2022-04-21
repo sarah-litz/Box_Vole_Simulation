@@ -68,9 +68,13 @@ class modeABC:
         # countdown for the specified timeout interval 
         countdown( timeinterval = self.timeout, message = f"remaining in {self}'s timeout interval" )
 
-
+        # tasks for closing out the mode 
+        # self.shutdown() 
         # exit when timeout countdown finishes  
         self.exit()
+
+        # ensure that mode thread finishes before returning 
+        mode_thread.join() 
      
     def exit(self): 
         """This function is run when the mode exits and another mode begins. It closes down all the necessary threads and makes sure the next mode is setup and ready to go. 
@@ -82,6 +86,7 @@ class modeABC:
 
         self.map.deactivate_interactables() 
         self.map.reset_interactables() # empty interactables threshold event queue before new mode 
+
 
 
     @threader

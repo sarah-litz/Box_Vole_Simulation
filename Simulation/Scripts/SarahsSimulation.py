@@ -68,6 +68,7 @@ class SarahsSimulation(SimulationABC):
         time.sleep(5)
 
         print('Exiting the Mode 2 Simulation')
+
         return 
     
     def mode3_timeout(self): 
@@ -102,7 +103,7 @@ class SarahsSimulation(SimulationABC):
 
         time.sleep(5)
 
-        print('Exiting the Mode 2 Simulation')
+        print('Exiting the Mode 3 Simulation')
         return         
 
 
