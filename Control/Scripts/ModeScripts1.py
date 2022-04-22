@@ -47,12 +47,23 @@ class mode1(modeABC):
         
         door1 = self.map.instantiated_interactables['door1']    
         door1.open() # Leave Door Open
+        door1.deactivate() # deactivate door since we want it to sit idle during this mode.
+        # (NOTE) if we didn't deactivate door1 here, its watch_threshold_event would endlessly count threshold events, which isn't really accurate. 
+        #        This would happen Because: 
+        #           we are having door sit in an Open state the entire time, i.e. sitting in its 'goal_state' the entire time.
+        #           we have set door1's only dependent (lever1) to be inactive, meaning lever1's state won't effect if door1 meets threshold or not
+        #        By deactivating door1, nothing will get added to door1's threshold_event_queue, its threshold attribute will never change, but it will sit in an open state the entire mode.  
+        # (from a Simulation perspecative) 
+        #       if Vole needs to pass by door1 (or any inactive interactable), 
+        #       then from the attempt_move function we manually check if door1 is sitting in its goal_state or not. 
+        #       
+        #                               
 
   
     def run(self):
         # Run code of the class. This basically waits for the timeout
 
-        #  Mode 1 Description: Open Cage! Voles are free to run around. # 
+        #  Mode 1 Description: Open Cage! Voles are free to run around while this mode is active (so for the duration of the timeout interval). # 
         while self.active: 
 
             time.sleep(2)
@@ -197,7 +208,6 @@ class mode3(modeABC):
             
             ## Lever Threshold Met ## 
             print(f"(mode3, run()) Threshold Event for lever1, event: {event}" )
-            lever1.pressed = 0 # reset num of presses 
             lever1.threshold_condition['goal_value'] += 1 # increase required number of presses by 1
             print(f"(mode3, run()) New Lever1 Threshold (required presses): {lever1.threshold_condition['goal_value']}")
 

@@ -52,29 +52,31 @@ class modeABC:
     def enter(self):
         """This method runs when the mode is entered from another mode. Essentially it is the startup method. This differs from the __init__ method because it should not run when the object is created, rather it should run every time this mode of operation is started. 
         """
-        print(f'new mode entered: {self}') # print to console 
+        print(f'\nnew mode entered: {self}') # print to console 
+
+        time.sleep(2) # pause before activating interactables 
 
         self.map.activate_interactables() # ensure that interactables are running for the new mode 
-        self.startTime = time.time() 
-        self.active = True 
 
-        self.setup() # prep for run() function call 
+        self.setup() # prep for run() function call ( this is where calls to deactivate() specific interactables should be made )
+
+        time.sleep(3) # Pause Before Starting
+
+        self.startTime = time.time() 
+        self.active = True # mark this mode as being active, triggering a simulation to start running, if a simulation exists
 
         self.inTimeout = True 
-        # start running the run() funciton in its own thread as a daemon thread
-        mode_thread = threading.Thread(target = self.run, daemon = True)
+        mode_thread = threading.Thread(target = self.run, daemon = True) # start running the run() funciton in its own thread as a daemon thread
         mode_thread.start() 
 
         # countdown for the specified timeout interval 
         countdown( timeinterval = self.timeout, message = f"remaining in {self}'s timeout interval" )
 
-        # tasks for closing out the mode 
-        # self.shutdown() 
-        # exit when timeout countdown finishes  
-        self.exit()
+        # exit when the timeout countdown finishes
+        self.exit()   
 
-        # ensure that mode thread finishes before returning 
-        mode_thread.join() 
+        mode_thread.join() # ensure that mode thread finishes before returning 
+
      
     def exit(self): 
         """This function is run when the mode exits and another mode begins. It closes down all the necessary threads and makes sure the next mode is setup and ready to go. 
@@ -84,8 +86,7 @@ class modeABC:
         self.inTimeout = False
         self.active = False 
 
-        self.map.deactivate_interactables() 
-        self.map.reset_interactables() # empty interactables threshold event queue before new mode 
+        self.map.deactivate_interactables(clear_threshold_queue = True) # empties the interactable's threshold event queue and sets active = False
 
 
 

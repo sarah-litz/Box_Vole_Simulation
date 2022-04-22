@@ -46,13 +46,15 @@ class Vole:
         if interactable.edge_or_chamber == 'chamber': # check that the vole's location is w/in physical proximity of the interactable we are simulating an interaction with
             # vole's current chamber location must match 
             if self.current_loc != interactable.edge_or_chamber_id: 
-                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate voles interaction with {interactable.name} because it is in a different chamber.')
+                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
                 return 
         else: 
             # vole's current chamber must be one of the chambers that the edge connects 
             edge = self.map.get_edge(interactable.edge_or_chamber_id)
             if (self.current_loc != edge.v1 and self.current_loc != edge.v2): 
-                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate voles interaction with {interactable.name} because it is on an edge connection different chambers.')
+                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
                 return 
 
 
@@ -118,11 +120,15 @@ class Vole:
         sim_log(f'(Vole.py, attempt_move) Entering the attempt move function. Vole {self.tag} is currently in chamber {self.current_loc}. Destination: {destination}.')
 
         if validity_check: 
+
             if not self.is_move_valid(destination): 
-
-                sim_log(f'(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request')
-
-                print('attempting a move that is not physically possible according to Map layout. Skipping Move Request.')
+                # print reason that move is invalid, and then return.
+                if self.current_loc == destination: 
+                    sim_log(f'(Vole.py, attempt_move) Vole{self.tag} is already in chamber{destination}!')
+                    print(f'(Vole.py, attempt_move) Vole{self.tag} is already in chamber {destination}!')
+                else: 
+                    sim_log(f'(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request')
+                    print(f'(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request.')
 
                 return False
 
@@ -160,15 +166,27 @@ class Vole:
             # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
             #
             if (component.interactable.active and not component.interactable.threshold): # active component with a false threshold
-                print(component.interactable.threshold)
                 # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
                 print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
                 return False 
+
+            ## Inactive Interactable Handling ## 
+            elif component.interactable.active is False: # inactive component has no way of its threshold getting set to true, so we manually check here 
+                # Inactive means that the component is sitting idle, however, we still want to check if it is currently sitting at its threshold goal state, because if it is the vole can successfully make its move. 
+                threshold_attr_name = component.interactable.threshold_condition["attribute"]
+                attribute = getattr(component.interactable, threshold_attr_name) # get object specified by the attribute name
+                
+                if hasattr(component.interactable, 'check_threshold_with_fn'): 
+                    attribute = attribute(component.interactable)
+                if attribute == component.interactable.threshold_condition['goal_value']: pass # threshold is True, continue executing function
+                else: return False # threshold is False, return from attempt_move
+                
         
         ## END FOR: Done Simulating Components along the Edge ##
 
 
         # All Component Thresholds Reached; loop back thru and reset their threshold values to False now that we have confirmed an event occurred 
+        print('\n')
         for component in edge:     
             component.interactable.threshold = False  # reset the components threshold 
             print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}.') #CHANGE Event: {event}')
@@ -179,8 +197,8 @@ class Vole:
         ## Update Vole Location ## 
         self.current_loc = destination
 
-        sim_log(f'(Vole.py, attempt_move) Vole {self.tag} successfully moved into chamber {self.current_loc}')
-        print(f'Vole Move Successful: New Location is Chamber {self.current_loc}')
+        sim_log(f'(Vole.py, attempt_move) Simulated Vole {self.tag} successfully moved into chamber {self.current_loc}')
+        print(f'Simulated Vole{self.tag} Move Successful: New Location is Chamber {self.current_loc}')
     
 
 

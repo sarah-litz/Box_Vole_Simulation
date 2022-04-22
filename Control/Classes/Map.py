@@ -142,10 +142,17 @@ class Map:
         for (n,i) in self.instantiated_interactables.items(): 
             if not i.active: 
                 i.activate()
-    def deactivate_interactables(self): 
+        
+    def deactivate_interactables(self, clear_threshold_queue = True): 
         ''' loops thru all instantiated interactables and sets each of them to be inactive. Called in between modes '''
         for (n,i) in self.instantiated_interactables.items(): 
-            i.active = False 
+            i.deactivate()
+        if clear_threshold_queue: 
+            self.reset_interactables() # empties the interactables threshold queue
+
+                
+        
+            
 
 
     #
