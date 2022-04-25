@@ -111,9 +111,12 @@ class Vole:
             return True 
         else: return False
     
+
+    
     def attempt_move(self, destination, validity_check=True): 
         ''' called by a Vole object ''' 
         ''' attempts to executes a move. if validity_check is set to True, then we check if the move is physically valid or not. '''
+        ''' SETTING the interactable's to meet their goal_value by calling simulate_vole_interaction '''
         ''' GETTING the thresholds of each interactable and checking that it is True '''
         ''' if the threshold of any interactable is not True, then we cannot successfully make the move '''
 
@@ -199,7 +202,7 @@ class Vole:
 
         sim_log(f'(Vole.py, attempt_move) Simulated Vole {self.tag} successfully moved into chamber {self.current_loc}')
         print(f'Simulated Vole{self.tag} Move Successful: New Location is Chamber {self.current_loc}')
-    
+        return True
 
 
 
@@ -208,26 +211,6 @@ class Vole:
      
     def random_move(self): 
         ''' chooses a random neighboring chamber to try to move to '''
-
-
-
-
-    #
-    # Component Simulation; simulates Vole's interaction w/ some hardware interactable 
-    # 
-        
-    def send_interaction_requestion(self, interactable): 
-        ''' Checks validity of interacting with some interactable/component 
-        Does not simulate any interaction, just checks if it is possible according to map layout 
-        Return True if interaction is possible, False otherwise 
-        '''
-        pass 
-
-    def reset_components(self): 
-        pass
-
-
-
 
 
     #
@@ -252,18 +235,30 @@ class Vole:
         for adj_chmbr in self.map.graph[self.current_loc].connections: # for all of the current chamber's neighboring chambers
             actions.append( (self.attempt_move, adj_chmbr) ) # add to list of possible moves 
         
-        # add all possible "interact w/ chamber interactables" options
+        # add all possible "interact w/in chamber interactables" options
         for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber
-
-            actions.append( ('interactable.simulate', self) )
+            actions.append( (self.simulate_vole_interactable_interaction, interactable) )
         
         return actions
 
 
 
+    def attempt_random_action(self): 
+        ''' calls random_action to chose an action at random (or w/ weighted probabilities), and then calls the chosen function '''
+
+        (action_fn, arg) = self.random_action() 
+            
+        sim_log(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting random action: {action_fn.__name__} (arg: {arg}) ')
+        print(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting random action: {action_fn.__name__} (arg: {arg}) ')
+
+        action_fn(arg) 
+
+
 
     def random_action(self): 
-        ''' Randomly choose between interacting with an interactable or making a move or doing nothing'''
+        ''' Randomly choose between interacting with an interactable or making a move or doing nothing
+            Returns the (function, arguments) of the chosen action
+        '''
 
         '''
         randomly choose between the following options: 
@@ -279,7 +274,7 @@ class Vole:
 
         action_probability = self.map.graph[self.current_loc].action_probability_dist
         if action_probability is not None: 
-            # User has set probabilities for the actions, make deicision based on this. 
+            # User has set probabilities for the actions, make decision based on this. 
             print('action probability:', action_probability)
             pd = [] # list to contain probabilities in same order of actionobject_probability
             for a in possible_actions: 
@@ -293,9 +288,8 @@ class Vole:
             # no probabilities have been set, make decision where every possible action has an equal decision of being chosen
             idx = random.randint(0, len(possible_actions)-1)
 
+        return possible_actions[idx] # returns the ( function, arguments ) of randomly chosen action
 
-        # LEAVING OFF HERE
-        possible_actions[idx][0]( *possible_actions[idx][1:] )
 
 
     

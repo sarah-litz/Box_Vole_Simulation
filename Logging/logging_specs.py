@@ -9,8 +9,8 @@ formatter = logging.Formatter('%(asctime)s %(message)s') # To Display Level Name
 
 cwd = os.getcwd() 
 logging.basicConfig(filename=cwd + '/Logging/eventlogging.log' , level=logging.DEBUG )
-control_fp=cwd+'/Logging/control.log'
-simulation_fp=cwd+'/Logging/simulation.log'
+control_fp=cwd+'/Control/Logging/control.log'
+simulation_fp=cwd+'/Simulation/Logging/simulation.log'
 
 
 def setup_logger(name, log_file, level=logging.DEBUG):

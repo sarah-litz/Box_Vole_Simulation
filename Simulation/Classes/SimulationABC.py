@@ -46,6 +46,54 @@ class SimulationABC:
             return t
         return run 
     
+
+    @run_in_thread
+    def run_active_mode_sim(self, current_mode): 
+        ''' 
+        called from run_sim() 
+        starts thread to run the simulation function 
+        waits for current mode's timeout to end and immediately returns, killing the simulation function as a result 
+        '''
+
+        #
+        # Wait for Mode's Timeout Interval
+        while not current_mode.inTimeout and current_mode.active: # active mode not in Timeout
+            # while not in timeout portion of mode, loop 
+            time.sleep(0.5)
+
+        sim_log(f'(Simulation.py, run_sim) The current mode ({current_mode}) entered in timeout. Checking for if a simulation should be run. ')
+
+        #
+        # Check for if simulation function exists for the current mode 
+        if current_mode not in self.simulation_func.keys(): # no simulation function specified for this mode 
+            # do nothing loop until current mode is inactive 
+            sim_log(f'(Simulation.py, run_sim) No simulation function for {type(current_mode)}.')
+            while current_mode.active: 
+                time.sleep(0.5)
+            return 
+
+   
+        sim_log(f'(Simulation.py, run_sim) {current_mode} is paired with the simulation function: {self.simulation_func[current_mode]}')
+        
+        
+        #
+        # Run the Mode's Simulation Function in separate thread. Exit when the running mode becomes inactive or exits its timeout interval. 
+        sim_fn = self.simulation_func[current_mode]
+
+        sim_thread = threading.Thread(target = sim_fn, daemon = True)
+        sim_thread.start() 
+
+        while current_mode.inTimeout and current_mode.active: 
+            
+            time.sleep(1)  # let the simulation continue to run while mode is both active and in timeout
+
+        if sim_thread.is_alive(): 
+            sim_log(f'(Simulation.py, run_sim) {current_mode} ending, forcing simulation to exit now.')
+            print(f'(Simulation.py, run_sim) {current_mode} ending, forcing simulation to exit now.')
+        
+        return
+        
+
     @run_in_thread
     def run_sim(self): 
 
@@ -75,30 +123,17 @@ class SimulationABC:
 
             sim_log(f'NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: {(current_mode)}')
 
+            t = self.run_active_mode_sim(current_mode)
+            t.join() 
 
-            # Loop Until Current Mode is Inactive
-            while current_mode.active: # reruns simulation while the mode is still active
 
-                #
-                # Wait for Mode's Timeout Interval
-                while not current_mode.inTimeout and current_mode.active: # active mode not in Timeout
-                    # while not in timeout portion of mode, loop 
-                    time.sleep(0.5)
+            
 
-                sim_log(f'(Simulation.py, run_sim) The current mode ({current_mode}) entered in timeout. Checking for if a simulation should be run. ')
-                #
-                # Check for if simulation function 
-                if current_mode not in self.simulation_func.keys(): # no simulation function specified for this mode 
-                    # do nothing loop until current mode is inactive 
-                    sim_log(f'(Simulation.py, run_sim) No simulation function for {type(current_mode)}.')
-                    while current_mode.active: 
-                        time.sleep(0.5)
 
-                
-                sim_log(f'(Simulation.py, run_sim) {current_mode} is paired with the simulation function: {self.simulation_func[current_mode]}')
-                #
+
+                # (NOTE) Delete This Section with the iterator check!! 
                 # Check if an iterator value was specified (num of times to call the sim function) 
-                sim_iterator = None # specifies number of times to call the simulation function (optional)
+            '''sim_iterator = None # specifies number of times to call the simulation function (optional)
                 sim_fn = None # simulation function 
                 
                 if type(self.simulation_func[current_mode]) is tuple: # sim_iterator specified
@@ -111,29 +146,16 @@ class SimulationABC:
                 
                 else: # no sim_iterator specified
                     # if the value is not a tuple, then the function should just rerun continuously until while loop can exit 
-                    sim_fn = self.simulation_func[current_mode]
-                        
-                
-                #
-                # Run the Mode's Simulation Function
-                # 
-                while current_mode.inTimeout and current_mode.active:  # active mode is in timeout 
-                    
-                    if sim_iterator is None: 
-                        
-                        sim_log(f'(Simulation.py, run_sim) Simulaton is calling the function:{sim_fn}')
 
+                while current_mode.inTimeout and current_mode.active:  # active mode is in timeout                  
+                    if sim_iterator is None:  
+                        sim_log(f'(Simulation.py, run_sim) Simulaton is calling the function:{sim_fn}')
                         sim_fn()  # calling function continuously throught timeout interval 
-
                     elif sim_iterator > 0:  
-                        
                         sim_log(f'(Simulation.py, run_sim) Simulaton is calling the function:{sim_fn}')
-
                         sim_fn() # function call for running the simulation 
-
-                        sim_iterator -= 1 # decrement the iterator each run 
-                    
-                    time.sleep(2)
+                        sim_iterator -= 1 # decrement the iterator each run                    
+                    time.sleep(2)'''
             
 
 

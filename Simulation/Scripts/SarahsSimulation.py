@@ -9,9 +9,8 @@ import time
 from ..Logging.logging_specs import sim_log
 from ..Classes.SimulationABC import SimulationABC
 
-# 
-# This is just an example --> Doesn't actually run yet. (config_testing.py has a more working version)
-# 
+
+
 class SarahsSimulation(SimulationABC): 
 
     def __init__(self, modes, map):

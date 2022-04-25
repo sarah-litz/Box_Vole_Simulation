@@ -33,7 +33,6 @@ class interactableABC:
         self.threshold = False
         self.threshold_condition = threshold_condition  # {attribute, initial_value, goal_value} dict to specify what the attribute/value goal of the interactable is. 
         self.threshold_event_queue = queue.Queue() # queue for tracking anytime a threshold condition is met 
-        self.new_threshold_count = 0 # boolean for how many new events have been added 
 
         self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. 
 
@@ -254,7 +253,7 @@ class door(interactableABC):
         interactableABC ([type]): [description]
     """
 
-    def __init__(self, ID, servoPin, threshold_condition, dependent=None):
+    def __init__(self, ID, servoPin, threshold_condition):
         # Initialize the abstract class stuff
         super().__init__(threshold_condition)
         
@@ -263,7 +262,6 @@ class door(interactableABC):
         self.ID       = ID 
         self.servoPin = servoPin
 
-        self.lever = dependent # lever that controls the door
         # in order for a threshold event to occur, there must have also been a threshold_event for its dependent interactable
         
         # Set the state variable, default to False (closed). (open, closed) = (True, False)
@@ -277,9 +275,6 @@ class door(interactableABC):
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
 
-    def activate(self): 
-        self.active = True 
-        self.watch_for_threshold_event()
 
     def add_new_threshold_event(self): 
         # appends to the threshold event queue 
@@ -377,18 +372,13 @@ class rfid(interactableABC):
         interactableABC ([type]): [description]
     """
 
-    def __init__(self, ID, threshold_condition, rfidQ = queue.Queue()):
+    def __init__(self, ID, threshold_condition):
         # Initialize the parent 
         super().__init__(threshold_condition)
 
-        # Initialize the required properties
         self.name = 'rfid'+str(ID)
         self.ID = ID 
-
-        # Init the found properties
         self.rfidQ = queue.Queue()
-        self.rfidQisEmpty = self.rfidQ.empty() # returns True if queue is Empty
-        self.specificQ = queue.LifoQueue()
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
 
