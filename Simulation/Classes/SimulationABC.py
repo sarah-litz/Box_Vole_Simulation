@@ -13,8 +13,7 @@ from Logging.logging_specs import sim_log
 from .Vole import Vole
 
 # Standard Lib Imports 
-import copy
-import threading, time, json, sys
+import threading, time, json, inspect
 import os
 cwd = os.getcwd() 
 
@@ -75,22 +74,32 @@ class SimulationABC:
    
         sim_log(f'(Simulation.py, run_sim) {current_mode} is paired with the simulation function: {self.simulation_func[current_mode]}')
         
-        
+
         #
         # Run the Mode's Simulation Function in separate thread. Exit when the running mode becomes inactive or exits its timeout interval. 
         sim_fn = self.simulation_func[current_mode]
 
-        sim_thread = threading.Thread(target = sim_fn, daemon = True)
+        sim_thread = threading.Thread(target = sim_fn)
+
+        current_mode.simulation_lock.acquire()  # grab lock to denote that simulation is running 
         sim_thread.start() 
 
         while current_mode.inTimeout and current_mode.active: 
             
             time.sleep(1)  # let the simulation continue to run while mode is both active and in timeout
 
+
         if sim_thread.is_alive(): 
-            sim_log(f'(Simulation.py, run_sim) {current_mode} ending, forcing simulation to exit now.')
-            print(f'(Simulation.py, run_sim) {current_mode} ending, forcing simulation to exit now.')
+
+            print(f'(Simulation.py, run_sim) {current_mode} ended, simulation is completing its final iteration and then exiting.')
+            sim_log(f'(Simulation.py, run_sim) {current_mode} ended, simulation is completing its final iteration and then exiting.')
+            
+            sim_thread.join(1000) # wait for simulation to finish 
+            if sim_thread.is_alive(): 
+                print(f'(Simulation.py, run_sim) simulation for {current_mode} got stuck running. Forcing exit now.')
+                sim_log(f'(Simulation.py, run_sim) simulation for {current_mode} got stuck running. Forcing exit now.')
         
+        current_mode.simulation_lock.release() # release lock to denote that simulation for this mode finished running  
         return
         
 
@@ -101,6 +110,7 @@ class SimulationABC:
 
         ''' This Function Runs Continuously Until the Experiment Ends 
                     Runs on a separate thread 
+                    Get/waits for an active mode
                     Calls the function that is paired with the currently active mode '''
 
         # NOTE: the function that we call should potentially also run on its own thread, so then all this function does is 

@@ -227,9 +227,8 @@ class Map:
         # if an interactable specified a "dependent" in its configuration file, then it gets an attribute "interactable_name" which serves as a string representation of the interactable
         # after all objects have been instantiated, we now want to assign the actual interactable objects rather than just their string representation
 
-        # loop thru all instantiated interactables and check for the attribute interactable_name 
+        # loop thru all instantiated interactables and check for the attribute dependent_name 
         for i_name in self.instantiated_interactables:
-            
             i = self.instantiated_interactables[i_name]
             if hasattr(i, 'dependent_names'): 
                 dependents = []
@@ -566,7 +565,27 @@ class Map:
 
             del remComp 
             return 
+        
 
+        def reverse_components(self): 
+
+            ''' returns list of components in the reverse order that they were added in '''
+            # instantiates new Component and adds to end of linked list
+
+            if self.headval is None: 
+                return self.headval 
+            
+            component = self.headval 
+            while(component.nextval):
+                component = component.nextval # list traversal to get last component in linked list 
+            
+            # last element reached. This item will be the first one in our list. Then traverse back to start of linked list, adding the elements as we go. 
+            reversed_lst = [component]
+            while(component.prevval): 
+                component = component.prevval
+                reversed_lst.append(component)
+
+            return reversed_lst
 
 
         #

@@ -34,7 +34,7 @@ sim_log('\n\n\n\n-----------------------------New Simulation Running------------
 
 
 # (TODO) instantiate the modes that you want to run -- this should use the classes that you imported in the first "todo"
-mode1 = mode1( timeout = 60, map = map ) 
+mode1 = mode1( timeout = 20, map = map ) 
 mode2 = mode2( timeout = 60, map = map )
 mode3 = mode3( timeout = 60, map = map )
 
@@ -59,7 +59,7 @@ sim.simulation_func[mode2] = (sim.mode2_timeout)
 # sim.simulation_func[mode3] = (sim.mode3_timeout)
 
 # runs simulation as daemon thread. 
-t1 = sim.run_sim() 
+sim.run_sim() 
 
 # (TODO) calls to start the experiment 
 

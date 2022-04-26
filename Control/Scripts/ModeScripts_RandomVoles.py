@@ -37,9 +37,7 @@ class mode1(modeABC):
     def setup(self): 
         ''' any tasks to setup before run() gets called '''
 
-        pass
-                    
-  
+          
     def run(self):
         # Run code of the class. This basically waits for the timeout
 

@@ -30,7 +30,7 @@
             "type":"shared", 
             "components":[
                 { "interactable_name":"rfid1", "type":"rfid" }, 
-                { "interactable_name":"door1", "type":"door" }, 
+                { "interactable_name":"door1", "type":"door" },
                 { "interactable_name":"rfid2", "type":"rfid" }
             ]
         }, 
@@ -40,7 +40,10 @@
             "target_chamber_id":3, 
             "id": 13, 
             "type":"shared", 
-            "components":[ ]
+            "components":[
+                {"interactable_name":"rfid3", "type":"rfid"}, 
+                {"interactable_name":"rfid4", "type":"rfid"}
+            ]
         }
     ]
 }

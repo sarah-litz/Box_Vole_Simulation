@@ -37,6 +37,9 @@ class modeABC:
         self.enterStrings = enterFuncs
         self.exitStrings  = exitFuncs
 
+        # Simulation only 
+        self.simulation_lock = threading.Lock() # locked while a simulation is actively running
+
 
 
     def __str__(self): 
@@ -85,6 +88,10 @@ class modeABC:
         print(f"{self} finished its Timeout Period and is now Exiting")
         self.inTimeout = False
         self.active = False 
+
+        # Waits on Sim to reach clean exiting point # 
+        self.simulation_lock.acquire() # if sim is running, wait for lock to ensure that it exits cleanly
+        self.simulation_lock.release() # immediately release so next sim can use it 
 
         self.map.deactivate_interactables(clear_threshold_queue = True) # empties the interactable's threshold event queue and sets active = False
 

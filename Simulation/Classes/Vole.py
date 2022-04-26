@@ -25,6 +25,7 @@ class Vole:
         self.map = map 
     
 
+    
     ##
     ## Simulating Interactable thru setting attribute value or thru function call
     ##
@@ -112,8 +113,7 @@ class Vole:
         else: return False
     
 
-    
-    def attempt_move(self, destination, validity_check=True): 
+    def attempt_move( self, destination, validity_check = True ): 
         ''' called by a Vole object ''' 
         ''' attempts to executes a move. if validity_check is set to True, then we check if the move is physically valid or not. '''
         ''' SETTING the interactable's to meet their goal_value by calling simulate_vole_interaction '''
@@ -140,6 +140,18 @@ class Vole:
 
         sim_log(f'(Vole.py, attempt_move) traversing the edge: {edge} ')
 
+
+        #
+        # Edge Traversal 
+        #
+
+        # check if we need to do a forwards or backwards traversal of the edge components 
+        if self.current_loc == edge.v2: 
+            # reverse order of the components 
+            edge = edge.reverse_components() 
+            
+            
+
         # traverse the linked list containing the edge components 
         for component in edge: 
 
@@ -147,6 +159,7 @@ class Vole:
             # Simulation 
             #
             interactable = component.interactable
+            
             for dependent in interactable.dependents:
                 self.simulate_vole_interactable_interaction(dependent)
             self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
@@ -248,8 +261,8 @@ class Vole:
 
         (action_fn, arg) = self.random_action() 
             
-        sim_log(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting random action: {action_fn.__name__} (arg: {arg}) ')
-        print(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting random action: {action_fn.__name__} (arg: {arg}) ')
+        sim_log(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting: {action_fn.__name__} (arg: {arg}) ')
+        print(f'(Vole.py, attempt_random_action) Vole{self.tag} attempting: {action_fn.__name__} (arg: {arg}) ')
 
         action_fn(arg) 
 
@@ -268,7 +281,7 @@ class Vole:
         '''
 
         possible_actions = self.possible_actions()
-        print('possible actions: ', possible_actions)
+        # print('possible actions: ', possible_actions)
         
         # choose action from possible_actions based on their value in the current chamber's probability distribution
 

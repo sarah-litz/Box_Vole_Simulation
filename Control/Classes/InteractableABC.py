@@ -36,7 +36,6 @@ class interactableABC:
 
         self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. 
 
-
     def activate(self):
 
         print(f"(InteractableABC.py, activate) {self.name} has been activated. starting contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
@@ -51,6 +50,7 @@ class interactableABC:
         print(f"(InteractableABC.py, deactivate) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")        
         control_log(f"(InteractableABC.py, deactivate) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
         
+        self.threshold = False # "resets" the threshold value so it'll only check for a new threshold occurence in anything following its deactivation
         self.active = False 
 
     def reset(self): 
@@ -146,7 +146,7 @@ class interactableABC:
                 #
                 # Interactable Threshold Event Handling
                 #             
-                if event_bool: 
+                if event_bool and self.active: 
                     ## AN EVENT! ## 
 
                     # Reset the Threshold Values of the interactable's Dependents (ok to do so now that we have confirmed that there was a threshold event)
@@ -154,8 +154,9 @@ class interactableABC:
                         dependent.threshold = False 
 
                     # Handle Event 
+                    self.threshold = True
                     self.add_new_threshold_event()
-                    self.threshold = True 
+                    # self.threshold = True 
                     print(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}. Event queue: {list(self.threshold_event_queue.queue)}")
                     control_log(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}. Event queue: {list(self.threshold_event_queue.queue)}")
 
@@ -265,8 +266,11 @@ class door(interactableABC):
         # in order for a threshold event to occur, there must have also been a threshold_event for its dependent interactable
         
         # Set the state variable, default to False (closed). (open, closed) = (True, False)
-        self.state = threshold_condition['initial_value'] # assumes that config file reflects the current state of the physical door
-
+        # (NOTE) need to initialize the door's state in more accurate way 
+        self.state = threshold_condition['initial_value']
+        '''if threshold_condition['initial_value'] is True: # ensure that the physical door refelcts the initial state specified by the config file
+            self.open() 
+        else: self.close() '''
 
         # Set properties that will later be set
         self.currentAngle = None
@@ -279,6 +283,7 @@ class door(interactableABC):
     def add_new_threshold_event(self): 
         # appends to the threshold event queue 
         self.threshold_event_queue.put(f'{self.name} isOpen:{self.state}')
+        print("Door Threshold: ", self.threshold, "  Door Threshold Condition: ", self.threshold_condition)
         print(f'(Door(InteractableABC.py, add_new_threshold_event) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
            
         # (NOTE) if you don't want this component to be checking for a threhsold value the entire time, then deactivate here and re-activate when a new mode starts 
