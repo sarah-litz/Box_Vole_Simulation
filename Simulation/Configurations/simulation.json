@@ -15,8 +15,11 @@
             "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )"  
         }, 
         {"name":"lever1", 
-            "simulate":false
+            "simulate":true
         }, 
+        {"name":"lever2", 
+            "simulate":true
+        },
         {"name":"rfid3", 
             "simulate":true,
             "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )"  

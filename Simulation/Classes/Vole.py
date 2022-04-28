@@ -34,6 +34,15 @@ class Vole:
         ''' called from vole.attempt_move() for any interactable that has the simulate attribute set to True '''
 
         #
+        # Independent vs Dependent check 
+        #
+        if interactable.isIndependent: 
+            # a fully independent interacable means that it is dependent on the values of its dependents and independent of a vole's actions
+            # i.e. it is pointless for the vole to interact directly with it. So return. (Doesn't mean we won't interact and simulate w/ its dependents tho)
+            print(f'(Vole.py, simulate_vole_interactable_interaction) {interactable.name} isDependent on dependents, not on a vole interaction.')
+            return 
+
+        #
         # Active Check
         #
         if interactable.active is False: 
@@ -142,6 +151,11 @@ class Vole:
 
 
         #
+        # Current Chamber's Interactables: Check if isEdgeDependent. If so, make function call to simulate vole's interaction with these interactables. 
+        #
+
+
+        #
         # Edge Traversal 
         #
 
@@ -201,10 +215,11 @@ class Vole:
         ## END FOR: Done Simulating Components along the Edge ##
 
 
-        # All Component Thresholds Reached; loop back thru and reset their threshold values to False now that we have confirmed an event occurred 
+        # All Component Thresholds Reached; loop back thru and reset the dependent components threshold values to False now that we have confirmed an event occurred 
+        # (NOTE BIG CHANGE) (not implemented, just idea.) for any independent component, we don't want to reset its threshold because its behavior may differ from this default behavior. 
         print('\n')
         for component in edge:     
-            component.interactable.threshold = False  # reset the components threshold 
+            component.interactable.threshold = False  # reset the components threshold
             print(f'(Simulation/Vole.py, attempt_move) the threshold condition was met for {component.interactable.name}.') #CHANGE Event: {event}')
         
         

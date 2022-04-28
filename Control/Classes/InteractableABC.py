@@ -34,7 +34,8 @@ class interactableABC:
         self.threshold_condition = threshold_condition  # {attribute, initial_value, goal_value} dict to specify what the attribute/value goal of the interactable is. 
         self.threshold_event_queue = queue.Queue() # queue for tracking anytime a threshold condition is met 
 
-        self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. 
+        self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. These are interactables that are dependent on a vole's actions! 
+        self.isIndependent = False # set to True if an interactable acts independently of a vole, and who's behavior is fully dependent on values of its dependents 
 
     def activate(self):
 
@@ -44,7 +45,7 @@ class interactableABC:
         self.threshold = False # "resets" the interactable's threshold value so it'll check for a new threshold occurence
         self.active = True 
         self.watch_for_threshold_event() # begins continuous thread for monitoring for a threshold event
-
+        self.dependents_loop() 
 
     def deactivate(self): 
         print(f"(InteractableABC.py, deactivate) {self.name} has been deactivated. Final contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")        
@@ -83,6 +84,17 @@ class interactableABC:
     def isThreshold(self): 
         ''' checks if interactable has reached its threshold. Returns True if yes, False otherwise. '''
 
+    def dependents_loop(self): 
+        ''' if interactable has dependents, then we can trigger a threshold event to occur for the interactable iff all of its dependents are true.'''
+        # ISSUE: what if a door has 2 levers that are able to open it. Then we don't need all of them to be able to open the door. 
+
+        if len(self.dependents)>0: 
+            raise Exception(f'must override dependents_loop with logic for the cause/effect of an interactables dependents')
+            # (NOTE) when overriding this function, make sure that you set isIndependent to True if the interactable behavior is completely dependent on its dependents rather than on any vole behavior! 
+        
+        else: 
+            return # don't need to run this function for interactable w/out dependents 
+
     @run_in_thread
     def watch_for_threshold_event(self): 
         
@@ -112,7 +124,7 @@ class interactableABC:
                 #
                 # Dependents Loop 
                 #
-                for dependent in self.dependents: 
+                '''for dependent in self.dependents: 
                     # if dependents are present, then before we can add an event to current interactable, we must check if the dependents have met their threshold 
                     # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
                     
@@ -139,7 +151,7 @@ class interactableABC:
                         # Retrieve the Event of the Current Interactable's Dependent.  
                         control_log(f"(InteractableABC.py, watch_for_threshold_event, dependents loop) Threshold Event for {self.name}'s dependent, {dependent.name}.") 
                         print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) Threshold Event for  {self.name}'s dependent, {dependent.name}.") 
-                # End of Dependents Loop 
+                # End of Dependents Loop '''
              
 
 
@@ -150,8 +162,8 @@ class interactableABC:
                     ## AN EVENT! ## 
 
                     # Reset the Threshold Values of the interactable's Dependents (ok to do so now that we have confirmed that there was a threshold event)
-                    for dependent in self.dependents: 
-                        dependent.threshold = False 
+                    '''for dependent in self.dependents: 
+                        dependent.threshold = False '''
 
                     # Handle Event 
                     self.threshold = True
@@ -160,6 +172,20 @@ class interactableABC:
                     print(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}. Event queue: {list(self.threshold_event_queue.queue)}")
                     control_log(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}. Event queue: {list(self.threshold_event_queue.queue)}")
 
+
+                    if self.isIndependent: 
+
+                        # because interactable is not dependent on vole's actions, we can assume that it could potentially be sitting in its goal state for extended periods of time. 
+                        # as a result, we want to sleep until it is out of its goal state ( or until threshold gets set to false by simulation ).
+                        # 
+                        #  
+                        # (other idea:) once out of its goal state, set self.threshold = False again. 
+
+                        while attribute == self.threshold_condition['goal_value'] and self.threshold == True: 
+
+                            time.sleep(1) # wait for change in threshold or a change in the attribute's value to differ away from goal_value 
+
+                    
                     # Since an event occurred, check if we should reset the attribute value 
                     # (NOTE) Delete This?? 
                     if ('reset_value' in self.threshold_condition.keys() and self.threshold_condition['reset_value'] is True): 
@@ -278,6 +304,50 @@ class door(interactableABC):
         self.closeAngle = None
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
+    
+    
+    def run_in_thread(func): 
+        ''' decorator function to run function on its own daemon thread '''
+        def run(*k, **kw): 
+            t = threading.Thread(target = func, args = k, kwargs=kw, daemon=True)
+            t.start() 
+            return t
+        return run 
+
+
+
+    @run_in_thread
+    def dependents_loop(self): 
+        
+        self.isIndependent = True
+
+        ## Logic for How To Handle Door's Dependent(s) ## 
+
+        # if any one of door's dependents (i.e. one of the levers that is listed as its dependent) meets its threshold, then go ahead and 
+        # meet the door's threshold goal by opening or closing the door 
+
+        while self.active: 
+
+            for dependent in self.dependents: 
+
+                if dependent.threshold == True: 
+
+                    dependent.threshold = False # reset now that we have triggered an event occurrence
+
+                    # check self's threshold goal 
+                    if self.threshold_condition['goal_value'] == True: 
+
+                        self.open() 
+
+                    elif self.threshold_condition['goal_value'] == False: 
+
+                        self.close() 
+                    
+                    else: 
+
+                        raise Exception(f'(Door, dependents_loop) did not recognize {self.name} threshold_condition[goal_value] of {self.threshold_condition["goal_value"]}')
+
+
 
 
     def add_new_threshold_event(self): 

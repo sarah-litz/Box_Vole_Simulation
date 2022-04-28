@@ -36,9 +36,20 @@ class RandomVoles(SimulationABC):
         vole1 = self.get_vole(1)
         vole2 = self.get_vole(2)
         rfid1 = self.map.instantiated_interactables['rfid1']
+        lever1 = self.map.instantiated_interactables['lever1']
+        #door1 = self.map.instantiated
 
-        while self.modes[0].inTimeout: 
-            '''vole1.simulate_vole_interactable_interaction(rfid1) # vole1 on edge side of rfid1
+        vole1.attempt_move(2) # success 
+
+        vole1.attempt_move(1) # ISSUE: should succeed, because we never closed door1 again. 
+
+        # vole2.simulate_vole_interactable_interaction(lever1)
+
+        # vole1.attempt_move(1)
+        
+
+        # while self.modes[0].inTimeout: 
+        '''vole1.simulate_vole_interactable_interaction(rfid1) # vole1 on edge side of rfid1
             vole1.simulate_vole_interactable_interaction(rfid1) # vole1 on chamber side of rfid1
             vole2.simulate_vole_interactable_interaction(rfid1)'''
             # if the rfids on an edge have unequal lengths, then we know vole did not complete move 
@@ -51,7 +62,7 @@ class RandomVoles(SimulationABC):
 
             # time.sleep(3)
 
-            vole1.attempt_random_action() # vole 1 makes random actions while in timeout 
+            # vole1.attempt_random_action() # vole 1 makes random actions while in timeout '''
 
 
     def mode2_timeout(self): 
@@ -85,7 +96,7 @@ class RandomVoles(SimulationABC):
         vole1.attempt_move(destination) # this move will work because we have manually increased the number of lever presses 
    
 
-   
+
         #
         #   LEAVING OFF HERE!!!!!! 
         #   come up w/ a better system to reach the goal of this simulation

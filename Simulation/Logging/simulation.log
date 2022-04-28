@@ -33045,3 +33045,1655 @@ NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a Ne
 (Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
 (Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
 (Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1072c3ac0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1072c3ac0>>
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f69da30>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f69da30>>
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 3
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 3
+(Vole.py, attempt_random_action) Vole1 attempting: sleep (arg: 5) 
+(Vole.py, attempt_random_action) Vole1 attempting: sleep (arg: 5) 
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108fc7a00>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108fc7a00>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole2 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole2 interaction with lever1 because it is in a different chamber.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106da8a90>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106da8a90>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106af8a90>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106af8a90>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10d949a60>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10d949a60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10278da60>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10278da60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104275af0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104275af0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101beaa60>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101beaa60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101beaa60>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101beaa60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1016d08e0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1016d08e0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10510d910>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10510d910>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1039c1a60>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1039c1a60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104801af0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104801af0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Simulation.py, run_sim) Mode 1 ended, simulation is completing its final iteration and then exiting.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109783af0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109783af0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole2 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 3) 
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 3.
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid3
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 3
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 3
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 1) 
+(Vole.py, attempt_random_action) Vole1 attempting: attempt_move (arg: 1) 
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 3. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 3. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, attempt_move) traversing the edge: Edge 13, connects: 1 <--['rfid3', 'rfid4']--> 3 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a7c8a90>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a7c8a90>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108d61a90>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108d61a90>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108d61a90>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108d61a90>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1020e1ac0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1020e1ac0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106a37a30>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106a37a30>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1073c1a30>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1073c1a30>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102628a30>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102628a30>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102628a30>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102628a30>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1090bb910>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1090bb910>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+simulation.json did not contain the interactable lever2. sim defaults to False, so this interactable will not be simulated as the simulation runs.
+simulation.json did not contain the interactable lever2. sim defaults to False, so this interactable will not be simulated as the simulation runs.
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a82ecd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a82ecd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with door1
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, threshold attribute: state, threshold value: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) door1, attribute result: True
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 1.
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+(Vole.py, attempt_move) Vole1 is already in chamber1!
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b508cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b508cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106ae7cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106ae7cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x110248cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x110248cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10c3a1cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10c3a1cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x110634cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x110634cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fb9f880>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fb9f880>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1028a4cd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1028a4cd0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever2 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105413d60>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105413d60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 1.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole1 interaction with lever1 because it is in a different chamber.
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 1
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105413d60>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105413d60>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['rfid1', 'door1', 'rfid2']--> 2 
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 2
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber 2. Destination: 2.
+(Vole.py, attempt_move) Vole1 is already in chamber2!
+(Vole.py, attempt_move) Vole1 is already in chamber2!
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 3
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 3) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.
+(Simulation.py, run_sim) No simulation function for <class 'Control.Scripts.ModeScripts_RandomVoles.mode3'>.

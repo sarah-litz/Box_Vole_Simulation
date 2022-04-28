@@ -34,7 +34,7 @@ sim_log('\n\n\n\n-----------------------------New Simulation Running------------
 
 
 # (TODO) instantiate the modes that you want to run -- this should use the classes that you imported in the first "todo"
-mode1 = mode1( timeout = 20, map = map ) 
+mode1 = mode1( timeout = 60, map = map ) 
 mode2 = mode2( timeout = 60, map = map )
 mode3 = mode3( timeout = 60, map = map )
 

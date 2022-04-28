@@ -4,14 +4,16 @@
             "id": 1, 
             "descriptive_name": "Main Chamber", 
             "interactables": [
-                {"interactable_name":"lever1", "type":"lever"} 
+                { "interactable_name":"lever1", "type":"lever" }
             ] 
         }, 
 
         {
             "id": 2, 
             "descriptive_name": "Chamber 2", 
-            "interactables": []
+            "interactables": [
+                { "interactable_name":"lever2", "type":"lever"}
+            ]
         }, 
 
         {
