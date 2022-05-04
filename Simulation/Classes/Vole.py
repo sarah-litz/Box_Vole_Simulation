@@ -11,6 +11,7 @@ Property of Donaldson Lab at the University of Colorado at Boulder
 # Standard Lib Imports 
 from itertools import count
 import random
+from re import I
 import time 
 
 # Local Imports 
@@ -20,23 +21,82 @@ from .Timer import countdown
 class Vole: 
 
     def __init__(self, tag, start_chamber, map): 
+        
         self.tag  = tag 
-        self.current_loc = start_chamber
         self.map = map 
+
+        ## Vole Location Information ## 
+        # LEAVING OFF HERE!!! need to finish going thru and correcting all the spots in code where I reference self.current_loc
+        self.curr_loc = self.map.get_chamber(start_chamber)
+
+        # starting position between interactables is between chamber edge or wall and the first interactable in the chamber, if it exists
+        self.prev_component = None # last interactable that vole moved away from (so we know the direction of movement)
+        try: self.curr_component = self.curr_loc.headval # current interactable the vole is closest to
+        except AttributeError: self.curr_component = None # (interactable1, interactable2)
+        print(f'VOLE {self.tag} POSITION BETWEEN INTERACTABLES: {self.prev_component}, {self.curr_component}')
+        
+
+        '''self.prev_interactable = None # last interactable that vole moved away from (so we know the direction of movement)
+        try: self.curr_interactable = self.curr_loc.headval.interactable # current interactable the vole is closest to
+        except AttributeError: self.curr_interactable = None # (interactable1, interactable2)
+        print(f'VOLE {self.tag} POSITION BETWEEN INTERACTABLES: {self.prev_interactable}, {self.curr_interactable}')
+        '''
     
 
     
     ##
     ## Simulating Interactable thru setting attribute value or thru function call
     ##
+
+
+    def update_location(self, newcomponent=None): 
+        #TESTME
+        ''' 
+        updates vole's current component position 
+        if current component position is None, then check to see if we need to update the vole's chamber/edge/id location 
+        '''
+
+        # make sure that the current chamber/edge/id reflects the newcomponent 
+        prev_loc = self.curr_loc 
+        self.curr_loc = self.map.get_location_object(newcomponent.interactable) 
+        if prev_loc != self.curr_loc: 
+            print(f'Vole {self.tag} traveled from {prev_loc.edge_or_chamber}{prev_loc.id} into {self.curr_loc.edge_or_chamber}{self.curr_loc.id}')
+
+        self.prev_component = self.curr_component 
+        self.curr_component = newcomponent 
+
+        print(f'Updated Vole Interactable Location from {self.prev_component} to {self.curr_component} ')
+
+
+    def pre_simulation_error_checks(self, interactable): 
+        ''' checks for a bunch of edge cases to ensure that the called simulation is valid '''
+    def simulate_autonomous_interactable(self, interactable): 
+        ''' really this just applies to rfids at the moment. '''
+        ''' any interactable that is classified as a Barrier interactable AND has no dependents is considered to be autonomous, and can be simulated by this quicker function. (skips all of the dependent loops and things) '''
+     
+
+    def at_location_of(self, interactable): 
+        ''' 
+            Physical Proximity Check: returns True if vole's location is at the current interactable, false otherwise.
+            Depends on both the chamber/edge vole is in, as well as where the vole is positioned w/in the chamber. 
+        '''
+
+        if self.curr_component.interactable.name == interactable.name:
+            return True 
+        else: 
+            return False 
+
+
+        
     def simulate_vole_interactable_interaction(self, interactable): 
 
-        ''' called from vole.attempt_move() for any interactable that has the simulate attribute set to True '''
+        ''' called from vole.attempt_move() in order to simulate a vole's interaction with an interactable '''
+        ''' prior to simulation, checks if the requested simulation is valid. returns if not '''
 
         #
         # Independent vs Dependent check 
         #
-        if interactable.isIndependent: 
+        if len(interactable.dependents) > 0: 
             # a fully independent interacable means that it is dependent on the values of its dependents and independent of a vole's actions
             # i.e. it is pointless for the vole to interact directly with it. So return. (Doesn't mean we won't interact and simulate w/ its dependents tho)
             print(f'(Vole.py, simulate_vole_interactable_interaction) {interactable.name} isDependent on dependents, not on a vole interaction.')
@@ -48,24 +108,16 @@ class Vole:
         if interactable.active is False: 
             print(f'(Vole.py, simulate_vole_interactable_interaction) {interactable.name} is inactive')
             # we don't care to simulate an inactive interactable
+            # vole unable to effect the threshold attribute value of an inactive interactable (so threshold value is the same the entire time)
             return 
 
         #
         # Physical Proximity Check 
         #
-        if interactable.edge_or_chamber == 'chamber': # check that the vole's location is w/in physical proximity of the interactable we are simulating an interaction with
-            # vole's current chamber location must match 
-            if self.current_loc != interactable.edge_or_chamber_id: 
-                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
-                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
-                return 
-        else: 
-            # vole's current chamber must be one of the chambers that the edge connects 
-            edge = self.map.get_edge(interactable.edge_or_chamber_id)
-            if (self.current_loc != edge.v1 and self.current_loc != edge.v2): 
-                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
-                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
-                return 
+        if not self.at_location_of(interactable): 
+            print(f'(Vole.py, simulate_vole_interactable_interaction) vole{self.tag} is not at_location_of({interactable.name}). Failed the physical proximity check; cannot simulate.')
+            return 
+
 
 
 
@@ -111,16 +163,121 @@ class Vole:
     ## Vole Movements
     ##
     def is_move_valid(self, destination): 
+        # TESTME
         # attempt_move helper function
         '''Check validity of making a move from voles current location to some destination 
-        Does not actually make move/update the voles location, just checks if the move is possible according to map layout 
+        Does not actually make move/update the voles location, just checks if the move is possible in a single move according to map layout 
         Return True if move is possible, False otherwise 
         '''
-        curr_chamber = self.map.graph[self.current_loc]
-        if destination in curr_chamber.connections.keys(): 
-            return True 
-        else: return False
+        # destination must be a chamber 
+        # vole can be currently sitting on an edge or in a chamber 
+
+        if self.curr_loc.edge_or_chamber == 'chamber': 
+            if destination in self.curr_loc.connections.keys(): 
+                return True # chamber has edge connecting it to destination 
+        else: 
+            if destination == self.curr_loc.v1 or destination == self.curr_loc.v1: 
+                return True # edge is connected to destination chamber
+        return False  
     
+
+    def interactable_path ( self, destination, forward_ ): 
+
+        ''' returns list of interactables that exist betewen the voles current location and the desired destination '''
+        # use vole's starting position between interactables 
+
+        # we want to grab everything on the edge that we need to traverse 
+
+        # as we sort thru the edge components, if we encounter an 
+
+    def move_next_component(self, component): 
+
+        ''' vole positions itself in front of component. component specified must be a component that only requires a singular position change. '''
+        ''' this does NOT simulate any interactions with this interactable. i.e. the component we are currently standing at has not necessarily been passed (aka threshold met) yet. But we are able to interact with it.'''
+        
+
+        print(f'move_next_component entered. Goal: {self.curr_component.interactable}->{component.interactable}')
+        
+
+        def getInteractable(component): 
+            ## try except statement for retrieving components interactable. If component is None, this prevents errors from gettting thrown. ## 
+            try: return component.interactable
+            except AttributeError: return None
+
+
+        # Interactables At/Around Vole's Current Position
+        curr_interactable = getInteractable(self.curr_component)
+        nxt_interactable = getInteractable(self.curr_component.nextval)
+        prev_interactable = getInteractable(self.curr_component.prevval)
+
+        # Interactables At/Around Goal Position 
+        goal = getInteractable(component)
+        goal_nxt = getInteractable(component.nextval)
+        goal_prev = getInteractable(component.prevval)
+
+
+
+        if curr_interactable == goal: 
+            
+            return  
+        
+        if nxt_interactable != goal and prev_interactable != goal: # if curr_component->nxt.interactable != goal AND currcomponent->prev != goal
+
+            # possible that the next component is on an adjacent edge/chamber to the vole's current location 
+
+            # extra check for scenario that current component is a chamber component
+            if goal_prev != curr_interactable and goal_nxt != curr_interactable: # this scenario will happen when chamber interactables are added to an edge 
+                # if goal->prev != curr_component ( if the target interactable doesn't link back to our current interactable )
+                # if goal->nxt != curr_component ( if the target interactable doesn't link forward to our current interactable )
+                # invalid move request 
+
+                print(f'(Vole.py, move_next_component) only accepts components as arguments that are directly next to the voles location: {self.curr_component}. prev={self.curr_component.prevval}, next={self.curr_component.nextval}. The arugment passed in {component} has prev={component.prevval} and next={component.nextval}')
+                return 
+
+            else: 
+
+                pass # valid move requested from a chamber component -> adjacent edge component
+
+        
+        #
+        # Check that we are able to move past the interactable that vole is currently positioned at 
+        #
+    
+        # interactable is not a barrier 
+        if curr_interactable.barrier is False: 
+            # we can make move freely, update location 
+            return self.update_location(component)
+                
+
+        # barrier interactables require that threshold is True, or possible simulation 
+        if curr_interactable.threshold is True: 
+            # threshold is True, we can freely make move 
+            print(f'(Simulation/Vole.py, move_next_component) the threshold condition was met for {curr_interactable}. Vole{self.tag} making the move from {self.curr_component} to {component}.')
+            return self.update_location(component)
+
+
+        # barrier interactable with false threshold. Check if we can simulate without dependents 
+        if len(curr_interactable.dependents) > 0: 
+            # component requires dependent interaction in order to get threshold to become True. This would require other movements, so exiting from this request 
+            print(f'(Simulation/Vole.py, move_next_component) Movement from {self.curr_component}->{component} cannot be completed because {self.curr_component} threshold is False, and would require interactions with its dependents in order to pass.')
+        
+
+        else: 
+            # component does not have dependents, so can simulate in a simple step. 
+            self.simulate_vole_interactable_interaction(curr_interactable)
+            time.sleep(5) 
+            if curr_interactable.threshold: # recheck the threshold 
+                print(f'(Simulation/Vole.py, move_next_component) the threshold condition was met for {curr_interactable}. Vole{self.tag} making the move from {self.curr_component} to {component}.')
+                # update location 
+                return self.update_location(component)
+            else: 
+                print(f'(Simulation/Vole.py, move_next_component) Movement from {self.curr_component}->{component} cannot be completed because after simulating {self.curr_component} the threshold is still False.')
+                return 
+
+
+
+
+        
 
     def attempt_move( self, destination, validity_check = True ): 
         ''' called by a Vole object ''' 
@@ -129,13 +286,13 @@ class Vole:
         ''' GETTING the thresholds of each interactable and checking that it is True '''
         ''' if the threshold of any interactable is not True, then we cannot successfully make the move '''
 
-        sim_log(f'(Vole.py, attempt_move) Entering the attempt move function. Vole {self.tag} is currently in chamber {self.current_loc}. Destination: {destination}.')
+        sim_log(f'(Vole.py, attempt_move) Entering the attempt move function. Vole {self.tag} is currently in {self.curr_loc.edge_or_chamber}{self.curr_loc.id}. Destination: {destination}.')
 
         if validity_check: 
 
             if not self.is_move_valid(destination): 
                 # print reason that move is invalid, and then return.
-                if self.current_loc == destination: 
+                if self.curr_loc == destination: 
                     sim_log(f'(Vole.py, attempt_move) Vole{self.tag} is already in chamber{destination}!')
                     print(f'(Vole.py, attempt_move) Vole{self.tag} is already in chamber {destination}!')
                 else: 
@@ -144,79 +301,134 @@ class Vole:
 
                 return False
 
+
+        # compile a list of interactables we need to pass over to reach destination (include both chamber and edge interactables)
+        
+        # sort thru chamber interactables, and only add the ones that are related to the goal movement (i.e. they are a barrier or they)
+
+        # then, we can update the vole's location by using the interactable location info 
+
+
+        # # # # # # # # # # # # # # # # 
         # retrieve edge between current location and the destination, and check threshold for each of these 
-        edge = self.map.graph[self.current_loc].connections[destination]
+        edge = self.curr_loc.connections[destination]
 
-        sim_log(f'(Vole.py, attempt_move) traversing the edge: {edge} ')
+        sim_log(f'(Vole.py, attempt_move) traversing the edge: {edge}')
 
-
-        #
-        # Current Chamber's Interactables: Check if isEdgeDependent. If so, make function call to simulate vole's interaction with these interactables. 
-        #
-
+        # check if we need to do a forwards or backwards traversal of the edge components 
+        if destination == edge.v1: 
+            # reverse order of the components 
+            edge = edge.reverse_components() 
+            reversed = True 
+        
+        else: 
+            # converts to list of components
+            edge = edge.get_component_list()
+            reversed = False 
 
         #
         # Edge Traversal 
         #
 
-        # check if we need to do a forwards or backwards traversal of the edge components 
-        if self.current_loc == edge.v2: 
-            # reverse order of the components 
-            edge = edge.reverse_components() 
-            
-            
+        ## for now, assuming that the vole just needs to traverse an edge. will deal with chamber movement later. 
+
+        # position start location along the edge to be where the vole's current position is 
+        # if the current position is None, then we will start at the beginning of the list and loop thru all components on edge.
+        # if the current position is Not None, traverse along edge until we find edge component, where self.curr_component == component
+
+        # begin simulation from the vole's current interactable position. 
+        if self.curr_component is None: 
+            self.curr_component = edge[0] # first component on edge 
+ 
+        # remove components that come before vole's current position 
+        i = 0
+        while self.curr_component.interactable.name != edge[i].interactable.name: 
+            i+=1 
+        edge = edge[i::]
 
         # traverse the linked list containing the edge components 
-        for component in edge: 
+        for i in range(len(edge)):
 
-            #
-            # Simulation 
-            #
-            interactable = component.interactable
+            component = edge[i] 
+            for c in edge: print(c)
+            self.move_next_component(edge[i])
+            # print(f'Updated Vole Interactable Location from {self.prev_component} to {self.curr_component} ')
+
+            # check that vole's position allows us to simulate
+            if self.curr_component.interactable.name != component.interactable.name: 
+                
+                raise Exception(f'(Vole.py, attempt_move) Vole is positioned at {self.curr_component}, so unable to simulate interaction with {component.interactable.name}')
+                print(self.curr_component, component)
+                pass 
             
-            for dependent in interactable.dependents:
-                self.simulate_vole_interactable_interaction(dependent)
-            self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
+            else: 
+                 
+                #
+                # Simulation for Single Interactable
+                #
+                interactable = component.interactable
+                for dependent in interactable.dependents:
+                    self.simulate_vole_interactable_interaction(dependent)
+                self.simulate_vole_interactable_interaction(interactable) # function call which simulates interaction thru function call or changing vals of specified attributes
 
 
 
 
                 
-            #
-            # Wait for Control Side Software to react to Simulation 
-            #
-            ################################################
-            time.sleep(10)  # Pause to give control side a moment to assess if there was a threshold event 
-            ################################################
+                #
+                # Wait for Control Side Software to react to Simulation of this Interactable
+                #
+                ################################################
+                time.sleep(10)  # Pause to give control side a moment to assess if there was a threshold event 
+                ################################################
 
 
 
 
-            #
-            # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
-            #
-            if (component.interactable.active and not component.interactable.threshold): # active component with a false threshold
-                # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
-                print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
-                return False 
+                #
+                # Check if Threshold has been met, in which case Vole completed correct moves to "pass" this interactable
+                #
 
-            ## Inactive Interactable Handling ## 
-            elif component.interactable.active is False: # inactive component has no way of its threshold getting set to true, so we manually check here 
-                # Inactive means that the component is sitting idle, however, we still want to check if it is currently sitting at its threshold goal state, because if it is the vole can successfully make its move. 
-                threshold_attr_name = component.interactable.threshold_condition["attribute"]
-                attribute = getattr(component.interactable, threshold_attr_name) # get object specified by the attribute name
+                # self.pass_interactable(interactable)
+
+                # The only thresholds that we actually care about are Barrier Interactables 
+                # if we encounter an active, barrier interactable (either a door or rfid) that has a False threshold, then something went wrong. 
+                # if 
+                if not component.interactable.barrier: # non-barrier interactables wont directly prevent a voles movement, so we can move past this one no matter what the threshold is 
+                    
+                    pass 
+
+                else: 
+                    
+                    # handle barrier components 
+                    print(f'(Simulation/Vole.py, attempt_move) Barrier Component Handling: {component}')
+
+                    if (component.interactable.active and not component.interactable.threshold): # active component with a false threshold
+                        # if the threshold condition was not met, then display message to tell user that attempted move was unsuccessful, and return from function. 
+                        print(f'(Simulation/Vole.py, attempt_move) the threshold condition was not met for {component.interactable.name}. Vole{self.tag} cannot complete the move from chamber {self.current_loc} to chamber {destination}.')
+                        return False 
+
+                    ## Inactive Interactable Handling ## 
+                    elif component.interactable.active is False: # inactive component has no way of its threshold getting set to true, so we manually check here 
+                        # Inactive means that the component is sitting idle, however, we still want to check if it is currently sitting at its threshold goal state, because if it is the vole can successfully make its move. 
+                        threshold_attr_name = component.interactable.threshold_condition["attribute"]
+                        attribute = getattr(component.interactable, threshold_attr_name) # get object specified by the attribute name
+                        
+                        if hasattr(component.interactable, 'check_threshold_with_fn'): 
+                            attribute = attribute(component.interactable)
+                        if attribute == component.interactable.threshold_condition['goal_value']: pass # threshold is True, continue executing function
+                        else: return False # threshold is False, return from attempt_move
+                    
+                    else: 
+                        pass # active component with a true threshold. update location and continue to next component
                 
-                if hasattr(component.interactable, 'check_threshold_with_fn'): 
-                    attribute = attribute(component.interactable)
-                if attribute == component.interactable.threshold_condition['goal_value']: pass # threshold is True, continue executing function
-                else: return False # threshold is False, return from attempt_move
-                
-        
-        ## END FOR: Done Simulating Components along the Edge ##
+
+
+            
+            ## END FOR: Done Simulating Components along the Edge ##
 
 
         # All Component Thresholds Reached; loop back thru and reset the dependent components threshold values to False now that we have confirmed an event occurred 
-        # (NOTE BIG CHANGE) (not implemented, just idea.) for any independent component, we don't want to reset its threshold because its behavior may differ from this default behavior. 
         print('\n')
         for component in edge:     
             component.interactable.threshold = False  # reset the components threshold

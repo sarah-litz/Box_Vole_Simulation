@@ -1,3 +1,32 @@
+    '''OLD VERSION
+    def physical_proximity_check(self, interactable): 
+        if interactable.edge_or_chamber == self.edge_or_chamber and interactable.edge_or_chamber_id == self.edge_or_chamber_id: 
+            # if vole position between interactables is currently next to the desired interactable, return True
+            if interactable == self.curr_interactable: 
+                # vole is next to interactable 
+                return True 
+            else: 
+                print(f'(Vole.py, physical_proximity_check) vole{self.tag} is in the same {self.edge_or_chamber} as {interactable.name} but is standing next to the interactable: {self.curr_interactable}') 
+        else:            
+            print(f'(Vole.py, physical_proximity_check) vole{self.tag} is in {self.edge_or_chamber}{self.edge_or_chamber_id} but {interactable.name} is in {interactable.edge_or_chamber}{interactable.edge_or_chamber_id}')      
+        return False 
+     
+        if interactable.edge_or_chamber == 'chamber': # check that the vole's location is w/in physical proximity of the interactable we are simulating an interaction with
+
+            # vole's current chamber location must match 
+            if self.current_loc != interactable.edge_or_chamber_id: 
+                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is in a different chamber.')
+                return 
+        else: 
+            # vole's current chamber must be one of the chambers that the edge connects 
+            edge = self.map.get_edge(interactable.edge_or_chamber_id)
+            if (self.current_loc != edge.v1 and self.current_loc != edge.v2): 
+                sim_log(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
+                print(f'(Vole.py, simulate_vole_interactable_interaction) Cannot simulate vole{self.tag} interaction with {interactable.name} because it is on an edge connection different chambers.')
+                return '''
+
+
 {
     "door2": 
     {

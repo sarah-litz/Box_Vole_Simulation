@@ -1,13 +1,13 @@
 import unittest 
 unittest.TestLoader.sortTestMethodsUsing = None
-from Map import Map
-from Simulation import Simulation
+from Control.Classes.Map import Map
+
+import os 
+cwd = os.getcwd() # current working directory
 
 
 
 class VoleTests(unittest.TestCase): 
-    sim = Simulation(Map())
-    map = sim.map 
 
     #
     # Initalize Map and Voles 
@@ -74,6 +74,28 @@ class VoleTests(unittest.TestCase):
         # then update vole.random_action() so it first checks for probabilities. If action_probabilities==None, then call possible_actions() and choose randomly (using a uniform distribution)
 
 
+def map_testing(): 
+    
+    map = Map(cwd+'/Control/Configurations')
+
+    for id in map.graph.keys():
+
+        chamber = map.graph[id] 
+
+        print(chamber)
+
+
+    edge = map.get_edge(12)
+
+    print(edge)
+
+
+    
+    
+
 if __name__ == '__main__': 
 
-     unittest.main()
+    # unittest.main()
+
+    map_testing() 
+    

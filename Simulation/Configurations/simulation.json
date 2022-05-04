@@ -28,7 +28,9 @@
         {"name":"rfid4", 
             "simulate":true,
             "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )"  
-
+        }, 
+        {"name":"door2", 
+            "simulate":true
         }
         
     ],

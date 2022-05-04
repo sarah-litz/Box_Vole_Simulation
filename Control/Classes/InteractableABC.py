@@ -24,6 +24,7 @@ class interactableABC:
         ## Object Information ## 
         self.ID = None
         self.active = False # must activate an interactable to startup threads for tracking any vole interactions with the interactable
+        self.name = 'OVERRIDE!'
 
         ## Location Information ## 
         self.edge_or_chamber = None # string to represent if this interactable sits along an edge or in a chamber
@@ -34,9 +35,15 @@ class interactableABC:
         self.threshold_condition = threshold_condition  # {attribute, initial_value, goal_value} dict to specify what the attribute/value goal of the interactable is. 
         self.threshold_event_queue = queue.Queue() # queue for tracking anytime a threshold condition is met 
 
+        ## Dependency Chain Information ## 
         self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. These are interactables that are dependent on a vole's actions! 
-        self.isIndependent = False # set to True if an interactable acts independently of a vole, and who's behavior is fully dependent on values of its dependents 
+        self.parents = [] # if an interactable is a dependent for another, then the object that it is a dependent for is placed in this list. 
+        self.barrier = False # set to True if the interactable acts like a barrier to a vole, meaning we require a vole interaction of somesort everytime a vole passes by this interactable. 
+    
+    def __str__(self): 
 
+        return self.name
+        
     def activate(self):
 
         print(f"(InteractableABC.py, activate) {self.name} has been activated. starting contents of the threshold_event_queue are: {list(self.threshold_event_queue.queue)}")
@@ -85,12 +92,11 @@ class interactableABC:
         ''' checks if interactable has reached its threshold. Returns True if yes, False otherwise. '''
 
     def dependents_loop(self): 
+        ## (New) DEPENDENTS LOOP ## 
         ''' if interactable has dependents, then we can trigger a threshold event to occur for the interactable iff all of its dependents are true.'''
-        # ISSUE: what if a door has 2 levers that are able to open it. Then we don't need all of them to be able to open the door. 
 
         if len(self.dependents)>0: 
             raise Exception(f'must override dependents_loop with logic for the cause/effect of an interactables dependents')
-            # (NOTE) when overriding this function, make sure that you set isIndependent to True if the interactable behavior is completely dependent on its dependents rather than on any vole behavior! 
         
         else: 
             return # don't need to run this function for interactable w/out dependents 
@@ -162,6 +168,7 @@ class interactableABC:
                     ## AN EVENT! ## 
 
                     # Reset the Threshold Values of the interactable's Dependents (ok to do so now that we have confirmed that there was a threshold event)
+                    # this is now getting done in the separate dependents_loop function
                     '''for dependent in self.dependents: 
                         dependent.threshold = False '''
 
@@ -173,13 +180,11 @@ class interactableABC:
                     control_log(f"(InteractableABC.py, watch_for_threshold_event) Threshold Event for {self.name}. Event queue: {list(self.threshold_event_queue.queue)}")
 
 
-                    if self.isIndependent: 
+                    if len(self.dependents) > 0: 
 
                         # because interactable is not dependent on vole's actions, we can assume that it could potentially be sitting in its goal state for extended periods of time. 
                         # as a result, we want to sleep until it is out of its goal state ( or until threshold gets set to false by simulation ).
-                        # 
-                        #  
-                        # (other idea:) once out of its goal state, set self.threshold = False again. 
+
 
                         while attribute == self.threshold_condition['goal_value'] and self.threshold == True: 
 
@@ -216,8 +221,7 @@ class interactableABC:
             
 
 
-    
-        
+           
 class lever(interactableABC):
     def __init__(self, ID, signalPin, threshold_condition):
         # Initialize the parent class
@@ -239,6 +243,7 @@ class lever(interactableABC):
         self.angleRetract = None
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
+
 
     def add_new_threshold_event(self): 
 
@@ -303,6 +308,8 @@ class door(interactableABC):
         self.openAngle = None
         self.closeAngle = None
 
+        self.barrier = True 
+
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
     
     
@@ -318,8 +325,6 @@ class door(interactableABC):
 
     @run_in_thread
     def dependents_loop(self): 
-        
-        self.isIndependent = True
 
         ## Logic for How To Handle Door's Dependent(s) ## 
 
@@ -454,6 +459,9 @@ class rfid(interactableABC):
         self.name = 'rfid'+str(ID)
         self.ID = ID 
         self.rfidQ = queue.Queue()
+
+
+        self.barrier = True # because rfid beam is unavoidable when vole runs passed interactable. 
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
 

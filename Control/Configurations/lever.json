@@ -4,7 +4,8 @@
         "id":1,
         "signalPin":1, 
         "numPresses":2,  
-        "threshold_condition": { "attribute": "pressed", "initial_value":0, "goal_value": 4, "reset_value": true }    
+        "threshold_condition": 
+        { "attribute": "pressed", "initial_value":0, "goal_value": 4, "reset_value": true }    
     },
     
     "lever2": 

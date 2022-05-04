@@ -243,11 +243,12 @@ class SimulationABC:
 
         for cid in self.map.graph.keys(): 
             
-            chmbr = self.map.graph[cid]
+            chmbr = self.map.get_chamber(cid)
             cvoles = [] 
 
             for v in self.voles: 
-                if v.current_loc == chmbr.id: cvoles.append(v.tag)
+                if v.curr_loc == chmbr: 
+                    cvoles.append(v.tag)
             print(f'_____________\n|   (C{chmbr.id})    |')
 
             for v in cvoles: 
@@ -256,8 +257,8 @@ class SimulationABC:
                 space = 8 - len(str(v)) 
                 print(f'|V[{v}]' + f"{'':>{space}}" + '|')
             
-            for i in chmbr.interactables: 
-                i = i.name # reset i so we loop thru the names of the interactable objects
+            interactables = [c.interactable.name for c in chmbr]
+            for i in interactables: 
                 if len(str(i)) > 8: 
                     i = i[:7] + '-'
                 space = 8 - len(str(i)) 

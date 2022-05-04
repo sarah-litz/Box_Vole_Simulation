@@ -28,7 +28,7 @@ class Map:
     def __init__(self, config_directory): 
         ''' key is id assigned to vertex: Chamber instance'''
         
-        self.graph = {} 
+        self.graph = {} # { chamberid: chamber instance }
 
         self.edges = [] # list of all edge objects that have been created ( can also access thru each Chamber instance )
 
@@ -175,13 +175,13 @@ class Map:
             
             new_c = self.new_chamber( chmbr['id'] )
             
-            for i in chmbr['interactables']: 
+            for i in chmbr['components']: 
                 
                 # instantiate interactable hardware 
                 #try: 
                     new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
                     # assign the interactable to a chamber object
-                    new_c.new_interactable( new_i )
+                    new_c.new_component( new_i )
                 
             '''except Exception as e: 
                     print(f"Ran into an issue when trying to instantiate the interactable object: {i['interactable_name']}")
@@ -201,11 +201,41 @@ class Map:
                 
                 for i in edge['components']:
 
-                    # instantiate interactable hardware
-                    new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+                    
+                    # (NOTE changes!!!! ) CHECK IF REFERNCE TO AN EXISTING CHAMBER INTERACTABLE 
+                    # edge components may point to an already instanted interactable that is in a chamber
+                    # denoted with the key "chamber_interactable" 
+                    ref = False
+                    if 'chamber_interactable' in i.keys(): 
+                        # reference to an already instanted interactable 
+                        ## check validity ## 
 
-                    new_edge.new_component( new_i )
+                        # edge case: reference to a nonexistent interactable
+                        try: old_i = self.instantiated_interactables[i['chamber_interactable']]
+                        except KeyError as e: 
+                            raise Exception(f'(Map.py, configure_setup) chamber_interactable is trying to reference a nonexistent interactable {i["chamber_interactable"]}. KeyError: {e}')
+                        
+                        # edge case: reference to an edge interactable (can only reference a chamber interactable)
+                        if old_i.edge_or_chamber == 'edge': raise Exception(f'(Map.py, configure_setup) invalid chamber_interactable: cannot reference {old_i.name} as a chamber_interactable, because it is on an edge interactable (edge{old_i.edge_or_chamber_id})')
+
+                        # edge case: reference to a chamber that does not touch the current edge 
+                        if old_i.edge_or_chamber_id != new_edge.v1 and old_i.edge_or_chamber_id != new_edge.v2: raise Exception(f'(Map.py, configure_setup) invalid chamber_interactable: {old_i.name} is in chamber{old_i.edge_or_chamber_id} which is not connected to edge{new_edge.id}: {new_edge}') 
+                        
+                        ref = True 
+                        new_i = self.instantiated_interactables[i['chamber_interactable']]
+                        component_obj = self.get_chamber(new_i.edge_or_chamber_id).get_component(new_i)
+                        new_edge.new_component(new_i, chamber_interactable_reference=True)
+                        
+
+                    # instantiate interactable hardware
+                    if not ref: 
+                        new_i = self.instantiate_interactable_hardware( i['interactable_name'], i['type'] )
+                        new_edge.new_component( new_i )
             
+
+
+
+            ## Not Implemented: Unidirectional Edges ## 
             '''
             elif edge['type'] == 'unidirectional': 
 
@@ -231,16 +261,17 @@ class Map:
         for i_name in self.instantiated_interactables:
             i = self.instantiated_interactables[i_name]
             if hasattr(i, 'dependent_names'): 
-                dependents = []
+                # has dependents we need to add 
                 for dname in i.dependent_names:
-                    try: dependents.append(self.instantiated_interactables[dname])
+                    try: 
+                        i.dependents.append(self.instantiated_interactables[dname]) # assign parent its new dependent 
+                        self.instantiated_interactables[dname].parents.append(i) # assign dependent its new parent
+
                     except KeyError as e: 
-                        print(f' specified an unknown interactable {e} as a dependent for {i.name}. Double check the config files for {e} and for {i.name} to ensure they are correct.')
+                        print(f' specified an unknown interactable {e} as a dependent for {i.name}. Double check the config files for {e} and for {i.name} to ensure they are correct, and ensure that {e} was added in the map config file as well.')
                         ans = input(f' would you like to carry on the experiment without adding {e} as a dependent for {i.name}? (y/n)')
                         if ans == 'n': exit()
 
-
-                i.dependents = dependents # store list of dependent objects in the interactables dependent list
                 
                 delattr(i, 'dependent_names')  # delete the dependent_names attribute since we don't need it anymore 
 
@@ -301,6 +332,15 @@ class Map:
 
         return None
 
+    def get_location_object(self, interactable): 
+        ''' returns chamber or edge object that the component exists in '''
+        if interactable.edge_or_chamber == 'chamber': 
+
+            return self.get_chamber(interactable.edge_or_chamber_id)
+        
+        else: 
+
+            return self.get_edge(interactable.edge_or_chamber_id)
     #
     # Path Finding Methods
     #
@@ -331,102 +371,14 @@ class Map:
 
 
 
-    # 
-    # Chamber -- vertices in the graph
-    #  
-    class Chamber: 
-        def __init__(self,id): 
-            self.id = id 
-            
-            self.connections = {} # adjacent chamber: a single Edge object which points to linked list of components
-
-            self.interactables = [] # interactable specific to a chamber, rather than an edge 
-
-            self.action_probability_dist = None # probabilities are optional; must be added after all interacables and chamber connections have been added. can be added thru function 'add_action_probabilities'
-
-
-        def __str__(self): 
-            return 'Chamber: ' + str(self.id) + ', adjacent: ' + str([x for x in self.connections])
-   
-        def new_interactable(self, interactable): 
-            # Adds interactable to chamber; these objects exist w/in a chamber, and not on an edge so have nothing to do with a vole's movement between chambers
-            self.interactables.append(interactable)
-            interactable.edge_or_chamber = 'chamber'
-            interactable.edge_or_chamber_id = self.id
-
-
-        def remove_interactable(self, interactable_name): 
-            interactableobj = self.get_chmbr_interactable(interactable_name)
-            if interactableobj is None: 
-                control_log(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
-                print(f'Chamber{self.id} does not contain {interactable_name}, so this interactable cannot be removed.')
-            self.interactables.remove(interactableobj)
-
-        def get_chmbr_interactable(self, interactable_name): 
-            # search list of interactables and return the specified object 
-            for i in self.interactables: 
-                if i.name == interactable_name: return i 
-            return None 
-        
-
-
-        #
-        # (for Simulation Use Only) Probability Tracking: tracking probabilities of some Action-Object getting chosen by a Vole when a simulated vole is told to make random decisions
-        #
-        def add_action_probabilities( self, actionobj_probability_dict ): 
-            
-            ''' function for extensive error checking before assigning the probabilities to the possible actions from the current chamber '''
-
-            # Check that probabilities have been set for every value (the +1 is for the time.sleep() option)
-            if len(actionobj_probability_dict) != len(self.interactables) + len(self.connections) + 1: 
-                raise Exception(f'must set the probability value for all action objects (the connecting chambers and the interactables) within the chamber, as well as the "sleep" option (even if this means setting their probability to 0) ')
-
-
-            # check that the specified action-objects are accessible from the current chamber, and of type Chamber, Interactable, or 'sleep'
-            p_sum = 0
-            for (k,v) in actionobj_probability_dict.items():  
-                if isinstance(k, type(self)): # type: Chamber 
-                    if k.id not in self.connections.keys(): 
-                        raise Exception(f'attempting to set the probability of moving to chamber{k.id}, which is not adjacent to chamber{self.id}, so cannot set its probability.') 
-                elif isinstance(k, type(self.interactables[0])): # type: Interactable 
-                    if k.id not in self.interactables: 
-                        raise Exception(f'attempting to set the probability of choosing interactable {k.id} which does not exist in chamber {self.id}, so cannot set its probability.')
-                elif k != 'sleep': # only remaining option is type=='sleep', throw error if it is not
-                    raise Exception(f'{k} is an invalid object to set a probability for')
-                else: 
-                    p_sum += v
-
-
-            # check that the probability values sum to 1
-            if p_sum != 1: 
-                raise Exception(f'the probabilities must sum to 1, but the given probabilities for chamber{self.id} summed to {p_sum}')
-            
-
-            self.action_probability_dist = actionobj_probability_dict
-
-        
-
     #
-    # Edges -- linked list for storing Components
-    # 
-    class Edge:    
-        def __init__(self, id, chamber1, chamber2, type=None): 
-            
-            # Identifying Edge w/ id val and the chambers it connects 
-            self.id = id 
-            self.v1 = chamber1 
-            self.v2 = chamber2
-            self.type = type 
-
-            # Component Makeup of the Edge 
-            self.headval = None # will point to first instance of Component
-        
-        def __str__(self): 
-            interactables = [c.interactable.name for c in self] # list of the interactable object's Names -- (concatenation of type+ID)
-            if self.type=='shared': 
-                return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{interactables}--> {self.v2}'
-
-            return 'Edge ' + str(self.id) + f', connects: {self.v1} --{interactables}---> {self.v2}'
+    # Linked List for Interactable Ordering w/in Edge or Chamber
+    #
+    class OrderedComponents: 
+        ''' Class for Traversing and Locating Components on an Edge or w/in a Chamber. 
+        Manages Linked Lists that preserves order of interactable components.
+        Possible to add info on the "edges" that link two components. i.e. can assign values so we can identify where a vole sits relative to interactables w/in the linked list. 
+        '''
 
         ''' Methods for Traversing and Locating Components on an Edge '''
         def __iter__(self): 
@@ -464,6 +416,10 @@ class Map:
                     return c.interactable
             return None # a component with an interactable with name does not exist in linked list
 
+        def get_component_list(self): 
+            ''' returns all components w/in edge or chamber in a list format '''
+            return [c for c in self] 
+
         def get_component(self, interactable): 
             ## helper function for adding components into the linked list ## 
             '''beginning at headval, traverses linked list to find component. Returns None if it does not exist'''
@@ -482,31 +438,6 @@ class Map:
                     return c 
             return None # c does not exist in linked list 
 
-
-        ''' Adding and Removing Components from Edge '''
-        def new_component(self, newinteractable): 
-            # instantiates new Component and adds to end of linked list
-            newinteractable.edge_or_chamber = 'edge'
-            newinteractable.edge_or_chamber_id = self.id
-            newComp = self.Component(newinteractable)
-
-            if self.headval is None: 
-                self.headval = newComp
-                return newComp
-            
-            component = self.headval 
-            while(component.nextval):
-                component = component.nextval # list traversal to get last component in linked list 
-                if component.interactable == newComp.interactable:                 
-                    # check that component is not a repeat 
-                    del newComp
-                    raise Exception(f'component not added because this component has already been added to the edge')
-            
-            
-            component.nextval = newComp # update list w/ new Component
-            newComp.prevval = component # set new Component's previous component to allow for backwards traversal     
-            return newComp
-                
 
         def new_component_after(self, newinteractable, previnteractable): 
             '''instantiates and adds new component directly after the specified interactable (so can be in middle of linked list if desired)''' 
@@ -588,8 +519,10 @@ class Map:
             return reversed_lst
 
 
+
+
         #
-        # Component Object: Subclass of the Edge Class, used for implementing Linked List 
+        # Component Object: subclass of OrderedComponents. Used for implementing Linked List 
         #
         class Component: 
        
@@ -597,10 +530,151 @@ class Map:
                 self.interactable = interactable # access to the actual object that represents a hardware component
                 self.nextval = None
                 self.prevval = None
-
             
             def __str__(self): 
                 return str(self.interactable.name)
+
+
+    # 
+    # Chamber -- vertices in the graph
+    #  
+    class Chamber(OrderedComponents): 
+        
+        def __init__(self,id): 
+
+            self.id = id 
+
+            self.edge_or_chamber = 'chamber'
+            
+            self.connections = {} # adjacent chamber: a single Edge object which points to linked list of components
+
+            self.headval = None
+            # (NOTE CHANGES!) self.interactables is now accessed thru self.headval 
+
+            self.action_probability_dist = None # probabilities are optional; must be added after all interacables and chamber connections have been added. can be added thru function 'add_action_probabilities'
+
+
+        def __str__(self): 
+            return 'Chamber: ' + str(self.id) + ', adjacent: ' + str([x for x in self.connections]) + ', interactables: ' + str([c.interactable.name for c in self])
+
+
+        ''' Adding Component to Chamber '''
+        def new_component(self, newinteractable): 
+            # instantiates new Component and adds to end of linked list
+            newinteractable.edge_or_chamber = 'chamber'
+            newinteractable.edge_or_chamber_id = self.id
+            newComp = self.Component(newinteractable)
+
+            if self.headval is None: 
+                self.headval = newComp
+                return newComp
+            
+            component = self.headval 
+            while(component.nextval):
+                component = component.nextval # list traversal to get last component in linked list 
+                if component.interactable == newComp.interactable:                 
+                    # check that component is not a repeat 
+                    del newComp
+                    raise Exception(f'component not added because this component has already been added to the edge')
+            
+            
+            component.nextval = newComp # update list w/ new Component
+            newComp.prevval = component # set new Component's previous component to allow for backwards traversal     
+            return newComp
+
+
+        
+        #
+        # (for Simulation Use Only) Probability Tracking: tracking probabilities of some Action-Object getting chosen by a Vole when a simulated vole is told to make random decisions
+        #
+        def add_action_probabilities( self, actionobj_probability_dict ): 
+            
+            ''' function for extensive error checking before assigning the probabilities to the possible actions from the current chamber '''
+
+            # Check that probabilities have been set for every value (the +1 is for the time.sleep() option)
+            if len(actionobj_probability_dict) != len(self.interactables) + len(self.connections) + 1: 
+                raise Exception(f'must set the probability value for all action objects (the connecting chambers and the interactables) within the chamber, as well as the "sleep" option (even if this means setting their probability to 0) ')
+
+
+            # check that the specified action-objects are accessible from the current chamber, and of type Chamber, Interactable, or 'sleep'
+            p_sum = 0
+            for (k,v) in actionobj_probability_dict.items():  
+                if isinstance(k, type(self)): # type: Chamber 
+                    if k.id not in self.connections.keys(): 
+                        raise Exception(f'attempting to set the probability of moving to chamber{k.id}, which is not adjacent to chamber{self.id}, so cannot set its probability.') 
+                elif isinstance(k, type(self.interactables[0])): # type: Interactable 
+                    if k.id not in self.interactables: 
+                        raise Exception(f'attempting to set the probability of choosing interactable {k.id} which does not exist in chamber {self.id}, so cannot set its probability.')
+                elif k != 'sleep': # only remaining option is type=='sleep', throw error if it is not
+                    raise Exception(f'{k} is an invalid object to set a probability for')
+                else: 
+                    p_sum += v
+
+
+            # check that the probability values sum to 1
+            if p_sum != 1: 
+                raise Exception(f'the probabilities must sum to 1, but the given probabilities for chamber{self.id} summed to {p_sum}')
+            
+
+            self.action_probability_dist = actionobj_probability_dict
+
+        
+
+    #
+    # Edges -- linked list for storing Components
+    # 
+    class Edge(OrderedComponents):    
+        def __init__(self, id, chamber1, chamber2, type=None): 
+            
+            # Identifying Edge w/ id val and the chambers it connects 
+            self.id = id 
+            self.v1 = chamber1 
+            self.v2 = chamber2
+            self.type = type 
+            self.edge_or_chamber = 'edge'
+
+            self.headval = None # points to first component in linked list
+
+        def __str__(self): 
+            interactables = [c.interactable.name for c in self] # list of the interactable object's Names -- (concatenation of type+ID)
+            if self.type=='shared': 
+                return 'Edge ' + str(self.id) + f', connects: {self.v1} <--{interactables}--> {self.v2}'
+
+            return 'Edge ' + str(self.id) + f', connects: {self.v1} --{interactables}---> {self.v2}'
+
+        ''' Adding Component to an Edge'''
+        def new_component(self, newobj, chamber_interactable_reference = False): 
+            # instantiates new Component and adds to end of linked list
+            if chamber_interactable_reference is False: 
+                newobj.edge_or_chamber = 'edge'
+                newobj.edge_or_chamber_id = self.id
+            else: 
+                # if type(newobj) != self.Component: raise Exception(f'(Map.py, new_component) chamber_interactable_reference=True, sop must pass in a Component object, not an interactable object. ')
+                # if not issubclass(type(newobj), InteractableABC): raise Exception(f'(Map.py, new_component (on edge)) chamber_interactable=True, but newobj {type(newobj)}was not of IneractableABC type')
+                newComp = newobj
+
+            newComp = self.Component(newobj)
+
+            if self.headval is None: 
+                self.headval = newComp
+                return newComp
+            
+            component = self.headval 
+            while(component.nextval):
+                component = component.nextval # list traversal to get last component in linked list 
+                if component.interactable == newComp.interactable:                 
+                    # check that component is not a repeat 
+                    del newComp
+                    raise Exception(f'component not added because this component has already been added to the edge')
+            
+            
+            component.nextval = newComp # update list w/ new Component
+            newComp.prevval = component # set new Component's previous component to allow for backwards traversal     
+            return newComp
+
+
+
+
             
 
             
