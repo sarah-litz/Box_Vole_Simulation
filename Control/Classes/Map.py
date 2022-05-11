@@ -428,12 +428,18 @@ class Map:
 
 
     def get_component_path(self, start, goal): 
-        '''Returns list of sequential components from start->goal component'''
+
+        # values passed in should be chamber/edge objects 
+
+        '''Returns list of sequential components that fall between the start Location and the goal location'''
+
 
         # check that start and end component exist
-        if start.interactable not in self.instantiated_interactables or goal.interactable not in self.instantiated_interactables: 
-            raise Exception(f'(Map, get_component_path) start component {start} and/or goal component {goal} does not exist in the map, so cannot find path')
-        
+        # if start.interactable.name not in self.instantiated_interactables.keys() or goal.interactable.name not in self.instantiated_interactables.keys(): 
+        #    raise Exception(f'(Map, get_component_path) start component {start} and/or goal component {goal} does not exist in the map, so cannot find path')
+
+        # convert the start/goal to their corresponding chamber or edge location
+
         # get path will return a list of chambers that we will need to cross to reach the desired chamber/edge. 
         chamber_path = self.get_path(start, goal) # if the start or goal is an edge, then the path will consist of the shortest way to reach a chamber that touches the goal edge. 
 
@@ -452,15 +458,21 @@ class Map:
             # begin with edge components if our start is an edge
             component_path.extend(start.get_component_list())
         
-        for idx in range(chamber_path):
+        for idx in range(len(chamber_path)-1):
 
-            chamber = chamber_path[idx] 
+            chamberID = chamber_path[idx] 
+            chamber = self.graph[chamberID]
+
+            adj_cid = chamber_path[idx+1] # grab the next chambers id 
 
             # for each chamber, grab the next edge connecting current chamber and nxt chamber 
-            edge = chamber.connections[chamber_path[idx+1].id]
+            edge = chamber.connections[adj_cid]
 
-            # extend with edges component list 
-            component_path.extend(edge.get_component_list())
+            # extend the component path with the new edges component list  
+            if edge.v1 == adj_cid: # the nxt chamber comes first in the edge, so reverse component ordering 
+                component_path.extend(edge.get_component_list(reverse=True))
+            else: 
+                component_path.extend(edge.get_component_list(reverse=False))
             
             idx = idx+1
         
@@ -469,22 +481,9 @@ class Map:
             # end with edge components if our goal is an edge 
             component_path.extend(goal.get_component_list())
 
-
-
-            
-            
+        return component_path
 
         
-
-        # now that we know the chamber path to reach the goal, we can start compiling a list of the components we will cross. 
-
-        # if goal component is on an edge, don't forget to add those extra components at the end! 
-
-
-
-        
-        
-
     #
     # Linked List for Interactable Ordering w/in Edge or Chamber
     #
@@ -530,9 +529,12 @@ class Map:
                     return c.interactable
             return None # a component with an interactable with name does not exist in linked list
 
-        def get_component_list(self): 
+        def get_component_list(self, reverse = False ): 
             ''' returns all components w/in edge or chamber in a list format '''
-            return [c for c in self] 
+            if not reverse: 
+                return [c for c in self] 
+            else: 
+                return self.reverse_components() 
 
         def get_component(self, interactable): 
             ## helper function for adding components into the linked list ## 

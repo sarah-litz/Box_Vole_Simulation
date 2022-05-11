@@ -29,14 +29,29 @@ class RandomVoles(SimulationABC):
         # 
         # Simulation Goal: 1 Vole that makes random moves throughout the timeout
         # 
+
         chamber1 = self.map.get_chamber(1)
         chamber2 = self.map.get_chamber(2)
         chamber3 = self.map.get_chamber(3)
+
         edge12 = self.map.get_edge(12)
+
+        rfid1 = self.map.instantiated_interactables['rfid1']
+        door2 = self.map.instantiated_interactables['door2']
+        
+        loc1 = self.map.get_location_object(rfid1)
+        loc2 = self.map.get_location_object(door2)
+        rfid1 = loc1.get_component(rfid1) # convert to the component version rather than the interactable
+        door2 = loc2.get_component(door2)
+
+
+
         print(self.map.get_path(chamber1,edge12))
         print(self.map.get_path(chamber3,edge12))
         print('-----')
-        print(self.map.get_component_path(chamber3, chamber2))
+        component_path = self.map.get_component_path(chamber3, chamber2)
+        for c in component_path: 
+            print(c.interactable)
 
         return 
         # (NOTE) need to implement vole function that while in timeout, the vole just makes random moves 
