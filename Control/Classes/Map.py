@@ -45,6 +45,9 @@ class Map:
                 edge = chamber.connections[adj]  
                 print(edge)                      # edge id and vertices it connects
 
+
+
+
     #
     # Getters and Setters 
     #        
@@ -344,7 +347,10 @@ class Map:
     #
     # Path Finding Methods
     #
-    def get_path(self, start, goal): 
+
+
+    def get_chamber_path(self, start, goal): 
+        '''pass in only the integer ids to specify the start/goal'''
         '''Returns list of sequential chambers to move from start->goal chamber'''
         def trace_path(previous, s): #helper function for get_path 
             # recursive trace back thru previous dictionary to get path 
@@ -358,7 +364,7 @@ class Map:
         # BFS 
         frontier = deque([start]) # chambers already explored 
         previous = {start: None} # keeps track of the chamber that came before current chamber 
-        if start == goal: return start 
+        if start == goal: return [start]
         while frontier: 
             chmbr_id = frontier.popleft() 
             for adj in self.graph[chmbr_id].connections: 
@@ -368,8 +374,116 @@ class Map:
                     # Goal Check 
                     if adj == goal: 
                         return trace_path(previous, adj)
+    
+
+    def get_path(self, start, goal): 
+        '''Must pass in the actual edge/chamber objects to specify the start and goal'''
+        '''Returns list of sequential chambers to move to in order to reach a chamber that is adjacent to edge '''
+                
+
+        def edge_to_chamber_path(start, goal): 
+            p1 = self.get_chamber_path(start.v1, goal.id)
+            p2 = self.get_chamber_path(start.v2, goal.id)
+            if len(p1) < len(p2): return p1 
+            else: return p2
+
+        def chamber_to_edge_path(start, goal): 
+            # check the edges vertices that it connects. we want to get the chamber path that it takes to reach each of these chambers and then return the shortest path
+            p1 = self.get_chamber_path(start.id, goal.v1) # path to vertex/chamber1 that edge touches
+            p2 = self.get_chamber_path(start.id, goal.v2) # path to vertex/chamber2 that edge touches
+            if len(p1) < len(p2): return p1 
+            else: return p2 
+        
+        def edge_to_edge_path(start, goal): 
+            # get path starting from both chambers 
+            p1 = chamber_to_edge_path(start.v1, goal) 
+            p2 = chamber_to_edge_path(start.v2, goal)
+            if len(p1) < len(p2): return p1 
+            else: return p2      
+
+        def chamber_to_chamber_path(start,goal): 
+            return self.get_chamber_path(start.id, goal.id)   
 
 
+        ### Figure Out Which function from above we should call! ###
+
+        if type(start) == self.Edge:
+            if type(goal) == self.Edge:
+                # edge->edge 
+                return edge_to_edge_path(start,goal)
+            else: 
+                # edge->chamber
+                return edge_to_chamber_path(start,goal)
+        
+        else: 
+            if type(goal) == self.Chamber: 
+                # chamber->chamber
+                return chamber_to_chamber_path(start,goal)
+            else: 
+                # chamber->edge
+                return chamber_to_edge_path(start,goal)
+
+
+
+
+
+    def get_component_path(self, start, goal): 
+        '''Returns list of sequential components from start->goal component'''
+
+        # check that start and end component exist
+        if start.interactable not in self.instantiated_interactables or goal.interactable not in self.instantiated_interactables: 
+            raise Exception(f'(Map, get_component_path) start component {start} and/or goal component {goal} does not exist in the map, so cannot find path')
+        
+        # get path will return a list of chambers that we will need to cross to reach the desired chamber/edge. 
+        chamber_path = self.get_path(start, goal) # if the start or goal is an edge, then the path will consist of the shortest way to reach a chamber that touches the goal edge. 
+
+        # collect the comonents! 
+        #
+        #
+        #
+        # important NOTE : LEAVING OFF HERE!!!!!!!!!!!! 
+        # IMPORTANT NOTE : we only care about the components along the edges, because all components that matter in vole movements should be added to an edge! 
+        # important ISSUE : what happens if two edges get the same component added to it??? I dont think this will matter? if i remember correctly, it gets assigned a new component object but contains the same interactable object. 
+        #
+        
+        # follow path and append components on the edges that we traverse
+        component_path = [] 
+        if type(start) == self.Edge: 
+            # begin with edge components if our start is an edge
+            component_path.extend(start.get_component_list())
+        
+        for idx in range(chamber_path):
+
+            chamber = chamber_path[idx] 
+
+            # for each chamber, grab the next edge connecting current chamber and nxt chamber 
+            edge = chamber.connections[chamber_path[idx+1].id]
+
+            # extend with edges component list 
+            component_path.extend(edge.get_component_list())
+            
+            idx = idx+1
+        
+        if type(goal) == self.Edge: 
+
+            # end with edge components if our goal is an edge 
+            component_path.extend(goal.get_component_list())
+
+
+
+            
+            
+
+        
+
+        # now that we know the chamber path to reach the goal, we can start compiling a list of the components we will cross. 
+
+        # if goal component is on an edge, don't forget to add those extra components at the end! 
+
+
+
+        
+        
 
     #
     # Linked List for Interactable Ordering w/in Edge or Chamber

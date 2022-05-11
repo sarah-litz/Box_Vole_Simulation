@@ -4,7 +4,8 @@
             "id": 1, 
             "descriptive_name": "Main Chamber", 
             "components": [
-                { "interactable_name":"lever1", "type":"lever"}
+                { "interactable_name":"lever1", "type":"lever"},
+                { "interactable_name":"lever2", "type":"lever"}
             ] 
         }, 
 
@@ -32,11 +33,11 @@
             "type":"shared", 
             "components":[
                 { "chamber_interactable": "lever1"},
+                { "chamber_interactable": "lever2"},
 
                 { "interactable_name":"rfid1", "type":"rfid" }, 
                 { "interactable_name":"door1", "type":"door" },
 
-                { "interactable_name":"lever2", "type":"lever" },
 
                 { "interactable_name":"door2", "type":"door" },
                 { "interactable_name":"rfid2", "type":"rfid" }

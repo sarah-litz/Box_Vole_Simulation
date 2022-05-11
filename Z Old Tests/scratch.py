@@ -1,3 +1,86 @@
+
+
+
+
+
+### DRAWING VOLES AND EDGES CHANGES ### 
+
+            ''' edgeObjectList = [] 
+            if len(interactables) == 0: 
+                # just draw voles
+                edgeObjectList = evoles 
+
+            for idx in range(len(interactables)): 
+                i = interactables[idx] 
+
+                # check if any of the edge voles position is at interactable i
+                for v in self.voles: 
+                    if v.curr_component.interactable == i: 
+                        # figure out which side of interactable the vole goes on
+                        if v.prev_component == None: 
+                            # v before i 
+                            edgeObjectList.extend([v,i])
+                        else: 
+                            edgeObjectList.extend([i,v])
+            '''
+
+            
+
+            '''if len(interactables) == 0: 
+                # chamber without interactables. Just draw voles. 
+                for v in cvoles: 
+                    draw_vole(v)
+
+            for idx in range(len(interactables)): 
+                # loop thru interactables w/in the chamber
+                i = interactables[idx] 
+                
+                voles_after_i = [] 
+                voles_before_i = [] 
+                
+                for v in cvoles: # for each interactable, loop thru the voles w/in the same chamber and check their component location 
+
+                    # for every vole located by the current interactable, append to list so we can draw 
+                    if v.curr_component.interactable == i: 
+                        
+                        # figure out if vole should be drawn before or after the interactable
+                        if idx == 0: 
+                            # edge case to avoid out of bounds error 
+                            if v.prev_component == None: 
+                                # v before i 
+                                voles_before_i.append(v)
+                            else: 
+                                # i before v 
+                                voles_after_i.append(v)
+
+                        elif v.prev_component == interactables[idx-1]: 
+                            # draw v before i 
+                            voles_before_i.append(v)
+                        else: 
+                            # draw i before v 
+                            voles_after_i.append(v)
+                
+                # Draw! 
+                for v in voles_before_i: draw_vole(v)
+                draw_interactable(i)
+                for v in voles_after_i: draw_vole(v)'''
+
+
+
+
+'''def draw_vole(v):
+    v = v.tag
+    if len(str(v)) > 8: 
+        v = str(v)[:7] + '-'
+    space = 8 - len(str(v)) 
+    print(f'|[{v}]' + f"{'':>{space}}" + '|')
+def draw_interactable(i):
+    if len(str(i)) > 8: 
+        i = i[:7] + '-'
+    space = 8 - len(str(i)) 
+    print(f'|[{i}]' + f"{'':>{space}}" + '|')'''    
+    
+    
     '''OLD VERSION
     def physical_proximity_check(self, interactable): 
         if interactable.edge_or_chamber == self.edge_or_chamber and interactable.edge_or_chamber_id == self.edge_or_chamber_id: 

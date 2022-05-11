@@ -37791,3 +37791,2331 @@ NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a Ne
 (Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
 (Vole.py, attempt_move) lever2, attribute result: 4
 (Vole.py, attempt_move) lever2, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101f64430>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101f64430>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a1db430>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a1db430>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10982c430>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10982c430>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'rfid1', 'door1', 'lever2', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1010c23d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1010c23d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104349490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x104349490>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f6a1490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f6a1490>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10197a3d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10197a3d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1067f53d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1067f53d0>>
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109927490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109927490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in chamber1. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1041993d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1041993d0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101a6ffd0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101a6ffd0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x100cff490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x100cff490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1073c7490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1073c7490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b153490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b153490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 200.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 200.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10646b490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10646b490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 1
+(Vole.py, attempt_move) Simulated Vole 1 successfully moved into chamber 1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106626490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106626490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x100a69490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x100a69490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b714490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b714490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole.py, attempt_move) attempting a move that is not physically possible according to Map layout. Skipping Move Request
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever2
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, attempt_move) lever2, attribute result: 4
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with lever1
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, threshold attribute: pressed, threshold value: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+(Vole.py, attempt_move) lever1, attribute result: 4
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fadf490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fadf490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b6a3490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b6a3490>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10765af70>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10765af70>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f32f370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f32f370>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x107419340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x107419340>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106c6d370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106c6d370>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1042aa340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1042aa340>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1089c9340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1089c9340>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10d4ee3a0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10d4ee3a0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fb723d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fb723d0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1093393a0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1093393a0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10769d340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10769d340>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109364340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109364340>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fa6b3a0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fa6b3a0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10341c310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10341c310>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b326310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10b326310>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f3ba550>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f3ba550>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1088c73d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1088c73d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a1b73d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10a1b73d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1084ea310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1084ea310>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f4483d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10f4483d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10160a3d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10160a3d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x11083c3d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x11083c3d0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fa883d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fa883d0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1017973a0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1017973a0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x107e58310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x107e58310>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fd81310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fd81310>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fd81310>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10fd81310>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102a53730>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x102a53730>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105fb6310>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105fb6310>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 1.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 2
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 2) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105fb6310>>
+(Simulation.py, run_sim) Mode 2 is paired with the simulation function: <bound method RandomVoles.mode2_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x105fb6310>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10ea8a3d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10ea8a3d0>>
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) Entering the attempt move function. Vole 1 is currently in edge12. Destination: 2.
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole1, attempt_move) traversing the edge: Edge 12, connects: 1 <--['lever1', 'lever2', 'rfid1', 'door1', 'door2', 'rfid2']--> 2
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+(Vole.py, simulate_vole_interactable_interaction) simulating vole1 interaction with rfid1
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108eb24f0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x108eb24f0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109dea370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x109dea370>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1076f83d0>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1076f83d0>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10ed53370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10ed53370>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101f76370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x101f76370>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1018ed370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1018ed370>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1095b2370>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1095b2370>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x11003b340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x11003b340>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10124d340>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10124d340>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10288a490>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x10288a490>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106f76400>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x106f76400>>
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+
+
+
+
+-----------------------------New Simulation Running------------------------------------
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(Simulation.py, configure_simulation) reading/parsing the file /Users/sarahlitz/Projects/Donaldson Lab/Vole Simulator Version 1/Box_Vole_Simulation/Simulation/Configurations/simulation.json
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(sim_attempt_move.py, __main__) New Simulation Created: RandomVoles
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+(Simulation.py, run_sim) Daemon Thread for getting the active mode, and running the specified simulation while active mode is in its timeout period.
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: Mode 1
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) The current mode (Mode 1) entered in timeout. Checking for if a simulation should be run. 
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1037f8460>>
+(Simulation.py, run_sim) Mode 1 is paired with the simulation function: <bound method RandomVoles.mode1_timeout of <Simulation.Scripts.RandomVoles.RandomVoles object at 0x1037f8460>>

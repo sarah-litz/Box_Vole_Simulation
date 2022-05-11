@@ -238,7 +238,60 @@ class SimulationABC:
 
     #
     #  Vole/Map Visualization 
-    #         
+    #
+
+    def draw_helper(self, voles, interactables): 
+
+        # arguments: 
+        #   interactables are string representations of interactable names 
+        #       - to retrieve the actual object, use the function
+
+        vole_interactable_lst = [] 
+        if len(interactables) == 0: 
+            # chamber or edge has no interactables. just draw voles 
+            for v in voles: 
+                vole_interactable_lst.append('Vole'+str(v.tag))
+        
+        for idx in range(len(interactables)): 
+            # loop thru interactales w/in the edge or chamber
+            i = interactables[idx]
+            
+
+            voles_before_i = [] 
+            voles_after_i = []
+            
+            for v in voles: # for each interactable, loop thru the voles w/in the same chamber and check their component location 
+
+                # for every vole located by the current interactable, append to list so we can draw it 
+                if v.curr_component.interactable == i: 
+
+                    # figure out if vole should be drawn before or after the interactable
+                    if idx == 0: 
+
+                        # edge case to avoid out of bounds error
+                        if v.prev_component == None: 
+                            # v before i 
+                            voles_before_i.append('Vole'+str(v.tag))
+                        
+                        else: 
+                            # i before v 
+                            voles_after_i.append('Vole'+str(v.tag))
+                    
+                    elif v.prev_component.interactable == interactables[idx-1]: 
+                        # draw v before i 
+                        voles_before_i.append('Vole'+str(v.tag)) # append string representation for the vole 
+                    else: 
+                        # draw i before v 
+                        voles_after_i.append('Vole'+str(v.tag)) # append string representation for the vole 
+
+            # On Each Component, append to vole_interactable_lst in order to make one complete list with ordered voles/interactables 
+            vole_interactable_lst.extend(voles_before_i)
+            vole_interactable_lst.append(i.name)
+            vole_interactable_lst.extend(voles_after_i)
+        
+        # make list of string names rather than the objects 
+        return vole_interactable_lst
+    
     def draw_chambers(self): 
 
         for cid in self.map.graph.keys(): 
@@ -246,32 +299,51 @@ class SimulationABC:
             chmbr = self.map.get_chamber(cid)
             cvoles = [] 
 
+            # get chamber voles 
             for v in self.voles: 
                 if v.curr_loc == chmbr: 
-                    cvoles.append(v.tag)
+                    cvoles.append(v)
             print(f'_____________\n|   (C{chmbr.id})    |')
 
-            for v in cvoles: 
-                if len(str(v)) > 8: 
-                    v = str(v)[:7] + '-'
-                space = 8 - len(str(v)) 
-                print(f'|V[{v}]' + f"{'':>{space}}" + '|')
-            
-            interactables = [c.interactable.name for c in chmbr]
-            for i in interactables: 
-                if len(str(i)) > 8: 
-                    i = i[:7] + '-'
-                space = 8 - len(str(i)) 
-                print(f'|I[{i}]' + f"{'':>{space}}" + '|')
+            # get chamber interactables 
+            interactables = [c.interactable for c in chmbr]
 
+            # helper function to get list of ordered voles/interactables 
+            vole_interactable_list = self.draw_helper(cvoles, interactables)
+
+            
+            def draw_name(name): 
+                if len(str(name)) > 8: 
+                    name = name[:7] + '-'
+                space = 9 - len(str(name)) 
+                print(f'|[{name}]' + f"{'':>{space}}" + '|')
+            
+            
+            # Draw! 
+            for name in vole_interactable_list: 
+                draw_name(name)
+                    
+                        
             print(f'-------------')
 
     
     def draw_edges(self): 
         edges = self.map.edges
         for e in edges: 
-            interactables = [c.interactable.name for c in e] # creates list of the interactable names 
-            print(f'({e.v1}) <---{interactables}----> ({e.v2})')
+            
+            # Make List of Edge Voles
+            evoles = []
+            for v in self.voles: 
+                # get voles that are on edge e 
+                if v.curr_loc == e: 
+                    evoles.append(v)
+
+            # Make List of Edge Interactables        
+            interactables = [c.interactable for c in e] # creates list of the interactable names 
+
+            vole_interactable_lst = self.draw_helper(evoles, interactables)
+
+            print(f'({e.v1}) <---{vole_interactable_lst}----> ({e.v2})')
     
 
     #

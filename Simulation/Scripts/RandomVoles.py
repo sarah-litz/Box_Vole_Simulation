@@ -29,18 +29,49 @@ class RandomVoles(SimulationABC):
         # 
         # Simulation Goal: 1 Vole that makes random moves throughout the timeout
         # 
+        chamber1 = self.map.get_chamber(1)
+        chamber2 = self.map.get_chamber(2)
+        chamber3 = self.map.get_chamber(3)
+        edge12 = self.map.get_edge(12)
+        print(self.map.get_path(chamber1,edge12))
+        print(self.map.get_path(chamber3,edge12))
+        print('-----')
+        print(self.map.get_component_path(chamber3, chamber2))
 
-
+        return 
         # (NOTE) need to implement vole function that while in timeout, the vole just makes random moves 
 
         vole1 = self.get_vole(1)
         vole2 = self.get_vole(2)
+        vole3 = self.get_vole(1)
         rfid1 = self.map.instantiated_interactables['rfid1']
         lever1 = self.map.instantiated_interactables['lever1']
+        lever2 = self.map.instantiated_interactables['lever2']
         #door1 = self.map.instantiated
 
-        vole1.attempt_move(2) # success 
+        component1 = self.map.get_edge(12).get_component(lever1)
+        component2 = self.map.get_edge(12).get_component(lever2)
+        component3 = self.map.get_edge(12).get_component(rfid1)
+        
+        # Testing Component Traversal # 
+        vole1.move_next_component(component1)
+        # vole1.simulate_vole_interactable_interactable(component1)
 
+        vole2.move_next_component(component2)
+        self.draw_edges() 
+        # (NOTE--COME BACK TO THIS!) THIS CASE CAUSES AN ERROR THAT ISN'T DEALT WITH: vole2.move_next_component(component2)
+        vole3.move_next_component(component2)
+        self.draw_edges() 
+
+        vole1.move_next_component(component3)
+        self.draw_edges()
+
+        self.draw_chambers()
+        self.draw_edges()
+
+
+        # Chamber Traversal # 
+        vole1.attempt_move(2) # success 
         vole1.attempt_move(1) # ISSUE: should succeed, because we never closed door1 again. 
 
         # vole2.simulate_vole_interactable_interaction(lever1)
