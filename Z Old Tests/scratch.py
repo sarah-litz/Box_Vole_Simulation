@@ -1,6 +1,189 @@
+        chamber1 = self.map.get_chamber(1)
+        chamber2 = self.map.get_chamber(2)
+        chamber3 = self.map.get_chamber(3)
+
+        edge12 = self.map.get_edge(12)
+        edge13 = self.map.get_edge(13)
+
+        rfid1 = self.map.instantiated_interactables['rfid1']
+        rfid2 = self.map.instantiated_interactables['rfid2']
+        rfid4 = self.map.instantiated_interactables['rfid4']
+        door2 = self.map.instantiated_interactables['door2']
+        lever1 = self.map.instantiated_interactables['lever1']
+        lever2 = self.map.instantiated_interactables['lever2']
+        
+        loc1 = self.map.get_location_object(rfid1)
+        loc2 = self.map.get_location_object(door2)
+        loc3 = self.map.get_location_object(lever1)
+        loc4 = self.map.get_location_object(lever2)
+        loc5 = self.map.get_location_object(rfid2)
+        loc6 = self.map.get_location_object(rfid4)
+        rfid1 = loc1.get_component(rfid1) # convert to the component version rather than the interactable
+        rfid2 = loc5.get_component(rfid2)
+        rfid4 = loc6.get_component(rfid4)
+        door2 = loc2.get_component(door2)
+        lever1 = loc3.get_component(lever1)
+        lever2 = loc4.get_component(lever2)
 
 
 
+        print(self.map.get_path(chamber1,edge12))
+        print(self.map.get_path(edge12,chamber2))
+        print(self.map.get_path(edge13, edge12))
+        print('-----')
+
+        chamber_edge_path = self.map.get_edge_chamber_path(chamber3, chamber2)
+
+        for c in chamber_edge_path:
+            print(f'{c.edge_or_chamber}{c.id}')
+
+        chamber_edge_path = self.map.get_edge_chamber_path(edge12, chamber3)
+
+        for c in chamber_edge_path:
+            print(f'{c.edge_or_chamber}{c.id}')
+
+        component_path = self.map.get_component_path(lever1, lever2)
+        
+        for c in component_path: 
+            print(c.interactable)
+        
+        print('\n')
+
+        component_path = self.map.get_component_path(lever1, door2)
+
+        for c in component_path: 
+            print(c.interactable)
+        
+        print('\n')
+
+        component_path = self.map.get_component_path(rfid2, rfid1)
+     
+        for c in component_path: 
+            print(c.interactable)
+
+        
+        component_path = self.map.get_component_path(rfid4, rfid1)
+     
+        for c in component_path: 
+            print(c.interactable)
+
+
+
+        component1 = self.map.get_edge(12).get_component(lever1)
+        component2 = self.map.get_edge(12).get_component(lever2)
+        component3 = self.map.get_edge(12).get_component(rfid1)
+        component4 = self.map.get_edge(12).get_component(rfid2)
+        
+        # Testing Component Traversal # 
+        res = vole1.move_to_component(component2)
+
+         
+        vole1.move_next_component(component1)
+        self.draw_edges() 
+        # vole1.simulate_vole_interactable_interactable(component1)
+
+        vole2.move_next_component(component2)
+        self.draw_edges() 
+        # (NOTE--COME BACK TO THIS!) THIS CASE CAUSES AN ERROR THAT ISN'T DEALT WITH: vole2.move_next_component(component2)
+        vole3.move_next_component(component2)
+        self.draw_edges() 
+
+        vole1.move_next_component(component3)
+        self.draw_edges()
+
+        self.draw_chambers()
+        self.draw_edges()
+
+
+
+
+GET_COMPONENT_PATH NOTES: 
+        # get path will return a list of chambers that we will need to cross to reach the desired chamber/edge. 
+
+        # collect the comonents! 
+        #
+        #
+        #
+        # important NOTE : LEAVING OFF HERE!!!!!!!!!!!! 
+        # IMPORTANT NOTE : we only care about the components along the edges, because all components that matter in vole movements should be added to an edge! 
+        # important ISSUE : what happens if two edges get the same component added to it??? I dont think this will matter? if i remember correctly, it gets assigned a new component object but contains the same interactable object. 
+        #
+        
+        #
+        # Wednesday May 11
+        # leaving off here!!!!!! NEED TO FIGURE OUT HOW TO HANDLE WHEN OUR START AND GOAL ARE ON THE SAME EDGE (or the same chamber i guess). 
+        # Cause then chamber path comes back empty. and then we add nothing. 
+        #
+        # ####
+        # #### 
+
+
+        # handle if chamber path is empty!!! this is the case if and only if start==goal, and they are of edge type. but then shouldnt the edge components get added anyways??? because we 
+        # check if start and goal are of edge type, and if they are, we add those edge components?? so idk what happening.  
+        
+        # also case where get_path gets called with a (chamber1, edge12), then the result is just [1] (as in chamber1), since chamber1 is connected to edge12. So need to account for this as well. 
+        #   actually think this is already accounted for because we wouldn't loop in the chamber path at all, we would end up just skipping down to the if type(goal) == edge, then add those edge components. 
+
+        # basically we need to change this so its an INCLUSIVE path finding result.
+        component_path = [] 
+
+        for loc in loc_path: 
+            
+            if type(loc) == self.Edge: 
+                # ordering matters! 
+                if 
+
+        if type(start) == self.Edge: 
+            # begin with edge components if our start is an edge
+            if loc_[0] == start.v1: 
+                component_path.extend(start.get_component_list(reverse=False))
+            else: component_path.extend(start.get_component_list(reverse=True))
+        
+        for idx in range(len(chamber_path)-1): # for each chamber in the chamber path 
+
+
+
+            chamberID = chamber_path[idx] 
+            chamber = self.graph[chamberID]
+
+            # # # # 
+            # HANDLE CHAMBER COMPONENTS 
+            # if the ordering of components is specified in a neighboring edge (as a chamber_interactable), then use that information to decide the ordering of the chamber components to return 
+            
+            cc = chamber.get_component_list() # chamber component list 
+            
+            # for each chamber component, we want to check if it exists on the NXT edge. If we find any component on the next edge, 
+
+            #
+            #
+            # # # # 
+
+
+            # # Get Next Edge # # 
+            adj_cid = chamber_path[idx+1] # grab the next chambers id in order to get next edge 
+
+            # for each chamber, grab the next edge connecting current chamber and nxt chamber 
+            edge = chamber.connections[adj_cid]
+
+            # extend the component path with the new edges component list  
+            if edge.v1 == adj_cid: # the nxt chamber comes first in the edge, so reverse component ordering 
+                component_path.extend(edge.get_component_list(reverse=True))
+            else: 
+                component_path.extend(edge.get_component_list(reverse=False))
+            
+            idx = idx+1
+        
+        # Final Loop for adding the last chamber in the chamber_path (since previous loop skips its last iteration):
+        final_chamberid = chamber_path[idx] 
+
+
+        
+        if type(goal) == self.Edge: 
+
+            # end with edge components if our goal is an edge 
+            component_path.extend(goal.get_component_list())
+
+        return component_path
 
 
 ### DRAWING VOLES AND EDGES CHANGES ### 

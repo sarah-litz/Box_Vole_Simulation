@@ -127,6 +127,8 @@ class interactableABC:
                 event_bool = True 
 
 
+
+
                 #
                 # Dependents Loop 
                 #
@@ -330,6 +332,15 @@ class door(interactableABC):
 
         # if any one of door's dependents (i.e. one of the levers that is listed as its dependent) meets its threshold, then go ahead and 
         # meet the door's threshold goal by opening or closing the door 
+
+        #
+        # LEAVING OFF HERE!!!!! 
+        # DOORS DONT WORK CORRECTLY IF THEY DONT HAVE A DEPENDENT!!!! 
+        # need to add something to the dependents loop that accounts for this.
+        #
+        if len(self.dependents) < 1: # No Dependents 
+
+            return 
 
         while self.active: 
 

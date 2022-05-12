@@ -337,6 +337,7 @@ class Map:
 
     def get_location_object(self, interactable): 
         ''' returns chamber or edge object that the component exists in '''
+                
         if interactable.edge_or_chamber == 'chamber': 
 
             return self.get_chamber(interactable.edge_or_chamber_id)
@@ -352,6 +353,9 @@ class Map:
     def get_chamber_path(self, start, goal): 
         '''pass in only the integer ids to specify the start/goal'''
         '''Returns list of sequential chambers to move from start->goal chamber'''
+
+        print(f'(Map, get_chamber_path) args: start={start}, goal={goal}')
+
         def trace_path(previous, s): #helper function for get_path 
             # recursive trace back thru previous dictionary to get path 
             if s is None: return [] 
@@ -378,8 +382,10 @@ class Map:
 
     def get_path(self, start, goal): 
         '''Must pass in the actual edge/chamber objects to specify the start and goal'''
-        '''Returns list of sequential chambers to move to in order to reach a chamber that is adjacent to edge '''
-                
+        '''Returns list of sequential CHAMBERS to move to in order to reach a chamber that is adjacent to edge '''
+        '''basically just a little parent function to get_chamber_path '''
+
+        print(f'(Map, get_path) args: start={start}, goal={goal}')
 
         def edge_to_chamber_path(start, goal): 
             p1 = self.get_chamber_path(start.v1, goal.id)
@@ -396,8 +402,8 @@ class Map:
         
         def edge_to_edge_path(start, goal): 
             # get path starting from both chambers 
-            p1 = chamber_to_edge_path(start.v1, goal) 
-            p2 = chamber_to_edge_path(start.v2, goal)
+            p1 = chamber_to_edge_path(self.graph[start.v1], goal) 
+            p2 = chamber_to_edge_path(self.graph[start.v2], goal)
             if len(p1) < len(p2): return p1 
             else: return p2      
 
@@ -410,6 +416,7 @@ class Map:
         if type(start) == self.Edge:
             if type(goal) == self.Edge:
                 # edge->edge 
+                print("edge to edge!")
                 return edge_to_edge_path(start,goal)
             else: 
                 # edge->chamber
@@ -424,66 +431,160 @@ class Map:
                 return chamber_to_edge_path(start,goal)
 
 
+    def get_edge_chamber_path(self, start, goal): 
+        print(f'(Map, get_edge_chamber_path) args: start={start}, goal={goal}')
+        '''Returns list of sequential EDGE AND CHAMBER objects that fall between the start Location and the goal location (inclusive list, so start and goal will also be apart of list)'''
 
-
-
-    def get_component_path(self, start, goal): 
-
-        # values passed in should be chamber/edge objects 
-
-        '''Returns list of sequential components that fall between the start Location and the goal location'''
-
-
-        # check that start and end component exist
-        # if start.interactable.name not in self.instantiated_interactables.keys() or goal.interactable.name not in self.instantiated_interactables.keys(): 
-        #    raise Exception(f'(Map, get_component_path) start component {start} and/or goal component {goal} does not exist in the map, so cannot find path')
-
-        # convert the start/goal to their corresponding chamber or edge location
-
-        # get path will return a list of chambers that we will need to cross to reach the desired chamber/edge. 
-        chamber_path = self.get_path(start, goal) # if the start or goal is an edge, then the path will consist of the shortest way to reach a chamber that touches the goal edge. 
-
-        # collect the comonents! 
-        #
-        #
-        #
-        # important NOTE : LEAVING OFF HERE!!!!!!!!!!!! 
-        # IMPORTANT NOTE : we only care about the components along the edges, because all components that matter in vole movements should be added to an edge! 
-        # important ISSUE : what happens if two edges get the same component added to it??? I dont think this will matter? if i remember correctly, it gets assigned a new component object but contains the same interactable object. 
-        #
+        if start == goal: 
+           return goal 
         
-        # follow path and append components on the edges that we traverse
-        component_path = [] 
+        chamberIDpath = self.get_path(start, goal) # returns list of chamber ids that we can follow along to get from start->goal
+
+        # convert the chamberIDpath to chamber and edge objects 
+        path = [] 
         if type(start) == self.Edge: 
-            # begin with edge components if our start is an edge
-            component_path.extend(start.get_component_list())
+            path.append(start)
         
-        for idx in range(len(chamber_path)-1):
-
-            chamberID = chamber_path[idx] 
-            chamber = self.graph[chamberID]
-
-            adj_cid = chamber_path[idx+1] # grab the next chambers id 
-
-            # for each chamber, grab the next edge connecting current chamber and nxt chamber 
-            edge = chamber.connections[adj_cid]
-
-            # extend the component path with the new edges component list  
-            if edge.v1 == adj_cid: # the nxt chamber comes first in the edge, so reverse component ordering 
-                component_path.extend(edge.get_component_list(reverse=True))
-            else: 
-                component_path.extend(edge.get_component_list(reverse=False))
+        
+        for i in range(len(chamberIDpath)): # loop thru chamber path
             
-            idx = idx+1
+            cid = chamberIDpath[i] # for each chamber id 
+
+            # retrieve chamber object corresponding with the chamber id 
+            c = self.graph[cid]
+
+            # append chamber object to path 
+            path.append(c)
+
+            # if there is another chamber specified in the path, then we know that there is an edge to add 
+            # look one chamber forward if it exists
+            if (i+1) < len(chamberIDpath): 
+                e = c.connections[chamberIDpath[i+1]] # grab nxt edge and append 
+                path.append(e)
+            
+            i += 1 
         
+        # if goal specified was an edge, append the edge object now 
         if type(goal) == self.Edge: 
-
-            # end with edge components if our goal is an edge 
-            component_path.extend(goal.get_component_list())
-
-        return component_path
-
+            path.append(goal)
         
+
+        return path 
+
+
+
+    def get_component_path(self, start_component, goal_component ): 
+        ''' 
+        arguments should be of component type 
+        function first gets list of sequential edge and chamber components that fall between the start Location and the goal location
+        then, it removes any components that fall outside of the start_compoennt and goal_component and returns this list. 
+        returns list of iNTERACTABLE TYPE! 
+        '''
+        
+        print(f'(Map, get_component_path) args: start={start_component}, goal={goal_component}')
+
+        # Error Check: Incorrect Argument Type 
+        if type(start_component) is not self.OrderedComponents.Component or type(goal_component) is not self.OrderedComponents.Component: 
+            control_log(f'(Map, get_component_path) arguments must be of type Component, but recieved start_component of type {type(start_component)} and goal_component of type {type(goal_component)}')
+            raise Exception(f'(Map, get_component_path) arguments must be of type Component, but recieved start_component of type {type(start_component)} and goal_component of type {type(goal_component)}')
+
+
+        # convert components to their edge or chamber location objects (get_location_object requires interactable arguments rather than the component)
+        start_loc = self.get_location_object(start_component.interactable)
+        goal_loc = self.get_location_object(goal_component.interactable)
+
+
+        #
+        # edge case: components are in the same lcoation 
+        #
+        if start_loc == goal_loc: 
+            # get full component list of location 
+            component_path = start_loc.get_component_list() 
+
+            # convert to interactable version 
+            interactable_path = [c.interactable for c in component_path]
+            startIdx = interactable_path.index(start_component.interactable)
+            goalIdx = interactable_path.index(goal_component.interactable)      
+            # based off of the start/goal values, ensure that locations components mimic this ordering. Reverse the component list if they dont. 
+            if startIdx > goalIdx: # lst is currently ordered with goal -> other components -> start, and we want to reverse that. 
+                # reverse lst! 
+                component_path = start_loc.get_component_list(reverse=True)
+        
+        #
+        # Components Specified Exist in 2 different Locations # 
+        #
+        else: 
+            # we have at least two locations in our path, meaning loc_path contains at least 1 chamber and 1 edge 
+            component_path = [] 
+
+            # get path of edge/chamber objects that makeup the path 
+            loc_path = self.get_edge_chamber_path(start_loc, goal_loc)
+            
+            # loop thru loc_path of edges and chambers
+            for idx in range(len(loc_path)): 
+                
+                loc = loc_path[idx] # edge or chamber object specified by path 
+
+                components = loc.get_component_list() # locations components 
+
+                if type(loc) == self.Chamber: # if current loc is a chamber 
+
+                    # if loc_path[i+1] exists, grab this edges component list 
+                    adj_components = [] 
+                    if idx+1 < len(loc_path): 
+                        # nxt loc will be an edge. grab its component list 
+                        adj_components = loc_path[idx+1].get_component_list() 
+                    
+                    # add any chamber components with interactables that are not also assigned to an edge
+                    for c in components: # for each component assigned to the current chamber 
+                        # convert from components to their interactables 
+                        interactable_path = [x.interactable for x in component_path]
+                        adj_interactables = [x.interactable for x in adj_components]
+                        # IF the component.interactable does not already exist in the component_path (case that it was already added by the previous edge)
+                        # AND if the component does not exist in the next edges component list (case that it will be specified in the following edge)
+                        # THEN add the component to the component_path 
+                        # ELSE we don't want to add this component as we can let the edges handle that.
+                        if c.interactable not in interactable_path and c.interactable not in adj_interactables: 
+                            component_path.append(c)
+                
+
+                else: 
+                    # current loc is an Edge! 
+                    # based on direction that we are moving in path, check if we should reverse the order of the edge components 
+                    # grab edges components list and add components to component path 
+
+                    ## Preserve Component Ordering based on Direction of Vole Movement ## 
+                    if idx+1 < len(loc_path): 
+                        # grab id of the chamber that follows 
+                        adj_cid = loc_path[idx+1].id
+                        # compare to the ordering of the edges chambers 
+                        if adj_cid == loc.v1: # nxt chamber in path is the 1st chamber of the edge, so we should reverse the edge components 
+                            reverse = True 
+                        else: reverse = False  
+                    
+                    # Edge Case: Final Element in path. Use the previous chamber to figure out component ordering
+                    else: 
+                        # grab id of the chamber that precedes 
+                        adj_cid = loc_path[idx-1].id 
+                        # compare to the chamber ordering that the edge chamber knows
+                        if adj_cid == loc.v1: # prev chamber in path is the 1st chamber of the edge, so do NOT reverse the edge components 
+                            reverse = False
+                        else: reverse = True 
+
+                    # Add All Edge Components in the Specifed Ordering #                        
+                    component_path.extend(loc.get_component_list(reverse=reverse))
+            
+
+        # full component path has been compiled. Final step is to remove elements that fall outside of the range of the start_component and goal_component 
+        # since start or goal components may have been chamber component where we added the edge version of the component, we should check for the index by interactable rather than by component 
+        interactable_path = [c.interactable for c in component_path]
+        start_idx = interactable_path.index(start_component.interactable)
+        goal_idx = interactable_path.index(goal_component.interactable)
+        if start_idx > goal_idx: 
+            return component_path[goal_idx:start_idx+1]
+        return component_path[start_idx:goal_idx+1] 
+                    
+
     #
     # Linked List for Interactable Ordering w/in Edge or Chamber
     #
@@ -535,6 +636,12 @@ class Map:
                 return [c for c in self] 
             else: 
                 return self.reverse_components() 
+
+        def get_interactable_list(self, reverse = False): 
+            ''' returns all interactables w/in edge or chamber in a list format '''
+            components = self.get_component_list(self, reverse)
+            return [c.interactable for c in components]
+
 
         def get_component(self, interactable): 
             ## helper function for adding components into the linked list ## 
