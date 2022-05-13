@@ -13,6 +13,8 @@ import inspect
 from Logging.logging_specs import control_log
 import time
 import threading
+import queue 
+from .InteractableABC import rfid
 from ..Classes.Timer import countdown
 
 
@@ -23,8 +25,8 @@ class modeABC:
     """
 
     def __init__(self, timeout = None, map = None, enterFuncs = None, exitFuncs = None, bypass = False, **kwargs):
+        
         # Set the givens
-        self.rfidQ   = None
         self.map     = map
         self.threads = None
         self.active  = False
@@ -32,6 +34,10 @@ class modeABC:
         self.optional = kwargs
         self.inTimeout = False 
         self.startTime = None
+
+        # Shared rfidQ ( if no rfids present, this will just sit idle )
+        self.shared_rfidQ = queue.Queue() # if any of the rfids are pinged, a message will be added to this queue 
+                                        # listener is activated in the modes activate function
 
         # Set variables as the enter and exit strings
         self.enterStrings = enterFuncs
@@ -44,10 +50,15 @@ class modeABC:
 
     def __str__(self): 
         return __name__
-    def threader(self):
-        """This is a decorator function that will be added to any method here that needs to run on its own thread. It simply creates, starts, and logs a method to a thread. 
-        """
-        pass
+
+
+    def threader(func):
+        ''' decorator function to run function on its own daemon thread '''
+        def run(*k, **kw): 
+            t = threading.Thread(target = func, args = k, kwargs=kw, daemon=True)
+            t.start() 
+            return t
+        return run 
 
 
 
@@ -67,6 +78,8 @@ class modeABC:
 
         self.startTime = time.time() 
         self.active = True # mark this mode as being active, triggering a simulation to start running, if a simulation exists
+
+        self.rfidListener() # starts up listener that checks the shared_rfidQ
 
         self.inTimeout = True 
         mode_thread = threading.Thread(target = self.run, daemon = True) # start running the run() funciton in its own thread as a daemon thread
@@ -98,12 +111,62 @@ class modeABC:
 
 
     @threader
-    def listen(self):
-        """This method listens to the rfid queue and waits until something is added there.
+    def rfidListener(self):
+        """This method listens to the rfid queue and waits until something is added there. (running as daemon thread)
         """
-        pass
+        # TEST ME!!! 
+        rfid_objects = {} # dictionary to store all of the rfid objects { tag : object } that were added to Map 
+
+        # Get RFID Objects # 
+        for n in self.map.instantiated_interactables.keys(): 
+            
+            i = self.map.instantiated_interactables[n]
+            # check each interactable to see if it is of RFID type. Compile list of all rfid objects in the box. 
+
+            if type(i) ==  rfid: # if interactable is an rfid object 
+                
+                rfid_objects[i.ID] =  i # add to dictionary to keep track of rfids 
 
 
+        # Exit if No RFIDs Present # 
+        if len(rfid_objects.keys()) == 0: 
+            # if there are no rfid objects, exit now
+            return 
+        
+
+        # Wait For Pings and Notify Specific RFIDs if Pinged # 
+        while self.active: 
+
+            # while mode is active, loop thru the shared_rfidQ to wait for pings. signal the corresponding rfid object as pings come in. 
+            
+            ping = None 
+            while self.active and ping is None: 
+
+                try: 
+                    ping = self.shared_rfidQ.get(block = False) # waits 5 seconds to see if anything is added to Queue 
+                except queue.Empty: 
+                    ping = None 
+                    time.sleep(.25)
+
+
+            # Mode Deactivated #
+            if ping is None: 
+                # while loop was exited because self.active was set to False # 
+                return 
+            
+
+            # Handle New Ping # 
+            else: 
+                # # ping added to shared queue. send to specific rfid object # # 
+
+                print('PING: ', ping)
+                id = ping[0] # parse the ping information (NOTE: come back to ensure I am parsing correctly)
+
+                rfid_interactable = rfid_objects[id] # retrieve the corresponding rfid object 
+
+                rfid_interactable.rfidQ.put( (ping) ) 
+            
+    
     def setup(self): 
         ''' any tasks for setting up box before run() gets called '''
         raise NameError('this funciton should be overriden')

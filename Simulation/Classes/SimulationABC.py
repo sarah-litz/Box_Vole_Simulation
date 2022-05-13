@@ -33,6 +33,8 @@ class SimulationABC:
 
         self.modes = modes
 
+        self.current_mode = None # contains the Mode object that the control software is currently running. 
+
 
     #
     # Threaded Simulation Runner 
@@ -123,17 +125,17 @@ class SimulationABC:
 
 
             # Set the Currently Active Mode 
-            current_mode = self.get_active_mode() # update the current mode 
+            self.current_mode = self.get_active_mode() # update the current mode 
 
             
-            while current_mode is False: # if no mode is currently active 
+            while self.current_mode is None: # if no mode is currently active 
                 # wait for a mode to become active 
                 time.sleep(0.5)
-                current_mode = self.get_active_mode() # update the current mode when one becomes active 
+                self.current_mode = self.get_active_mode() # update the current mode when one becomes active 
 
-            sim_log(f'NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: {(current_mode)}')
+            sim_log(f'NEW MODE: (Simulation.py, run_sim) Simulation Updating for Control Entering a New Mode: {(self.current_mode)}')
 
-            t = self.run_active_mode_sim(current_mode)
+            t = self.run_active_mode_sim(self.current_mode)
             t.join() 
 
 
@@ -178,7 +180,7 @@ class SimulationABC:
             if mode.active: 
                 return mode 
         
-        return False
+        return None
     
     
     #

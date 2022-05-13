@@ -251,6 +251,48 @@ GET_COMPONENT_PATH NOTES:
 
 
 
+
+                #
+                # OLD Dependents Loop (this was placed w/in the watch_for_threshold_event function in InteractableABC.py)
+                #
+                '''for dependent in self.dependents: 
+                    # if dependents are present, then before we can add an event to current interactable, we must check if the dependents have met their threshold 
+                    # loop thru all the dependents, and if any dependent has not already detected a threshold_event, then the current interactable has not met its threshold. 
+                    
+                    #print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name} event queue: {list(self.threshold_event_queue.queue)}')
+                    #print(f'(InteractableABC.py, watch_for_threshold_event, dependents_loop) dependent of {self.name} : {dependent.name} (event queue: {list(dependent.threshold_event_queue.queue)})')
+
+                    time.sleep(3)   
+
+                    if dependent.active is False: 
+                        # dependent is not currently active, skip over this one 
+                        break 
+
+                    # Threshold Not Reached
+                    elif dependent.threshold is False:
+                        # depedent did not reach its treshold, so neither does the current interactable
+                        
+                        # print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) {self.name}'s dependent, {dependent.name} did not reach threshold")
+                        
+                        event_bool = False 
+                        break  # do not need to check any remaining interactables in the list
+                
+
+                    else: 
+                        # Retrieve the Event of the Current Interactable's Dependent.  
+                        control_log(f"(InteractableABC.py, watch_for_threshold_event, dependents loop) Threshold Event for {self.name}'s dependent, {dependent.name}.") 
+                        print(f"(InteractableABC.py, watch_for_threshold_event, dependents_loop) Threshold Event for  {self.name}'s dependent, {dependent.name}.") 
+                # End of Dependents Loop '''
+                    # Reset the Threshold Values of the interactable's Dependents (ok to do so now that we have confirmed that there was a threshold event)
+                    # this is now getting done in the separate dependents_loop function
+                    '''for dependent in self.dependents: 
+                        dependent.threshold = False '''
+
+
+
+
+
+
 '''def draw_vole(v):
     v = v.tag
     if len(str(v)) > 8: 

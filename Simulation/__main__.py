@@ -24,6 +24,7 @@ from Control.Scripts.ModeScripts_RandomVoles import mode1, mode2, mode3
 # (TODO) Import your SimulationABC Implementations Here using the following syntax: from .Scripts.your_file_name import SimulationClassName
 from .Scripts.SarahsSimulation import SarahsSimulation
 from .Scripts.RandomVoles import RandomVoles
+from .Scripts.ping_shared_rfidQ import SimulatePings
 
 
 # Map Instantiation (which will also instantiate the hardware components) 
@@ -41,7 +42,7 @@ mode3 = mode3( timeout = 60, map = map )
 
 # (TODO) instantiate the Simulation, pass in the Mode objects and map -- this should be using the class you imported in the second "todo"
 # (TODO) in the modes argument, pass a list of all of the modes that you instantiated above. These should get passed in in the same order that they will run in.
-sim = RandomVoles( modes = [mode1, mode2, mode3], map = map  ) 
+sim = SimulatePings( modes = [mode1, mode2, mode3], map = map  ) 
 
 sim_log(f'(sim_attempt_move.py, {__name__}) New Simulation Created: {type(sim).__name__}')
 
