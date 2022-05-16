@@ -226,7 +226,7 @@ class Map:
                         
                         ref = True 
                         new_i = self.instantiated_interactables[i['chamber_interactable']]
-                        component_obj = self.get_chamber(new_i.edge_or_chamber_id).get_component(new_i)
+                        component_obj = self.get_chamber(new_i.edge_or_chamber_id).get_component_from_interactable(new_i)
                         new_edge.new_component(new_i, chamber_interactable_reference=True)
                         
 
@@ -354,7 +354,7 @@ class Map:
         '''pass in only the integer ids to specify the start/goal'''
         '''Returns list of sequential chambers to move from start->goal chamber'''
 
-        print(f'(Map, get_chamber_path) args: start={start}, goal={goal}')
+        print(f'(Map, get_chamber_path) {start}->{goal}')
 
         def trace_path(previous, s): #helper function for get_path 
             # recursive trace back thru previous dictionary to get path 
@@ -472,7 +472,6 @@ class Map:
         return path 
 
 
-
     def get_component_path(self, start_component, goal_component ): 
         ''' 
         arguments should be of component type 
@@ -481,8 +480,8 @@ class Map:
         returns list of iNTERACTABLE TYPE! 
         '''
         
-        print(f'(Map, get_component_path) args: start={start_component}, goal={goal_component}')
-
+        print(f'(Map, get_component_path) {start_component}->{goal_component}')
+            
         # Error Check: Incorrect Argument Type 
         if type(start_component) is not self.OrderedComponents.Component or type(goal_component) is not self.OrderedComponents.Component: 
             control_log(f'(Map, get_component_path) arguments must be of type Component, but recieved start_component of type {type(start_component)} and goal_component of type {type(goal_component)}')
@@ -643,7 +642,7 @@ class Map:
             return [c.interactable for c in components]
 
 
-        def get_component(self, interactable): 
+        def get_component_from_interactable(self, interactable): 
             ## helper function for adding components into the linked list ## 
             '''beginning at headval, traverses linked list to find component. Returns None if it does not exist'''
             
@@ -685,7 +684,7 @@ class Map:
                     return self.headval
             
             else: 
-                prevComp = self.get_component(previnteractable) # retrieve prevComp and check that it exists 
+                prevComp = self.get_component_from_interactable(previnteractable) # retrieve prevComp and check that it exists 
                 nxtComp = prevComp.nextval
 
                 # once prevcomponent is located, instantiate new component and update the vals of the previous component, current component, and next component
@@ -700,7 +699,7 @@ class Map:
         def remove_component(self, interactable): 
             ''' updates linked list to remove specified interactable '''
 
-            remComp = self.get_component(interactable)
+            remComp = self.get_component_from_interactable(interactable)
             if remComp==None: raise Exception(f'{interactable} does not exist, so cannot remove it from linked list') 
 
             prevComp = remComp.prevval

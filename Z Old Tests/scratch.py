@@ -96,7 +96,77 @@
 
 
 
+            print(path)
+            for loc in path: 
+                # we can either update location to go back towards our previous location, or we can try to update location into a new edge or chamber. 
 
+
+                '''# if prev component exists in same location as current location, vole is simply sitting at the end of a component list. 
+                if self.prev_component is not None and self.map.get_location_object(self.prev_component.interactable) == self.curr_loc:
+                # Positioned At End Of Linked List. we want to get  
+                
+                component_lst = self.map.get_component_path(self.prev_component, goal_component) 
+
+                # if the''' 
+                # for each location, 
+            '''if self.curr_component is None and self.prev_component is None: 
+
+            # Voles current location does not match the goal component location 
+            goal_loc = self.map.get_location_object(component.interactable)
+            if self.curr_loc != goal_loc: 
+                
+                # see if we are able to move freely into the location of the component we want to interact with. 
+                path = self.map.get_edge_chamber_path(self.curr_loc, goal_loc) # inclusive list, so first element will be curr_loc and last element will be goal_loc
+                print('path;', path)
+                for l in path: 
+
+                    if l != self.curr_loc and l != goal_loc: 
+                        
+                        print()
+                        # for all locations in between start and goal, ensure that they are empty so vole is free to pass 
+                        if len(l.get_component_list()) == 0: 
+                            continue 
+                    
+                        else: 
+                            # cannot freely pass thru this location, so cannot reach component in a single step. 
+                            print(f'(Vole{self.tag}, move_next_interactable) Cannot move to {component} because need to pass other components in {l}')
+                            return False
+                    
+            # check if we can goal component is accessible w/in the goal location ( must be on correct end of linked list )
+            ok = False 
+            if self.curr_loc.edge_or_chamber == "chamber": # current location is a chamber! goal location is an edge! 
+                # goal loc must be an edge that touches current chamber 
+                for (c,e) in self.curr_loc.connections.items(): 
+                    if goal_loc == e: 
+                        ok = True 
+                        break 
+                # goal component must be on the correct side of the edge 
+                if ok: 
+                    if goal_loc.v1 == self.curr_loc: 
+                        clst = goal_loc.get_component_list() 
+                    else: 
+                        clst = goal_loc.get_component_list(reverse=True)
+                    if clst[0] != component: # goal component should be the first element in the component list we made
+                        print(f'(Vole{self.tag}, move_next_interactable) Cannot move to {component} because need to pass other components first. {goal_loc}')
+                        return False 
+                    
+
+            else:  # current location is an edge! goal location is a chamber! 
+                # goal loc must be a chamber that current edge is connected to 
+                if self.curr_loc.v1 == self.curr_loc.id or self.curr_loc.v2 == self.curr_loc.id: 
+                    ok = True 
+            if not ok: 
+                print(f'(Vole{self.tag}, move_next_interactable) Cannot move to {component} because {goal_loc.edge_or_chamber}{goal_loc.edge_or_chamber_id} does not border {self.curr_loc.edge_or_chamber}{self.curr_loc.edge_or_chamber_id}.')
+                return False 
+            
+            
+            # can freely update location to the goal location 
+            self.update_location(component)
+            return True 
+            '''
+
+
+            
 GET_COMPONENT_PATH NOTES: 
         # get path will return a list of chambers that we will need to cross to reach the desired chamber/edge. 
 

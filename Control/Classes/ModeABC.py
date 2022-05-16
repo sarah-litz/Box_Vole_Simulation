@@ -127,6 +127,7 @@ class modeABC:
                 
                 rfid_objects[i.ID] =  i # add to dictionary to keep track of rfids 
 
+                setattr(rfid_objects[i.ID], 'shared_rfidQ', self.shared_rfidQ)  # assign all rfid objects the same instance of shared_rfidQ
 
         # Exit if No RFIDs Present # 
         if len(rfid_objects.keys()) == 0: 

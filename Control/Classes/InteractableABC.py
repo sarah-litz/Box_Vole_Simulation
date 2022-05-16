@@ -39,7 +39,7 @@ class interactableABC:
         self.dependents = [] # if an interactable is dependent on another one, then we can place those objects in this list. example, door's may have a dependent of 1 or more levers that control the door movements. These are interactables that are dependent on a vole's actions! 
         self.parents = [] # if an interactable is a dependent for another, then the object that it is a dependent for is placed in this list. 
         self.barrier = False # set to True if the interactable acts like a barrier to a vole, meaning we require a vole interaction of somesort everytime a vole passes by this interactable. 
-    
+        self.autonomous = False # set to True if it is not dependent on other interactables or on vole interactions (i.e. this will be True for RFIDs only )
     def __str__(self): 
 
         return self.name
@@ -260,6 +260,7 @@ class door(interactableABC):
         self.closeAngle = None
 
         self.barrier = True 
+        self.autonomous = False 
 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
     
@@ -287,7 +288,7 @@ class door(interactableABC):
         # DOORS DONT WORK CORRECTLY IF THEY DONT HAVE A DEPENDENT!!!! 
         # need to add something to the dependents loop that accounts for this.
         #
-        if len(self.dependents) < 1: # No Dependents 
+        if len(self.dependents) < 1: # No Dependents. 
 
             return 
 
@@ -425,7 +426,7 @@ class rfid(interactableABC):
 
 
         self.barrier = True # because rfid beam is unavoidable when vole runs passed interactable. 
-
+        self.autonomous = True # operates independent of direct interaction with a vole or other interactales. 
         # (NOTE) do not call self.activate() from here, as the "check_for_threshold_fn", if present, gets dynamically added, and we need to ensure that this happens before we call watch_for_threshold_event()  
 
 

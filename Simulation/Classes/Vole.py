@@ -26,8 +26,8 @@ class Vole:
         self.map = map 
 
         ## Vole Location Information ## 
-        # LEAVING OFF HERE!!! need to finish going thru and correcting all the spots in code where I reference self.current_loc
         self.curr_loc = self.map.get_chamber(start_chamber)
+        self.prev_loc = None # object representing the voles previous location.
 
         # starting position between interactables is between chamber edge or wall and the first interactable in the chamber, if it exists
         self.prev_component = None # last interactable that vole moved away from (so we know the direction of movement)
@@ -64,6 +64,9 @@ class Vole:
             Physical Proximity Check: returns True if vole's location is at the current interactable, false otherwise.
             Depends on both the chamber/edge vole is in, as well as where the vole is positioned w/in the chamber. 
         '''
+        # Edge Case: Vole can be sitting at component==None. Check for this. 
+        if self.curr_component is None: 
+            return False 
 
         if self.curr_component.interactable.name == interactable.name:
             return True 
@@ -177,6 +180,7 @@ class Vole:
         self.curr_loc = self.map.get_location_object(newcomponent.interactable) 
         if prev_loc != self.curr_loc: 
             print(f'Vole {self.tag} traveled from {prev_loc.edge_or_chamber}{prev_loc.id} into {self.curr_loc.edge_or_chamber}{self.curr_loc.id}')
+            self.prev_loc = prev_loc # update the voles previous location
 
         self.prev_component = self.curr_component 
         self.curr_component = newcomponent 
@@ -184,7 +188,16 @@ class Vole:
         print(f'\nUpdated Vole Interactable Location from {self.prev_component} to {self.curr_component}\n')
             
     
-        
+    def move_to_interactable(self, goal_interactable): 
+        '''
+        converts interactable to component, and calls the move_to_component function. 
+        '''
+        print(f'(Vole{self.tag}, move_to_interactable) {self.curr_component.interactable}->{goal_interactable}')
+        sim_log(f'(Vole{self.tag}, move_to_interactable) {self.curr_component.interactable}->{goal_interactable}')
+        interactable_loc = self.map.get_location_object(goal_interactable)
+        goal_component = interactable_loc.get_component_from_interactable(goal_interactable)
+        return self.move_to_component(goal_component)
+
     def move_to_component(self, goal_component): 
         ''' 
         compiles list of components that stand between current component and the goal component. 
@@ -194,10 +207,65 @@ class Vole:
         '''
         print(f'(Vole{self.tag}, move_to_component) {self.curr_component} -> {goal_component})')
 
-        # get list of components in between current location and goal location 
-        component_lst = self.map.get_component_path(self.curr_component, goal_component) 
+        # check that goal_component exists 
+        if goal_component.interactable.name not in self.map.instantiated_interactables: 
+            raise Exception(f'(Vole{self.tag}, move_to_component) goal component {goal_component} does not exist.')
+            return False 
 
-        print(component_lst)
+
+        # 
+        # Voles Current Component is None: Must first reposition at nearest component before getting the component path!
+        #
+        while self.curr_component is None: # Loop Until We Find the first Component along our path that we can position the vole at! 
+            
+            # manually put together the component path by using the start_loc and goal_loc 
+            goal_loc = self.map.get_location_object(goal_component.interactable)
+            path = self.map.get_edge_chamber_path(self.curr_loc, goal_loc)
+            
+            # position vole in place that provides more information for us 
+            # move to closest new location. If sitting on edge, move to closest chamber. If sitting in chamber, move to closest edge. 
+            if self.curr_loc == 'edge': 
+                
+                if self.map.get_chamber(self.curr_loc.v1) in path: 
+                    # check if interactables exist in this chamber. if they do, try to move into that chamber 
+                    newloc = self.curr_loc.v1
+                    clst = newloc.get_component_list(reverse=True)
+                else: 
+                    newloc = self.map.get_chamber(self.curr_loc.v2)
+                    clst = newloc.get_component_list()
+
+                if clst is not None: 
+                    # move to first component 
+                    self.update_location(clst[0])
+                else: 
+                    self.curr_loc = newloc # new chamber is empty. manually move vole there anyways and we will loop again. 
+                
+            
+            else: # current location is a chamber. move to closest edge 
+
+                for (c,e) in self.curr_loc.connections.items(): 
+
+                    if e in path: 
+                        # move to new edge 
+                        # check if interactables exist on this edge. If they do, make move to that interactable. 
+                        if self.curr_loc.id == e.v2: 
+                            clst = e.get_component_list(reverse=True)
+                        else: 
+                            clst = e.get_component_list() 
+                    
+                    if clst is not None: 
+                        # move to first component 
+                        self.update_location(clst[0])
+                    else: 
+                        # new edge is empty, manually move the vole there anyways. 
+                        self.curr_loc = e
+
+
+
+        #
+        # Get list of components in between current location and goal location 
+        #
+        component_lst = self.map.get_component_path(self.curr_component, goal_component) 
 
 
         # for each component in component_lst, call move_next_component
@@ -219,10 +287,12 @@ class Vole:
         # makes calls to move_next_component to see if we are able to reach the goal component 
         # similar to move_next_component, does not simulate anything along the way. Just positions vole so it can interact with component.
 
+    
     def move_next_component(self, component): 
         #TESTME
         ''' vole positions itself in front of component. component specified must be a component that only requires a singular position change. 
-            this does NOT perform any simulations. 
+            this will check the threshold of the voles current component to make sure it is okay for us to move passed it.
+            if the current component is an rfid, will simulate a ping.Any other component does not get automatically simulated in here. Vole is able to freely pass by non-barrier objects though. 
             we check if the voles current component is able to be freely passed. If so, we move and position ourselves at this new interactable. 
             Once returned from this funciton, we would be able to attempt an interaction with the new component without getting a physical proximity error. 
         '''
@@ -230,17 +300,11 @@ class Vole:
         #
         # Edge Cases 
         #
-        # inner helpr function, getInteractable
+        # inner helper function, getInteractable
         def getInteractable(component): 
             ## try except statement for retrieving components interactable. If component is None, this prevents errors from gettting thrown. ## 
             try: return component.interactable
             except AttributeError: return None
-
-        # In an Empty Chamber/Edge (i.e. no components around. cant move next component.)
-        if self.curr_component is None and self.prev_component is None: 
-            print(f'(Vole{self.tag}, move_next_interactable) Cannot move to {component} because voles current location has no components assigned to it.')
-            return False 
-
 
         # Interactables At/Around Vole's Current Position
         curr_interactable = getInteractable(self.curr_component)
@@ -253,7 +317,7 @@ class Vole:
         goal_prev = getInteractable(component.prevval)
 
 
-        print(f'(Vole{self.tag}), move_next_component entered. Goal: {self.curr_component.interactable}->{component.interactable}')
+        print(f'(Vole{self.tag}, move_next_component) {self.curr_component.interactable}->{component.interactable}')
 
         if curr_interactable == goal: 
             print(f'(Vole{self.tag}, move_next_component) Goal interactable and voles current interactable are the same.')
@@ -279,7 +343,7 @@ class Vole:
 
         
         #
-        # Check that we are able to move past the interactable that vole is currently positioned at 
+        # Check that we are able to move past the interactable that vole is currently positioned at ( this only happens for ONE interactable, the current one, each time this function gets called )
         #
     
         #
@@ -308,26 +372,31 @@ class Vole:
 
 
         # FALSE Threshold
-        # Check if we can simulate without dependents 
-        if len(curr_interactable.dependents) > 0: 
+        if len(curr_interactable.dependents) > 0: # cannot simulate if dependent interactions are required first
             # component requires dependent interaction in order to get threshold to become True. This would require other movements, so exiting from this request 
             print(f'(Simulation/Vole{self.tag}, move_next_component) Movement from {self.curr_component}->{component} cannot be completed because {self.curr_component} threshold is False, and would require interactions with its dependents in order to pass.')
             return False 
 
+        elif not curr_interactable.autonomous: # cannot simulate if not autonomous 
+            print(f'(Simulation/Vole{self.tag}, move_next_component) Movement from {self.curr_component}->{component} cannot be completed because {self.curr_component} has no dependents that were set to control it, and it is not an autonomous interactable so requires dependents to operate it.')
+            return False 
+        
         else: 
-            #
-            # SIMULATION allowed for this barrier 
-            # component does not have dependents, so can simulate in a simple step. 
+            
+            # OK to simulate! 
+            # Interactables that are autonomous and do not have interactables can be simulated in a simple step. 
+
             self.simulate_vole_interactable_interaction(curr_interactable)
+            
             time.sleep(5) 
+            
             if curr_interactable.threshold: # recheck the threshold 
                 print(f'(Simulation/Vole{self.tag}, move_next_component) threshold met for {curr_interactable}. Vole{self.tag} moving from {self.curr_component} to {component}.')
                 # update location 
                 self.update_location(component)
                 return True 
 
-            #
-            # NO SIMULATION allowed for this barrier. Cannot move to next component
+            # Simulation did not successfully meet threshold. 
             else: 
                 print(f'(Simulation/Vole{self.tag}, move_next_component) Movement from {self.curr_component}->{component} cannot be completed because after simulating {self.curr_component} the threshold is still False.')
                 return False 
@@ -336,7 +405,6 @@ class Vole:
 
 
         
-
     def attempt_move( self, destination, validity_check = True ): 
         ## destination is an integer specifying a CHAMBERID that we want to move to.
         ''' called by a Vole object ''' 
@@ -344,6 +412,8 @@ class Vole:
         ''' SETTING the interactable's to meet their goal_value by calling simulate_vole_interaction '''
         ''' GETTING the thresholds of each interactable and checking that it is True '''
         ''' if the threshold of any interactable is not True, then we cannot successfully make the move '''
+
+
         print(f'(Vole{self.tag}, attempt_move) Attempting move from {self.curr_loc.edge_or_chamber}{self.curr_loc.id} -> Chamber{destination}.')
         sim_log(f'(Vole{self.tag}, attempt_move) Entering the attempt move function. Vole {self.tag} is currently in {self.curr_loc.edge_or_chamber}{self.curr_loc.id}. Destination: {destination}.')
 
@@ -504,8 +574,8 @@ class Vole:
         ## Update Vole Location ## 
         # self.current_loc = destination
 
-        sim_log(f'(Vole.py, attempt_move) Simulated Vole {self.tag} successfully moved into chamber {self.current_loc}')
-        print(f'Simulated Vole{self.tag} Move Successful: New Location is Chamber {self.current_loc}')
+        sim_log(f'(Vole.py, attempt_move) Simulated Vole {self.tag} successfully moved into chamber {self.curr_loc}')
+        print(f'Simulated Vole{self.tag} Move Successful: New Location is Chamber {self.curr_loc}')
         return True
 
 
@@ -534,13 +604,41 @@ class Vole:
 
         actions = [ (time.sleep,5)  ]  # initialize with option to do nothing, as this action is always available, independent of the vole's current location
 
+        
+        if self.curr_component is not None: 
+            # add "interact w/ current component" option 
+            actions.append( (self.simulate_vole_interactable_interaction, self.curr_component ))
+        
+        else: # current component is None. 
+            
+            if self.prev_component is None: # Current Edge or Chamber is Empty. 
+                
+                # add surrounding locations as options to move to
+                
+                if self.curr_loc.edge_or_chamber == 'chamber': 
+                    # add surrounding edges and neighboring chambers
+                    for (c,e) in self.curr_loc.connections.items(): 
+                        actions.append( self.attempt_move, e ) # attempt moving into edge
+
+                else: # current location is an edge 
+                    # attempt moving into either chamber that the edge connects
+                    actions.append(self.attempt_move, self.curr_loc.v1)
+                    actions.append(self.attempt_move, self.curr_loc.v2)
+            
+            else: 
+                # prev component specified. We are at the end of a locations component list. We can either choose to turn around by navigating back to prev_component, or we can move forward into next chamber/edge 
+
+                actions.append((self.move_next_component() ))
+
+        # if we are currently in a chamber, add all possible moves to surrounding components
+        
 
         # add all possible "move chamber" options 
-        for adj_chmbr in self.map.graph[self.current_loc].connections: # for all of the current chamber's neighboring chambers
-            actions.append( (self.attempt_move, adj_chmbr) ) # add to list of possible moves 
+        for adj_chmbr_id in self.map.graph[self.curr_loc].connections.keys(): # for all of the current chamber's neighboring chambers
+            actions.append( (self.attempt_move, adj_chmbr_id) ) # add to list of possible moves 
         
         # add all possible "interact w/in chamber interactables" options
-        for interactable in self.map.graph[self.current_loc].interactables: # for all of the interactables in the current chamber
+        for interactable in self.map.graph[self.curr_loc].interactables: # for all of the interactables in the current chamber
             actions.append( (self.simulate_vole_interactable_interaction, interactable) )
         
         return actions
@@ -576,7 +674,7 @@ class Vole:
         
         # choose action from possible_actions based on their value in the current chamber's probability distribution
 
-        action_probability = self.map.graph[self.current_loc].action_probability_dist
+        action_probability = self.map.graph[self.curr_loc].action_probability_dist
         if action_probability is not None: 
             # User has set probabilities for the actions, make decision based on this. 
             print('action probability:', action_probability)

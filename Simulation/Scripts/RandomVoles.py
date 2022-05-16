@@ -78,11 +78,11 @@ class RandomVoles(SimulationABC):
         vole1 = self.get_vole(1)
         
         # Start Vole in Chamber 1 or 2 
-        if vole1.current_loc > 2: # if vole is in chamber 3, position vole into chamber 1  to start
+        if vole1.curr_loc > 2: # if vole is in chamber 3, position vole into chamber 1  to start
             vole1.attempt_move(1) 
         
         # Based on current location, get destination to move to 
-        if vole1.current_loc == 2: 
+        if vole1.curr_loc == 2: 
             destination = 1
         else: 
             destination = 2

@@ -5,7 +5,7 @@
         
         {"name":"rfid1", 
             "simulate":true, 
-            "simulate_with_fn": "lambda self, vole: self.rfidQ.put( (vole, self.ID) )" 
+            "simulate_with_fn": "lambda self, vole: self.shared_rfidQ.put( (vole, self.ID, time.time()) )" 
         }, 
         {"name":"door1", 
             "simulate":true
